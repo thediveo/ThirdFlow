@@ -1,0 +1,10 @@
+created: 20140903162805949
+modified: 20140903165824207
+title: is shadowinsync test
+type: text/vnd.tiddlywiki
+
+! Sync with Shadows
+{{{ [prefix[$:/plugins/TheDiveO/ThirdFlow/]is[shadowinsync]] }}}
+
+! No Shadows or Out of Sync
+{{{ [prefix[$:/plugins/TheDiveO/ThirdFlow/]!is[shadowinsync]] }}}

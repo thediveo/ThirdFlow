@@ -1,0 +1,50 @@
+created: 20140903162951165
+modified: 20140903163120486
+module-type: isfilteroperator
+title: $:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js
+type: application/javascript
+
+/*\
+title: $:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js
+type: application/javascript
+module-type: isfilteroperator
+
+Filter function for [is[shadowinsync]]
+  a tiddler is shadowsynced when it has a shadow tiddler
+  *AND* the shadow tiddler is the same as the real tiddler.
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+/*
+Export our filter function
+*/
+exports.shadowinsync = function(source,prefix,options) {
+	var results = [];
+	var invert = prefix === "!";
+	source(function(tiddler,title) {
+		var match = invert;
+		console.log("shadowinsync? " + title);
+		var pluginTitle = options.wiki.getShadowSource(title);
+		if(pluginTitle) {
+			console.log("shadowinsync -- has plugin "+pluginTitle);
+			var pluginInfo = options.wiki.getPluginInfo(pluginTitle),
+				shadow = pluginInfo.tiddlers[title];
+			if ( (tiddler.fields.type == shadow.type)
+			     && (tiddler.getFieldString("created") === shadow.created)
+				 && (tiddler.getFieldString("modified") === shadow.modified) ) {
+				match = !match;
+			}
+		}
+		if ( match ) {
+			results.push(title);
+		}
+	});
+	return results;
+};
+
+})();
