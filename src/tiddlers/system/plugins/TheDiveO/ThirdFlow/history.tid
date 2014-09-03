@@ -1,0 +1,8 @@
+created: 20140902083720188
+modified: 20140903110242095
+title: $:/plugins/TheDiveO/ThirdFlow/history
+type: text/vnd.tiddlywiki
+
+* ''1.0.0'' -- this marks the first public release of the //Third Flow// plugin. Of course, the //Third Flow// eats its own dog food: this plugin has been developed with itself. Sweet, isn't it?
+** the ``--makeplugin`` command for creating plugins in headless TW5 instances running under Node.js.
+** the ``hierarchicalfilesystemadaptor`` sync adapter that stores tiddlers according to their hierarchical names into folders and subfolders.

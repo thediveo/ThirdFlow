@@ -1,0 +1,10 @@
+created: 20140902084022063
+modified: 20140902090843205
+title: $:/plugins/TheDiveO/ThirdFlow/license
+type: text/vnd.tiddlywiki
+
+The //Third Flow// plugin is covered by the following licenses:
+
+* The ''Third Flow plugin'' is licensed under the [[MIT license|http://opensource.org/licenses/MIT]].
+* The ''hierarchical file system adapter'' is licensed under the [[TiddlyWiki 5 license|https://raw.githubusercontent.com/Jermolene/TiddlyWiki5/master/licenses/copyright.md]] (links to ~GitHub TW5 repository). It bases on ``plugins/tiddlywiki/filesystem/filesystemadaptor.js`` and brings in storing tiddlers into hierarchical folder structures according to their titles.
+* Other content of this ~TiddlyWiki which is not part of the plugin or ~TiddlyWiki 5 is covered by the [[CC BY 3.0|http://creativecommons.org/licenses/by/3.0/]] license.
