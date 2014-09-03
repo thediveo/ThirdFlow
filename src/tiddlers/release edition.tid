@@ -1,0 +1,20 @@
+created: 20140902131327505
+modified: 20140903082424252
+tags: edition
+title: release edition
+type: text/vnd.tiddlywiki
+
+The ``release`` edition is used for generating release files, namely:
+
+* a single plugin file for easy import into existing ~TiddlyWikis.
+* a demonstration and documentation ~TiddlyWiki including the plugin but without the individual plugin source tiddlers.
+
+The folder ``./editions/release`` only contains the ~TiddlyWiki configuration in ``tiddlywiki.info`` (see also the [[release template|editions/release/tiddlywiki.info]]). It's quite a typical configuration, but with these notable exceptions geared towards release:
+
+* the single source folder ``./src/`` is automatically and transparently included using the ``includeWikis`` configuration option.
+* the hiearchical filesystem sync adaptor module is ''disabled''. This is necessary since this sync adaptor is always present in the single source tree on purpose. Since we don't want the updated plugin tiddler to be written into the source tree we disable the sync adapter.
+* there is ''no'' ``default-tiddler-location`` configuration option set: this edition is for releasing files but not for editing them!
+* a single build rule named ``release`` that...
+*# packs the plugin tiddler,
+*# saves the plugin as a single tiddler file,
+*# saves the complete ~TiddlyWiki sans the plugin sources but with documentation and demonstration to an HTML file. This requires the help of a suitable [[save template|$:/plugins/TheDiveO/ThirdFlow/templates/save-all]].

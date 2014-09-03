@@ -1,0 +1,80 @@
+created: 20140903124549244
+modified: 20140903125703672
+module-type: command
+title: $:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js
+type: application/javascript
+
+/*\
+title: $:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js
+type: application/javascript
+module-type: command
+
+Pack plugin command:
+--packplugin <plugin title>
+
+\*/
+(function(){
+
+/*jslint node: true, browser: true */
+/*global $tw: false */
+"use strict";
+
+exports.info = {
+	name: "packplugin",
+	synchronous: true
+};
+
+var Command = function(params,commander) {
+	this.params = params;
+	this.commander = commander;
+	this.logger = new $tw.utils.Logger("--" + exports.info.name);
+};
+
+Command.prototype.execute = function() {
+	if(this.params.length < 1) {
+		return "Missing plugin title";
+	}
+	var wiki = this.commander.wiki,
+		fs = require("fs"),
+		path = require("path"),
+		pluginTitle = this.params[0],
+		filter = this.params[1] ||
+			"[field:title/"+this.params[0].replace(/\$/g, "\\$").replace(/\//g, "\\/")+"\\//]";
+		
+	// Get the plug-in self-description tiddler. If it doesn't exist,
+	// bail out as the plugin developer needs to provide a plugin tiddler
+	// with the required self-description.
+	this.logger.log("making plugin", pluginTitle);
+	this.logger.log("using filter for packing", filter);
+	var pluginTiddler = $tw.wiki.getTiddler(pluginTitle);
+	if (!pluginTiddler) {
+		return "missing plugin tiddler: " + pluginTitle;
+	}
+	// Sanity checks first...
+	if(pluginTiddler.fields.type !== "application/json" || !pluginTiddler.hasField("plugin-type")) {
+		return "not a plugin skeleton: " + pluginTitle;
+	}
+	// Update the plugin content to contain all the tiddlers that match
+	// the filter expression.
+	var tiddlers = $tw.wiki.filterTiddlers(filter),
+	    pluginTiddlers = {};
+	$tw.utils.each(tiddlers, function(title) {
+		var tiddler = $tw.wiki.getTiddler(title),
+		    fields = {};
+		$tw.utils.each(tiddler.fields, function(value, name) {
+			fields[name] = tiddler.getFieldString(name);
+		});
+		pluginTiddlers[title] = fields;
+	});
+	this.logger.log("packed", tiddlers.length, "tiddlers");
+	var plugin = new $tw.Tiddler(pluginTiddler, { text: JSON.stringify({tiddlers: pluginTiddlers}) });
+	$tw.wiki.addTiddler(plugin);
+	// we need to update the plugin info that TW had built up during boot.
+	$tw.wiki.readPluginInfo();
+	
+	return null; // done & okay
+};
+
+exports.Command = Command;
+
+})();

@@ -1,0 +1,30 @@
+created: 20140903071652956
+modified: 20140903125305824
+tags: tiddlywiki.info template
+title: editions/release/tiddlywiki.info
+type: application/json
+
+{
+    "includeWikis": [
+		"../../src"
+    ],
+    "config": {
+		"disable-hfs": "yes"
+    },
+    "plugins": [
+        "tiddlywiki/tiddlyweb",
+        "tiddlywiki/codemirror",
+        "tiddlywiki/highlight"
+    ],
+    "build": {
+		"release": [
+			"--packplugin", "$:/plugins/TheDiveO/ThirdFlow",
+			"--rendertemplatedtiddler", "$:/plugins/TheDiveO/ThirdFlow", "$:/core/templates/tid-tiddler", "thirdflow.tid", "", "text/plain",
+			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "thirdflow.html", "text/plain"
+		]
+    },
+    "themes": [
+        "tiddlywiki/vanilla",
+        "tiddlywiki/snowwhite"
+    ]
+}

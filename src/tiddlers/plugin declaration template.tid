@@ -1,0 +1,22 @@
+created: 20140903102610926
+modified: 20140903105717390
+tags: template
+title: plugin declaration template
+type: text/vnd.tiddlywiki
+
+Every plugin needs a tiddler which declares this plugin. The following fields should be declared:
+
+|!Field|!Value|!Note|
+|''author''|``Author``|//your name here.//|
+|''description''|``MyPlugin``|//a short, sweet description of what your plugin does and is good for.//|
+|''list''|``readme license history``|//a list of tiddlers that are shown in the advanced tab of your plugin tiddler//|
+|''plugin-type''|``plugin``|//must be this value.//|
+|''source''|``https://github.com/``|//link to where users can get/update your plugin.//|
+|''type''|``application/json``|//must be this value.//|
+|''version''|``1.0.0``|//set your version, first release ;)//|
+
+You also need to set the text contents of your plugin to this specific value. Otherwise you will run into trouble booting your plugin development ~TiddlyWiki the next time.
+
+```
+{"tiddlers:" {}}
+```

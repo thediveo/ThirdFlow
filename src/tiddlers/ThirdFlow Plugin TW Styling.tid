@@ -1,0 +1,13 @@
+created: 20140903072613112
+modified: 20140903081036480
+tags: $:/tags/stylesheet
+title: ThirdFlow Plugin TW Styling
+type: text/css
+
+ol li, ul li {
+  margin-top: 1ex;
+}
+
+table.borderless, table.borderless td, table.borderless th {
+  border: 0px solid #000 !important;
+}

@@ -1,0 +1,11 @@
+created: 20140902082615605
+modified: 20140903130604089
+title: Third Flow
+type: text/vnd.tiddlywiki
+
+|borderless|k
+|^{{$:/plugins/TheDiveO/ThirdFlow/icon}}|The //Third Flow// plugin brings to you another way to develop customizations for ~TiddlyWiki&nbsp;5. It is not enforcing a specific development flow, it simply tries to help you. Otherwise, it tries to stay out of your way.|
+
+This is the //Third Flow// plugin version "<$view tiddler="$:/plugins/TheDiveO/ThirdFlow" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
+
+<<tabs "[prefix[ThirdFlow/]] -[prefix[ThirdFlow/Use/]] +[sort[]]" "ThirdFlow/1/The Flow" "$:/state/tabs/3f" >>

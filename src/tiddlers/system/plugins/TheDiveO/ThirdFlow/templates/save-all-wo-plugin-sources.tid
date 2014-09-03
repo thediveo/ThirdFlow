@@ -1,0 +1,9 @@
+created: 20140902113827798
+modified: 20140903090211114
+title: $:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources
+type: text/vnd.tiddlywiki
+
+\define saveTiddlerFilter()
+[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[prefix[$:/temp/]] -[all[tiddlers]field:plugin-type[plugin]!prefix[$:/core]!prefix[$:/plugins/tiddlywiki]plugintiddlers[]] +[sort[title]]
+\end
+{{$:/core/templates/tiddlywiki5.html}}

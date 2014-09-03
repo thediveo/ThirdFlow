@@ -1,0 +1,16 @@
+caption: 4 Release
+created: 20140903075152280
+modified: 20140903130239883
+title: ThirdFlow/Use/4/Release
+type: text/vnd.tiddlywiki
+
+!Release
+
+''Important:'' make sure that you've set up the plugin (description) tiddler correctly. Otherwise, you won't be able to package your plugin tiddler.
+
+# Make sure to correctly set (or bump up) the version information of your plugin tiddler. Otherwise, people won't be able to upgrade existing installations of your plugin.
+# Use either ``release.sh`` (OS&nbsp;X, Linux, ...) or ``release.cmd`` (Windows) to create a single plugin tiddler file as well as a demonstration ~TiddlyWiki 5 containing, demonstrating, and documenting your plugin.
+#* ``release/output/example.tid`` is your plugin packaged in a single tiddler, ready for release.
+#* ``release/output/example.html`` is your demonstration ~TiddlyWiki 5 that also contains your plugin packaged in a single tiddler, ready for release. The individual source files that make up the plugin are not included (as they would be duplicated due to the plugin tiddler).
+# Test drive your release files.
+# You finally may want to distribute your plugin, for instance, by uploading it to [[GitHub|http://github.com]].

@@ -1,0 +1,21 @@
+caption: 2 Your Plugin
+created: 20140903081716848
+modified: 20140903130230707
+title: ThirdFlow/Use/2/Your Plugin
+type: text/vnd.tiddlywiki
+
+!Your Plugin
+
+You need to create a plugin declaration tiddler. It is common to use a system title, such as ``$:/plugins/``//``author``//``/``//``pluginname``//. For instance, ``$:/plugin/TheDiveO/ThirdFlow``.
+
+{{plugin declaration template}}
+
+!Auxilliary Plugin Tiddlers
+
+It is good practice to include the following four tiddlers (where ``.../`` denotes tiddler title of your plugin):
+
+|!Tiddler Title|!Note|
+|``.../readme``|//a (short) readme explaining what your plugin does and how to use it. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/readme]])//|
+|``.../license``|//how your plugin is licensed. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/license]])//|
+|``.../history``|//the release history of your plugin. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/history]])//|
+|``.../logo``|//an (optional) plugin logo that will be shown in the plugin tab of the system settings. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/icon]])//|

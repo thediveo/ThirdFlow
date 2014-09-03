@@ -1,0 +1,15 @@
+caption: Rationale
+created: 20140902115316645
+modified: 20140903080718680
+title: ThirdFlow/2/Rationale
+type: text/vnd.tiddlywiki
+
+The existing established plugin development flows either completely work inside the browser not caring about source code management or mandate to maintain separate branches for normal tiddlers and plugin tiddlers. These flows surely have their advantages.
+
+You may want to try the //Third Flow// and its plugin a try when you are ''developing customizing plugins'' and you want to ''develop mainly inside the web browser'' yet have your well-organized ''plugin tiddlers under source code control'' but not dumped in a single flat folder or even separate folder structure.
+
+Instead, the //Third Flow// neatly organizes the system tiddlers you are developing in a hierarchical folder structure following the tiddler naming hierarchy.
+
+The //Third Flow// does not replace existing development flows, instead it //complements// them, namely (1) using the plugin branch support in headless TW5 and editing your plugins in an external editor and with full source code control, as well as (2) editing and creating your plugins solely from within your browser but with only limited source code control. With the //Third Flow// you now get (3) develop flow from ''within'' the browser but with ''full source code management'' with well-organized tiddler files in a single source code tree.
+
+So, get into the //Third Flow// now. Or any other flow you want to.
