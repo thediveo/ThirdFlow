@@ -1,5 +1,5 @@
 created: 20140903162951165
-modified: 20140903163120486
+modified: 20140904093120486
 module-type: isfilteroperator
 title: $:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js
 type: application/javascript
@@ -31,7 +31,6 @@ exports.shadowinsync = function(source,prefix,options) {
 		console.log("shadowinsync? " + title);
 		var pluginTitle = options.wiki.getShadowSource(title);
 		if(pluginTitle) {
-			console.log("shadowinsync -- has plugin "+pluginTitle);
 			var pluginInfo = options.wiki.getPluginInfo(pluginTitle),
 				shadow = pluginInfo.tiddlers[title];
 			if ( (tiddler.fields.type == shadow.type)
