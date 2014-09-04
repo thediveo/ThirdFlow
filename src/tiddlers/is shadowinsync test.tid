@@ -1,7 +1,11 @@
 created: 20140903162805949
-modified: 20140903165824207
+modified: 20140904070031909
 title: is shadowinsync test
 type: text/vnd.tiddlywiki
+
+This is a test bed for the new ``[is[shadowinsync]]`` filter operator. It returns only those tiddlers for which both a tiddler and its shadow exist ''and'' which are both identical (on the basis of type, creation time, and modification time). We assume that the content and fields then are also the same as long as the modification and creation time stamps match. 
+
+You are asking now, how can this be? It can, when we pack a plugin using ``--packplugin`` which does not delete the package source tiddlers. We then need to dump only the plugin without its source tiddlers. But we don't want to drop those other source tiddlers that are actually really //replacing// shadow tiddlers.
 
 ! Sync with Shadows
 {{{ [prefix[$:/plugins/TheDiveO/ThirdFlow/]is[shadowinsync]] }}}

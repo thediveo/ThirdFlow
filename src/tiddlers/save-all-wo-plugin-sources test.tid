@@ -1,0 +1,11 @@
+created: 20140904063412617
+modified: 20140904065439552
+title: save-all-wo-plugin-sources test
+type: text/vnd.tiddlywiki
+
+This filter expression is the test bed for [[save-all-wo-plugin-sources test|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]]: it returns most the ~TiddlyWiki itself (as with the [[$:/core/save/all]] template), yet with some important exceptions...
+
+# those source tiddlers which are also identically inside a plugin (``[is[shadowinsync]]``)
+# the [[ThirdFlow|$:/plugins/TheDiveO/ThirdFlow]] plugin itself, but only if it is not empty (``-[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]removesuffix[/readme]] +[sort[title]]``). This is a special rule that just covers the //Third Flow// plugin: normally, you don't want to include it in your own plugin demo ~TiddlyWiki releases. Therefore, the //Third Flow// plugin gets cloned only once when dumping //Third Flow// demonstration ~TiddlyWiki.
+
+{{{ [is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[prefix[$:/temp/]] -[is[shadowinsync]] -[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]removesuffix[/readme]] +[sort[title]] }}}

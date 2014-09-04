@@ -1,6 +1,6 @@
 caption: Technical
 created: 20140902131746344
-modified: 20140903165642150
+modified: 20140904070223091
 title: ThirdFlow/4/Technical
 type: text/vnd.tiddlywiki
 
@@ -9,8 +9,8 @@ Interesting technical tidbits of //Third Flow// are:
 * you only maintain a ''single'' tiddler source code tree. All the tiddlers you're developing are living inside their hierarchical folders in and below ``./src/tiddlers``. No need for maintaining separate ~~``plugin/``~~ folder structures outside your main tiddler tree. This is especially useful when developing single and probably simpler plugins.
 * two editions help you maintaining and releasing your plugin: the [[develop edition]] and the [[release edition]]. These editions ''do not'' contain any additional tiddlers! There's only a //single// source tree on purpose and it lives in ``src/tiddlers``.
 * you may want to use this [[plugin declaration template|plugin declaration template]] when setting up your plugin for the first time.
-* there is a new ``is`` filter operand ``shadowinsync``: given a list of tiddlers you get back those tiddlers for which a shadow tiddler exists and this shadow is the same (on the basis of creation time, modification time, and tiddler type) as the non-shadow tiddler. Also supports the inverse, where it returns only those tiddlers being out of sync with their shadows.
-* the [[save-all-wo-plugin-sources|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]] template: works amost like the [[$:/core/save/all]] template, but leaves out all those plugin source tiddlers that are also contained in a plugin. In most projects you probably don't need to touch this template as it should work fully automatic and detect your plugin(s) correctly.
+* there is a new ``is`` filter operand ``shadowinsync``: given a list of tiddlers you get back those tiddlers for which a shadow tiddler exists and this shadow is the same (on the basis of creation time, modification time, and tiddler type) as the non-shadow tiddler. Also supports the inverse, where it returns only those tiddlers being out of sync with their shadows. The ``[is[shadowinsync]]`` is used in the ~TiddlyWiki save template, we discuss next.
+* the [[save-all-wo-plugin-sources|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]] template: works amost like the [[$:/core/save/all]] template, but leaves out all those plugin source tiddlers that are also contained in a plugin. In most projects you probably don't need to touch this template as it should work fully automatic and detect your plugin(s) correctly. This template in addition ensures that the //Third Flow// plugin does not get dumped into your own plugin demonstration ~TiddlyWikis (you typically don't want it //there//). See the [[save-all-wo-plugin-sources test]] for some more background information.
 * there's a new [[hierarchical file system adapter|$:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js]] in the plugin that handles hierarchical title names for maintaining a subfolder hierarchicy.
 * for easier release there are two additional commands in the plugin:
 ** the new [[--packplugin|$:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js]] command for packing a plugin tiddler.
