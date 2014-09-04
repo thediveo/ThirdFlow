@@ -19,6 +19,36 @@ the process of deploying your new plugin.
 
 Of course, the Third Flow has been developed using the same process it supports. Eat your own dog food.
 
+## Installation
+
+```
+git clone https://github.com/TheDiveO/ThirdFlow.git
+cd ThirdFlow
+npm install tiddlywiki
+```
+
+Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin`
+or
+You can install TW globally with:  `npm install -g tiddlywiki`
+
+For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
+
+## Starting the Server
+
+```
+develop [[username] [password]] [IP]
+```
+
+and open [localhost:8080](http://localhost:8080)
+
+## Creating the Release Files
+
+```
+release
+```
+
+The files will be crated in then `editons/release` folder
+
 ## License
 
 The Third Flow plugin is covered by the following licenses:
