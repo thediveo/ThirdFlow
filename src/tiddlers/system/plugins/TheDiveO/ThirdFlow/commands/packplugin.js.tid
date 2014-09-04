@@ -1,5 +1,5 @@
 created: 20140903124549244
-modified: 20140903125703672
+modified: 20140904125703672
 module-type: command
 title: $:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js
 type: application/javascript
@@ -71,6 +71,7 @@ Command.prototype.execute = function() {
 	$tw.wiki.addTiddler(plugin);
 	// we need to update the plugin info that TW had built up during boot.
 	$tw.wiki.readPluginInfo();
+	$tw.wiki.unpackPluginTiddlers();
 	
 	return null; // done & okay
 };
