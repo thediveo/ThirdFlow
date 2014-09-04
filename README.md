@@ -39,7 +39,7 @@ For Windows users the PATH variable is well hidden, so just [ask the search engi
 develop [[username] [password]] [IP]
 ```
 
-and open http:localhost:8080
+and open [localhost:8080](localhost:8080)
 
 ## Creating the Release Files
 
