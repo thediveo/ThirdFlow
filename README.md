@@ -5,15 +5,15 @@
 The Third Flow plugin brings to you another way to develop customizations for TiddlyWiki 5. It is not enforcing
 a specific development flow, it simply tries to help you. Otherwise, it tries to stay out of your way.
 
-* You can ''develop your plugin directly from within your browser''. A server-based
+* You can **develop your plugin directly from within your browser**. A server-based
 TiddlyWiki instance running on Node.js ensures that all your source tiddlers are neatly stored in a clean and
 hierarchically organized folder structure.
 
-* ''Source code management is done as usual'' using your favorite source code management tool, such as git and others.
+* **Source code management is done as usual** using your favorite source code management tool, such as git and others.
 As the Third Flow plugin structures your tiddler source files you get a well-organized repository structure at
 no price.
 
-* For ''packaging your plugin'' you finally simply run a shell script which packs the plugin tiddler and saves it
+* For **packaging your plugin** you finally simply run a shell script which packs the plugin tiddler and saves it
 to disk. Additionally, a demonstration TiddlyWiki is also created that guides your future plugin users through
 the process of deploying your new plugin.
 
