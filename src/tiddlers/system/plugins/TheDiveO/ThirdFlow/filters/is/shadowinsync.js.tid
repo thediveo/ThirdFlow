@@ -28,7 +28,6 @@ exports.shadowinsync = function(source,prefix,options) {
 	var invert = prefix === "!";
 	source(function(tiddler,title) {
 		var match = invert;
-		console.log("shadowinsync? " + title);
 		var pluginTitle = options.wiki.getShadowSource(title);
 		if(pluginTitle) {
 			var pluginInfo = options.wiki.getPluginInfo(pluginTitle),
