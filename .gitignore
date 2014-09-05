@@ -1,2 +1,4 @@
 .drafts/
 /node_modules/
+.directory
+.project
