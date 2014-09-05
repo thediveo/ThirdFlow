@@ -49,14 +49,6 @@ Command.prototype.execute = function() {
 		template = this.params[1],
 		filename = path.resolve(this.commander.outputPath,this.params[2]);
 	$tw.utils.createFileDirectories(filename);
-/*	
-	var parser = wiki.parseTiddler(template),
-		widgetNode = wiki.makeWidget(parser,{variables: {currentTiddler: title}});
-	var container = $tw.fakeDocument.createElement("div");
-	widgetNode.render(container,null);
-	var text = type === "text/html" ? container.innerHTML : container.textContent;
-	fs.writeFileSync(filename,text,"utf8");
-*/
 	// Save the tiddler as a self contained templated file
 	var content = wiki.renderTiddler("text/plain",template,{variables: {currentTiddler: title}});
 	fs.writeFileSync(filename,content,{encoding: "utf8"});

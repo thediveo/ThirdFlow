@@ -4,6 +4,6 @@ title: $:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources
 type: text/vnd.tiddlywiki
 
 \define saveTiddlerFilter()
-[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[prefix[$:/temp/]] -[is[shadowinsync]] -[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]removesuffix[/readme]] +[sort[title]]
+[is[tiddler]] -[prefix[$:/state/popup/]] -[[$:/HistoryList]] -[[$:/boot/boot.css]] -[type[application/javascript]library[yes]] -[[$:/boot/boot.js]] -[[$:/boot/bootprefix.js]] -[prefix[$:/temp/]] -[is[shadowinsync]] -[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]!is[tiddler]removesuffix[/readme]] +[sort[title]]
 \end
 {{$:/core/templates/tiddlywiki5.html}}

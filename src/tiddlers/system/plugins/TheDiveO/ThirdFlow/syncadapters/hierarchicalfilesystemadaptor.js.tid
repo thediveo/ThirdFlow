@@ -1,6 +1,8 @@
+created: 20140904130857052
+modified: 20140904130903925
+module-type: syncadaptor
 title: $:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js
 type: application/javascript
-module-type: syncadaptor
 
 /*\
 title: $:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js

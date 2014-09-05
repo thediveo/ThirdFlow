@@ -35,6 +35,7 @@ Command.prototype.execute = function() {
 		return "Missing plugin title";
 	}
 	var wiki = this.commander.wiki,
+		self = this,
 		fs = require("fs"),
 		path = require("path"),
 		pluginTitle = this.params[0],
@@ -61,6 +62,7 @@ Command.prototype.execute = function() {
 	$tw.utils.each(tiddlers, function(title) {
 		var tiddler = $tw.wiki.getTiddler(title),
 		    fields = {};
+		self.logger.log("adding " + title);
 		$tw.utils.each(tiddler.fields, function(value, name) {
 			fields[name] = tiddler.getFieldString(name);
 		});
@@ -69,8 +71,10 @@ Command.prototype.execute = function() {
 	this.logger.log("packed", tiddlers.length, "tiddlers");
 	var plugin = new $tw.Tiddler(pluginTiddler, { text: JSON.stringify({tiddlers: pluginTiddlers}) });
 	$tw.wiki.addTiddler(plugin);
-	// we need to update the plugin info that TW had built up during boot.
+	// We need to update the plugin info that TW had built up during boot...
 	$tw.wiki.readPluginInfo();
+	// ...and we need to re-unpack the plugins into their shadow tiddlers in
+	// order to make [is[shadow]] work correctly.
 	$tw.wiki.unpackPluginTiddlers();
 	
 	return null; // done & okay
