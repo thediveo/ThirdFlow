@@ -6,3 +6,12 @@ b, strong {
 span.nb {
   white-space: nowrap;
 }
+
+p.clear {
+  clear: both;
+}
+
+img.framed {
+  border: 1px solid #ccc;
+  padding: 1px;
+}
