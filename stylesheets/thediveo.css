@@ -7,12 +7,55 @@ span.nb {
   white-space: nowrap;
 }
 
+span.fa:before {
+  margin-right: 0.3em;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
 p.clear {
   clear: both;
+}
+
+img.right {
+  float: right;
+  margin-left: 1em;
 }
 
 img.framed {
   border: 1px solid #ccc;
   padding: 1px;
-  margin-left: 1em;
 }
+
+span.plugin:before {
+  font: normal normal normal 90%/1 FontAwesome;
+  content: "\f1e6";
+  margin-right: 0.3em;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+span.plugin {
+  font-weight: bold;
+}
+
+a.wiki:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f02d";
+  margin-right: 0.2em;
+  -webkit-opacity: 0.5;
+  -moz-opacity: 0.5;
+  opacity: 0.5;
+}
+
+a.ext:before {
+  font: normal normal normal 14px/1 FontAwesome;
+  content: "\f14c";
+  margin-right: 0.15em;
+  -webkit-opacity: 0.4;
+  -moz-opacity: 0.4;
+  opacity: 0.4;
+}
+
