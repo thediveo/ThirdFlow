@@ -14,4 +14,5 @@ p.clear {
 img.framed {
   border: 1px solid #ccc;
   padding: 1px;
+  margin-left: 1em;
 }
