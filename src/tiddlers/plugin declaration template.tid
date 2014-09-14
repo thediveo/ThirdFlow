@@ -1,5 +1,5 @@
 created: 20140903102610926
-modified: 20140903105717390
+modified: 20140914142327950
 tags: template
 title: plugin declaration template
 type: text/vnd.tiddlywiki
@@ -7,13 +7,13 @@ type: text/vnd.tiddlywiki
 Every plugin needs a tiddler which declares this plugin. The following fields should be declared:
 
 |!Field|!Value|!Note|
-|''author''|``Author``|//your name here.//|
-|''description''|``MyPlugin``|//a short, sweet description of what your plugin does and is good for.//|
-|''list''|``readme license history``|//a list of tiddlers that are shown in the advanced tab of your plugin tiddler//|
-|''plugin-type''|``plugin``|//must be this value.//|
+|''author''|``Author Jones``|//your name here.//|
+|''description''|``supports foo on TW5``|//a short, sweet description of what your plugin does and is good for.//|
+|''list''|``readme license history``|//a list of tiddlers that are shown in the advanced tab of your plugin tiddler. These three documentation tiddlers are a great start for documenting your plugin so users can better understand what your plugin does, what its license is, and what was added, fixed, and removed over time.//|
+|''plugin-type''|``plugin``|//must be exactly this value unless you are developing a theme plugin.//|
 |''source''|``https://github.com/``|//link to where users can get/update your plugin.//|
-|''type''|``application/json``|//must be this value.//|
-|''version''|``1.0.0``|//set your version, first release ;)//|
+|''type''|``application/json``|//must be exactly this value.//|
+|''version''|``1.0.0``|//set your version, first release ;) You may want to start with something lower during the development and beta test phases of your plugin though. Believe me...//|
 
 You also need to set the text contents of your plugin to this specific value. Otherwise you will run into trouble booting your plugin development ~TiddlyWiki the next time.
 

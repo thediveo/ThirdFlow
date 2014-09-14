@@ -1,6 +1,6 @@
 created: 20140903072613112
-modified: 20140903081036480
-tags: $:/tags/stylesheet
+modified: 20140914140111547
+tags: $:/tags/Stylesheet
 title: ThirdFlow Plugin TW Styling
 type: text/css
 
@@ -10,4 +10,15 @@ ol li, ul li {
 
 table.borderless, table.borderless td, table.borderless th {
   border: 0px solid #000 !important;
+}
+
+img.imagethumb {
+  float: right;
+  border: 1px solid #ccc;
+  margin-left: 1em;
+}
+
+div.body img {
+  border: 1px solid #ccc;
+  margin-left: 1em;
 }

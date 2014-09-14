@@ -90,13 +90,21 @@ HierarchicalFileSystemAdaptor.prototype.getTiddlerInfo = function(tiddler) {
 	return {};
 };
 
+// Nota Bene: this needs to mirror the file extension information as established
+// in function $tw.boot.startup (boot.js). Otherwise, the sync adaptor will use
+// another encoding than expected by the boot process.
 $tw.config.typeInfo = {
 	"text/vnd.tiddlywiki": {
 		fileType: "application/x-tiddler",
 		extension: ".tid"
 	},
 	"image/jpeg" : {
-		hasMetaFile: true
+		hasMetaFile: true,
+		encoding: "base64"
+	},
+	"image/png" : {
+		hasMetaFile: true,
+		encoding: "base64"
 	}
 };
 
@@ -269,8 +277,10 @@ HierarchicalFileSystemAdaptor.prototype.saveTiddler = function(tiddler,callback)
 			}
 			if(fileInfo.hasMetaFile) {
 				// Save the tiddler as a separate body and meta file
-				var typeInfo = $tw.config.contentTypeInfo[fileInfo.type];
-				fs.writeFile(fileInfo.filepath,tiddler.fields.text,{encoding: typeInfo.encoding},function(err) {
+				var typeInfo = $tw.config.typeInfo[fileInfo.type],
+				    encoding = typeInfo.encoding || "base64"; // makes sense for TW
+				self.logger.log("saving type", fileInfo.type, "with meta file and encoding", encoding);
+				fs.writeFile(fileInfo.filepath,tiddler.fields.text,{encoding: encoding},function(err) {
 					if(err) {
 						return callback(err);
 					}
