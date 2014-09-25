@@ -1,10 +1,12 @@
 created: 20140902083720188
-modified: 20140914142858593
+modified: 20140925072000528
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.3'' -- upgraded to work with the final ~TiddlyWiki 5.1.x releases.
+** fixed using deprecated regular expression when packing plugin tiddlers.
 * ''1.0.2'' -- fix and polishing release.
-** fixes a problem in the hierarchical filesystem sync adaptor that previously caused server aborts when adding JPEG tiddlers. The sync adaptor now defaults to the "binary" encoding whenever a meta file is required.
+** fixes a problem in the hierarchical filesystem sync adaptor that previously caused server aborts when adding JPEG tiddlers. The sync adaptor now defaults to the "~~binary~~base64" encoding whenever a meta file is required.
 ** added two illustrations to the demo documentation showing the develop and release phases.
 ** further minor documentation fixes and improvements.
 * ''1.0.1'' -- fix and polishing release.

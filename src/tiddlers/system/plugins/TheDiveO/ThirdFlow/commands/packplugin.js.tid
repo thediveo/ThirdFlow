@@ -40,7 +40,8 @@ Command.prototype.execute = function() {
 		path = require("path"),
 		pluginTitle = this.params[0],
 		filter = this.params[1] ||
-			"[field:title/"+this.params[0].replace(/\$/g, "\\$").replace(/\//g, "\\/")+"\\//]";
+			"[prefix["+this.params[0]+"/]]";
+//			"[field:title/"+this.params[0].replace(/\$/g, "\\$").replace(/\//g, "\\/")+"\\//]";
 		
 	// Get the plug-in self-description tiddler. If it doesn't exist,
 	// bail out as the plugin developer needs to provide a plugin tiddler
