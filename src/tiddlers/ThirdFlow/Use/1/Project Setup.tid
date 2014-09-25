@@ -1,17 +1,27 @@
 caption: 1 Project Setup
 created: 20140903075000564
-modified: 20140903130316429
+modified: 20140925203245149
 title: ThirdFlow/Use/1/Project Setup
 type: text/vnd.tiddlywiki
 
 !Project Setup
 
+@@.wide
 # If not done yet, please make sure that you've installed ~TiddlyWiki on Node.js as described in the [[TiddlyWiki 5 documentation|http://tiddlywiki.com/#GettingStarted]].
+
 # For a //new// plugin project create a new plugin project folder, say ``plugin-hello``. For an existing plugin project you may want to slightly reorganize your plugin folder structure if possible.
+
 # Set up the tiddler source folders: ``src`` and within it ``src/tiddlers``. You tiddlers will later be stored below the ``src/tiddlers`` folders in a hierarchical subfolder structure that reflects the hierarchical titles of your tiddlers. On purpose, there is only a //single// src branch and on purpose we don't use a ~~``plugins``~~ branch.
+
 # Copy the //Third Flow// plugin ``ThirdFlow.tid`` into ``src/tiddlers``. Alternatively, you can later import the //Third Flow// plugin by simply dropping it on your plugin development wiki (and then reloading).
+
 # If you don't have a ``src/tidlywiki.info`` file yet, create a new one that simply contains ``{}``. That's enough.
+
 # Next, we will set up two editions: one for development and one for release of your plugin. So create a subfolder for ``editions`` inside ``plugin-ex``.
+
 # Then, inside the ``editions`` folder, create two more folders: ``editions/develop`` and ``editions/release``.
+
 # Create ``editions/develop/tiddlywiki.info`` using [[this plugin develop template|editions/develop/tiddlywiki.info]]. You can probably take this template just verbatim without any changes.
+
 # Create ``editions/release/tiddlywiki.info`` using [[this plugin release template|editions/release/tiddlywiki.info]]. In this template, please adapt the plugin path and file names in the ``--build release`` configuration to your plugin.
+@@

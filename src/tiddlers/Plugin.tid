@@ -1,0 +1,41 @@
+created: 20140925184608907
+modified: 20140925203440288
+tags: Terminology
+title: Plugin
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+A ''plugin'' in ~TiddlyWiki 5 is a bundle of tiddlers packaged together as a //single// tiddler. Plugins are used to distribute optional customizations components for ~TiddlyWikis.
+
+!Types
+
+Plugins have a `plugin-type` field that currently can take on these values:
+
+* `plugin` (which is the default) indicates a plain plugin; that is, a plugin that isn't further specialized in its purpose.
+* `theme` identifies plugins that provide themes and that are understood by ~TiddlyWiki's theming mechanism.
+
+!Technical
+
+From the technical perspective, a plugin is a single tiddler with [[JSON]] content. This JSON content in turn represents the individual tiddlers that are packaged into the plugin.
+
+During the boot process of a ~TiddlyWiki 5 or later when importing a plugin into a ~TiddlyWiki 5 plugins automatically get unpacked. That means that the tiddlers packed into a plugin are unpacked into individual ''shadow tiddlers''.
+
+[[Shadow tiddlers|Shadow Tiddler]] cannot be changed, but they can be overwritten simply by creating a new tiddler with the same title. Unfortunately, there isn't yet an offical term for such a tiddler that overwrites a shadow tiddler. In this documentation I'll use the term [[foreground tiddler|Foreground Tiddler]] instead when refering to a tiddler (in the foreground) for which a shadow tiddler exists.
+
+!Packaging
+
+Basically, there are two ways to package plugins:
+
+@@.wide
+# inside the web browser from the JavaScript console. I won't further detail this process as I consider the //Third Flow// process to be much easier in comparism.
+
+# from the command line running a ~TiddlyWiki 5 instance under the control of Node.js and using the [[packplugin]] command that comes with the //Third Flow// plugin. Typically, you will call this command during the release phase from your ~TiddlyWiki [[release edition]].
+@@
+
+!See Also
+
+* [[Foreground Tiddler]]
+* [[Shadow Tiddler]]
+* [[Ordinary Tiddler]]
+* [[packplugin]] command

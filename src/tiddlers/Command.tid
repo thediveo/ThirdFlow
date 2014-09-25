@@ -1,0 +1,28 @@
+color: #8f11a4
+created: 20140925195209533
+modified: 20140925203653789
+tags: Terminology
+title: Command
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+A ''command'' is used to instruct a ~TiddlyWiki 5 to carry out certain actions programmatically after it has been started. Command generally can only be used with ~TiddlyWiki 5 running on Node.js. 
+
+!Third Flow
+
+The //Third Flow// plugin comes with these commands that support plugin packaging and release:
+
+<<list-links filter:"[tag[Command]]">>
+
+!Technical
+
+~TiddlyWiki 5 realizes commands through (JavaScript) [[modules|Module]]. It almost goes without saying that the `module-type` consequently is `command`.
+
+!Trivia
+
+The `[commands[]]` filter operator returns a list of the available commands.
+
+!See Also
+
+* [[Module]]

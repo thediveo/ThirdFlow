@@ -1,10 +1,10 @@
 created: 20140903072613112
-modified: 20140914140111547
+modified: 20140925203042242
 tags: $:/tags/Stylesheet
 title: ThirdFlow Plugin TW Styling
 type: text/css
 
-ol li, ul li {
+ol.wide li, ul.wide li {
   margin-top: 1ex;
 }
 

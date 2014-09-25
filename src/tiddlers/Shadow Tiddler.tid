@@ -1,0 +1,20 @@
+created: 20140925190154910
+modified: 20140925192235727
+tags: Terminology
+title: Shadow Tiddler
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+A ''shadow tiddler'' in ~TiddlyWiki 5 is a tiddler that originates from a [[plugin|Plugin]]. Shadow tiddlers cannot be changed, but they can be overwritten  simply by creating a new tiddler (so-called [[ordinary tiddlers|Ordinary Tiddler]]) with the same name.
+
+For lack of a better name, I'll call (ordinary) tiddlers overwriting shadows the [[foreground tiddlers|Foreground Tiddler]].
+
+!Technical
+
+Internally, the ~TiddlyWiki 5 core stores shadow tiddlers in a separate tiddler table. This shadow tiddler table gets populated when [[plugins|Plugin]] are unpacked: either during boot or when importing them.
+
+!See Also
+
+* [[Ordinary Tiddler]]
+* [[Foreground Tiddler]]

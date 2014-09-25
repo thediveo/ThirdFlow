@@ -1,13 +1,17 @@
 caption: 3 Develop
 created: 20140903075047801
-modified: 20140903130246675
+modified: 20140925203203906
 title: ThirdFlow/Use/3/Develop
 type: text/vnd.tiddlywiki
 
 !Develop
 
+@@.wide
 # Use either ``develop.sh`` (OS&nbsp;X, Linux, ...) or ``develop.cmd`` (Windows) to start your development ~TiddlyWiki 5 under control of Node.js as a server.
+
 # Navigate to [[http://localhost:8080]] in your web browser.
+
 # You should see your plugin development wiki now. Simply start working on your plugin. You may also add some examples and documentation.
+@@
 
 You should now see your tiddlers showing up inside the ``src/tiddlers`` folder hierarchy. Source code management should also be easy with all tiddlers well organized. 

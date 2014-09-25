@@ -1,15 +1,23 @@
 created: 20140902130549262
-modified: 20140903082442450
-tags: edition
+modified: 20140925204203828
+tags: Edition
 title: develop edition
 type: text/vnd.tiddlywiki
 
-The ``develop`` edition is used while developing and maintaining the source code for your plugin.
+The ``develop`` [[edition|Edition]] is used while developing and maintaining the source code for your plugin.
 
 The folder ``./editions/develop`` only contains the ~TiddlyWiki configuration in ``tiddlywiki.info`` (see also the [[develop template|editions/develop/tiddlywiki.info]]). It's quite a typical configuration, but with these notable exceptions geared towards the //Third Flow// development flow:
 
+@@.wide
 * the single source folder ``./src/`` is automatically and transparently included using the ``includeWikis`` configuration option.
+
 * the ``default-tiddler-location`` configuration option points to the single source folder ``./src/tiddlers/``. So all newly created tiddlers will automatically placed in or below the single source folder.
+
 * there are no build rules -- because you don't need them here. This ~TiddlyWiki is for //development// but not for release.
+@@
 
 Please note that during development there's only a skeleton plugin tiddler that contains the plugin information but not the packed tiddlers. There are thus no shadowed plugin files. However, ~TiddlyWiki will notice the empty plugin tiddler nevertheless and display its meta information. Other than that, the empty plugin doesn't cause any (potentially adverse) effects.
+
+!See also
+
+* [[release edition]]

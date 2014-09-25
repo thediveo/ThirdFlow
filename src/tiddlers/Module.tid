@@ -1,0 +1,21 @@
+color: #880000
+created: 20140925193346003
+modified: 20140925203825474
+title: Module
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+A ''module'' in ~TiddlyWiki 5 is a tiddler that contains executable JavaScript code.
+
+!Third Flow
+
+The //Third Flow// plugin defines the following modules:
+
+<<list-links filter:"[tag[Module]]">>
+
+!Technical
+
+Modules must be of type `application/javascript` -- that is, their field `type` is set to this specific value.
+
+The `module-type` field then specifies the specific type of module. See the ~TiddlyWiki 5 documentation for details about [[available module types||http://tiddlywiki.com/#ModuleType]].

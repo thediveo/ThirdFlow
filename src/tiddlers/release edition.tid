@@ -1,10 +1,10 @@
 created: 20140902131327505
-modified: 20140903082424252
-tags: edition
+modified: 20140925204252489
+tags: Edition
 title: release edition
 type: text/vnd.tiddlywiki
 
-The ``release`` edition is used for generating release files, namely:
+The ``release`` [[edition|Edition]] is used for generating release files, namely:
 
 * a single plugin file for easy import into existing ~TiddlyWikis.
 * a demonstration and documentation ~TiddlyWiki including the plugin but without the individual plugin source tiddlers.
@@ -18,3 +18,7 @@ The folder ``./editions/release`` only contains the ~TiddlyWiki configuration in
 *# packs the plugin tiddler,
 *# saves the plugin as a single tiddler file,
 *# saves the complete ~TiddlyWiki sans the plugin sources but with documentation and demonstration to an HTML file. This requires the help of a suitable [[save template|$:/plugins/TheDiveO/ThirdFlow/templates/save-all]].
+
+!See Also
+
+* [[develop edition]]
