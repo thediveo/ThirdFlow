@@ -1,7 +1,7 @@
 created: 20140925203841854
-modified: 20140926162537534
+modified: 20140926174910359
 tags: Module Filter [[is Filter Operand]]
-title: shadowinsync
+title: shadowinsync is Filter Operand
 type: text/vnd.tiddlywiki
 
 !Abstract
@@ -47,5 +47,7 @@ Or more precise:
 * ''and'' the ordinary tiddler is the same as the shadow tiddler, based on the creation and modification dates of them. For performance reasons, the tiddler contents are not compared.
 
 So, if either the foreground or shadow tiddler is missing, these tiddlers get filtered out.
+
+!Source
 
 The source code for the `is` filter operand `shadowinsync` can be found in [[$:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js]]. It is a ~TiddlyWiki 5 [[module|Module]] -- or more specifically: it's a `is` filter operand, so its `module-type` is `isfilteroperator` (sic!).

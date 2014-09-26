@@ -1,5 +1,5 @@
 created: 20140925184608907
-modified: 20140925203440288
+modified: 20140926174506564
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
@@ -30,7 +30,7 @@ Basically, there are two ways to package plugins:
 @@.wide
 # inside the web browser from the JavaScript console. I won't further detail this process as I consider the //Third Flow// process to be much easier in comparism.
 
-# from the command line running a ~TiddlyWiki 5 instance under the control of Node.js and using the [[packplugin]] command that comes with the //Third Flow// plugin. Typically, you will call this command during the release phase from your ~TiddlyWiki [[release edition]].
+# from the command line running a ~TiddlyWiki 5 instance under the control of Node.js and using the [[--packplugin|packplugin Command]] command that comes with the //Third Flow// plugin. Typically, you will call this command during the release phase from your ~TiddlyWiki [[release edition]].
 @@
 
 !See Also
@@ -38,4 +38,4 @@ Basically, there are two ways to package plugins:
 * [[Foreground Tiddler]]
 * [[Shadow Tiddler]]
 * [[Ordinary Tiddler]]
-* [[packplugin]] command
+* [[packplugin Command]]
