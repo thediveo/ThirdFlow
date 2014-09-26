@@ -7,6 +7,6 @@ plugin-type: plugin
 source: http://thediveo.github.io/ThirdFlow
 title: $:/plugins/TheDiveO/ThirdFlow
 type: application/json
-version: 1.0.3
+version: 1.0.4
 
 {"tiddlers": {}}
