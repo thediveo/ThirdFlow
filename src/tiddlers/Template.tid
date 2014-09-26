@@ -1,0 +1,8 @@
+color: #5430cc
+created: 20140926151026611
+modified: 20140926153224672
+title: Template
+type: text/vnd.tiddlywiki
+
+See the following templates:
+<<list-links filter:"[tag[Template]]">>

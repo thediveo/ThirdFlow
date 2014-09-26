@@ -1,6 +1,7 @@
 color: #880000
 created: 20140925193346003
-modified: 20140925203825474
+modified: 20140926165411439
+tags: Terminology
 title: Module
 type: text/vnd.tiddlywiki
 
@@ -19,3 +20,27 @@ The //Third Flow// plugin defines the following modules:
 Modules must be of type `application/javascript` -- that is, their field `type` is set to this specific value.
 
 The `module-type` field then specifies the specific type of module. See the ~TiddlyWiki 5 documentation for details about [[available module types||http://tiddlywiki.com/#ModuleType]].
+
+!Organizing Modules
+
+While not strictly necessary, it is helpful to organize module titles so that they reflect the module type.
+
+One way is to put all modules below their own `modules` folder, as the ~TiddlyWiki 5 sources do. This is especially useful when maintaing a lot of other tiddler files that are not modules.
+
+However, when developing plugins using the //Third Flow// this results in even longer tiddler titles without really improving tiddler organization. Personally, I don't care whether a tiddler is a module, but I care about its purpose, such as a //command// or //filter//.
+
+Thus, the following slightly flattened title organization may be of better help when developing with the //Third Flow//. It simply indicates the functional group immediately in the first level of hierarchy inside the plugin itself:
+
+* `$:/.../commands/`
+* `$:/.../filters/`
+** `$:/.../filters/all`
+** `$:/.../filters/is`
+* `$:/.../macros/`
+* `$:/.../parsers/`
+* `$:/.../templates/`
+* `$:/.../styles/`
+* `$:/.../syncadaptors/`
+* `$:/.../wikiparser/`
+* `$:/.../widgets/`
+
+Of course, the above is nothing more than a suggestion. You are free to use whatever naming scheme you like.

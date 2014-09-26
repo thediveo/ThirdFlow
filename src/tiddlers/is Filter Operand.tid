@@ -1,0 +1,18 @@
+color: #3e6281
+created: 20140926142829593
+modified: 20140926165726018
+tags: Terminology
+title: is Filter Operand
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+The //operands// to the `is` filter //operator// are easily extensible through [[modules|Module]] with a `module-type` of `isfilteroperator` (sic!). Now this ~TiddlyWiki 5 core architecture really //is// sweet, isn't it?!
+
+The //Third Flow// plugin brings in this:
+
+<<list-links filter:"[tag[is Filter Operand]]">>
+
+!Note Bene
+
+For some reason unknown to us the operands of the `is` filter operator are tagged as `isfilteroperator` and not ~~`isfilteroperand`~~ as someone may expect. Any hey, we didn't came up with the operator-operand thingy.

@@ -1,25 +1,35 @@
 color: #2891ac
 created: 20140925200545535
-modified: 20140925201915423
-tags: Terminology todo
+modified: 20140926150559031
+tags: Terminology
 title: Edition
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-An ''edition'' in ~TiddlyWiki 5 allows us to distribute different TiddlyWiki editions (tiddler subsets) from the same source set of tiddlers. Editions are used when running ~TiddlyWiki 5 under the control of Node.js.
+An ''edition'' in ~TiddlyWiki 5 allows us to distribute different tiddler sets from the same source set of tiddlers. Editions are used when running ~TiddlyWiki 5 under the control of Node.js.
 
 !Technical
 
+Editions consist of one or multiple [[TiddlyWiki folders|http://tiddlywiki.com/#TiddlyWikiFolders]]: simply spoken, these are folders with contain configuration data as well as tiddlers in certain subfolders.
+
+As ~TiddlyWiki folders can pull in other ~TiddlyWiki folders it is convention to usually call the topmost level of these folders the editions.
+
+For instance, the //Third Flow// plugin consists of three ~TiddlyWiki folders: `src`, `develop`, and `release`. But only the latter two folders `develop` and `release` are actually editions.
+
 !Usage
 
-When developing [[plugins|Plugin]] using the //Third Flow// you will typically set up two editions:
+When developing [[plugins|Plugin]] using the //Third Flow// you will typically set up two editions. In the background, these different editions will map to the //same// set of source tiddlers. The editions differ in their configuration, such as the plugins they pull in.
 
-# the `develop` edition is used during in-browser plugin development. Notably, it pulls in the [[hierarchical filesystem sync adaptor]] that stores your tiddlers neatly organized in a subfolder structure according to the titles of your tiddlers.
+In particular, the editions typically are these:
+
+@@.wide
+# the `develop` edition is used during in-browser plugin development. Notably, it pulls in the [[hierarchical filesystem sync adaptor|hierarchicalfilesystemadaptor]] that stores your tiddlers neatly organized in a subfolder structure according to the titles of your tiddlers.
 
 # the `release` edition is used to package the final plugin and to create both a single plugin `.tid` file as well as demonstration ~TiddlyWiki showcasing and documenting your new plugin. The release edition is different in that it pulls in again the sync adaptor, but this time it disables the synchronization. This is necessary, as otherwise the plugin tiddler would be synced back to disk immediately after it has been packaged. But we don't want this to happen as we need to explicitly dump the plugin tiddler into a file with a controlled filename in a controlled output directory.
+@@
 
-As an example of how this all works simply take //this// ~TiddlyWiki -- it has been released exactly through this mechanism.
+As an example of how this all works simply take //this// ~TiddlyWiki of the //Third Flow// plugin -- it has been released exactly using this mechanism.
 
 
 !See Also

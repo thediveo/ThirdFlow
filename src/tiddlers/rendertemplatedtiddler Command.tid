@@ -1,0 +1,19 @@
+created: 20140925203707046
+modified: 20140926163902669
+tags: Command Module
+title: rendertemplatedtiddler Command
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+In the release phase, the `--rendertemplatedtiddler` command is used to render one or more tiddlers using a specific template instead of as a fixed one and as the core `--rendertiddler` command does.
+
+We need the better control that our `--rendertemplatedtiddler` offers so we can save a stripped-down demonstration ~TiddlyWiki from the source ~TiddlyWiki. The existing core commands don't allow for this flexibility that we need here.
+
+!Rationale
+
+While the existing `--rendertiddler` command allows us to control the content type of the output, there simply is no way to control the rendering beyond this.
+
+In contrast, the existing `--savetiddler` command saves in the well know `.tid` format. While this is fine for a single tiddler, such as our [[plugin|Plugin]], this is the wrong format when creating as full single-file ~TiddlyWiki.
+
+So this is, where our new `--rendertemplatedtiddler` comes in. It works in concert with our neat little saving template [[$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]].

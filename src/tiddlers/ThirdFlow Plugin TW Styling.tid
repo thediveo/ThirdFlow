@@ -1,5 +1,5 @@
 created: 20140903072613112
-modified: 20140925203042242
+modified: 20140926152259399
 tags: $:/tags/Stylesheet
 title: ThirdFlow Plugin TW Styling
 type: text/css
@@ -21,4 +21,12 @@ img.imagethumb {
 div.body img {
   border: 1px solid #ccc;
   margin-left: 1em;
+}
+
+table th {
+  background-color: #d8d8d8;
+}
+
+table tr.evenRow td {
+  background-color: #f8f8f8;
 }

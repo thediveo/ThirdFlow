@@ -1,8 +1,11 @@
 created: 20140902083720188
-modified: 20140925072000528
+modified: 20140926170600649
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.4'' -- fix and more documentation.
+** fixed a typo in the (empty) source plugin tiddler itself which caused hiccups in ~TiddlyWiki's control panel plugin tab.
+** added more background information about plugins, modules, and the crazy stuff the //Third Flow// plugin is made of. 
 * ''1.0.3'' -- upgraded to work with the final ~TiddlyWiki 5.1.x releases.
 ** fixed using deprecated regular expression when packing plugin tiddlers.
 * ''1.0.2'' -- fix and polishing release.

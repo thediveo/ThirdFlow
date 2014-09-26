@@ -1,6 +1,51 @@
 created: 20140925203841854
-modified: 20140925204127709
-tags: Module Filter [[is Filter Operand]] todo
+modified: 20140926162537534
+tags: Module Filter [[is Filter Operand]]
 title: shadowinsync
 type: text/vnd.tiddlywiki
 
+!Abstract
+
+When working with the //Third Flow// you only have a single tiddler source tree. In consequence, your ~TiddlyWiki thus contains both the source tiddlers for your [[plugin|Plugin]] as well as the plugin itself. During development, your plugin is empty, so in consequence there are no [[shadow tiddlers|Shadow Tiddler]].
+
+Now, when you want to release a demonstration ~TiddlyWiki from these sources this demo wiki should contain the (now fully packaged) plugin itself but not the source code tiddlers that once made up the plugin.
+
+So how do we strip these source tiddlers off when dumping only the wanted parts into the demonstration ~TiddlyWiki?
+
+This is where this strange new `is` filter operand comes in: simply spoken, it is used to kick out those source tiddlers for which an identical shadow exists.
+
+!Save Template Magic
+
+The special //Third Flow// saving template thus is able to clone your source ~TiddlyWiki into the demo wiki without the sources ... all this without the need for any configuration. You don't need to punch in your plugin name anywhere.
+
+Please note that this saving template is smart enough not only to throw out your plugin source tiddlers, but also the //Third Flow// plugin. If you are wondering why this doesn't cause problems with the //Third Flow// release process itself: the saving template is so smart that it only kicks the //Third Flow// plugin itself out when there are no sources for itself present.
+
+If you didn't fully grok this neat trick yet, don't worry. This is simply //Architects' Nirvana//.
+
+!Usage
+
+The [[saving template|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]] that automatically kicks out all plugin source tiddlers (and only them) basically simply does this:
+
+```
+... -[is[shadowinsync]] ...
+```
+
+Nothing more needs to be done here, simple and sweet.
+
+And as needed, this doesn't touch your own [[ordinary tiddlers|Ordinary Tiddler]] that overwrite other shadow tiddlers -- for instance, when customizing the site title, and similar stuff.
+
+While not needed by the //Third Flow// plugin itself, we also properly support negating the filter function, that is, `[!is[shadowinsync]]`.
+
+!Technical
+
+The `is` filter operand ''shadowinsync'' returns only those tiddlers that qualify the simplified condition //ordinary tiddler//===//shadow tiddler//.
+
+Or more precise:
+
+* there exists an [[ordinary tiddler|Ordinary Tiddler]] (that is, [[foreground tiddler|Foreground Tiddler]]),
+* ''and'' at the same time there also exists a [[shadow tiddler|Shadow Tiddler]] (inside a [[plugin|Plugin]]),
+* ''and'' the ordinary tiddler is the same as the shadow tiddler, based on the creation and modification dates of them. For performance reasons, the tiddler contents are not compared.
+
+So, if either the foreground or shadow tiddler is missing, these tiddlers get filtered out.
+
+The source code for the `is` filter operand `shadowinsync` can be found in [[$:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js]]. It is a ~TiddlyWiki 5 [[module|Module]] -- or more specifically: it's a `is` filter operand, so its `module-type` is `isfilteroperator` (sic!).

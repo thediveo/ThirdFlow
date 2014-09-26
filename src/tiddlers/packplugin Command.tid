@@ -1,0 +1,13 @@
+created: 20140925193331237
+modified: 20140926163854861
+tags: Module Command
+title: packplugin Command
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+The `--packplugin` command is used to package the (source) tiddlers belonging to a plugin into a single [[plugin tiddler|Plugin]].
+
+!Technical
+
+The source code for the `--packplugin` command can be found in [[$:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js]]. It is a ~TiddlyWiki 5 [[module|Module]] -- or more specifically: it's a command module, so its `module-type` is `command`.

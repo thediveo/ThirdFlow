@@ -1,0 +1,14 @@
+caption: More on Plugins
+created: 20140925194827934
+modified: 20140926165913185
+title: ThirdFlow/666/More on Plugins
+type: text/vnd.tiddlywiki
+
+You can't just get enough information? So here it is: more background information on plugins and related concepts, and even the workings of the //Third Flaw// plugin...
+
+* the [[plugin|Plugin]] concept.
+* the [[module|Module]] concept.
+* what are [[editions|Edition]]?
+* when working with ~TiddlyWiki 5 from the command line: [[commands|Command]]
+* [[filters|Filter]] are at the heart of the //Third Flow//'s replication magic.
+* and finally: the [[terminology|Terminology]] around plugins.
