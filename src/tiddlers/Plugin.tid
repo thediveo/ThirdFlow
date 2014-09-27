@@ -1,5 +1,5 @@
 created: 20140925184608907
-modified: 20140926174506564
+modified: 20140926201009685
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
@@ -12,8 +12,13 @@ A ''plugin'' in ~TiddlyWiki 5 is a bundle of tiddlers packaged together as a //s
 
 Plugins have a `plugin-type` field that currently can take on these values:
 
+@@.wide
 * `plugin` (which is the default) indicates a plain plugin; that is, a plugin that isn't further specialized in its purpose.
+
 * `theme` identifies plugins that provide themes and that are understood by ~TiddlyWiki's theming mechanism.
+
+* `language` identifies language plugins.
+@@
 
 !Technical
 

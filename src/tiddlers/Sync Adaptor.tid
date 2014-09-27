@@ -1,0 +1,46 @@
+created: 20140927112534297
+modified: 20140927115503130
+tags: Module Terminology
+title: Sync Adaptor
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+A ''sync adaptor'' in ~TiddlyWiki 5 is responsible for synchronizing the tiddlers to an external storage place. Such places, for instance, can be servers, file systems, and whatever other storage places that may fit in.
+
+Sync adaptors do not modify the wiki tiddler store. Instead, they solely focus on how to retrieve tiddlers from and save them to an external storage, and how to delete them there. Thus, sync adaptors maintain an external tiddler storage, but not the internal wiki tiddler storage.
+
+A sync adaptor is also responsible to handle logging in and out of an external storage place, when necessary.
+
+!Technical
+
+Sync adaptors are [[modules|Module]] with the well-known `module-type` of `syncadaptor`. Sync adaptors then have to export their functionality in form of a set of well-known methods attached to `exports.adaptorClass`.
+
+!!Export and Constructor
+
+; `exports.adaptorClass` constructor
+: this function constructs a sync adaptor object. It has access to several options through its `options` parameter, such as the correct wiki instance (`options.wiki`).
+
+!!Prototype Methods
+
+The following bunch of sync adaptor methods are exported through `exports.adaptorClass.prototype`. In particular:
+
+; `getTiddlerInfo`
+: returns information about an individual tiddler. 
+
+; `getTiddlerFileInfo`
+
+; `loadTiddler`
+: loads an individual tiddler from the external storage. As a side note: depending on how the sync adaptor is deployed, this method may be empty when the ~TiddlyWiki instance running this module has other means to load its tiddlers during boot.
+
+; `saveTiddler`
+: saves an individual tiddler to the external storage place.
+
+; `deleteTiddler`
+: deletes an individual tiddler from the external storage place.
+
+Any other methods are not used by the ~TiddlyWiki 5 core itself. Such methods will usually simply be regarded as private methods to the sync adaptor module.
+
+!See Also
+
+* The [[hierarchicalfilesystemadaptor Sync Adaptor]] that the //Third Flow// uses to synchronize tiddlers with the local file system and into hierarchical folder structures according to tiddler titles.

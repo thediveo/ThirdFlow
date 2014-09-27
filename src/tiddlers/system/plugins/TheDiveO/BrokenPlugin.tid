@@ -1,0 +1,11 @@
+author: TheDiveO
+created: 20140926202818194
+description: Everyone loves it: the Broken Plugin
+list: readme license history
+modified: 20140926204915526
+plugin-type: plugin
+title: $:/plugins/TheDiveO/BrokenPlugin
+type: application/json
+version: 6.6.6
+
+{"tiddler": {}}

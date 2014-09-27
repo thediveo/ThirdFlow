@@ -1,0 +1,17 @@
+created: 20140926204707344
+modified: 20140926204738734
+title: $:/plugins/TheDiveO/BrokenPlugin/icon
+type: text/vnd.tiddlywiki
+
+<svg width="22pt" height="22pt" viewBox="0 0 128 128">
+    <g fill-rule="evenodd">
+	  <path
+     style="opacity:1.0;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.80000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     d="M 59.204931,1.3288136 4.6594762,32.892451 l 0,62.981818 29.5272728,17.018181 3.490909,-20.799999 4.072727,7.999999 6.4,-25.890908 4.509091,6.545455 4.072728,-27.781819 5.381818,2.036364 0.872727,-28.509091 6.981818,1.745454 L 68.077658,6.4197228 59.204931,1.3288136 z"
+      />
+		<path
+     style="opacity:1.0;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:0.80000000999999998;marker:none;visibility:visible;display:inline;overflow:visible;enable-background:accumulate"
+     d="m 107.51468,28.41326 -0.0838,6.336325 L 99.577594,30.705701 96.032706,64.199134 90.909217,57.23967 74.582259,92.023208 73.267252,84.406241 50.712667,107.60453 52.928019,98.394815 37.374703,112.04599 55.382077,127.18611 114.58126,105.57764 125.52204,43.553385 107.51467,28.41326 z"
+      />
+    </g>
+</svg>

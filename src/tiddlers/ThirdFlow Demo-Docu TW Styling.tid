@@ -1,11 +1,15 @@
 created: 20140903072613112
-modified: 20140926152259399
+modified: 20140927114616821
 tags: $:/tags/Stylesheet
-title: ThirdFlow Plugin TW Styling
+title: ThirdFlow Demo-Docu TW Styling
 type: text/css
 
 ol.wide li, ul.wide li {
   margin-top: 1ex;
+}
+
+dl dt code {
+  font-weight: normal;
 }
 
 table.borderless, table.borderless td, table.borderless th {
@@ -29,4 +33,17 @@ table th {
 
 table tr.evenRow td {
   background-color: #f8f8f8;
+}
+
+.tc-story-river {
+  width: 75%;
+}
+
+.tc-sidebar-scrollable {
+  width: 25%;
+  left: 75%;
+}
+
+.tc-tiddler-frame {
+  width: 100%;
 }

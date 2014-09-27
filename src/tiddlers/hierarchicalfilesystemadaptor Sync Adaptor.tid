@@ -1,0 +1,31 @@
+created: 20140925204107359
+modified: 20140927120049168
+tags: Module todo [[Sync Adaptor]]
+title: hierarchicalfilesystemadaptor Sync Adaptor
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+The ''hierarchical file system (sync) adaptor'' (or HFS) is a sync adaptor that does not simply throws all tiddlers into a single folder but instead neatly organizes them into folder hierarchies according to their titles. As is the custom for system tiddler titles, the forward slash `/` denotes hierarchy.
+
+When using with legacy tiddler folders please note that this sync adaptor ''never'' moves such tiddlers into a new position according to their title -- unless you change their title which basically results in a new tiddler anyway.
+
+!Technical
+
+The HFS sync adaptor only becomes alive when it detects the presence of Node.js: this means that it is being run in a server ~TiddlyWiki instance. And only then we'll need its services.
+
+!Usage
+
+The HFS sync adaptor can be disabled through the global wiki option `disable-hfs`. This is typically required during the release phase to avoid that after packing the plugin tiddler this tiddler automatically gets synchronized with the source code tiddlers, thus updating the sources.
+
+To disable the HFS sync adaptor, in your [[edition|Edition]] you need to add to your `tiddlywiki.info` file a `config` section (if not already present):
+
+```
+{
+    ...
+    "config": {
+        "disable-hfs": "yes"
+    },
+    ...
+}
+```

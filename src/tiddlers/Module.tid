@@ -1,13 +1,17 @@
 color: #880000
 created: 20140925193346003
-modified: 20140926165411439
+modified: 20140927112315415
 tags: Terminology
 title: Module
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-A ''module'' in ~TiddlyWiki 5 is a tiddler that contains executable JavaScript code.
+A ''module'' in ~TiddlyWiki 5 is a tiddler that contains executable [[JavaScript|http://en.wikipedia.org/wiki/JavaScript]] code. Pardon, that's [[ECMAScript|http://en.wikipedia.org/wiki/ECMAScript]] to be overly correct. But that's a complete story of its own.
+
+~TiddlyWiki's modules need to follow some simple conventions though. When a module gets activated it is run in kind of its own sandbox environment so it cannot simply change the ~TiddlyWiki 5 core or other modules, except through well-defined extension mechanisms. This extension mechanism involves that modules can only export their functionality through an `exports` variable. Everything else is kept in the sandboxed environment set up especially for this particular module.
+
+Of course, as we've already hinted at above, this clean module concept now requires well-defined extension mechanisms. The downside is that this allows to extend ~TiddlyWiki only along the existing extension points. But the big, really big, upside of all this is that there is no more function reference hooking and rewiring needed.
 
 !Third Flow
 
@@ -17,9 +21,9 @@ The //Third Flow// plugin defines the following modules:
 
 !Technical
 
-Modules must be of type `application/javascript` -- that is, their field `type` is set to this specific value.
+Modules are all those tiddlers that are of type `application/javascript` -- that is, their tiddler field `type` is set to this specific value.
 
-The `module-type` field then specifies the specific type of module. See the ~TiddlyWiki 5 documentation for details about [[available module types||http://tiddlywiki.com/#ModuleType]].
+The `module-type` field then specifies the particular type of module. One of the big changes that ~TiddlyWiki 5 introduces is it incredible extensibility through these modules. For instance, modules not only can add macros but also extensions to the standard wiki parser, and they can even add in new parsers. Next, we can easily drop in new filters. More behind the scenes are such specialized modules as sync adaptors and new commands to be used on the command line. See the ~TiddlyWiki 5 documentation for details about [[available module types||http://tiddlywiki.com/#ModuleType]].
 
 !Organizing Modules
 
