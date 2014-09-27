@@ -1,15 +1,11 @@
-created: 20140903121310285
-modified: 20140903125924374
-module-type: command
-title: $:/plugins/TheDiveO/ThirdFlow/commands/rendertemplatedtiddler.js
-type: application/javascript
-
 /*\
+created: 20140927173011680
 title: $:/plugins/TheDiveO/ThirdFlow/commands/rendertemplatedtiddler.js
 type: application/javascript
+modified: 20140927173032181
 module-type: command
 
-Render single tiddler using template command.
+Command to render a single tiddler using a template.
 --rendertemplatedtiddler <title> <template> <file>
 
 Command to render a single tiddler using a template to a specific file.
