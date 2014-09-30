@@ -1,5 +1,6 @@
 created: 20140902082615605
-modified: 20140903130604089
+list: [[The Flow]] Rationale [[Using Third Flow]] Technical [[More on Plugins]]
+modified: 20140930203917609
 title: Third Flow
 type: text/vnd.tiddlywiki
 
@@ -8,4 +9,6 @@ type: text/vnd.tiddlywiki
 
 This is the //Third Flow// plugin version "<$view tiddler="$:/plugins/TheDiveO/ThirdFlow" field="version" />" (<$list filter="[[$:/plugins/TheDiveO/ThirdFlow/readme]is[shadow]]" emptyMessage="<span style='color: #c00; font-weight: bold'>development</span>">release</$list> wiki).
 
-<<tabs "[prefix[ThirdFlow/]] -[prefix[ThirdFlow/Use/]] +[sort[]]" "ThirdFlow/1/The Flow" "$:/state/tabs/3f" >>
+<<tabs "[list[]addprefix[ThirdFlow/]]" "ThirdFlow/The Flow" "$:/state/tabs/3f" >>
+
+

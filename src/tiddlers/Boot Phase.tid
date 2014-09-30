@@ -1,0 +1,8 @@
+created: 20140927121107650
+modified: 20140927121434406
+title: Boot Phase
+type: text/vnd.tiddlywiki
+
+!Abstract
+
+Here we only focus on these specifics when booting a ~TiddlyWiki 5 instance that are of concern to [[modules|Module]].
