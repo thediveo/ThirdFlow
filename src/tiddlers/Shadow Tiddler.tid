@@ -1,17 +1,18 @@
 created: 20140925190154910
-modified: 20140930213425647
+modified: 20141001173039225
 tags: Terminology
 title: Shadow Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "250%">>
+
 
 
 A ''shadow tiddler'' in ~TiddlyWiki 5 is a tiddler that originates from a [[plugin|Plugin]]. Shadow tiddlers cannot be changed, but they can be overwritten  simply by creating a new tiddler (so-called [[ordinary tiddlers|Ordinary Tiddler]]) with the same name.
 
-For lack of a better name, I'll call (ordinary) tiddlers overwriting shadows the [[foreground tiddlers|Foreground Tiddler]].
+For lack of a better name, I'll call (ordinary) tiddlers overwriting shadows the [[foreground tiddlers|Foreground Tiddler]]. If an ordinary tiddler has a shadow, then the ordinary is the foreground one. Otherwise, I stick to the established term of ordinary tiddler.
 
 !Technical
 
@@ -19,5 +20,6 @@ Internally, the ~TiddlyWiki 5 core stores shadow tiddlers in a separate tiddler 
 
 !See Also
 
-* [[Ordinary Tiddler]]
-* [[Foreground Tiddler]]
+* [[Ordinary Tiddler]] -- the one that //isn't// a shadow.
+* [[Foreground Tiddler]] -- the one that //has// a shadow.
+* [[shadowinsync is Filter Operand]] -- checks for shadows that are in sync with their foregrounds.

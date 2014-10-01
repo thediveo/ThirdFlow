@@ -1,12 +1,13 @@
 created: 20140925190552195
-modified: 20140930213357753
+modified: 20141001173022674
 tags: Terminology
 title: Foreground Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "250%">>
+
 
 For lack of a better name, a ''foreground tiddler'' in ~TiddlyWiki 5 is a tiddler that overwrites a [[shadow tiddler|Shadow Tiddler]].
 
@@ -20,5 +21,6 @@ Otherwise, such demo ~TiddlyWikis would contain both the plugin shadows as well 
 
 !See Also
 
-* [[Ordinary Tiddler]]
-* [[Shadow Tiddler]]
+* [[Ordinary Tiddler]] -- the one that //isn't// a shadow tiddler.
+* [[Shadow Tiddler]] -- the one in the background.
+* [[shadowinsync is Filter Operand]] -- checks for shadows that are in sync with their foregrounds.

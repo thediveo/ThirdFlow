@@ -1,5 +1,5 @@
 created: 20140930200019048
-modified: 20140930200547514
+modified: 20141001174722470
 tags: configuration
 title: $:/config/CodeMirror
 type: application/json
@@ -9,7 +9,6 @@ type: application/json
 		"$:/plugins/tiddlywiki/codemirror/mode/javascript/javascript.js",
 		"$:/plugins/tiddlywiki/codemirror/addon/dialog/dialog.js",
 		"$:/plugins/tiddlywiki/codemirror/addon/search/searchcursor.js",
-		"$:/plugins/tiddlywiki/codemirror/keymap/vim.js",
 		"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js",
 		"$:/plugins/tiddlywiki/codemirror/keymap/sublime.js"
 	],
