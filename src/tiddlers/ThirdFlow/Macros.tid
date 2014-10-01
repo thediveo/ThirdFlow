@@ -1,0 +1,16 @@
+created: 20140930201806697
+modified: 20140930202033909
+tags: $:/tags/Macro
+title: ThirdFlow/Macros
+type: text/vnd.tiddlywiki
+
+\define imagethumb(title, width)
+<$link to="$title$">
+<$image class="imagethumb" source="$title$" width="$width$" />
+</$link>
+\end
+
+\define tf()
+<i>Third Flow</i>
+
+\end

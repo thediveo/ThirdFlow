@@ -1,10 +1,12 @@
 created: 20140925190552195
-modified: 20140925191851956
+modified: 20140930213357753
 tags: Terminology
 title: Foreground Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
+
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
 
 For lack of a better name, a ''foreground tiddler'' in ~TiddlyWiki 5 is a tiddler that overwrites a [[shadow tiddler|Shadow Tiddler]].
 

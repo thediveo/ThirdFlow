@@ -1,12 +1,15 @@
 created: 20140925191904767
-modified: 20140925192005765
+modified: 20140930213417188
 tags: Terminology
 title: Ordinary Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
 
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
+
 An ''ordinary tiddler'' in ~TiddlyWiki 5 is any tiddler that is ''not'' a [[shadow tiddler|Shadow Tiddler]].
+
 
 !See Also
 

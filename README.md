@@ -33,6 +33,10 @@ You can install TW globally with:  `npm install -g tiddlywiki`
 
 For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
 
+## Creating Your New Plugin
+
+Simply copy the contents inside the `skeleton` folder to a new folder. Then start the develop phase as described next and edit and rename the plugin tiddlers as suitable for your new plugin creation. After that, simply enter the release phase. These two phases are described next. And if you need to see a full blown life demonstration then simply look at the *Third Flow* plugin itself. Enjoy!
+
 ## Starting the Server
 
 ```

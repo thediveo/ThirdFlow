@@ -1,10 +1,13 @@
 created: 20140925190154910
-modified: 20140925192235727
+modified: 20140930213425647
 tags: Terminology
 title: Shadow Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
+
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
+
 
 A ''shadow tiddler'' in ~TiddlyWiki 5 is a tiddler that originates from a [[plugin|Plugin]]. Shadow tiddlers cannot be changed, but they can be overwritten  simply by creating a new tiddler (so-called [[ordinary tiddlers|Ordinary Tiddler]]) with the same name.
 
