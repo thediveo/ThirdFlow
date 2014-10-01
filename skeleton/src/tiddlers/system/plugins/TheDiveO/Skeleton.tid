@@ -1,0 +1,12 @@
+author: TheDiveO
+created: 20140902114846490
+description: Skeleton plugin from the Third Flow in-TW plugin development
+list: readme license history
+modified: 20141001164919446
+plugin-type: plugin
+source: http://thediveo.github.io/ThirdFlow
+title: $:/plugins/TheDiveO/Skeleton
+type: application/json
+version: 1.0.0-dev
+
+{"tiddlers": {}}

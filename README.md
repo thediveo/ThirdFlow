@@ -33,6 +33,10 @@ You can install TW globally with:  `npm install -g tiddlywiki`
 
 For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
 
+## Creating Your New Plugin
+
+Simply copy the contents inside the `skeleton` folder to a new folder. Then start the develop phase as described next and edit and rename the plugin tiddlers as suitable for your new plugin creation. Enjoy!
+
 ## Starting the Server
 
 ```
