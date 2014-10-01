@@ -1,5 +1,5 @@
 created: 20141001162614812
-modified: 20141001164549963
+modified: 20141001170239225
 title: Skeleton Plugin
 type: text/vnd.tiddlywiki
 
@@ -12,7 +12,9 @@ This is the //Skeleton// plugin version "<$view tiddler="$:/plugins/TheDiveO/Ske
 To easily start creating your own plugin start editing these skeleton tiddlers:
 
 * [[$:/plugins/TheDiveO/Skeleton]] -- the Skeleton plugin itself defines the overall plugin properties. Most probably you will here want to adjust:
-** the plugin name by changing the title parts "~TheDiveO/Skeleton" to something else. And please don't forget to change the titles of the other skeleton tiddlers also.
+** the plugin name by changing the title parts `TheDiveO/Skeleton` to something else in the form //your-name/plugin-name//. And please don't forget to change the titles of the other skeleton tiddlers also.
+
+
 
 ** of course, the version information that is stored in the `version` field of the plugin tiddler.
 ** also edit the fields `author`, `description`, and `source` while you are at it.
