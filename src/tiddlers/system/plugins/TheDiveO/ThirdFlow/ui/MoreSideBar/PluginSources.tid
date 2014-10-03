@@ -1,0 +1,31 @@
+caption: Plugin Sources
+created: 20141003192047443
+modified: 20141003202950385
+tags: $:/tags/MoreSideBar
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
+type: text/vnd.tiddlywiki
+
+\define pluginfilter() [prefix[$:/plugins/$(plugin)$]!is[shadow]]
+\define pluginpath() $:/plugins/$(plugin)$
+
+<div class="tc-timeline">
+<$list filter="[is[system]prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]]" variable="plugin">
+
+<div class="tc-menu-list-item">
+<$link to=<<pluginpath>>>
+<$macrocall $name="plugin" $output="text/plain" />
+</$link>
+<div class="tc-menu-list-subitem">
+</div>
+<$list filter=<<pluginfilter>> >
+<div class="tc-menu-list-subitem">
+<$link to={{!!title}}>
+<$list filter="[is[current]removeprefix[$:/plugins/]removeprefix<plugin>removeprefix[/]addprefix[...]]">
+<$view field="title" />
+</$list>
+</$link>
+</div>
+</$list>
+</div>
+</$list>
+</div>
