@@ -1,0 +1,36 @@
+created: 20141003153100991
+modified: 20141003164807749
+tags: $:/tags/Stylesheet
+title: $:/plugins/TheDiveO/ThirdFlow/styles/codemirror/tw5
+type: text/css
+
+/* This CodeMirror stylesheet implements a TW5-compatible syntax coloring theme */
+
+.cm-s-tw5 span.cm-meta {color: #FF1717;}
+.cm-s-tw5 span.cm-keyword { line-height: 1em; font-weight: bold; color: #333; }
+.cm-s-tw5 span.cm-atom {color: #219;}
+.cm-s-tw5 span.cm-number {color: #008080;}
+.cm-s-tw5 span.cm-def {color: #00f;}
+.cm-s-tw5 span.cm-variable {color: black;}
+.cm-s-tw5 span.cm-variable-2 {color: #0000C0;}
+.cm-s-tw5 span.cm-variable-3 {color: #0000C0;}
+.cm-s-tw5 span.cm-property {color: #065252;}
+.cm-s-tw5 span.cm-operator {color: black;}
+.cm-s-tw5 span.cm-comment {color: #998;}
+.cm-s-tw5 span.cm-string {color: #2A00FF;}
+.cm-s-tw5 span.cm-string-2 {color: #f50;}
+.cm-s-tw5 span.cm-qualifier {color: #555;}
+.cm-s-tw5 span.cm-builtin {color: #30a;}
+.cm-s-tw5 span.cm-bracket {color: #cc7;}
+.cm-s-tw5 span.cm-tag {color: #000080; font-weight: bold;}
+.cm-s-tw5 span.cm-attribute {color: #00c;}
+.cm-s-tw5 span.cm-link {color: #219;}
+.cm-s-tw5 span.cm-error {color: #f00;}
+
+.cm-s-tw5 span.cm-underlined { text-decoration: underline; }
+.cm-s-tw5 span.cm-strikethrough { text-decoration: line-through; }
+.cm-s-tw5 span.cm-brace { color: #170; font-weight: bold; }
+.cm-s-tw5 span.cm-table { color: blue; font-weight: bold; }
+
+.cm-s-tw5 .CodeMirror-activeline-background {background: #F0F3F7 !important;}
+.cm-s-tw5 .CodeMirror-matchingbracket {outline:1px solid #c00; color:black !important;}

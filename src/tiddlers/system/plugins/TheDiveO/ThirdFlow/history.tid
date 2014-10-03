@@ -1,8 +1,12 @@
 created: 20140902083720188
-modified: 20140926170600649
+modified: 20141003165314326
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.5'' -- more editing and highlight support.
+** towards a (mostly) unified syntax highlighting in both static rendering as well as when editing tiddlers.
+** added more codemirror features: current line highlighting, CSS syntax support.
+** added support for TW5's native ~JavaScript storage format when creating ~JavaScript tiddlers directly inside ~TiddlyWiki 5. Tiddler meta-data gets correctly inserted into a (special) comment section.
 * ''1.0.4'' -- fix and more documentation.
 ** fixed a typo in the (empty) source plugin tiddler itself which caused hiccups in ~TiddlyWiki's control panel plugin tab.
 ** added more background information about plugins, modules, and the crazy stuff the //Third Flow// plugin is made of. 

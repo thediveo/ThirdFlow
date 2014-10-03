@@ -1,5 +1,5 @@
 created: 20140930200019048
-modified: 20141001174722470
+modified: 20141003162849499
 tags: configuration
 title: $:/config/CodeMirror
 type: application/json
@@ -10,13 +10,17 @@ type: application/json
 		"$:/plugins/tiddlywiki/codemirror/addon/dialog/dialog.js",
 		"$:/plugins/tiddlywiki/codemirror/addon/search/searchcursor.js",
 		"$:/plugins/tiddlywiki/codemirror/addon/edit/matchbrackets.js",
+      	"$:/plugins/TheDiveO/ThirdFlow/codemirror/addon/selection/active-line.js",
+      	"$:/plugins/TheDiveO/ThirdFlow/codemirror/mode/css/css.js",
 		"$:/plugins/tiddlywiki/codemirror/keymap/sublime.js"
 	],
 	"configuration": {
 		"keyMap": "sublime",
 		"showCursorWhenSelecting": true,
-		"matchBrackets":true,
+      	"styleActiveLine": true,
+		"matchBrackets": true,
 		"autoCloseBrackets" : true,
-		"theme": "erlang-dark"
+		"theme": "tw5"
+      
 	}
 }

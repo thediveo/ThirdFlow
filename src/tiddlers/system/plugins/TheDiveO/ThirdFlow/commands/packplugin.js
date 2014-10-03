@@ -1,8 +1,8 @@
 /*\
 created: 20140927171850335
+modified: 20141003155657361
 title: $:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js
 type: application/javascript
-modified: 20140927172039138
 module-type: command
 
 The packplugin command packages source tiddlers (ordinary
@@ -42,8 +42,7 @@ Command.prototype.execute = function() {
 		pluginTitle = this.params[0],
 		filter = this.params[1] ||
 			"[prefix["+this.params[0]+"/]]";
-//			"[field:title/"+this.params[0].replace(/\$/g, "\\$").replace(/\//g, "\\/")+"\\//]";
-		
+
 	// Get the plug-in self-description tiddler. If it doesn't exist,
 	// bail out as the plugin developer needs to provide a plugin tiddler
 	// with the required self-description.
