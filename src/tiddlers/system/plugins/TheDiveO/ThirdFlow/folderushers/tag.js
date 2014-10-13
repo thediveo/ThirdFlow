@@ -12,11 +12,11 @@ type: application/javascript
 /*global $tw: false */
 "use strict";
 
-var cfg = {
-	"Module": "modules",
-	"Filter": "filters",
-	"is Filter Operand": "filters/is"
-};
+var configTiddler = $tw.wiki.getTiddler("$:/config/FileStorage/tag");
+var tagFolders = {};
+if ( configTiddler ) {
+	tagFolders = JSON.parse(configTiddler.fields.text);
+}
 
 exports.tag = function(title, options) {
 	if( !options.draft ) {
@@ -24,9 +24,15 @@ exports.tag = function(title, options) {
 		if ($tw.utils.isArray(tags)) {
 			this.logger.log("Tags: "+tags.toString());
 			for (var i=0; i<tags.length; ++i) {
-				if (cfg.hasOwnProperty(tags[i])) {
-					options.subfolder = cfg[tags[i]] + this.subfoldersFromTitle(title);
-					options.name = this.leafFromTitle(title);
+				if (tagFolders.hasOwnProperty(tags[i])) {
+					var subfolder = tagFolders[tags[i]];
+					if ( subfolder.substr(-1) === "+" ) {
+						options.subfolder = subfolder.substr(0, subfolder.length - 1) + "/" + this.subfoldersFromTitle(title);
+						options.name = this.leafFromTitle(title);
+					} else {
+						options.subfolder = subfolder;
+						options.title = title;
+					}
 					return true;
 				}
 			}

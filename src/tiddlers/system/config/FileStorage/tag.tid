@@ -1,0 +1,11 @@
+created: 20141013172946373
+modified: 20141013191400867
+title: $:/config/FileStorage/tag
+type: application/json
+
+{
+    "Module": "modules",
+    "Filter": "filters",
+    "is Filter Operand": "filter/is",
+    "Template": "templates"
+}

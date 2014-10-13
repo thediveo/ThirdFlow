@@ -5,8 +5,8 @@ module-type: folderusher
 title: $:/plugins/TheDiveO/ThirdFlow/folderushers/draft.js
 type: application/javascript
 
-This folder usher handles draft tiddlers. It is used by the file system sync adaptor
-to decide where (subdir) to store tiddlers.
+This folder usher places draft tiddlers flat into their own separate drafts folder.
+The exact name of the drafts folder is configurable.
 \*/
 (function(){
 
@@ -14,16 +14,15 @@ to decide where (subdir) to store tiddlers.
 /*global $tw: false */
 "use strict";
 
-// A folder usher needs to decide whether it is responsible; if not, it has to return false.
-// The following parameters get handed to folder ushers:
-// title: the title of the tiddler in question
-// options: further in/out information, i.e.
-//   options.draft: true, if the tiddler is a draft tiddler
-//   options.subfolder: the sub directory where to store the tiddler; still OS-independent.
-//   options.name: the file name of the tiddler; still OS-independent.
+var configTiddler = $tw.wiki.getTiddler("$:/config/HFS/draftfolder");
+var draftFolderName = "drafts";
+if ( configTiddler ) {
+	draftFolderName = configTiddler.fields.text.replace(new RegExp("\r?\n", "mg"), "");
+}
+
 exports.draft = function(title, options) {
 	if(options.draft) {
-		options.subfolder = "drafts";
+		options.subfolder = draftFolderName;
 		return true;
 	}
 	return false;

@@ -6,7 +6,8 @@ title: $:/plugins/TheDiveO/ThirdFlow/folderushers/system.js
 type: application/javascript
 
 This folder usher handles system tiddlers and places them into their
-own separate system folder.
+own separate system folder and then into hierarchical subfolders according
+to their title. The exact name of the system folder is configurable.
 
 \*/
 (function(){
@@ -15,10 +16,16 @@ own separate system folder.
 /*global $tw: false */
 "use strict";
 
+var configTiddler = $tw.wiki.getTiddler("$:/config/FileStorage/systemfolder");
+var systemFolderName = "system";
+if ( configTiddler ) {
+	systemFolderName = configTiddler.fields.text.replace(new RegExp("\r?\n", "mg"), "");
+}
+
 exports.system = function(title, options) {
 	if( !options.draft && title.substr(0, 3) === "$:/") {
 		var posTitle = title.lastIndexOf("/");
-		options.subfolder = "system" + title.substr(2, posTitle - 2);
+		options.subfolder = systemFolderName + title.substr(2, posTitle - 2);
 		options.name = title.substr(posTitle + 1);
 		return true;
 	}

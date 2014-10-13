@@ -1,0 +1,80 @@
+caption: Tag-based Folders
+created: 20141013152809952
+modified: 20141013190936202
+tags: $:/tags/HFS/ControlPanel
+title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
+type: text/vnd.tiddlywiki
+
+\define config-tiddler() $:/config/FileStorage/tag
+
+\define config-tiddler-indexes() [[$(config-tiddler)$]indexes[]]
+
+\define tag-styles()
+background-color:$(backgroundColor)$;
+\end
+
+<$jsonmangler tiddler=<<config-tiddler>>>
+
+<div class="tc-edit-fields">
+  <table class="tc-edit-fields">
+    <tbody>
+      <$list filter=<<config-tiddler-indexes>> variable="currentIndex">
+        <tr class="tc-edit-field">
+          <td class="tc-edit-field-name">
+            <$text text=<<currentIndex>>/>:
+          </td>
+          
+          <td class="tc-edit-field-value">
+            <$edit-text tiddler=<<config-tiddler>> field="" index=<<currentIndex>> placeholder="folder name"/>
+          </td>
+          
+          <td class="tc-edit-field-remove">
+            <$button message="tm-remove-json-index" param=<<currentIndex>> class="tc-btn-invisible">{{$:/core/images/delete-button}}</$button>
+          </td>
+        </tr>
+      </$list>
+    </tbody>
+  </table>
+</div>
+
+//Note: append a "+" plus sign at the end of a subfolder name to hierarchically organize your tagged tiddlers below your top-level subfolder(s).//
+
+<div class="tc-edit-field-add">
+  <em class="tc-edit">Add a new tag:</em>
+
+  <div class="tc-edit-add-tag">
+    <span class="tc-add-tag-name">
+      <$edit-text tiddler="$:/temp/NewTagName" tag="input" default="" placeholder="tag name" focusPopup=<<qualify "$:/state/popup/tags-auto-complete">> class="tc-edit-texteditor"/>
+    </span>
+    
+    <$button popup=<<qualify "$:/state/popup/tags-auto-complete">> class="tc-btn-invisible tc-btn-dropdown">
+      {{$:/core/images/down-arrow}}
+    </$button>
+    
+    <span class="tc-add-tag-button">
+      <$button message="tm-add-json-index" param={{$:/temp/NewTagName}} set="$:/temp/NewTagName" setTo="" class="">
+        add
+      </$button>
+    </span>
+  </div>
+</div>
+
+<div class="tc-block-dropdown-wrapper">
+  <$reveal state=<<qualify "$:/state/popup/tags-auto-complete">> type="nomatch" text="" default="">
+    <div class="tc-block-dropdown">
+      <$linkcatcher set="$:/temp/NewTagName" setTo="" message="tm-add-json-index">
+        <$list filter="[!is[shadow]tags[]search{$:/temp/NewTagName}sort[title]]">
+          <$link>
+            <$set name="backgroundColor" value={{!!color}}>
+              <span style=<<tag-styles>> class="tc-tag-label">
+                <$view field="title" format="text"/>
+              </span>
+            </$set>
+          </$link>
+        </$list>
+      </$linkcatcher>
+    </div>
+  </$reveal>
+</div>
+
+</$jsonmangler>

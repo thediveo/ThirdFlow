@@ -1,0 +1,15 @@
+caption: Basic
+created: 20141013144648552
+modified: 20141013190842095
+tags: $:/tags/HFS/ControlPanel
+title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic
+type: text/vnd.tiddlywiki
+
+|Folder for system tiddlers:|<$edit-text tiddler="$:/config/FileStorage/systemfolder" default="system" tag="input"/>|
+|Folder for draft tiddlers:|<$edit-text tiddler="$:/config/FileStorage/draftfolder" default="drafts" tag="input"/>|
+
+!! How to store ordinary tiddlers into (sub) folders
+
+<$radio tiddler="$:/config/FileStorage/defaultHierarchy" value="yes"> Organize ordinary tiddlers into hierarchical subfolders.</$radio>
+
+<$radio tiddler="$:/config/FileStorage/defaultHierarchy" value="no"> Store ordinary tiddlers ''flat'' in the top-level wiki folder.</$radio>

@@ -13,7 +13,7 @@ their titles with "$:/") and stores them inside a "special" system branch.
 
 Moreover, this sync adaptor also understands the concept of draft tiddlers (based
 on the presence of the "draft.of" field) and stores all draft tiddlers in a flat
-single ".draft" folder. The makes cleanup and (git) repository syncing easier to do.
+single "drafts" folder. The makes cleanup and (git) repository syncing easier to do.
 
 The code for this sync adaptor comes from filesystemadaptor.js and has been enhanced
 to support hierarchical tiddler storage.
@@ -48,16 +48,6 @@ function HierarchicalFileSystemAdaptor(options) {
 		this.logger.log("plugin disabled; no saving and deleting");
 	}
 }
-
-// TODO: may we have modularized plugin config options in the boot kernel?
-// The file system folder immediately below the <wiki>/tiddlers root used
-// to store system tiddlers that have titles starting with "$:/". Default
-// is "system" (please note: no trailing separator slash!).
-HierarchicalFileSystemAdaptor.prototype.SYSTEM_FOLDER = "system"; //FIXME
-// The draft folder immediately below the <wiki>/tiddlers root used
-// to store system tiddlers that have their draft.of field set. Default
-// is "drafts" (please note: no trailing separator slash!).
-HierarchicalFileSystemAdaptor.prototype.DRAFT_FOLDER = "drafts"; //FIXME
 
 HierarchicalFileSystemAdaptor.prototype.getTiddlerInfo = function(tiddler) {
 	return {};
@@ -132,7 +122,7 @@ HierarchicalFileSystemAdaptor.prototype.subfoldersFromTitle = function(title) {
 	} else {
 		return title.substr(0,lastSlash+1);
 	}
-}
+};
 
 HierarchicalFileSystemAdaptor.prototype.leafFromTitle = function(title) {
 	var lastSlash = title.lastIndexOf("/");
@@ -141,7 +131,7 @@ HierarchicalFileSystemAdaptor.prototype.leafFromTitle = function(title) {
 	} else {
 		return title.substr(lastSlash+1);
 	}
-}
+};
 
 HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = function(tiddler, title, draftOf) {
 	var options = {
@@ -151,6 +141,7 @@ HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = functio
 		tiddler: tiddler
 	};
 	
+	this.logger.log("usher asked for: "+title);
 	for (var i=0; i<this.folderUsherNames.length; ++i) {
 		if (this.folderUshers[this.folderUsherNames[i]].call(this, title, options)) {
 			this.logger.log("usher hit: "+this.folderUsherNames[i]);
