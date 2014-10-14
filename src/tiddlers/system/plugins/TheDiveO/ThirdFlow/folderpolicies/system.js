@@ -1,9 +1,10 @@
 /*\
 created: 20141012162151347
 modified: 20141012163255922
-module-type: folderusher
-title: $:/plugins/TheDiveO/ThirdFlow/folderushers/system.js
+module-type: folderpolicy
+title: $:/plugins/TheDiveO/ThirdFlow/folderpolicies/system.js
 type: application/javascript
+priority: 100
 
 This folder usher handles system tiddlers and places them into their
 own separate system folder and then into hierarchical subfolders according
@@ -22,7 +23,7 @@ if ( configTiddler ) {
 	systemFolderName = configTiddler.fields.text.replace(new RegExp("\r?\n", "mg"), "");
 }
 
-exports.system = function(title, options) {
+exports.folderpolicy = function(title, options) {
 	if( !options.draft && title.substr(0, 3) === "$:/") {
 		var posTitle = title.lastIndexOf("/");
 		options.subfolder = systemFolderName + title.substr(2, posTitle - 2);

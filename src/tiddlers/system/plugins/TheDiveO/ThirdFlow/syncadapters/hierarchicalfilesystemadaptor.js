@@ -15,8 +15,16 @@ Moreover, this sync adaptor also understands the concept of draft tiddlers (base
 on the presence of the "draft.of" field) and stores all draft tiddlers in a flat
 single "drafts" folder. The makes cleanup and (git) repository syncing easier to do.
 
+In order to realize good modularity and to allow this sync adaptor to be enhanced
+at any time later in an easy manner, it supports so-called folder policy modules.
+These are module tiddlers with a module-type of "folderpolicy". Folder policy modules
+need to export a method named "folderpolicy". In addition, folder policy modules
+can be assigned a priority value. Normally, the priority of a folder policy should
+be between 199 and 1, inclusively. Priority 200 is currently used for the draft
+tiddler policy. Priority 0 is assigned to the default policy.
+
 The code for this sync adaptor comes from filesystemadaptor.js and has been enhanced
-to support hierarchical tiddler storage.
+to support hierarchical tiddler storage as well as folder policies.
 \*/
 (function(){
 
@@ -39,9 +47,23 @@ function HierarchicalFileSystemAdaptor(options) {
 		disabled: false
 	};
 	
-	// retrieve all folder usher modules
-	this.folderUshers = $tw.modules.applyMethods("folderusher");
-	this.folderUsherNames = Object.keys(this.folderUshers).sort();
+	// retrieve all folder usher modules and sort them according
+	// to their priority, with higher priority values towards
+	// the start of our usher modules list.
+	var fpModules = [];
+	$tw.modules.forEachModuleOfType("folderpolicy", function(title, exports) {
+		fpModules.push({
+			title: title, // just for logging
+			priority: options.wiki.getTiddler(title).fields.priority || 100,
+			config: exports.config,
+			policy: exports.folderpolicy || function() { return false; }
+		});
+	});
+	fpModules.sort(function(policyA, policyB) {
+		return policyB.priority - policyA.priority;
+	});
+	this.logger.log(fpModules.length + " folder policies");
+	this.policyModules = fpModules;
 	
 	if($tw.boot.wikiInfo.config["disable-hfs"]) {
 		this.config.disabled = true;
@@ -134,23 +156,24 @@ HierarchicalFileSystemAdaptor.prototype.leafFromTitle = function(title) {
 };
 
 HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = function(tiddler, title, draftOf) {
+	// set up the policy method options such that if in a rare circumstance no policy
+	// should fire, then we fall back to plain old flat storage in the main wiki folder.
 	var options = {
-		draft: !!draftOf,
-		subfolder: "",
-		name: title,
-		tiddler: tiddler
+		tiddler: tiddler, // in: tiddler object we're trying a policy to find for
+		draft: !!draftOf, // in: is this a draft tiddler?
+		subfolder: "", // out: folder into which to place the tiddler file
+		name: title // out: name of tiddler file
 	};
 	
-	this.logger.log("usher asked for: "+title);
-	for (var i=0; i<this.folderUsherNames.length; ++i) {
-		if (this.folderUshers[this.folderUsherNames[i]].call(this, title, options)) {
-			this.logger.log("usher hit: "+this.folderUsherNames[i]);
+	// run through our ordered list of folder policies and wait for one of them
+	// to return true because its folder policy should be applied.
+	for (var i=0; i<this.policyModules.length; ++i) {
+		if (this.policyModules[i].policy.call(this, title, options)) {
 			break;
 		}
-		this.logger.log("usher miss: "+this.folderUsherNames[i]);
 	}
 	
-	// Sanitize the filename as well as the subfolder name(s)...
+	// Sanitize the filename as well as the subfolder(s) name(s)...
 	// This more or less comes down to removing those characters that are illegal in
 	// Windows file names. Oh, and we also hammer out any hierarchy slashes inside
 	// the filename, thereby flattening it.

@@ -1,9 +1,10 @@
 /*\
 created: 20141012162151347
 modified: 20141012163255922
-module-type: folderusher
-title: $:/plugins/TheDiveO/ThirdFlow/folderushers/tag.js
+module-type: folderpolicy
+title: $:/plugins/TheDiveO/ThirdFlow/folderpolicies/tag.js
 type: application/javascript
+priority: 100
 
 \*/
 (function(){
@@ -18,7 +19,7 @@ if ( configTiddler ) {
 	tagFolders = JSON.parse(configTiddler.fields.text);
 }
 
-exports.tag = function(title, options) {
+exports.folderpolicy = function(title, options) {
 	if( !options.draft ) {
 		var tags = options.tiddler.fields.tags;
 		if ($tw.utils.isArray(tags)) {

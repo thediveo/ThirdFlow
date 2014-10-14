@@ -1,9 +1,10 @@
 /*\
 created: 20141012162041927
 modified: 20141012163305588
-module-type: folderusher
-title: $:/plugins/TheDiveO/ThirdFlow/folderushers/draft.js
+module-type: folderpolicy
+title: $:/plugins/TheDiveO/ThirdFlow/folderpolicies/draft.js
 type: application/javascript
+priority: 200
 
 This folder usher places draft tiddlers flat into their own separate drafts folder.
 The exact name of the drafts folder is configurable.
@@ -20,7 +21,7 @@ if ( configTiddler ) {
 	draftFolderName = configTiddler.fields.text.replace(new RegExp("\r?\n", "mg"), "");
 }
 
-exports.draft = function(title, options) {
+exports.folderpolicy = function(title, options) {
 	if(options.draft) {
 		options.subfolder = draftFolderName;
 		return true;
