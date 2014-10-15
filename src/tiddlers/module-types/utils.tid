@@ -1,0 +1,7 @@
+created: 20141015165805595
+modified: 20141015170050037
+tags: [[Module Type]]
+title: utils
+type: text/vnd.tiddlywiki
+
+Utils [[modules|Module]] bring in new elements for the global utilities object. All elements `export`ed by these utils modules automatically get added to the `$tw.utils` object.

@@ -1,0 +1,15 @@
+created: 20141015125759944
+modified: 20141015163927133
+tags: [[Module Type]]
+title: global
+type: text/vnd.tiddlywiki
+
+Global [[modules|Module]] bring in new elements that should be "globally" visible to all TiddlyWiki components. "Globally" here means that the elements `export`ed by global modules become visible through the global `$tw` variable.
+
+Global modules are identified by their `module-type: global` setting.
+
+For the TiddlyWiki 5 Core you can found examples of global modules in the [[code/modules|https://github.com/Jermolene/TiddlyWiki5/tree/master/core/modules]] source code folder. But beware, only some of the modules here are actually global modules, in particular:
+
+* the [[$:/core/modules/syncer.js]] global module tracks changes to the tiddler store and then instructs a replaceable sync adaptor to synchronize such changes with all kinds of (external) storage.
+* the [[$:/core/modules/commander.js]] global module implements a command interpreter which is used when running TiddlyWiki on Node.js.
+* ...

@@ -1,0 +1,7 @@
+created: 20141015170118707
+modified: 20141015170320379
+tags: [[Module Type]]
+title: macro
+type: text/vnd.tiddlywiki
+
+Macro [[modules|Module]] provide global macros that can be used, for instance, in wiki markup. All elements `export`ed by macro modules automatically get added to the `$tw.macros` object.

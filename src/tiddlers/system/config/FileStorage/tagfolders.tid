@@ -1,0 +1,12 @@
+created: 20141015162220478
+modified: 20141015162650814
+title: $:/config/FileStorage/tagfolders
+type: application/json
+
+{
+    "Filter": "filters",
+    "Module": "modules",
+    "Module Type": "module-types",
+    "is Filter Operand": "filters/is",
+    "Concept": "concepts"
+}

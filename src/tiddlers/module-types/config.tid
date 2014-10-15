@@ -1,0 +1,7 @@
+created: 20141015164033457
+modified: 20141015170104736
+tags: [[Module Type]]
+title: config
+type: text/vnd.tiddlywiki
+
+Config [[modules|Module]] provide configuration data for the global configuration object. All elements `export`ed by such config modules automatically get added to the `$tw.config` object.

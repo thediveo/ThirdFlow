@@ -69,8 +69,8 @@ JsonManglerWidget.prototype.handleAddJsonIndexEvent = function(event) {
 	var tiddler = this.wiki.getTiddler(this.mangleTitle);
 	var index = (typeof event.param === "string") ? event.param : event.param["index"];
 	var def = (typeof event.param === "string") ? "" : event.param["default"];
-	if ( tiddler && index ) {
-		var data = this.wiki.getTiddlerData(tiddler, {});
+	if ( index ) {
+		var data = tiddler ? this.wiki.getTiddlerData(tiddler, {}) : {};
 		data[index] = "";
 		this.wiki.setTiddlerData(this.mangleTitle, data, tiddler);
 	}

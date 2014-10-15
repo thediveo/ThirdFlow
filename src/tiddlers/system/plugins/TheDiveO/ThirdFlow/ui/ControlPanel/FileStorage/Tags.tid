@@ -5,7 +5,7 @@ tags: $:/tags/HFS/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
 type: text/vnd.tiddlywiki
 
-\define config-tiddler() $:/config/FileStorage/tag
+\define config-tiddler() $:/config/FileStorage/tagfolders
 
 \define config-tiddler-indexes() [[$(config-tiddler)$]indexes[]]
 

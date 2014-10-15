@@ -17,11 +17,18 @@ to their title. The exact name of the system folder is configurable.
 /*global $tw: false */
 "use strict";
 
-var configTiddler = $tw.wiki.getTiddler("$:/config/FileStorage/systemfolder");
-var systemFolderName = "system";
-if ( configTiddler ) {
-	systemFolderName = configTiddler.fields.text.replace(new RegExp("\r?\n", "mg"), "");
-}
+var configTiddler = "$:/config/FileStorage/systemfoldername";
+var systemFolderName;
+
+// The configuration tiddler to monitor for changes
+exports.watch = "[field:title[" + configTiddler + "]]";
+
+// We get notified when our configuration tiddler was changed. Please
+// note that title is undefined during inital configuration call.
+exports.reconfig = function() {
+	systemFolderName = $tw.wiki.getTiddlerText(configTiddler, "system").replace(new RegExp("\r?\n", "mg"), "");
+	this.logger.log("folder policy config: system: system subfolder is: " + systemFolderName);
+};
 
 exports.folderpolicy = function(title, options) {
 	if( !options.draft && title.substr(0, 3) === "$:/") {

@@ -1,0 +1,25 @@
+created: 20141015130515998
+modified: 20141015165035151
+tags: [[Module Type]]
+title: startup
+type: text/vnd.tiddlywiki
+
+Startup [[modules|Module]] are automatically run at the end of TiddlyWiki's [[boot process|http://tiddlywiki.com/#BootMechanism]]. They can be run only before or after a particular set of tasks has been run. Also, startup modules can be restricted to specific platforms only.
+
+Startup modules are identified by their `module-type: startup` setting.
+
+An important startup module is [[$:/core/modules/startup/load-modules.js]] which activates the following specific module types in this particular sequence:
+
+* first all [[utils]] modules,
+* optionally, only when running on Node.js, [[utils-node]] modules,
+* [[global]] modules,
+* [[config]] modules,
+* [[tiddlerfield]] modules,
+* [[tiddlermethod]] modules,
+* [[wikimethod]] modules,
+* [[tiddlerdeserializer]] modules,
+* and finally [[macro]] modules.
+
+Please note that without the help of the `load-modules` startup module the aforementioned module types would get loaded but ''never activated''. Just creating a module tiddler doesn't mean it ever gets to run. Au contraire.
+
+For more information, please refer to [[TiddlyWiki's startup mechanism|http://tiddlywiki.com/#StartupMechanism]] in the official documentation. 

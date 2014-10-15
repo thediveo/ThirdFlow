@@ -4,7 +4,7 @@ modified: 20141012163255922
 module-type: folderpolicy
 title: $:/plugins/TheDiveO/ThirdFlow/folderpolicies/tag.js
 type: application/javascript
-priority: 100
+priority: 50
 
 \*/
 (function(){
@@ -13,12 +13,23 @@ priority: 100
 /*global $tw: false */
 "use strict";
 
-var configTiddler = $tw.wiki.getTiddler("$:/config/FileStorage/tag");
-var tagFolders = {};
-if ( configTiddler ) {
-	tagFolders = JSON.parse(configTiddler.fields.text);
-}
+var configTiddler = "$:/config/FileStorage/tagfolders";
+var tagFolders;
 
+// The configuration tiddler to monitor for changes
+exports.watch = "[field:title[" + configTiddler + "]]";
+
+// We get notified when our configuration tiddler was changed. Please
+// note that title is undefined during inital configuration call.
+exports.reconfig = function() {
+	var self = this;
+	tagFolders = $tw.wiki.getTiddlerData(configTiddler, {});
+	$tw.utils.each(tagFolders, function(folder, tag) {
+		self.logger.log("folder policy config: tag: \"" + tag + "\" tag subfolder is: " + folder);
+	});
+};
+
+// We are asked to apply our folder policy...
 exports.folderpolicy = function(title, options) {
 	if( !options.draft ) {
 		var tags = options.tiddler.fields.tags;

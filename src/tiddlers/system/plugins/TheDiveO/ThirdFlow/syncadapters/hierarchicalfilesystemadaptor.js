@@ -47,22 +47,37 @@ function HierarchicalFileSystemAdaptor(options) {
 		disabled: false
 	};
 	
-	// retrieve all folder usher modules and sort them according
-	// to their priority, with higher priority values towards
-	// the start of our usher modules list.
+	// retrieve all folder policy modules and sort them according
+	// to their priority, with higher priority values sorted towards
+	// the beginning of our folder policy modules list. Policy modules
+	// more to the beginning are getting an earlier chance of applying
+	// their policy.
 	var fpModules = [];
+	var fpcWatching = [];
 	$tw.modules.forEachModuleOfType("folderpolicy", function(title, exports) {
+		// prepare folder policy information for later sorting and calling
 		fpModules.push({
 			title: title, // just for logging
 			priority: options.wiki.getTiddler(title).fields.priority || 100,
-			config: exports.config,
 			policy: exports.folderpolicy || function() { return false; }
 		});
+		// get the information to monitor for configuration changes
+		if ( exports.watch && exports.reconfig ) {
+			fpcWatching.push({
+				filter: self.wiki.compileFilter(exports.watch),
+				reconfig: exports.reconfig
+			});
+		}
+		// initial configuration call
+		if ( exports.reconfig ) {
+			exports.reconfig.call(self);
+		}
 	});
+	this.fpcWatching = fpcWatching;
 	fpModules.sort(function(policyA, policyB) {
 		return policyB.priority - policyA.priority;
 	});
-	this.logger.log(fpModules.length + " folder policies");
+	this.logger.log(fpModules.length + " folder policies active");
 	this.policyModules = fpModules;
 	
 	if($tw.boot.wikiInfo.config["disable-hfs"]) {
@@ -181,9 +196,7 @@ HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = functio
 	// For the subfolder path we are converting hierarchy slashes into the proper
 	// platform-specific separators.
 	options.subfolder = options.subfolder.replace(/\<|\>|\:|\"|\\|\||\?|\*|\^/g,"_").replace(/\//g, path.sep);
-	
-	this.logger.log("subfolder: " + options.subfolder);
-	this.logger.log("name: " + options.name);
+
 	return options;
 };
 
@@ -209,12 +222,25 @@ HierarchicalFileSystemAdaptor.prototype.generateUniqueTiddlerFilename = function
 Save a tiddler and invoke the callback with (err,adaptorInfo,revision)
 */
 HierarchicalFileSystemAdaptor.prototype.saveTiddler = function(tiddler,callback) {
+	var self = this;
+
+	// Monitor for configuration changes and then trigger the folder
+	// policy modules affected from configuration changes.
+	$tw.utils.each(this.fpcWatching, function(watch, title, obj) {
+		var changes = watch.filter.call(self.wiki, function(filterCallback) {
+			filterCallback(tiddler, tiddler.fields.title);
+		});
+		if ( changes.length > 0 ) {
+			watch.reconfig.call(self, tiddler.fields.title);
+		}
+	});
+	
+	// Proceed with saving the tiddler
 	if(this.config.disabled) {
 		this.logger.log("saving disabled");
 		return callback(null, {}, 0);
 	}
 	
-	var self = this;
 	this.getTiddlerFileInfo(tiddler,function(err,fileInfo) {
 		var template, content, encoding;
 		function _finish() {
@@ -290,9 +316,11 @@ HierarchicalFileSystemAdaptor.prototype.deleteTiddler = function(title,callback,
 					if(err) {
 						return callback(err);
 					}
+					delete $tw.boot.files[title];
 					callback(null);
 				});
 			} else {
+				delete $tw.boot.files[title];
 				callback(null);
 			}
 		});

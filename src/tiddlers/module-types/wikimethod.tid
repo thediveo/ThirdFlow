@@ -1,0 +1,7 @@
+created: 20141015130255846
+modified: 20141015164000912
+tags: [[Module Type]]
+title: wikimethod
+type: text/vnd.tiddlywiki
+
+Wiki method [[modules|Module]] bring in new elements for the global wiki object. All elements `export`ed by such wiki method modules automatically get added to the `$tw.wiki` object.
