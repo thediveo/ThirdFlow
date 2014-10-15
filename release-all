@@ -1,0 +1,14 @@
+#!/bin/sh
+#
+# release-all
+#
+# runs a release phase and then copies the files to be released
+# over into associated places.
+#
+tiddlywiki \
+	editions/release \
+	--verbose \
+	--build release \
+	|| exit 1
+cp -v editions/release/output/thirdflow.tid skeleton/src/tiddlers/system/plugins/TheDiveO
+cp -v editions/release/output/thirdflow.* ../ThirdFlow.github.io/output

@@ -1,17 +1,21 @@
 created: 20140925191904767
-modified: 20140930213417188
+modified: 20141015174858504
 tags: Terminology
 title: Ordinary Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "150%">>
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "250%">>
 
 An ''ordinary tiddler'' in ~TiddlyWiki 5 is any tiddler that is ''not'' a [[shadow tiddler|Shadow Tiddler]].
 
+An ''ordinary tiddler'' in ~TiddlyWiki 5 is any tiddler that is ''not'' a [[shadow tiddler|Shadow Tiddler]]. Please note that this does not preclude a shadow tiddler being present at the same time.
+
+Simply spoken, when also a shadow tiddler is present the term ordinary tiddler thus refers to the tiddler in the foreground -- that's why I like to call such tiddlers then [[foreground tiddlers|Foreground Tiddler]].
 
 !See Also
 
-* [[Shadow Tiddler]]
-* [[Foreground Tiddler]].
+* [[Shadow Tiddler]] -- the one in the background.
+* [[Foreground Tiddler]] -- the one in bright light.
+* [[shadowinsync is Filter Operand]] -- checks for shadows that are in sync with their foregrounds.

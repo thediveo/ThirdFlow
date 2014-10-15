@@ -1,17 +1,15 @@
-created: 20140903162951165
-modified: 20140904093120486
-module-type: isfilteroperator
-title: $:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js
-type: application/javascript
-
 /*\
+created: 20140927173349128
 title: $:/plugins/TheDiveO/ThirdFlow/filters/is/shadowinsync.js
 type: application/javascript
+modified: 20140927173409192
 module-type: isfilteroperator
 
 Filter function for [is[shadowinsync]]
-  a tiddler is shadowsynced when it has a shadow tiddler
-  *AND* the shadow tiddler is the same as the real tiddler.
+  a tiddler is shadowsynced when an ordinary tiddler also has
+  a shadow tiddler *AND* the shadow tiddler is the same as the
+  real tiddler. This is decided on the basis of type, and the
+  creation and modification dates.
 
 \*/
 (function(){

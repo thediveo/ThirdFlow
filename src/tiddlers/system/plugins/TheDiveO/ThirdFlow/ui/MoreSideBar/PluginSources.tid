@@ -1,0 +1,52 @@
+caption: Plugin Sources
+created: 20141003192047443
+modified: 20141005205418407
+tags: $:/tags/MoreSideBar
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
+type: text/vnd.tiddlywiki
+
+\define plugin-full-path() $:/plugins/$(plugin-name)$
+
+\define plugin-icon() $:/plugins/$(plugin-name)$/icon
+
+\define plugin-type-filter() [{$:/plugins/$(plugin-name)$!!plugin-type}]
+
+\define plugin-default-icon() $:/core/images/plugin-generic-$(plugin-type)$
+
+\define plugin-contents-filter() [prefix[$:/plugins/$(plugin-name)$]!is[shadow]]
+
+\define plugin-item-relname() [is[current]removeprefix[$:/plugins/$(plugin-name)$/]!prefix[tiddlywiki/]]
+
+\define plugin-item()
+<div class="tc-menu-list-subitem">
+  <$link to={{!!title}}>
+    <$list filter=<<plugin-item-relname>> >
+      ...<$view field="title" format="text" />
+    </$list>
+  </$link>
+</div>
+\end
+
+<div class="tc-timeline">
+  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]]" variable="plugin-name">
+    <div class="tc-menu-list-item">
+    
+      <div class="tc-plugin-info-chunk">
+        <$transclude tiddler=<<plugin-icon>> >
+          <$list filter=<<plugin-type-filter>> variable="plugin-type">
+            <$transclude tiddler=<<plugin-default-icon>> />
+          </$list>
+        </$transclude>
+        
+      </div>
+      <$link to=<<plugin-full-path>>>
+        <$macrocall $name="plugin-name" $output="text/plain" />
+      </$link>
+      
+      <$list filter=<<plugin-contents-filter>> >
+        <<plugin-item>>
+      </$list>
+      
+    </div>
+  </$list>
+</div>
