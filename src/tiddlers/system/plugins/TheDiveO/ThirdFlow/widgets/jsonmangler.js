@@ -1,9 +1,11 @@
 /*\
+created: 20141015190230115
 title: $:/plugins/TheDiveO/ThirdFlow/widgets/jsonmangler.js
 type: application/javascript
+modified: 20141015190236275
 module-type: widget
 
-JSON mangler widget -- similar to the fieldmangler widget,
+The JSON mangler widget -- similar to the fieldmangler widget,
 but for mangling JSON data in a data tiddler instead of
 mangling the fields of a tiddler.
 

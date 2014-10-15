@@ -1,6 +1,8 @@
 /*\
+created: 20141015190317579
 title: $:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js
 type: application/javascript
+modified: 20141015190324904
 module-type: syncadaptor
 
 A sync adaptor module for synchronising with the local filesystem via node.js APIs
@@ -32,7 +34,7 @@ to support hierarchical tiddler storage as well as folder policies.
 /*global $tw: false */
 "use strict";
 
-// Get a reference to the file system
+// Get a reference to the file system and path tools
 var fs = !$tw.browser ? require("fs") : null,
 	path = !$tw.browser ? require("path") : null;
 
@@ -109,7 +111,8 @@ $tw.config.typeInfo = {
 };
 
 $tw.config.typeTemplates = {
-	"application/x-tiddler": "$:/core/templates/tid-tiddler"
+	"application/x-tiddler": "$:/core/templates/tid-tiddler",
+	"application/javascript": "$:/plugins/TheDiveO/ThirdFlow/templates/javascript-tiddler"
 };
 
 HierarchicalFileSystemAdaptor.prototype.getTiddlerFileInfo = function(tiddler,callback) {
