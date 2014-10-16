@@ -30,6 +30,7 @@ figure.framed {
   -moz-box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   box-shadow: 4px 4px 8px -4px rgba(0, 0, 0, .75);
   border-radius: 3px;
+  margin-bottom: 0.5ex;
 }
 
 figure.framed img {
