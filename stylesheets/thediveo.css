@@ -3,6 +3,15 @@ b, strong {
   font-weight: bold;
 }
 
+section#main-content h2 {
+	font-size: 175%;
+	color: #204d7f;
+}
+
+section#main-content h2:not(:first-of-type) {
+	margin-top: 4ex;
+}
+
 span.nb {
   white-space: nowrap;
 }
