@@ -17,7 +17,19 @@ no price.
 to disk. Additionally, a demonstration TiddlyWiki is also created that guides your future plugin users through
 the process of deploying your new plugin.
 
-Of course, the Third Flow has been developed using the same process it supports. Eat your own dog food.
+Of course, the Third Flow has been developed using the same process it supports. We actually eat our own dog food.
+
+## In Simple Pictures
+
+From the «a single figure lies more than a thousands words» department...
+
+### Development Phase
+
+![Development Phase](https://raw.githubusercontent.com/TheDiveO/ThirdFlow/master/art/ThirdFlow%20Architecture%20Development%20Phase.jpg)
+
+### Release Phase
+
+![Release Phase](https://raw.githubusercontent.com/TheDiveO/ThirdFlow/master/art/ThirdFlow%20Architecture%20Release%20Phase.jpg)
 
 ## Installation
 
