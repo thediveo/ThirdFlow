@@ -1,20 +1,25 @@
 created: 20141018171323360
-modified: 20141018215308360
+modified: 20141019183604193
 title: TagsUI
 type: text/vnd.tiddlywiki
 
-\define config-tiddler() $:/config/FileStorage/tagfoldersX
+\define config-tiddler() $:/config/FileStorage/tagfolders
 
 \define config-tiddler-list() [list[$(config-tiddler)$]]
-
-\define config-tag-tiddler() $(config-tiddler)$/$(tagConfigTiddler)$
 
 \define tag-styles()
 background-color:$(backgroundColor)$;
 \end
 
+\define config-defaults() {"tag-name": "$(currentListElement)$", "folder-name": "$(folder)$", "folder-mode": "flat"}
+
 \define tag-folder-editor()
-  <$set name="tagConfigTiddler" value=<<hashify "$(currentListElement)$">>>
+  <$set name="tagConfigTiddler" value=<<hashify title:"$(currentListElement)$" prefix:"$(config-tiddler)$/config-">>>
+  <$set name="folder" value=<<sanitizedfoldername "$(currentListElement)$">>>
+    <$list filter="[<tagConfigTiddler>is[missing]]">
+      <$ensuretiddler title=<<tagConfigTiddler>> default=<<config-defaults>>/>
+      <$link title=<<currentTiddler>> format="text"><$text text=<<currentTiddler>>/></$link>
+    </$list>
     <tr class="tc-edit-field">
       <td class="tc-edit-tag-name">
         <$set name="backgroundColor" value={{$(currentListElement)$!!color}}>
@@ -25,11 +30,11 @@ background-color:$(backgroundColor)$;
       </td>
 
       <td class="tc-edit-tag-folder">
-        <$edit-text tiddler=<<config-tag-tiddler>> field="folder" default=<<sanitizedfoldername "$(currentListElement)$">> placeholder="folder name"/>
+        <$edit-text tiddler=<<tagConfigTiddler>> field="folder-name" placeholder="enter a folder name"/>
       </td>
 
       <td class="tc-edit-tag-flat">
-        <$select tiddler=<<config-tag-tiddler>> field="folder-mode">
+        <$select tiddler=<<tagConfigTiddler>> field="folder-mode">
             <option value="flat">flat</option>
             <option value="subfolders">subfolders</option>
         </$select>
@@ -44,12 +49,21 @@ background-color:$(backgroundColor)$;
       </td>
     </tr>
   </$set>
+  </$set>
 \end
 
 <$listmangler tiddler=<<config-tiddler>>>
 
 <div class="tc-edit-fields">
   <table class="tc-edit-fields">
+  	<thead>
+      <tr>
+        <td>tag</td>
+        <td>folder</td>
+        <td>storage</td>
+        <td>priority</td>
+      </tr>
+    </thead>
     <tbody>
       <$list filter=<<config-tiddler-list>> variable="currentListElement">
         <<tag-folder-editor>>
