@@ -1,46 +1,83 @@
 caption: Tag-based Folders
 created: 20141013152809952
-modified: 20141013190936202
+modified: 20141019212032454
 tags: $:/tags/HFS/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
 type: text/vnd.tiddlywiki
 
 \define config-tiddler() $:/config/FileStorage/tagfolders
 
-\define config-tiddler-indexes() [[$(config-tiddler)$]indexes[]]
+\define config-tiddler-list() [list[$(config-tiddler)$]]
 
 \define tag-styles()
 background-color:$(backgroundColor)$;
 \end
 
-<$jsonmangler tiddler=<<config-tiddler>>>
+\define config-defaults() {"tag-name": "$(currentListElement)$", "folder-name": "$(folder)$", "folder-mode": "flat"}
+
+\define tag-folder-editor()
+  <$set name="tagConfigTiddler" value=<<hashify title:"$(currentListElement)$" prefix:"$(config-tiddler)$/config-">>>
+  <$set name="folder" value=<<sanitizedfoldername "$(currentListElement)$">>>
+    <$list filter="[<tagConfigTiddler>is[missing]]">
+      <$ensuretiddler title=<<tagConfigTiddler>> default=<<config-defaults>>/>
+      <$link title=<<currentTiddler>> format="text"><$text text=<<currentTiddler>>/></$link>
+    </$list>
+    <tr class="tc-edit-field">
+      <td class="tc-edit-tag-name">
+        <$set name="backgroundColor" value={{$(currentListElement)$!!color}}>
+          <span style=<<tag-styles>> class="tc-tag-label">
+            <$text text=<<currentListElement>> format="text"/>
+          </span>
+        </$set>
+      </td>
+
+      <td class="tc-edit-tag-folder">
+        <$edit-text tiddler=<<tagConfigTiddler>> field="folder-name" placeholder="enter a folder name"/>
+      </td>
+
+      <td class="tc-edit-tag-flat">
+        <$select tiddler=<<tagConfigTiddler>> field="folder-mode">
+            <option value="flat">flat</option>
+            <option value="subfolders">subfolders</option>
+        </$select>
+      </td>
+
+      <td class="tc-edit-tag-ops">
+        <$button message="tm-shift-back-list-element" param=<<currentListElement>> class="tc-btn-invisible">{{$:/plugins/TheDiveO/ThirdFlow/images/up-arrow-filled}}</$button>
+        &nbsp;
+        <$button message="tm-shift-forward-list-element" param=<<currentListElement>> class="tc-btn-invisible">{{$:/plugins/TheDiveO/ThirdFlow/images/down-arrow-filled}}</$button>
+        &nbsp;
+        <$button message="tm-remove-list-element" param=<<currentListElement>> class="tc-btn-invisible">{{$:/core/images/delete-button}}</$button>
+      </td>
+    </tr>
+  </$set>
+  </$set>
+\end
+
+Tags towards the beginning of the list take priority over later tags.
+
+<$listmangler tiddler=<<config-tiddler>>>
 
 <div class="tc-edit-fields">
   <table class="tc-edit-fields">
+  	<thead>
+      <tr>
+        <td>tag</td>
+        <td>folder</td>
+        <td>storage</td>
+        <td>priority</td>
+      </tr>
+    </thead>
     <tbody>
-      <$list filter=<<config-tiddler-indexes>> variable="currentIndex">
-        <tr class="tc-edit-field">
-          <td class="tc-edit-field-name">
-            <$text text=<<currentIndex>>/>:
-          </td>
-          
-          <td class="tc-edit-field-value">
-            <$edit-text tiddler=<<config-tiddler>> field="" index=<<currentIndex>> placeholder="folder name"/>
-          </td>
-          
-          <td class="tc-edit-field-remove">
-            <$button message="tm-remove-json-index" param=<<currentIndex>> class="tc-btn-invisible">{{$:/core/images/delete-button}}</$button>
-          </td>
-        </tr>
+      <$list filter=<<config-tiddler-list>> variable="currentListElement">
+        <<tag-folder-editor>>
       </$list>
     </tbody>
   </table>
 </div>
 
-//Note: append a "+" plus sign at the end of a subfolder name to hierarchically organize your tagged tiddlers below your top-level subfolder(s).//
-
 <div class="tc-edit-field-add">
-  <em class="tc-edit">Add a new tag:</em>
+  <em class="tc-edit">Add a new tag folder:</em>
 
   <div class="tc-edit-add-tag">
     <span class="tc-add-tag-name">
@@ -62,7 +99,7 @@ background-color:$(backgroundColor)$;
 <div class="tc-block-dropdown-wrapper">
   <$reveal state=<<qualify "$:/state/popup/tags-auto-complete">> type="nomatch" text="" default="">
     <div class="tc-block-dropdown">
-      <$linkcatcher set="$:/temp/NewTagName" setTo="" message="tm-add-json-index">
+      <$linkcatcher set="$:/temp/NewTagName" setTo="" message="tm-add-list-element">
         <$list filter="[!is[shadow]tags[]search{$:/temp/NewTagName}sort[title]]">
           <$link>
             <$set name="backgroundColor" value={{!!color}}>
@@ -77,4 +114,4 @@ background-color:$(backgroundColor)$;
   </$reveal>
 </div>
 
-</$jsonmangler>
+</$listmangler>
