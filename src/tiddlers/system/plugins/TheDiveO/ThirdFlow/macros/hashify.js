@@ -21,14 +21,15 @@ Information about this macro
 exports.name = "hashify";
 
 exports.params = [
-	{name: "title"}
+	{name: "title"},
+    {name: "prefix"}
 ];
 
 /*
 Run the macro
 */
-exports.run = function(title) {
-	return "hash-" + $tw.utils.hashString(title);
+exports.run = function(title,prefix) {
+	return (prefix || "") + $tw.utils.hashString(title);
 };
 
 })();

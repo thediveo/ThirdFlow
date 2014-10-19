@@ -67,10 +67,11 @@ ListManglerWidget.prototype.refresh = function(changedTiddlers) {
 
 // Appends a new element to the list field (or other anspecified field) of
 // the given tiddler. Ensures that the same element never gets added twice.
+// If the tiddler doesn't exist yet, it will be created.
 ListManglerWidget.prototype.handleAddListElementEvent = function(event) {
-	var tiddler = this.wiki.getTiddler(this.mangleTitle);
+	var tiddler = this.wiki.getTiddler(this.mangleTitle) || new $tw.Tiddler({title: this.mangleTitle});
     var addElement = event.param;
-    var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField]).slice(0);
+    var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField] || "").slice(0);
     var where = list.indexOf(addElement);
     if(where<0) {
         list.push(addElement);
@@ -85,14 +86,16 @@ ListManglerWidget.prototype.handleAddListElementEvent = function(event) {
 // of the given tiddler.
 ListManglerWidget.prototype.handleRemoveListElementEvent = function(event) {
 	var tiddler = this.wiki.getTiddler(this.mangleTitle);
-    var remElement = event.param;
-    var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField]).slice(0);
-    var where = list.indexOf(remElement);
-    if(where>=0) {
-        list.splice(where,1);
-        var mods = this.wiki.getModificationFields();
-        mods[this.mangleField] = list;
-        this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+    if(tiddler) {
+        var remElement = event.param;
+        var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField] || "").slice(0);
+        var where = list.indexOf(remElement);
+        if(where>=0) {
+            list.splice(where,1);
+            var mods = this.wiki.getModificationFields();
+            mods[this.mangleField] = list;
+            this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+        }
     }
     return true;
 };
@@ -101,15 +104,17 @@ ListManglerWidget.prototype.handleRemoveListElementEvent = function(event) {
 // one position forward towards the end of the list of the given tiddler.
 ListManglerWidget.prototype.handleShiftForwardListElementEvent = function(event) {
 	var tiddler = this.wiki.getTiddler(this.mangleTitle);
-    var shiftElement = event.param;
-    var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField]).slice(0);
-    var where = list.indexOf(shiftElement);
-    if((where>=0) && (where<list.length-1)) {
-        var swapElement = list[where+1];
-        list.splice(where,2,swapElement,shiftElement);
-        var mods = this.wiki.getModificationFields();
-        mods[this.mangleField] = list;
-        this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+    if(tiddler) {
+        var shiftElement = event.param;
+        var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField] || "").slice(0);
+        var where = list.indexOf(shiftElement);
+        if((where>=0) && (where<list.length-1)) {
+            var swapElement = list[where+1];
+            list.splice(where,2,swapElement,shiftElement);
+            var mods = this.wiki.getModificationFields();
+            mods[this.mangleField] = list;
+            this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+        }
     }
     return true;
 };
@@ -118,15 +123,17 @@ ListManglerWidget.prototype.handleShiftForwardListElementEvent = function(event)
 // one position backwards towards the beginning of the list of the given tiddler.
 ListManglerWidget.prototype.handleShiftBackListElementEvent = function(event) {
 	var tiddler = this.wiki.getTiddler(this.mangleTitle);
-    var shiftElement = event.param;
-    var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField]).slice(0);
-    var where = list.indexOf(shiftElement);
-    if(where>=1) {
-        var swapElement = list[where-1];
-        list.splice(where-1,2,shiftElement,swapElement);
-        var mods = this.wiki.getModificationFields();
-        mods[this.mangleField] = list;
-        this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+    if(tiddler) {
+        var shiftElement = event.param;
+        var list = $tw.utils.parseStringArray(tiddler.fields[this.mangleField] || "").slice(0);
+        var where = list.indexOf(shiftElement);
+        if(where>=1) {
+            var swapElement = list[where-1];
+            list.splice(where-1,2,shiftElement,swapElement);
+            var mods = this.wiki.getModificationFields();
+            mods[this.mangleField] = list;
+            this.wiki.addTiddler(new $tw.Tiddler(tiddler,mods));
+        }
     }
     return true;
 };

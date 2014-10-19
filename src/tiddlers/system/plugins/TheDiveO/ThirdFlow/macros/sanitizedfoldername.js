@@ -3,9 +3,8 @@ title: $:/plugins/TheDiveO/ThirdFlow/macros/sanitizedfoldername.js
 type: application/javascript
 module-type: macro
 
-Macro to hash a tiddler title into a (mostly) unique number.
-This avoids problems when using titles (from tags, et cetera)
-as path elements of a system tiddler title.
+Macro to sanitize a tiddler title for use as, e.g. a folder name.
+Also converts the title to lowercase.
 
 \*/
 (function(){
@@ -28,7 +27,7 @@ exports.params = [
 Run the macro
 */
 exports.run = function(title) {
-	return title.replace(/\<|\>|\:|\"|\/|\\|\||\?|\*|\^/g,"_");
+	return title.replace(/\<|\>|\:|\"|\/|\\|\||\?|\*|\^/g,"_").toLowerCase();
 };
 
 })();
