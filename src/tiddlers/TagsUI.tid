@@ -1,5 +1,5 @@
 created: 20141018171323360
-modified: 20141018214054862
+modified: 20141018215308360
 title: TagsUI
 type: text/vnd.tiddlywiki
 
@@ -25,7 +25,7 @@ background-color:$(backgroundColor)$;
       </td>
 
       <td class="tc-edit-tag-folder">
-        <$edit-text tiddler=<<config-tag-tiddler>> field="folder"  placeholder="folder name"/>
+        <$edit-text tiddler=<<config-tag-tiddler>> field="folder" default=<<sanitizedfoldername "$(currentListElement)$">> placeholder="folder name"/>
       </td>
 
       <td class="tc-edit-tag-flat">

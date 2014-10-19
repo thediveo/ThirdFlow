@@ -1,5 +1,5 @@
 /*\
-title: $:/plugins/TheDiveO/ThirdFlow/macros/hashify.js
+title: $:/plugins/TheDiveO/ThirdFlow/macros/sanitizedfoldername.js
 type: application/javascript
 module-type: macro
 
@@ -18,7 +18,7 @@ as path elements of a system tiddler title.
 Information about this macro
 */
 
-exports.name = "hashify";
+exports.name = "sanitizedfoldername";
 
 exports.params = [
 	{name: "title"}
@@ -28,7 +28,7 @@ exports.params = [
 Run the macro
 */
 exports.run = function(title) {
-	return "hash-" + $tw.utils.hashString(title);
+	return title.replace(/\<|\>|\:|\"|\/|\\|\||\?|\*|\^/g,"_");
 };
 
 })();
