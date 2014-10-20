@@ -26,7 +26,7 @@ exports.reconfig = function() {
 	var self = this;
     
     var cfgTiddler = $tw.wiki.getTiddler(configTiddlerBase);
-    tagList = $tw.utils.parseStringArray(cfgTiddler.fields.list || "");
+    tagList = $tw.utils.parseStringArray((cfgTiddler && cfgTiddler.fields.list) || "");
     var cfgTags = $tw.wiki.filterTiddlers("[prefix[" + configTiddlerBase + "/]]");
     tagFolders = {};
     
