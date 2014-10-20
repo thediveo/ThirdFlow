@@ -1,5 +1,5 @@
 created: 20140902083641711
-modified: 20140902130540097
+modified: 20141020083728826
 title: $:/plugins/TheDiveO/ThirdFlow/readme
 type: text/vnd.tiddlywiki
 
@@ -10,5 +10,7 @@ The //Third Flow// plugin supports your plugin development in that it organizes 
 There's only a ''single'' tiddler source code tree and it is synchronized to your tiddler's title-based structure. Thus, no more need for external editing sessions and source file shuffling.
 
 Simply install this plugin into your ~TiddlyWiki in which you are developing your customizations. For more information, please go to the [[Third Flow project website|http://thediveo.github.io/ThirdFlow]].
+
+You can use the new [[File Storage|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage]] control panel tab to configure how your tiddlers get organized into folders and subfolders in your source code repository.
 
 Enjoy the //Third Flow//!

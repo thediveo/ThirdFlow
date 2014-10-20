@@ -1,11 +1,11 @@
 caption: File Storage
 created: 20141013143730660
-modified: 20141013190719637
+modified: 20141018205151892
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage
 type: text/vnd.tiddlywiki
 
-Setup how a Node.js-server TiddlyWiki organizes your tiddlers into hierarchical folders and subfolders. After you've changed anything here don't forget to restart your Node.js-server TiddlyWiki so your changes take effect.
+Setup how a Node.js-server TiddlyWiki organizes your tiddlers into hierarchical folders and subfolders. Any configuration changes you make here will immediately become live, even on your TiddlyWiki server.
 <div class="tc-control-panel">
 <<tabs "[all[shadows+tiddlers]tag[$:/tags/HFS/ControlPanel]!has[draft.of]]" "$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic">>
 </div>
