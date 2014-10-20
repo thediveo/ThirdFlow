@@ -1,6 +1,8 @@
 /*\
+created: 20141020111936183
 title: $:/plugins/TheDiveO/ThirdFlow/widgets/listmangler.js
 type: application/javascript
+modified: 20141020111942403
 module-type: widget
 
 The list mangler widget -- mangles the list field of a

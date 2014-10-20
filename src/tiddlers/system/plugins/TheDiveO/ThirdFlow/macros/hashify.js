@@ -1,6 +1,8 @@
 /*\
+created: 20141020111828333
 title: $:/plugins/TheDiveO/ThirdFlow/macros/hashify.js
 type: application/javascript
+modified: 20141020111837899
 module-type: macro
 
 Macro to hash a tiddler title into a (mostly) unique number.

@@ -1,6 +1,8 @@
 /*\
+created: 20141020111845057
 title: $:/plugins/TheDiveO/ThirdFlow/macros/sanitizedfoldername.js
 type: application/javascript
+modified: 20141020111852925
 module-type: macro
 
 Macro to sanitize a tiddler title for use as, e.g. a folder name.

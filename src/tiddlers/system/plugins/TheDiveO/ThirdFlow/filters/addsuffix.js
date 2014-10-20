@@ -1,6 +1,8 @@
 /*\
+created: 20141020111710426
 title: $:/plugins/TheDiveO/ThirdFlow/filters/addsuffix.js
 type: application/javascript
+modified: 20141020111717792
 module-type: filteroperator
 
 Filter operator for adding a suffix to each title in the list. This is
