@@ -1,7 +1,7 @@
 created: 20140903072613112
-modified: 20140930201923636
-tags: $:/tags/Stylesheet
-title: ThirdFlow/Styling
+modified: 20141020092413418
+tags: $:/tags/Stylesheet Customization
+title: ThirdFlow Wiki Styling
 type: text/css
 
 ol.wide li, ul.wide li {

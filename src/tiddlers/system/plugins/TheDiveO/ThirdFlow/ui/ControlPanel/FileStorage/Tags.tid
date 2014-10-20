@@ -1,6 +1,6 @@
 caption: Tag-based Folders
 created: 20141013152809952
-modified: 20141019212032454
+modified: 20141020091306676
 tags: $:/tags/HFS/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
 type: text/vnd.tiddlywiki
@@ -24,11 +24,13 @@ background-color:$(backgroundColor)$;
     </$list>
     <tr class="tc-edit-field">
       <td class="tc-edit-tag-name">
-        <$set name="backgroundColor" value={{$(currentListElement)$!!color}}>
-          <span style=<<tag-styles>> class="tc-tag-label">
-            <$text text=<<currentListElement>> format="text"/>
-          </span>
-        </$set>
+      	<$link to=<<currentListElement>>>
+          <$set name="backgroundColor" value={{$(currentListElement)$!!color}}>
+            <span style=<<tag-styles>> class="tc-tag-label">
+              <$text text=<<currentListElement>> format="text"/>
+            </span>
+          </$set>
+        </$link>
       </td>
 
       <td class="tc-edit-tag-folder">

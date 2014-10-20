@@ -1,0 +1,16 @@
+caption: News
+created: 20141020092824815
+modified: 20141020100849509
+tags: Main
+title: News
+type: text/vnd.tiddlywiki
+
+!!Configuration Panel Tab
+
+The File Storage [[configuration tab|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage]] in the control panel got an overhaul. You can now prioritize one tag over another when using tag-based folder organization.
+
+This is useful for those situations where you need to add multiple (conflicting) tags to a tiddler. Now, the tag higher up in the configuration list will prevail. Of course, you can easily change the priority of tags using the arrow buttons to reorder tags in the list.
+
+!!Skeleton Project
+
+Included is now a complete skeleton project that you can find in the `skeleton` subfolder within the source code files for the //Third Flow//. This helps you to get quickly up and running the //Third Flow// in your own plugin projects.

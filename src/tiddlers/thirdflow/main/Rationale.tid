@@ -1,7 +1,8 @@
 caption: Rationale
 created: 20140902115316645
-modified: 20140930210715004
-title: ThirdFlow/Rationale
+modified: 20141020091435228
+tags: Main
+title: Rationale
 type: text/vnd.tiddlywiki
 
 The existing established plugin development flows either completely work inside the browser not caring about source code management or mandate to maintain separate branches for normal tiddlers and plugin tiddlers. These flows surely have their advantages.

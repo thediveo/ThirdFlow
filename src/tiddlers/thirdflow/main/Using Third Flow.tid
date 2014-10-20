@@ -1,13 +1,14 @@
 caption: Using Third Flow
 created: 20140902115939898
 list: [[Project Setup]] [[Your Plugin]] Develop Release
-modified: 20140930211201961
-title: ThirdFlow/Using Third Flow
+modified: 20141020091601463
+tags: Main
+title: Using Third Flow
 type: text/vnd.tiddlywiki
 
 To use the //Third Flow// for your new or existing customization plugin project please follow the steps outlined below.
 
-<<tabs "[list[ThirdFlow/Using Third Flow]addprefix[ThirdFlow Use/]]" "ThirdFlow Use/Project Setup" "$:/state/tabs/3f-use" >>
+<<tabs "[list[Using Third Flow]]" "Project Setup" "$:/state/tabs/3f-use" >>
 
 
 

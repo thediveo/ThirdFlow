@@ -1,7 +1,7 @@
 created: 20140930201806697
-modified: 20140930202033909
-tags: $:/tags/Macro
-title: ThirdFlow/Macros
+modified: 20141020092421079
+tags: $:/tags/Macro Customization
+title: ThirdFlow Wiki Macros
 type: text/vnd.tiddlywiki
 
 \define imagethumb(title, width)
