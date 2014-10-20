@@ -1,6 +1,6 @@
 caption: Technical
 created: 20140902131746344
-modified: 20141020091634021
+modified: 20141020155252247
 tags: Main
 title: Technical
 type: text/vnd.tiddlywiki
@@ -12,7 +12,7 @@ Interesting technical tidbits of //Third Flow// are:
 
 * two editions help you maintaining and releasing your plugin: the [[develop edition]] and the [[release edition]]. These editions ''do not'' contain any additional tiddlers! There's only a //single// source tree on purpose and it lives in ``src/tiddlers``.
 
-* you may want to use this [[plugin declaration template|Plugin Declaration Template]] when setting up your plugin for the first time.
+* you may want to use this [[plugin declaration template|Plugin Declaration Template]] when setting up your plugin for the first time. For a jumb start consider copying the `skeleton` folder with all its contents and subfolders to a new place. It contains everything you need for a fresh start.
 
 * there is a new ``is`` filter operand ``shadowinsync``: given a list of tiddlers you get back those tiddlers for which a shadow tiddler exists and this shadow is the same (on the basis of creation time, modification time, and tiddler type) as the non-shadow tiddler. Also supports the inverse, where it returns only those tiddlers being out of sync with their shadows. The ``[is[shadowinsync]]`` is used in the ~TiddlyWiki save template, we discuss next.
 
@@ -23,4 +23,6 @@ Interesting technical tidbits of //Third Flow// are:
 * for easier release there are two additional commands in the plugin:
 ** the new [[--packplugin|$:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js]] command for packing a plugin tiddler.
 ** the new [[--rendertemplatedtiddler|$:/plugins/TheDiveO/ThirdFlow/commands/rendertemplatedtiddler.js]] for saving a single tiddler in .tid format. For some reason there doesn't seem to be a suitable command in the core; one needs to create a template instead ... but this means having to specify the plugin to save in the tiddler instead of in the ``tiddlywiki.conf``.
+
+* ...and much, much more to [[discover|Discover]].
 @@

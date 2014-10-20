@@ -1,0 +1,12 @@
+created: 20141020155307660
+modified: 20141020175437751
+title: Discover
+type: text/vnd.tiddlywiki
+
+The //Third Flow// plugin is an interesting adventure into TiddlyWiki 5 development territory in itself.
+
+* [[Sync Adaptor]] -- there can always be only one active in a given TiddlyWiki instance:
+** [[hierarchicalfilesystemadaptor Sync Adaptor]] ... organizes your tiddlers neatly into folders and subfolders. Also does tag-based folder organization. And it has [[extensible folder policies|Folder Policy]] which you can even extend yourself. Very nice.
+* Configuration UI -- the new [[File Storage|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage]] tab inside the control panel. It hosts the following tabs so that users can easily configure certain aspects of the [[HFS sync adaptor|hierarchicalfilesystemadaptor Sync Adaptor]]:
+** the [[basic configuration|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic]] tab. It is the configuration UI for the following stock folder policies: [[draft Folder Policy]], [[system Folder Policy]], and finally the [[autosubfolders Folder Policy]].
+** the [[tags-based folders|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags]] tab. It is the configuration UI for the [[tag Folder Policy]]. This UI is interesting in itself, as it allows users to reorder the priority of tag-related configuration settings by simply shuffling them around in the UI.

@@ -1,0 +1,37 @@
+created: 20141020173330960
+modified: 20141020180328313
+tags: [[Folder Policy]]
+title: tag Folder Policy
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+The tag [[folder policy|Folder Policy]] implements the so-called "tag-based folders" policy. It has a medium-to-low priority of 50 so it will chime in only after draft and system tiddlers already have been seated.
+
+This is currently the most "complex" folder policy which bases on the tags of a tiddler to place the tiddler source file into a specific folder.
+
+! Configuration
+
+The draft folder policy receives its configuration data from two sources:
+
+# the configuration tiddler [[$:/config/FileStorage/tagfolders]] -- its `list` field is of special importance, as it contains the ordered list of tags which are configured to use their own folders.
+
+# further per-tag configuration tiddlers below the `$:/config/FileStorage/tagfolders/` branch. Each individual configuration tiddler describes a single tag and the associated folder name. Furthermore, it specifies whether to store tagged tiddler flat or in a hierarchy inside this folder. The following tiddler ''fields'' are used to store the configuration data (fields in contrast to JSON data):
+#; tag-name
+#: the name of the tag for which this configuration tiddler holds configuration data.
+#; folder-name
+#: the name of the folder into which to save tiddlers with this tag.
+#; folder-mode
+#: whether to store tiddlers inside the tag-specific folder simply flat (`flat`) or hierarchically (`subfolder`).
+
+It is important to understand that the tag list is ordered: only this allows us to clearly resolve those cases where a tiddler is tagged with multiple tags for which different folders have been configured for. The configuration UI properly reflects the sequence and allows users to reorder the tags accordingly to their needs.
+
+The names of the individual tag-specific configuration tiddlers are derived from the tag names. Please note that we don't want to use tag names directly inside titles as this would lead to unwieldly config titles especially for system tags and a lot of surplus folders for storing these system configuration tiddlers. See also the new macro [[$:/plugins/TheDiveO/ThirdFlow/macros/hashify.js]] that returns a constant string for a given constant title.
+
+{{$:/plugins/TheDiveO/ThirdFlow/folderpolicies/tag.js}}
+
+! UI
+
+The configuration UI for the tag-based folder policy is in [[$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags]]. This UI tiddler implements the separate "Tag-based Folders" tab inside the "File Storage" control panel tab.
+
+Notably, this configuration UI shows an ordered list of the tags configured. The user is able to reorder the elements of this list in order to prioritize certain tags over others.

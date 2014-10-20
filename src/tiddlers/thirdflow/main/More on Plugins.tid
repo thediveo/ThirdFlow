@@ -1,6 +1,6 @@
 caption: More on Plugins
 created: 20140925194827934
-modified: 20141020091718621
+modified: 20141020175623595
 tags: Main
 title: More on Plugins
 type: text/vnd.tiddlywiki
@@ -13,3 +13,5 @@ You can't just get enough information? So here it is: more background informatio
 * when working with ~TiddlyWiki 5 from the command line: [[commands|Command]].
 * [[filters|Filter]] are at the heart of the //Third Flow//'s crazy replication magic.
 * and finally: some helpful [[terminology|Terminology]] around plugins.
+
+Oh, the //Third Flow// plugin may also be interesting: [[discover|Discover]] its secrets and learn more about plugins.

@@ -1,0 +1,19 @@
+created: 20141020172422172
+modified: 20141020172832629
+tags: [[Folder Policy]]
+title: system Folder Policy
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+The system [[folder policy|Folder Policy]] handles system tiddlers. It has a medium priority of 100 so that it usually will chime in before more general folder policies for ordinary tiddlers. The idea here is that regardless of what tiddler this is -- as long as it is a system tiddler, store it inside its own system folder //hierarchy//.
+
+! Configuration
+
+The system folder policy receives its configuration data from the configuration tiddler [[$:/config/FileStorage/systemfoldername]]. Its text content is used as the name for the systems folder.
+
+{{$:/plugins/TheDiveO/ThirdFlow/folderpolicies/system.js}}
+
+! UI
+
+The configuration UI for the system folder policy is included in [[$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic]]. This UI tiddler implements the "Basic" tab inside the "File Storage" control panel tab.

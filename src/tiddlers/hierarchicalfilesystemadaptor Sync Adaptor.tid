@@ -1,12 +1,12 @@
 created: 20140925204107359
-modified: 20141013191439497
-tags: Module todo [[Sync Adaptor]]
+modified: 20141020161237122
+tags: Module [[Sync Adaptor]]
 title: hierarchicalfilesystemadaptor Sync Adaptor
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-The ''hierarchical file system (sync) adaptor'' (or HFS) is a sync adaptor that does not simply throws all tiddlers into a single folder but instead neatly organizes them into folder hierarchies according to their titles. As is the custom for system tiddler titles, the forward slash `/` denotes hierarchy.
+The ''hierarchical file system (sync) adaptor'' (or HFS for short) is a sync adaptor that does not simply throws all tiddlers into a single folder but instead neatly organizes them into folder hierarchies according to their titles. As is the custom for system tiddler titles, the forward slash `/` denotes hierarchy.
 
 When using with legacy tiddler folders please note that this sync adaptor ''never'' moves such tiddlers into a new position according to their title -- unless you change their title which basically results in a new tiddler anyway.
 
@@ -14,11 +14,27 @@ When using with legacy tiddler folders please note that this sync adaptor ''neve
 
 The HFS sync adaptor only becomes alive when it detects the presence of Node.js: this means that it is being run in a server ~TiddlyWiki instance. And only then we'll need its services.
 
+The HFS sync adaptor is extensible using so-called [[folder policy modules|Folder Policy]]: this way, you can later add your own strategies how to organize your source code tiddlers into folders and subfolders.
+
 !Usage
 
-The HFS sync adaptor can be disabled through the global wiki option `disable-hfs`. This is typically required during the release phase to avoid that after packing the plugin tiddler this tiddler automatically gets synchronized with the source code tiddlers, thus updating the sources.
+!! Development Phase
 
-To disable the HFS sync adaptor, in your [[edition|Edition]] you need to add to your `tiddlywiki.info` file a `config` section (if not already present):
+In order to use the HFS sync adaptor, you simply include it into your tiddler source file tree. Please note that we do ''not'' keep the HFS sync adaptor in a separate plugins folder. Instead, it is part of the //Third Flow// plugin itself. This makes deploying it much simpler: no plugin files configuration to add and maintain, just install the //Third Flow// plugin into your own plugin project and you are ready and set.
+
+The HFS sync adaptor will be activated automatically as soon as it gets run under the control of a Node.js-based TiddlyWiki server.
+
+In the end, this is the normal and expected operation during the development phase.
+
+!!Release Phase
+
+When releasing plugin and docu&amp;demo wiki files, things are starting to look differently. In the release phase, we don't need the HFS sync adaptor and we don't want it to interfere with plugin package creation.
+
+Because we are using a single tiddler source tree wiki setup we cannot selectively include and exclude the HFS sync adaptor in form of a separate plugin. But luckily, there's an easy way to get around this and we don't loose the benefits of easy sync adaptor installation.
+
+For the release phase, the HFS sync adaptor can be easily disabled through the global wiki option `disable-hfs`. This avoids that after packing the plugin tiddler this tiddler automatically gets synchronized with the source code tiddlers, thus updating the sources when you don't want the plugin source tiddler itself receiving an unintended update.
+
+To disable the HFS sync adaptor, in your [[edition|Edition]] you simply need to add to your `tiddlywiki.info` file a `config` section (if not already present):
 
 ```
 {

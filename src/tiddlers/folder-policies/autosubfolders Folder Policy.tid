@@ -1,0 +1,23 @@
+created: 20141020172850789
+modified: 20141020173639434
+tags: [[Folder Policy]]
+title: autosubfolders Folder Policy
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+The autosubfolders [[folder policy|Folder Policy]] handles ordinary tiddlers. It has a stinking low priority of 0 and thus only chimes in if no other folder policy caught fire.
+
+Usually, we end up here only with normal ordinary and shadow tiddlers in this policy, as draft and system tiddlers were handled already elsewhere in [[draft Folder Policy]] and [[system Folder Policy]].
+
+Depending on our configuration we either store all tiddlers flat into the same wiki folder or alternatively into a hierarchical folder structure according to title.
+
+! Configuration
+
+The autosubfolders folder policy receives its configuration data from the configuration tiddler [[$:/config/FileStorage/enableautomaticsubfolders]].
+
+{{$:/plugins/TheDiveO/ThirdFlow/folderpolicies/autosubfolders.js}}
+
+! UI
+
+The configuration UI for the "ordinary" folder policy is included in [[$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic]]. This UI tiddler implements the "Basic" tab inside the "File Storage" control panel tab.

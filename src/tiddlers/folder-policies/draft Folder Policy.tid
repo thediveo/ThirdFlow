@@ -1,0 +1,19 @@
+created: 20141020164114768
+modified: 20141020172749201
+tags: [[Folder Policy]]
+title: draft Folder Policy
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+Then draft [[folder policy|Folder Policy]] handles draft tiddlers. It has a high priority of 200 so that it gets its chance very early in the game. The idea here is that regardless of what tiddler this is -- as long as it is a draft, throw it into the drafts folder. All draft folders are thus stored flat inside the drafts folder.
+
+! Configuration
+
+The draft folder policy receives its configuration data from the configuration tiddler [[$:/config/FileStorage/draftfoldername]]. Its text content is used as the name for the drafts folder.
+
+{{$:/plugins/TheDiveO/ThirdFlow/folderpolicies/draft.js}}
+
+! UI
+
+The configuration UI for the draft folder policy is included in [[$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Basic]]. This UI tiddler implements the "Basic" tab inside the "File Storage" control panel tab.

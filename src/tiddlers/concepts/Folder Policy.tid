@@ -1,0 +1,85 @@
+color: #5686a9
+created: 20141020160924825
+modified: 20141020171537754
+tags: Concept
+title: Folder Policy
+type: text/vnd.tiddlywiki
+
+\define fpm-doc(name)
+  [[$name$|$name$ Folder Policy]]
+\end
+
+\define fpm-source(name)
+  ([[source|$:/plugins/TheDiveO/ThirdFlow/folderpolicies/$name$.js]])
+\end
+
+! Abstract
+
+''Folder policies'' are an extension method of the [[HFS sync adaptor|hierarchicalfilesystemadaptor Sync Adaptor]] to add more organization strategies for how to distribute your tiddler source files into folders and subfolders.
+
+! Technical
+
+!! Folder Policy Modules
+
+Folder policies are [[modules|Module]] identified by their `module-type: folderpolicy` setting. The HFS sync adaptor automatically activates all available folder policy modules when it starts (unless certain modules have been explicitly disabled through the normal module mechanism).
+
+In addition, each folder policy module should have a `priority` field: its range normally is from 0 to 200, with higher priority numbers also meaning higher priority. The priority settings control in which order the individual folder policy modules get a chance to descide where a new tiddler should be placed into the file and folder tree. In case multiple folder policy modules share the same priority setting, then their order is undefined and implementation-dependent.
+
+!! Stock Folder Policy Modules
+
+The following folder policy modules are built-in.
+
+|!Policy|!Priority|!Source|!Purpose|
+|<<fpm-doc name:"draft">>| 200|<<fpm-source name:"draft">>|handles draft tiddlers.|
+|<<fpm-doc name:"system">>| 100|<<fpm-source name:"system">>|handles system tiddlers -- those starting with a `$:` title.|
+|<<fpm-doc name:"tag">>| 50|<<fpm-source name:"tag">>|handles tag-based tiddlers.|
+|<<fpm-doc name:"autosubfolders">>| 0|<<fpm-source name:"autosubfolders">>|handles all tiddlers not covered by other policy modules and stores them either flat or into subfolders according to their titles.|
+
+Normally, you should not need to specify a folder policy priority of 200 or greater -- unless you need to replace the stock handling of draft tiddlers.
+
+Similarly, you should not specify a folder policy priority less than zero: such a folder policy will never be given a chance to decide, as the autosubfolders policy will take precedence. Using a priority of 0 results in undefined behavior. If you need to replace the autosubfolder policy, then use a low value above 0.
+
+!! Folder Policy Module API
+
+Folder policy modules need to export the following symbols:
+
+;exports.watch
+: A filter expression (in form of a String) of the config tiddler(s) used by this folder policy modules. The HFS sync adaptor monitors the tiddlers matching this filter expression for any changes and then notifies this folder policy module by calling its `exports.reconfig` function.
+: It is good practice to store configuration information in tiddlers inside the `$:/config/FileStorage/` branch. If your folder policy module is named `myorg` then use this name also as the suffix of your configuration tiddler(s).
+: A typical example might be `"[field:title[$:/config/FileStorage/myorg]]"`.
+
+;exports.reconfigure(title)
+: Called when the HFS sync adaptor starts as well as later when a change in one of the configuration tiddlers monitored (according to the `exports.watch` filter expression) changes.
+: The `title` parameter is undefined during the initialization phase. This signals to the folder policy module to read in all available configuration data and to properly initialize itself.
+: Later, the `title` contains the monitored configuration tiddler that has changed. Some folder policy modules may want use the title parameter to optimze in that they read only that configuration that actually changed.
+: Please note that the `reconfigure` function is called in the context of the HFS sync adaptor, so that `this` references the HFS sync adaptor instance.
+
+;folderpolicy(title,options)
+: Called by the HFS sync adaptor to find out where to place a new tiddler into the file system (inside the wiki tiddler source file tree).
+: A folder policy module may choose to not being competent, in this case it signals its decline by simply returning `false`. Otherwise, if it proposes where to place and name the source tiddler it must return `true`. In this case, it communicates its decision details through the `options` parameter.
+: Please note that the `reconfigure` function is called in the context of the HFS sync adaptor, so that `this` references the HFS sync adaptor instance.
+:;title
+:: The title of the new tiddler to be seated.
+:;options
+:: A set of input and output parameters; in particular:
+::;(in) tiddler
+::: references the tiddler object to be seated. Useful if you want to implement a folder policy that takes the tiddler state into its calculation, such as for the tag-based folder policy.
+::;(in) options.draft
+::: `true` if the new tiddler is a draft tiddler, `false` otherwise.
+::;(in/out) subfolder
+::: initially `""` -- but intermediate priority folder policies are allowed to change this default in order to signal different preferences (while returning `false` from their `folderpolicy` functions). Caveat emptor, though.
+::: on return the folder or subfolder(s) name(s) to store the tiddler source file into. Hierarchical folder names must use forward slashes to separate hierarchical subfolders.
+::;(in/out) name
+::: initially the title of the new tiddler.
+::: on return the name of the file to store the tiddler into. Any slashes or backslashes left will automatically be sanitized later.
+:: Please note that the HFS sync adaptor sanitizes the folder and file names before it attempts to create the tiddler source file. In particular, it replaces certain restricted file name characters with underscores `"_"`.
+:: The HFS sync adaptor provides two convenience methods that may be of interest to folder policy modules. They can be easily accessed as the folder policy functions are invoked in the context of the HFS sync adaptor, so that `this` references the only HFS sync adaptor instance.
+::;subfoldersFromTitle(title)
+:::returns a string with the "path" part of a title. For instance, this function returns `"$:/plugins/TheDiveO"` from the full title `"$:/plugins/TheDiveO/ThirdFlow"`.
+::;leafFromTitle(title)
+:::returns a string with only the final part of a hierarchical title. For instance, this function returns `"ThirdFlow"` from the full title `"$:/plugins/TheDiveO/ThirdFlow"`.
+
+! References
+
+The //Third Flow// plugin comes with these built-in folder policies:
+<<list-links filter:"[prefix[$:/plugins/TheDiveO/ThirdFlow/folderpolicies/]removeprefix[$:/plugins/TheDiveO/ThirdFlow/folderpolicies/]removesuffix[.js]addsuffix[ Folder Policy]]">>
