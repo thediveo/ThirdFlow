@@ -1,5 +1,5 @@
 created: 20140925184608907
-modified: 20140926201009685
+modified: 20141021182201049
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
@@ -13,12 +13,16 @@ A ''plugin'' in ~TiddlyWiki 5 is a bundle of tiddlers packaged together as a //s
 Plugins have a `plugin-type` field that currently can take on these values:
 
 @@.wide
-* `plugin` (which is the default) indicates a plain plugin; that is, a plugin that isn't further specialized in its purpose.
+* `plugin` (which is the default) indicates a //plain// (or general, ordinary, ...) plugin. This is a plugin that isn't further specialized in its purpose.
 
 * `theme` identifies plugins that provide themes and that are understood by ~TiddlyWiki's theming mechanism.
 
 * `language` identifies language plugins.
 @@
+
+!Meta
+
+Plugin tiddlers ''must'' be [[ordinary tiddlers|Ordinary Tiddler]]. They cannot be [[shadow tiddlers|Shadow Tiddler]] themselves. Thus, you can't pack plugins into plugins. But you can pack plugins into libraries, but that's another story.
 
 !Technical
 
@@ -40,6 +44,7 @@ Basically, there are two ways to package plugins:
 
 !See Also
 
+* [[Plugin Information]]
 * [[Foreground Tiddler]]
 * [[Shadow Tiddler]]
 * [[Ordinary Tiddler]]

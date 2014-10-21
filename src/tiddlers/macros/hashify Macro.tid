@@ -1,0 +1,47 @@
+created: 20141020212114405
+modified: 20141021165851005
+tags: Macro
+title: hashify Macro
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+The ''hashify'' macro returns a (mostly) unique identifier on the basis of a tiddler title. This macro is especially helpful in situations where it isn't desirable to embed a full title, such as a tag name (which is a nothing more than a title), but where a one-to-one relationship between a title and a hash value is required.
+
+For instance, the //Third Flow// plugin uses the hashify macro to associate a //separate// configuration tiddler with each configured tag. By using the hash-ified tag name, the //Third Flow// plugin keeps the config tiddler titles short and this helps maintaining the plugin.
+
+! Technical
+
+For instance, you may want to avoid embedding titles into other titles as these result in unwieldly titles and title structures. A shorter, but still unique title here makes it easier to maintain a wiki.
+
+! Parameters
+
+|!Position |!Name |!Description |!Default |
+|1st |title |Title to hash-ify | |
+|2nd |prefix |The prefix (base title) to prefix the hash identifier with | |
+
+! Examples
+
+The result returned by the hashify macro depends only on the title specified, but neither on the prefix nor the context in which the macro is used. For example:
+
+```
+<<hashify "$:/tags/Stylesheet">>
+```
+
+returns:
+
+<pre><<hashify "$:/tags/Stylesheet">></pre>
+
+In several contexts it may be convenient to even specify a prefix title, so the result of the hashify macro can directly be used to set a widget parameter, et cetera. For example:
+
+```
+<<hashify "$:/tags/Stylesheet" "$:/config/FileStorage/tagfolders/config-">>
+```
+
+returns:
+
+<pre><<hashify "$:/tags/Stylesheet" "$:/config/FileStorage/tagfolders/config-">></pre>
+
+! Related
+
+In contrast, the stock [[qualify macro|http://tiddlywiki.com/#QualifyMacro]] from the TiddlyWiki 5 core serves a different purpose: it considers the context in which it is used and only then generates a unique identifer. The qualify macro is thus used in those situations where the same code may be have been transcluded from different contexts and where all the state data used in those different contexts has to be kept strictly separate.

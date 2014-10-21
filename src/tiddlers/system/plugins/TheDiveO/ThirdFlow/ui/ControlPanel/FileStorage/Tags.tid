@@ -1,6 +1,6 @@
 caption: Tag-based Folders
 created: 20141013152809952
-modified: 20141020091306676
+modified: 20141021155458219
 tags: $:/tags/HFS/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
 type: text/vnd.tiddlywiki
@@ -91,7 +91,7 @@ Tags towards the beginning of the list take priority over later tags.
     </$button>
     
     <span class="tc-add-tag-button">
-      <$button message="tm-add-json-index" param={{$:/temp/NewTagName}} set="$:/temp/NewTagName" setTo="" class="">
+      <$button message="tm-add-list-element" param={{$:/temp/NewTagName}} set="$:/temp/NewTagName" setTo="" class="">
         add
       </$button>
     </span>

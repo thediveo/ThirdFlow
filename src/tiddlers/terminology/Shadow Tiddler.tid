@@ -1,12 +1,12 @@
 created: 20140925190154910
-modified: 20141019212101390
+modified: 20141021175913459
 tags: Terminology
 title: Shadow Tiddler
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "250%">>
+<<imagethumb "ThirdFlow Architecture Tiddler Terms.jpg" "50%">>
 
 A ''shadow tiddler'' in ~TiddlyWiki 5 is a tiddler that originates from a [[plugin|Plugin]]. Shadow tiddlers cannot be changed, but they can be overwritten  simply by creating a new tiddler (so-called [[ordinary tiddlers|Ordinary Tiddler]]) with the same name.
 
@@ -14,7 +14,14 @@ For lack of a better name, I'll call (ordinary) tiddlers overwriting shadows the
 
 !Technical
 
-Internally, the ~TiddlyWiki 5 core stores shadow tiddlers in a separate tiddler table. This shadow tiddler table gets populated when [[plugins|Plugin]] are unpacked: either during boot or when importing them.
+Internally, the ~TiddlyWiki 5 core stores shadow tiddlers in its own tiddler table that is ''separate'' from the ordinary tiddler table. This is crucial to understand, as this has some important ramifications:
+
+* iterations over ordinary and shadow tiddlers are clearly separate.
+* the JavaScript objects for ordinary tiddlers and shadow tiddlers differ:
+** you can create and delete ordinary tiddlers (that is, adding or removing them to/from the tiddler store using `$tw.wiki.addTiddler()` and `$tw.wiki.removeTiddler()`), but you can't do so directly for shadown tiddlers.
+** ordinary tiddler objects have a `fields` element that is a hashmap of the fields of a tiddler.
+
+The shadow tiddler table only gets populated when [[plugins|Plugin]] are unpacked: either during boot or when importing them later.
 
 !See Also
 

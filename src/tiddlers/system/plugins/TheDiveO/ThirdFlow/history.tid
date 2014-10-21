@@ -1,8 +1,11 @@
 created: 20140902083720188
-modified: 20141020083413618
+modified: 20141021174538888
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.7'' -- minor fix release and core upgrade.
+** fixed the add tag button not working.
+** upgraded the release demo wiki core to 5.1.3.
 * ''1.0.6'' -- improved tag-based folders release.
 ** the tags configured for organizing tiddler storage into folders now have a well-defined natural order. Tags earlier in the tag list take precedence over later ones. The new UI makes setting precedence easy, please see the next item.
 ** revamped UI for configuring tag-based folders. The new UI allows tags to be sorted earlier in the list so that those earlier tags take precedence over latter tags.

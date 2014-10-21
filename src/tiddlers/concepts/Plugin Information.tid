@@ -1,0 +1,27 @@
+created: 20141021180227215
+modified: 20141021182612489
+tags: Concept
+title: Plugin Information
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+The TiddlyWiki 5 core uses ''plugin information'' to do bookkeeping on the plugins that are currently loaded.
+
+! Plugin Information (Core)
+
+The core uses an object structure that it (inofficially) calls //plugin info//. These plugin information objects are nothing more than JSON objects that represents the text bodies of plugins. That's all to it.
+
+As of the time of this writing the plugin information objects only possess a single element named `tiddlers`. The `tiddlers` element is an array of objects that represent tiddlers in their serialized form.
+
+It is crucial to understand that the individual objects referenced by the `tiddlers` element are ''not'' the usual `$tw.Tiddler` objects you see when working with the `$tw.wiki` tiddler APIs. Instead, the tiddler objects contained in plugin information are just plain JSON objects. They don't have any `$tw.Tiddler` DNA.
+
+! Core API
+
+;$tw.wiki.getPluginInfo(title)
+: Returns a plugin information object for the plugin specified in the `title` parameter. Returns `undefined` for titles that don't refer to actual plugins.
+: In order to use this function, the core needs to have read in all plugin information alread. See: `$tw.wiki.readPluginInfo`.
+
+;$tw.wiki.readPluginInfo()
+: Iterates over all plugin (ordinary) tiddlers and parses the plugin text bodies into JSON objects. These JSON objects then are the plugin information.
+: ''Caveat:'' currently, this function assumes to be called only once during the TiddlyWiki 5 boot process. However, if called later, it will work, but it won't properly clean its internal plugin information bookkeeping before scanning all plugins. It thus basically updates and adds, but never removes stale plugin information.

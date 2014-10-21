@@ -1,0 +1,9 @@
+color: #e2b80e
+created: 20141020212141579
+modified: 20141021170018397
+tags: Concept
+title: Macro
+type: text/vnd.tiddlywiki
+
+The following macros are defined by the //Third Flow// plugin:
+<<list-links filter:"[tag[Macro]]">>
