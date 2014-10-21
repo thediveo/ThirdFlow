@@ -1,0 +1,9 @@
+created: 20141021203600675
+modified: 20141021204125498
+tags: Concept
+title: Field Module
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+''Field modules'' handle the conversation of a tiddler field values in string form into their field-specific internal representations used by [[tiddler objects|Tiddler]]. Field modules are field-specific.

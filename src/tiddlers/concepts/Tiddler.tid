@@ -1,0 +1,42 @@
+created: 20141021201514946
+modified: 20141021203438308
+tags: Concept
+title: Tiddler
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+''Tiddlers'' are TiddlyWiki's most fundamental element. Internally during runtime, tiddlers are represented by JavaScript objects.
+
+Please note that tiddlers (more precise: tiddler objects) are ''immutable'' objects: you ''cannot change them''. This is completely different from what users experience at the TiddlyWiki user level: at this level tiddlers can be changed and updated at will. However, below the surface the tiddler objects can't be changed after they have been created.
+
+So in order to change or update a tiddler you need to replace its tiddler object that is stored in the, well, store.
+
+! Tiddler "Class"
+
+Talking about "classes" in an object-based language like JavaScript is slightly difficult. Most discussions put aside, we here simplify and thus call the tiddler constructor `$tw.Tiddler` also the tiddler class.
+
+Some tiddler methods are only defined later in [[$:/core/modules/tiddler.js]].
+
+The following is an incomplete and rather subjective list of interesting tiddler methods:
+
+;hasField(field)
+: returns `true`, if the tiddler currently has the field specified in the `field` parameter.
+
+;hasTag(tag)
+: returns `true`, if the tiddler is tagged with the tag specified in the `tag` parameter.
+
+;isPlugin()
+: returns `true` if the tiddler is a plugin. This is the case if the tiddler is of `type: application/json` and also has a `plugin-type` field set.
+
+;isDraft()
+: returns `true` if the tiddler is a draft tiddler. This is the case if the tiddler has a `draft.of` field.
+
+;getFieldString(field)
+: returns the value of the tiddler field in stringified form.
+
+;getFieldStringBlock(options)
+: `options.exclude`
+
+;isEqual(tiddler, excludeFields)
+:

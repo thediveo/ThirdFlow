@@ -1,5 +1,5 @@
 created: 20140925184608907
-modified: 20141021182201049
+modified: 20141021192936884
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
@@ -18,6 +18,8 @@ Plugins have a `plugin-type` field that currently can take on these values:
 * `theme` identifies plugins that provide themes and that are understood by ~TiddlyWiki's theming mechanism.
 
 * `language` identifies language plugins.
+
+* `import` is used by the core during import.
 @@
 
 !Meta
