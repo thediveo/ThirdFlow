@@ -1,0 +1,62 @@
+created: 20141022081246017
+modified: 20141022084805849
+tags: Concept
+title: Wiki
+type: text/vnd.tiddlywiki
+
+! Wiki Tiddler API
+
+`$tw.Wiki` and the `$tw.wiki` global instance offer the following functionality:
+
+;addTiddler(tiddler)
+: Adds a tiddler to the wiki instance. The `tiddler` parameter can take on two different forms:
+:# a tiddler object (`$tw.Tiddler`): the tiddler object to be added to the wiki.
+:# a hashmap of name-value pairs describing the data of a tiddler. `addTiddler` then creates a tiddler object (`$tw.Tiddler`) from this hashmap and adds this object to the wiki. It is important that the hashmap contains at least a `title` element, otherwise an exception will be thrown.
+: Please note that you can only add [[ordinary tiddlers|Ordinary Tiddler]] but not [[shadow tiddlers|Shadow Tiddler]]. Shadow tiddlers are unpacked from [[plugin tiddlers|Plugin]] and cannot be modified -- except by modifying the plugin and unpacking it (which isn't officially allowed practice).
+
+;allShadowTitles()
+: returns a string array of all [[shadow tiddlers|Shadow Tiddler]] titles. It never includes any [[ordinary tiddler|Ordinary Tiddler]] (see `allTitles` instead).
+
+;allTitles()
+: returns a string array of all [[ordinary tiddler|Ordinary Tiddler]] titles. It never includes any [[shadow tiddlers|Shadow Tiddler]] (see `allShadowTitles` instead).
+
+;each(callback(tiddler,title))
+: iterates over all [[ordinary tiddlers|Ordinary Tiddler]], calling the `callback` function for each one. The callback parameters are as such:
+:;tiddler
+:: the tiddler object being iterated.
+:;title
+:: the title of the tiddler object being iterated.
+
+;eachShadow(callback(tiddler,title))
+: similar to `each` but iterating over [[shadow tiddlers|Shadow Tiddler]] instead.
+
+;eachShadowPlusTiddlers(callback(tiddler,title))
+: like `eachShadow` and `each` combined, in this order.
+
+;eachTiddlerPlusShadows(callback(tiddler,title))
+: like `each` and `eachShadow` combined, in this order.
+
+;deleteTiddler(title)
+: removes the tiddler with the given title from the wiki. Please note that the `title` parameter specifies the title and never references the tiddler object. This is an important asymmetry compared to `addTiddler`.
+: Please note that you can only delete [[ordinary tiddlers|Ordinary Tiddler]] but not [[shadow tiddlers|Shadow Tiddler]].
+
+;getShadowSource(title)
+: returns the title of the plugin from which this [[shadow tiddler|Shadow Tiddler]] comes. Returns `null` if the given title does not reference a shadow tiddler.
+: Please note that an [[ordinary tiddler|Ordinary Tiddler]] may exist simultaneously but gets ignored.
+
+;getShadowTiddler(title)
+
+;getTiddler(title)
+: returns the tiddler object with the title specified in the `title` parameter. If the tiddler does not exist, then this function returns `undefined` instead. This function works on both [[ordinary tiddlers|Ordinary Tiddler]] as well as [[shadow tiddlers|Shadow Tiddler]].
+
+;isShadowTiddler(title)
+: returns `true` if a [shadow tiddler|Shadow Tiddler]] with the given title exists, regardless of whether there may be also an [[ordinary tiddler|Ordinary Tiddler]] with the same title. This function is basically the complement to `tiddlerExists()`.
+
+;tiddlerExists(title)
+: returns `true` if an [[ordinary tiddler|Ordinary Tiddler]] with the title specified exists. Otherwise returns `false`, even if there exists a [[shadow tiddler|Shadow Tiddler]] with the same title. This function is basically the complement to `isShadowTiddler()`.
+
+! Wikie Plugin API
+
+;readPluginInfo()
+
+;getPluginInfo(title)

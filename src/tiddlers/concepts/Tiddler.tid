@@ -1,5 +1,5 @@
 created: 20141021201514946
-modified: 20141021203438308
+modified: 20141022074759350
 tags: Concept
 title: Tiddler
 type: text/vnd.tiddlywiki
@@ -16,27 +16,43 @@ So in order to change or update a tiddler you need to replace its tiddler object
 
 Talking about "classes" in an object-based language like JavaScript is slightly difficult. Most discussions put aside, we here simplify and thus call the tiddler constructor `$tw.Tiddler` also the tiddler class.
 
-Some tiddler methods are only defined later in [[$:/core/modules/tiddler.js]].
+! Tiddler API
+
+Tiddler objects expose a number of functions (methods) that serve as their API.
+
+Interestingly, the TiddlyWiki 5 core in its early boot phase sets up only a really minimalist set of tiddler API functions. Only later do Tiddlers learn more tricks, so more methods are defined in [[$:/core/modules/tiddler.js]] -- which is, by the way, a [[tiddlermethod module|tiddlermethod]]. Thus, it is possible to further extend the tiddler API by simply plugging in more `moduletype: tiddlermethod` modules into a TiddlyWiki 5 wiki.
+
+However, you need to be aware that during startup of a TiddlyWiki 5 instance not all tiddler API functions might be present.
 
 The following is an incomplete and rather subjective list of interesting tiddler methods:
+
+!! Minimalist API
+
+Now this is //almost// an minimalist API. But this could be even made more minimalist...
 
 ;hasField(field)
 : returns `true`, if the tiddler currently has the field specified in the `field` parameter.
 
+!! Extended API
+
+And now for more functionaliy...
+
+;getFieldString(field)
+: returns the value of the tiddler field named in the `field` parameter in its stringified form, regardless of the form the field is stored internally on tiddlers.
+
+;getFieldStringBlock(options)
+: returns all fields of the tiddler in a ''single'' string (that is, as a single block). This string contains multiple lines, separated by normalized line endings `"\n"`. Each line represents a single tiddler field with its field name and field value in the form "//name//: //value//".
+: Optionally, fields can selectively be excluded from the string by listing them in the `options.exclude` parameter. `options.exclude` must be an array of field names. If it is missing, it is assumed to be the empty array `[]`.
+
 ;hasTag(tag)
 : returns `true`, if the tiddler is tagged with the tag specified in the `tag` parameter.
-
-;isPlugin()
-: returns `true` if the tiddler is a plugin. This is the case if the tiddler is of `type: application/json` and also has a `plugin-type` field set.
 
 ;isDraft()
 : returns `true` if the tiddler is a draft tiddler. This is the case if the tiddler has a `draft.of` field.
 
-;getFieldString(field)
-: returns the value of the tiddler field in stringified form.
-
-;getFieldStringBlock(options)
-: `options.exclude`
-
 ;isEqual(tiddler, excludeFields)
-:
+: compares the fields of this tiddler with another tiddler specified through the `tiddler` parameter and returns `true` if both are equal tiddler field-wise.
+: Optionally, you can specify the names of the fields to exclude from the comparism by listing them in the `excludeFields` array parameter. This parameter defaults to the empty array `[]`.
+
+;isPlugin()
+: returns `true` if the tiddler is a plugin. This is the case if the tiddler is of `type: application/json` and also has a `plugin-type` field set.
