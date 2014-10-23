@@ -1,0 +1,25 @@
+created: 20141023094053248
+modified: 20141023094440923
+tags: Module
+title: load-modules
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+''load-modules'' is a [[startup]] module that activates certain other module types in a specific sequence. Without load-modules these modules would never get activated.
+
+! Technical
+
+The [[$:/core/modules/startup/load-modules.js]] startup module is essential in that it is the one which actually activates the following specific module types, in this particular sequence:
+
+* first all [[utils]] modules,
+* optionally, only when running on Node.js, [[utils-node]] modules,
+* [[global]] modules,
+* [[config]] modules,
+* [[tiddlerfield]] modules,
+* [[tiddlermethod]] modules,
+* [[wikimethod]] modules,
+* [[tiddlerdeserializer]] modules,
+* and finally [[macro]] modules.
+
+Please note that without the help of the `load-modules` startup module the aforementioned module types would get loaded but ''never activated''. Just creating a module tiddler doesn't mean it ever gets to run. Au contraire.

@@ -1,14 +1,14 @@
 created: 20140925184608907
-modified: 20141021192936884
+modified: 20141023100926683
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
 
-!Abstract
+! Abstract
 
 A ''plugin'' in ~TiddlyWiki 5 is a bundle of tiddlers packaged together as a //single// tiddler. Plugins are used to distribute optional customizations components for ~TiddlyWikis.
 
-!Types
+! Plugin Types
 
 Plugins have a `plugin-type` field that currently can take on these values:
 
@@ -22,7 +22,15 @@ Plugins have a `plugin-type` field that currently can take on these values:
 * `import` is used by the core during import.
 @@
 
-!Meta
+! Plugin Priority
+
+Plugins optionally can have a `plugin-priority` field. This field controls the order in which plugins get unpacked. The lower its plugin priority is, the earlier this plugin gets unpacked.
+
+In consequence, when multiple plugins contain the same [[shadow tiddler|Shadow Tiddler]], then the plugin with the highest plugin-priority wins. For plugins with the same plugin-priority, the plugin with the alphabetically latest title wins. That's zzWins, so to say...
+
+For instance, the TiddlyWiki 5 Core has `plugin-priority: 0`.
+
+! Meta
 
 Plugin tiddlers ''must'' be [[ordinary tiddlers|Ordinary Tiddler]]. They cannot be [[shadow tiddlers|Shadow Tiddler]] themselves. Thus, you can't pack plugins into plugins. But you can pack plugins into libraries, but that's another story.
 

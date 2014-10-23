@@ -1,25 +1,39 @@
 created: 20141015130515998
-modified: 20141015165035151
+modified: 20141023095057649
 tags: [[Module Type]]
 title: startup
 type: text/vnd.tiddlywiki
 
-Startup [[modules|Module]] are automatically run at the end of TiddlyWiki's [[boot process|http://tiddlywiki.com/#BootMechanism]]. They can be run only before or after a particular set of tasks has been run. Also, startup modules can be restricted to specific platforms only.
+! Abstract
+
+''Startup'' [[modules|Module]] are automatically run at the end of TiddlyWiki's [[boot process|http://tiddlywiki.com/#BootMechanism]]. They can be run only before or after a particular set of tasks has been run. Also, startup modules can be restricted to specific platforms only.
 
 Startup modules are identified by their `module-type: startup` setting.
 
-An important startup module is [[$:/core/modules/startup/load-modules.js]] which activates the following specific module types in this particular sequence:
+One important startup module in the TiddlyWiki 5 core is the [[load-modules]] startup module: it is reponsible to activate certain other module types.
 
-* first all [[utils]] modules,
-* optionally, only when running on Node.js, [[utils-node]] modules,
-* [[global]] modules,
-* [[config]] modules,
-* [[tiddlerfield]] modules,
-* [[tiddlermethod]] modules,
-* [[wikimethod]] modules,
-* [[tiddlerdeserializer]] modules,
-* and finally [[macro]] modules.
+! Startup API
 
-Please note that without the help of the `load-modules` startup module the aforementioned module types would get loaded but ''never activated''. Just creating a module tiddler doesn't mean it ever gets to run. Au contraire.
+Startup modules need to export this information:
 
-For more information, please refer to [[TiddlyWiki's startup mechanism|http://tiddlywiki.com/#StartupMechanism]] in the official documentation. 
+;name
+: The name (identifier) of the startup module. This name can be referenced by other startup modules in order to express certain restrictions on the startup order of modules.
+
+;platforms
+: An (optional) array of platform names: this startup module will only be run on the [[platforms|Platform]] named here.
+
+;after
+: An (optional) array of startup modules on which this module depends: it must be started only after the referenced modules have been run. See also `before`.
+
+;before
+:  An (optional) array of startup modules on which this module depends: it must have been run only before the referenced modules will be run. See also `after`.
+
+;synchronous
+: Boolean indicating whether this startup module must be executed synchronous.
+
+;startup()
+: The function that represents the execution body this startup module.
+
+! References
+
+For more information, please refer to [[TiddlyWiki's startup mechanism|http://tiddlywiki.com/#StartupMechanism]] in the official documentation.

@@ -1,0 +1,48 @@
+created: 20141023060609084
+modified: 20141023083649871
+tags: Concept
+title: Modules (Browser)
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+''Modules'' are the basic unit of modularity in TiddlyWiki 5. Modules allow larger projects built using JavaScript technology to be modularized in order to make them better manageable.
+
+Fortunately, TiddlyWiki 5 puts much emphasis on modularity, which makes extending it so much more pleasure. Its notion of a module is central to many other elements.
+
+The concept of a TiddlyWiki ''module'' bases on the [[CommonJS Modules 1.0 definition|http://wiki.commonjs.org/wiki/Modules/1.0]]. Simply spoken, modules export their APIs solely through their `exports` free module variables. APIs of other modules are accessible using the free `require()` function.
+
+! Module Environments
+
+TiddlyWikis can execute in two main HTML/JavaScript environments:
+
+@@.wide
+# any modern HTML5-compliant web browser,
+
+# in an Node.js-based environment. Here, we find three main operation modes:
+## running as a TiddlyWiki server instance that is serving itself to web browsers (or, heaven forbid, even other Node.js-based TiddlyWiki server instances),
+## running a command-line job and then terminating.
+## running a test suite, creating a report, and then terminating.
+@@
+
+!! Node.js
+
+The Node.js-based environment provides already its own module environment based on the  [[CommonJS Modules 1.0|http://wiki.commonjs.org/wiki/Modules/1.0]] concept.
+
+!! Browser
+
+But when TiddlyWiki 5 runs inside a browser then there currently is no browser-supplied module support. In consequence, TiddlyWiki 5 then enables its own module support.
+
+This built-in module support is part of [[$:/boot/bootprefix.js]]. The bootprefix "module" only gets loaded when TiddlyWiki detects early in its boot process that it runs directly inside a browser without direct module support.
+
+;$tw.modules.define(moduleName, moduleType, definition)
+:
+:;moduleName
+:: The name of the module (its identifier) that is to be defined.
+:;moduleType
+::
+:;definition
+:: The module definition can take on any of these three different forms:
+::# an object (bascially a hashmap) containing the exports of this module.
+::# a function object that returns the exports of this module in an object and that takes the three arguments `module`, `require`, and `exports`.
+::# a string representing a function body that returns the exports of this module in an object through `exports` and that expects the three arguments `module`, `require`, and `exports`.

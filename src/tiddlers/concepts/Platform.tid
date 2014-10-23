@@ -1,0 +1,23 @@
+created: 20141023095115220
+modified: 20141023095858849
+tags: Concept
+title: Platform
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+TiddlyWiki 5 can be run on a wide variety of JavaScript platforms. In some situations you may need to know the exact platform, this is where ''platforms'' can be differentiated by name.
+
+For instance, some [[startup]] modules are allowed to run only on certain platforms. Most prominently, the startup modules that implements commands is run only on the `node` Node.js platform.
+
+! Platform Names
+
+Some (arbitrary) examples of platform names are:
+
+* `node`: when running TiddlyWiki under the control of Node.js.
+* `firefox`: when running inside a Firefox web browser.
+* `chrome`
+* `webkit`
+* `safari`
+* `iphone`
+* ...and lots more.

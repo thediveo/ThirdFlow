@@ -1,5 +1,5 @@
 created: 20141022081246017
-modified: 20141022084805849
+modified: 20141023060532912
 tags: Concept
 title: Wiki
 type: text/vnd.tiddlywiki
@@ -13,6 +13,9 @@ type: text/vnd.tiddlywiki
 :# a tiddler object (`$tw.Tiddler`): the tiddler object to be added to the wiki.
 :# a hashmap of name-value pairs describing the data of a tiddler. `addTiddler` then creates a tiddler object (`$tw.Tiddler`) from this hashmap and adds this object to the wiki. It is important that the hashmap contains at least a `title` element, otherwise an exception will be thrown.
 : Please note that you can only add [[ordinary tiddlers|Ordinary Tiddler]] but not [[shadow tiddlers|Shadow Tiddler]]. Shadow tiddlers are unpacked from [[plugin tiddlers|Plugin]] and cannot be modified -- except by modifying the plugin and unpacking it (which isn't officially allowed practice).
+
+;addTiddlers(tiddlers)
+: Adds multiple tiddlers to the wiki instance. The parameter `tiddlers` is an array of either tiddler objects (`$tw.Tiddler`) or hashmaps with at least a `title` element. See also `addTiddler()`.
 
 ;allShadowTitles()
 : returns a string array of all [[shadow tiddlers|Shadow Tiddler]] titles. It never includes any [[ordinary tiddler|Ordinary Tiddler]] (see `allTitles` instead).
@@ -60,3 +63,13 @@ type: text/vnd.tiddlywiki
 ;readPluginInfo()
 
 ;getPluginInfo(title)
+
+! Module API
+
+;defineTiddlerModules()
+: Iterates over all modules tiddlers, defining (Javascript) modules from these module tiddlers. Module tiddlers possess a `module-type` field and also have a `type` of either `application/javascript`, `application/json`, or `application/x-tiddler-dictionary`.
+: Please note that this function only iterates over [[ordinary tiddlers|Ordinary Tiddler]], excluding [[shadow tiddlers|Shadow Tiddler]]. See also `defineShadowModules`.
+
+;defineShadowModules()
+: Iterates over all module [[shadow tiddlers|Shadow Tiddler]] which haven't been overwritten by a [[ordinary tiddlers|Ordinary Tiddler]], defining (JavaScript) modules from these module tiddlers.
+: Please note that here only `type: application/javascript` is allowed.
