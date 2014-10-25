@@ -2,11 +2,11 @@ author: TheDiveO
 created: 20140902114846490
 description: Third Flow in-TW plugin development process support
 list: readme license history
-modified: 20141021183017561
+modified: 20141023200024345
 plugin-type: plugin
 source: http://thediveo.github.io/ThirdFlow
 title: $:/plugins/TheDiveO/ThirdFlow
 type: application/json
-version: 1.0.7-master
+version: 1.0.8-src-sidebar-tab-ui
 
 {"tiddlers": {}}

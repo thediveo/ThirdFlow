@@ -1,21 +1,23 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20141005205418407
+modified: 20141025085958277
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
 
 \define plugin-full-path() $:/plugins/$(plugin-name)$
 
-\define plugin-icon() $:/plugins/$(plugin-name)$/icon
+\define new-source-tiddler-name() $(plugin-full-path)$/new source tiddler
 
-\define plugin-type-filter() [{$:/plugins/$(plugin-name)$!!plugin-type}]
+\define plugin-icon() $(plugin-full-path)$/icon
+
+\define plugin-type-filter() [{$(plugin-full-path)$!!plugin-type}]
 
 \define plugin-default-icon() $:/core/images/plugin-generic-$(plugin-type)$
 
-\define plugin-contents-filter() [prefix[$:/plugins/$(plugin-name)$]!is[shadow]]
+\define plugin-contents-filter() [prefix[$(plugin-full-path)$]!is[shadow]]
 
-\define plugin-item-relname() [is[current]removeprefix[$:/plugins/$(plugin-name)$/]!prefix[tiddlywiki/]]
+\define plugin-item-relname() [is[current]removeprefix[$(plugin-full-path)$/]!prefix[tiddlywiki/]]
 
 \define plugin-item()
 <div class="tc-menu-list-subitem">
@@ -29,20 +31,27 @@ type: text/vnd.tiddlywiki
 
 <div class="tc-timeline">
   <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]]" variable="plugin-name">
-    <div class="tc-menu-list-item">
+    <div class="tc-menu-list-item tc-sidebar-header">
     
+      <!-- plugin icon or default icon -->
       <div class="tc-plugin-info-chunk">
         <$transclude tiddler=<<plugin-icon>> >
           <$list filter=<<plugin-type-filter>> variable="plugin-type">
             <$transclude tiddler=<<plugin-default-icon>> />
           </$list>
         </$transclude>
-        
       </div>
+      <!-- plugin author/name w. link -->
       <$link to=<<plugin-full-path>>>
         <$macrocall $name="plugin-name" $output="text/plain" />
       </$link>
+      <!-- new plugin source tiddler here -->
+      &nbsp;<$button message="tm-new-tiddler" param=<<new-source-tiddler-name>> class=<<tv-config-toolbar-class>> tooltip="Create a new source tiddler here">
+	    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">{{$:/core/images/new-button}}</$list>
+		<$list filter="[<tv-config-toolbar-text>prefix[yes]]"><span class="tc-btn-text"><$text text="New source here"/></span></$list>
+	  </$button>
       
+      <!-- list of plugin contents -->
       <$list filter=<<plugin-contents-filter>> >
         <<plugin-item>>
       </$list>
