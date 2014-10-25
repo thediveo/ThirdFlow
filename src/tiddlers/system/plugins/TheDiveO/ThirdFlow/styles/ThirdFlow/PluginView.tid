@@ -1,0 +1,27 @@
+created: 20141025152245526
+modified: 20141025175439479
+tags: $:/tags/Stylesheet
+title: $:/plugins/TheDiveO/ThirdFlow/styles/ThirdFlow/PluginView
+type: text/vnd.tiddlywiki
+
+tr.tfc-plugin-info-element td {
+  padding-top: 0.4ex;
+  padding-bottom: 0.4ex;
+}
+
+td.tfc-plugin-info-element-name {
+  text-align: right;
+  vertical-align: top;
+  background-color: <<colour table-header-background>>;
+  font-weight: bold;
+}
+
+td.tfc-plugin-info-element-value {
+  text-align: left;
+  vertical-align: top;
+}
+
+span.tfc-plugin-info-unspecified {
+  font-style: italic;
+  color: <<colour very-muted-foreground>>;
+}

@@ -1,0 +1,22 @@
+color: #ff0000
+created: 20141025142111324
+modified: 20141025144113757
+tags: [[View Template]]
+title: View Template
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+''View templates'' are (specialized) tiddlers that are responsible for rendering tiddlers for //display//. Such rendering template tiddlers simply use the same TiddlyWiki 5 markup that is also used elsewhere in the TiddlyWiki 5 ecosystem.
+
+In contrast, //editing// tiddlers is handled through a separate set of [[edit templates|Edit Template]].
+
+! View Template Parts for Modularity
+
+TiddlyWiki 5 uses a modular template architecture. Technically, there is a //single// (and thus primary) view template ([[$:/core/ui/ViewTemplate]]), but it immediately hands off rendering the various parts that constitute the display of a single tiddler to various ''view template part'' tiddlers.
+
+The individual view template parts are identified by the system tag {{$:/tags/ViewTemplate||$:/core/ui/TagTemplate}}. The order in which the individual template parts are transcluded for tiddler display is controlled in the usual way through the `list` field of the primary view template ([[$:/core/ui/ViewTemplate]]), as well as the `list-before` and `list-after` fields of the individual view template part tiddlers. All view template parts not explicitly placed into order using `list`, `list-before`, and `list-after` get transcluded towards the end of the rendering process.
+
+The following view template parts exist:
+
+<<list-links filter:"[tag[View Template]!is[current]]">>

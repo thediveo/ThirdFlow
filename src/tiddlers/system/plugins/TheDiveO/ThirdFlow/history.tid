@@ -1,10 +1,11 @@
 created: 20140902083720188
-modified: 20141023195825282
+modified: 20141025184049173
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''1.0.8'' -- usability improvements.
-** added "new plugin source tiddler here" to the "plugin sources" sidebar tab. 
+** added "new plugin source tiddler here" to the "plugin sources" sidebar tab.
+** added new plugin view template part: it shows the meta information associated with the plugin and is shown before the core's stock plugin view template that (only) lists the contents of a plugin.
 * ''1.0.7'' -- minor fix release and core upgrade.
 ** fixed the add tag button not working.
 ** upgraded the release demo wiki core to 5.1.3.

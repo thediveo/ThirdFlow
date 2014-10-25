@@ -1,0 +1,6 @@
+created: 20141025175537027
+modified: 20141025175826169
+title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin/types/import
+type: text/vnd.tiddlywiki
+
+`import` -- is a special plugin type only used internally by the TiddlyWiki 5 core when importing tiddlers. No ordinary plugin should ever use a plugin type of `import`.

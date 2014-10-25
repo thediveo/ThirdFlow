@@ -1,0 +1,7 @@
+created: 20141025151353413
+modified: 20141025151605893
+tags: [[View Template]]
+title: ThirdFlow Plugin View Template Part
+type: text/vnd.tiddlywiki
+
+The view template part [[$:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/Plugin]] that comes with the <<tf>> renders plugin meta information.

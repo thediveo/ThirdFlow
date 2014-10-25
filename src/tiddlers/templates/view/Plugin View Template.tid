@@ -1,0 +1,13 @@
+created: 20141025145426966
+modified: 20141025145846517
+tags: [[View Template]]
+title: Plugin View Template
+type: text/vnd.tiddlywiki
+
+! Abstract
+
+For [[plugins|Plugin]], the ''plugin view template part'' renders the advanced plugin information (as it is also shown in the control panel under the "plugins" tab). At the time of this writing, this advanced plugin information constitutes the list of [[shadow tiddlers|Shadow Tiddler]] contained in the plugin.
+
+! Technical
+
+This view template part only becomes active when it detects a plugin through the `plugin-type` field of a tiddler.
