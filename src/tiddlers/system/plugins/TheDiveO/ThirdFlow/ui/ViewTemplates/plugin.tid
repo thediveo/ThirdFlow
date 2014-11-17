@@ -1,6 +1,6 @@
 created: 20141025150024301
 list-before: $:/core/ui/ViewTemplate/plugin
-modified: 20141117185851769
+modified: 20141117190822226
 tags: $:/tags/ViewTemplate
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin
 type: text/vnd.tiddlywiki
@@ -62,8 +62,18 @@ type: text/vnd.tiddlywiki
 
 <div class="tfc-plugin-info">
   <table class="tfc-plugin-info">
-    <<plugin-info-filter "Plugin publisher" "[all[current]removeprefix[$:/plugins/]titlecomponents[]first[]]">>
-    <<plugin-info-filter "Plugin name" "[all[current]removeprefix[$:/plugins/]titlecomponents[]nth[2]]">>
+    <$list filter="[all[current]removeprefix[$:/plugins/]]">
+    	<<plugin-info-filter "Plugin publisher" "[all[current]titlecomponents[]first[]]">>
+    	<<plugin-info-filter "Plugin name" "[all[current]titlecomponents[]nth[2]]">>
+    </$list>
+    <$list filter="[all[current]removeprefix[$:/themes/]]">
+    	<<plugin-info-filter "Theme publisher" "[all[current]titlecomponents[]first[]]">>
+    	<<plugin-info-filter "Theme name" "[all[current]titlecomponents[]nth[2]]">>
+    </$list>
+    <$list filter="[all[current]prefix[$:/core]]">
+    	<<plugin-info-row "Plugin publisher" "TiddlyWiki">>
+        <<plugin-info-row "Plugin name" "core">>
+    </$list>
     <<plugin-info-field "Version" "version">>
     <$macrocall $name="plugin-info-field-plugin-type" name="Plugin type" />
     <<plugin-info-field "Description" "description">>
