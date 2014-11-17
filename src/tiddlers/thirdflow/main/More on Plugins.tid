@@ -1,6 +1,6 @@
 caption: More on Plugins
 created: 20140925194827934
-modified: 20141020175623595
+modified: 20141117173656651
 tags: Main
 title: More on Plugins
 type: text/vnd.tiddlywiki
@@ -10,8 +10,8 @@ You can't just get enough information? So here it is: more background informatio
 * the [[plugin|Plugin]] concept.
 * the [[module|Module]] concept as well as [[module types|Module Type]].
 * what are [[editions|Edition]]?
-* when working with ~TiddlyWiki 5 from the command line: [[commands|Command]].
-* [[filters|Filter]] are at the heart of the //Third Flow//'s crazy replication magic.
+* when working with <<tw5>> from the command line: [[commands|Command]].
+* [[filters|Filter]] are at the heart of the <<tf>>'s crazy replication magic.
 * and finally: some helpful [[terminology|Terminology]] around plugins.
 
-Oh, the //Third Flow// plugin may also be interesting: [[discover|Discover]] its secrets and learn more about plugins.
+Oh, the <<tf>> plugin may also be interesting: [[discover|Discover]] its secrets and learn more about plugins.

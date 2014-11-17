@@ -1,8 +1,18 @@
 created: 20140903072613112
-modified: 20141020092413418
+modified: 20141117175043813
 tags: $:/tags/Stylesheet Customization
 title: ThirdFlow Wiki Styling
 type: text/css
+
+span.tf-name {
+  font-style: italic;
+  text-decoration-style: wavy;
+  text-decoration-line: underline;
+  text-decoration-color: #6685C2;
+  -moz-text-decoration-style: wavy;
+  -moz-text-decoration-line: underline;
+  -moz-text-decoration-color: #6685C2;
+}
 
 ol.wide li, ul.wide li {
   margin-top: 1ex;

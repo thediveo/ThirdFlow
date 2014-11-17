@@ -1,6 +1,6 @@
 created: 20141025150024301
 list-before: $:/core/ui/ViewTemplate/plugin
-modified: 20141025183919439
+modified: 20141117185851769
 tags: $:/tags/ViewTemplate
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin
 type: text/vnd.tiddlywiki
@@ -50,12 +50,20 @@ type: text/vnd.tiddlywiki
   </$list>
 \end
 
+\define plugin-info-filter(name, filter)
+  <$list filter="$filter$" emptyMessage="""<<plugin-info-row "$name$" "<$macrocall $name='plugin-info-field-unspecified'/>" >>""">
+    <$macrocall $name="plugin-info-row" name="$name$" value={{!!title}} />
+  </$list>
+\end
+
 <$list filter="[all[current]has[plugin-type]]">
 
 ! Plugin Information
 
 <div class="tfc-plugin-info">
   <table class="tfc-plugin-info">
+    <<plugin-info-filter "Plugin publisher" "[all[current]removeprefix[$:/plugins/]titlecomponents[]first[]]">>
+    <<plugin-info-filter "Plugin name" "[all[current]removeprefix[$:/plugins/]titlecomponents[]nth[2]]">>
     <<plugin-info-field "Version" "version">>
     <$macrocall $name="plugin-info-field-plugin-type" name="Plugin type" />
     <<plugin-info-field "Description" "description">>
