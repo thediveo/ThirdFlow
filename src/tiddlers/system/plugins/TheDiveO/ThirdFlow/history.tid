@@ -1,9 +1,10 @@
 created: 20140902083720188
-modified: 20141025184049173
+modified: 20141128200910800
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''1.0.8'' -- usability improvements.
+* ''1.0.8'' -- fixes and usability improvements.
+** fixed broken handling of Javascript tiddlers when creating them: they are now correctly created as .js files. Also corrected file name handling to avoid duplicated file endings in case the title already contains the extension (as it is custom for Javascript tiddlers).
 ** added "new plugin source tiddler here" to the "plugin sources" sidebar tab.
 ** added new plugin view template part: it shows the meta information associated with the plugin and is shown before the core's stock plugin view template that (only) lists the contents of a plugin.
 * ''1.0.7'' -- minor fix release and core upgrade.
@@ -23,7 +24,7 @@ type: text/vnd.tiddlywiki
 *** added support for TW5's native ~JavaScript storage format when creating ~JavaScript tiddlers directly inside ~TiddlyWiki 5. Tiddler meta-data gets correctly inserted into a (special) comment section.
 * ''1.0.4'' -- fix and more documentation.
 ** fixed a typo in the (empty) source plugin tiddler itself which caused hiccups in ~TiddlyWiki's control panel plugin tab.
-** added more background information about plugins, modules, and the crazy stuff the //Third Flow// plugin is made of. 
+** added more background information about plugins, modules, and the crazy stuff the <<tf>> plugin is made of. 
 * ''1.0.3'' -- upgraded to work with the final ~TiddlyWiki 5.1.x releases.
 ** fixed using deprecated regular expression when packing plugin tiddlers.
 * ''1.0.2'' -- fix and polishing release.
@@ -33,6 +34,6 @@ type: text/vnd.tiddlywiki
 * ''1.0.1'' -- fix and polishing release.
 ** fixes an issue where the user plugin demonstration wikis contained still the plugin source in addition to the plugin itself.
 ** included polishing documentation from pmario (thanks!).
-* ''1.0.0'' -- this marks the first public release of the //Third Flow// plugin. Of course, the //Third Flow// eats its own dog food: this plugin has been developed with itself. Sweet, isn't it?
+* ''1.0.0'' -- this marks the first public release of the <<tf>> plugin. Of course, the <<tf>> eats its own dog food: this plugin has been developed with itself. Sweet, isn't it?
 ** the ``--makeplugin`` command for creating plugins in headless TW5 instances running under Node.js.
 ** the ``hierarchicalfilesystemadaptor`` sync adapter that stores tiddlers according to their hierarchical names into folders and subfolders.

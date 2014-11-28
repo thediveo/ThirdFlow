@@ -1,5 +1,5 @@
 created: 20140903072613112
-modified: 20141117175043813
+modified: 20141128202018930
 tags: $:/tags/Stylesheet Customization
 title: ThirdFlow Wiki Styling
 type: text/css
@@ -45,15 +45,6 @@ table tr.evenRow td {
   background-color: #f8f8f8;
 }
 
-.tc-story-river {
-  width: 75%;
-}
-
-.tc-sidebar-scrollable {
-  width: 25%;
-  left: 75%;
-}
-
-.tc-tiddler-frame {
-  width: 100%;
+table.plain tr.evenRow td {
+  background-color: inherit !important;
 }
