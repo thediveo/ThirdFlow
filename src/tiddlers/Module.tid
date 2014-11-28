@@ -1,13 +1,13 @@
 color: #880000
 created: 20140925193346003
-modified: 20141117180952640
+modified: 20141128184848215
 tags: Terminology
 title: Module
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-A ''module'' in <<tw5>> is a tiddler that contains executable [[JavaScript|http://en.wikipedia.org/wiki/JavaScript]] code. So ~TiddlyWiki 5 modules always need to be implemented in ~JavaScript and there is no other programming language supported (at the time of this writing).
+A ''module'' in <<tw5>> is a tiddler that contains executable [[JavaScript|http://en.wikipedia.org/wiki/JavaScript]] code. So ~TiddlyWiki 5 modules always need to be implemented in ~JavaScript and there is no other programming language supported (at the time of this writing). In consequence, module tiddlers are those tiddlers with their `type` field set `application/javascript`.
 
 Oh ... pardon, that's [[ECMAScript|http://en.wikipedia.org/wiki/ECMAScript]] to be overly correct. But that's a complete story of its own. In this wiki, we stick to the ~JavaScript name as it is in so much widespread use.
 
