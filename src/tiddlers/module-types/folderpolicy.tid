@@ -1,9 +1,15 @@
 created: 20141015132250399
-modified: 20141015163000903
+modified: 20141128212430146
 tags: [[Module Type]]
 title: folderpolicy
 type: text/vnd.tiddlywiki
 
-Folder policy [[modules|Module]] control how tiddlers are organized into an optionally hierarchical folder structure when stored in a normal file system. They are used by the [[hierarchicalfilesystemadaptor Sync Adaptor]].
+!Abstract
 
-Folder policy modules are identified by their `module-type: folderpolicy` setting.
+''Folder policy [[modules|Module]]'' control when using the <<tf>> plugin how tiddlers are organized into an optionally hierarchical folder structure any time they need to be stored in a normal file system. You can learn more about them under the topic [[Folder Policy]].
+
+!Technical
+
+Folder policy modules are uniquely identified by their `module-type: folderpolicy` setting.
+
+The folder policy modules are (solely) used by the [[hierarchicalfilesystemadaptor Sync Adaptor]].
