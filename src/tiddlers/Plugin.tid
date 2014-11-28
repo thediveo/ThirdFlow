@@ -1,12 +1,12 @@
 created: 20140925184608907
-modified: 20141023100926683
+modified: 20141128204141936
 tags: Terminology
 title: Plugin
 type: text/vnd.tiddlywiki
 
 ! Abstract
 
-A ''plugin'' in ~TiddlyWiki 5 is a bundle of tiddlers packaged together as a //single// tiddler. Plugins are used to distribute optional customizations components for ~TiddlyWikis.
+A ''plugin'' in <<tw5>> is a bundle of tiddlers packaged together as a //single// tiddler. Plugins are used to distribute optional customizations components for ~TiddlyWikis.
 
 ! Plugin Types
 
@@ -47,9 +47,9 @@ During the boot process of a ~TiddlyWiki 5 or later when importing a plugin into
 Basically, there are two ways to package plugins:
 
 @@.wide
-# inside the web browser from the JavaScript console. I won't further detail this process as I consider the //Third Flow// process to be much easier in comparism.
+# inside the web browser from the JavaScript console. I won't further detail this process as I consider the <<tf>> process to be much easier in comparism.
 
-# from the command line running a ~TiddlyWiki 5 instance under the control of Node.js and using the [[--packplugin|packplugin Command]] command that comes with the //Third Flow// plugin. Typically, you will call this command during the release phase from your ~TiddlyWiki [[release edition]].
+# from the command line running a ~TiddlyWiki 5 instance under the control of Node.js and using the [[--packplugin|packplugin Command]] command that comes with the <<tf>> plugin. Typically, you will call this command during the release phase from your ~TiddlyWiki [[release edition]].
 @@
 
 !See Also

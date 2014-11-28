@@ -1,14 +1,16 @@
 caption: User Interface
 created: 20141020093436958
-modified: 20141020095540954
+modified: 20141128204835879
 tags: Main
 title: User Interface
 type: text/vnd.tiddlywiki
 
-When you install the //Third Flow// plugin into your own plugin development wiki, you get the following additional tools in the user interrface:
+When you install the <<tf>> plugin into your own plugin development wiki, you get the following additional tools in the user interface:
 
 @@.wide
 * ''Plugin Sources'' is a new sidebar tool that you will find under the //More// tab. It lists only plugin source tiddlers, and this in a more compact format. Source tiddlers are tiddlers below `$:/plugins` and they must be [[ordinary tiddlers|Ordinary Tiddler]]. In fact, they must be [[foreground tiddlers|Foreground Tiddler]]. Your plugin source code tiddlers get organized by plugin, so it's easier to work even on multiple plugins simultaneously.
+
+* An additional ''plugin view template'' that neatly displays relevant plugin meta information, such as the publisher, and more.
 
 * ''File Storage Configuration'' is a new [[folder configuration tab in the control panel|$:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage]]. It offers a convenient way to configure how your tiddlers get organized into folders and subfolders within the source code repository on «disk». Basically, you can configure the folder name for drafts and system tiddlers. Even better, you may want to try our tag-based folders: easily organize your tiddlers into subfolders according to tags.
 @@

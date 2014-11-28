@@ -1,5 +1,5 @@
 created: 20141020212114405
-modified: 20141021165851005
+modified: 20141128203816373
 tags: Macro
 title: hashify Macro
 type: text/vnd.tiddlywiki
@@ -8,7 +8,7 @@ type: text/vnd.tiddlywiki
 
 The ''hashify'' macro returns a (mostly) unique identifier on the basis of a tiddler title. This macro is especially helpful in situations where it isn't desirable to embed a full title, such as a tag name (which is a nothing more than a title), but where a one-to-one relationship between a title and a hash value is required.
 
-For instance, the //Third Flow// plugin uses the hashify macro to associate a //separate// configuration tiddler with each configured tag. By using the hash-ified tag name, the //Third Flow// plugin keeps the config tiddler titles short and this helps maintaining the plugin.
+For instance, the <<tf>> plugin uses the hashify macro to associate a //separate// configuration tiddler with each configured tag. By using the hash-ified tag name, the <<tf>> plugin keeps the config tiddler titles short and this helps maintaining the plugin.
 
 ! Technical
 

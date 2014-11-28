@@ -1,6 +1,6 @@
 color: #77a70e
 created: 20140926142754247
-modified: 20140926165508495
+modified: 20141128203526384
 tags: Terminology
 title: Filter
 type: text/vnd.tiddlywiki
@@ -11,7 +11,7 @@ In ~TiddlyWiki 5, ''filters'' are used to choose tiddlers according to some crit
 
 New filters are implemented through [[modules|Module]] with a `module-type` of either `filter` or `isfilteroperator`. The latter allows to cleanly add even more selection categories to the existing `is` filter operator without the need to hacking it.
 
-The //Third Flow// plugin comes with these additional filters:
+The <<tf>> plugin comes with these additional filters:
 
 <<list-links filter:"[tag[Filter]]">>
 

@@ -1,12 +1,12 @@
 created: 20140902130549262
-modified: 20140925204203828
+modified: 20141128203343245
 tags: Edition
 title: develop edition
 type: text/vnd.tiddlywiki
 
 The ``develop`` [[edition|Edition]] is used while developing and maintaining the source code for your plugin.
 
-The folder ``./editions/develop`` only contains the ~TiddlyWiki configuration in ``tiddlywiki.info`` (see also the [[develop template|editions/develop/tiddlywiki.info]]). It's quite a typical configuration, but with these notable exceptions geared towards the //Third Flow// development flow:
+The folder ``./editions/develop`` only contains the ~TiddlyWiki configuration in ``tiddlywiki.info`` (see also the [[develop template|editions/develop/tiddlywiki.info]]). It's quite a typical configuration, but with these notable exceptions geared towards the <<tf>> development flow:
 
 @@.wide
 * the single source folder ``./src/`` is automatically and transparently included using the ``includeWikis`` configuration option.

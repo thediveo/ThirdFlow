@@ -1,12 +1,12 @@
 created: 20140925203841854
-modified: 20140926174910359
+modified: 20141128204429406
 tags: Module Filter [[is Filter Operand]]
 title: shadowinsync is Filter Operand
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-When working with the //Third Flow// you only have a single tiddler source tree. In consequence, your ~TiddlyWiki thus contains both the source tiddlers for your [[plugin|Plugin]] as well as the plugin itself. During development, your plugin is empty, so in consequence there are no [[shadow tiddlers|Shadow Tiddler]].
+When working with the <<tf>> you only have a single tiddler source tree. In consequence, your <<tw5>> thus contains both the source tiddlers for your [[plugin|Plugin]] as well as the plugin itself. During development, your plugin is empty, so in consequence there are no [[shadow tiddlers|Shadow Tiddler]].
 
 Now, when you want to release a demonstration ~TiddlyWiki from these sources this demo wiki should contain the (now fully packaged) plugin itself but not the source code tiddlers that once made up the plugin.
 
@@ -16,9 +16,9 @@ This is where this strange new `is` filter operand comes in: simply spoken, it i
 
 !Save Template Magic
 
-The special //Third Flow// saving template thus is able to clone your source ~TiddlyWiki into the demo wiki without the sources ... all this without the need for any configuration. You don't need to punch in your plugin name anywhere.
+The special <<tf>> saving template thus is able to clone your source ~TiddlyWiki into the demo wiki without the sources ... all this without the need for any configuration. You don't need to punch in your plugin name anywhere.
 
-Please note that this saving template is smart enough not only to throw out your plugin source tiddlers, but also the //Third Flow// plugin. If you are wondering why this doesn't cause problems with the //Third Flow// release process itself: the saving template is so smart that it only kicks the //Third Flow// plugin itself out when there are no sources for itself present.
+Please note that this saving template is smart enough not only to throw out your plugin source tiddlers, but also the <<tf>> plugin. If you are wondering why this doesn't cause problems with the <<tf>> release process itself: the saving template is so smart that it only kicks the <<tf>> plugin itself out when there are no sources for itself present.
 
 If you didn't fully grok this neat trick yet, don't worry. This is simply //Architects' Nirvana//.
 
@@ -34,7 +34,7 @@ Nothing more needs to be done here, simple and sweet.
 
 And as needed, this doesn't touch your own [[ordinary tiddlers|Ordinary Tiddler]] that overwrite other shadow tiddlers -- for instance, when customizing the site title, and similar stuff.
 
-While not needed by the //Third Flow// plugin itself, we also properly support negating the filter function, that is, `[!is[shadowinsync]]`.
+While not needed by the <<tf>> plugin itself, we also properly support negating the filter function, that is, `[!is[shadowinsync]]`.
 
 !Technical
 

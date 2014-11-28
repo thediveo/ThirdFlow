@@ -1,6 +1,6 @@
 color: #2891ac
 created: 20140925200545535
-modified: 20140926150559031
+modified: 20141128203506334
 tags: Terminology
 title: Edition
 type: text/vnd.tiddlywiki
@@ -15,11 +15,11 @@ Editions consist of one or multiple [[TiddlyWiki folders|http://tiddlywiki.com/#
 
 As ~TiddlyWiki folders can pull in other ~TiddlyWiki folders it is convention to usually call the topmost level of these folders the editions.
 
-For instance, the //Third Flow// plugin consists of three ~TiddlyWiki folders: `src`, `develop`, and `release`. But only the latter two folders `develop` and `release` are actually editions.
+For instance, the <<tf>> plugin consists of three ~TiddlyWiki folders: `src`, `develop`, and `release`. But only the latter two folders `develop` and `release` are actually editions.
 
 !Usage
 
-When developing [[plugins|Plugin]] using the //Third Flow// you will typically set up two editions. In the background, these different editions will map to the //same// set of source tiddlers. The editions differ in their configuration, such as the plugins they pull in.
+When developing [[plugins|Plugin]] using the <<tf>> you will typically set up two editions. In the background, these different editions will map to the //same// set of source tiddlers. The editions differ in their configuration, such as the plugins they pull in.
 
 In particular, the editions typically are these:
 
@@ -29,7 +29,7 @@ In particular, the editions typically are these:
 # the `release` edition is used to package the final plugin and to create both a single plugin `.tid` file as well as demonstration ~TiddlyWiki showcasing and documenting your new plugin. The release edition is different in that it pulls in again the sync adaptor, but this time it disables the synchronization. This is necessary, as otherwise the plugin tiddler would be synced back to disk immediately after it has been packaged. But we don't want this to happen as we need to explicitly dump the plugin tiddler into a file with a controlled filename in a controlled output directory.
 @@
 
-As an example of how this all works simply take //this// ~TiddlyWiki of the //Third Flow// plugin -- it has been released exactly using this mechanism.
+As an example of how this all works simply take //this// ~TiddlyWiki of the <<tf>> plugin -- it has been released exactly using this mechanism.
 
 
 !See Also

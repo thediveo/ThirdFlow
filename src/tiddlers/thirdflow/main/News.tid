@@ -1,6 +1,6 @@
 caption: News
 created: 20141020092824815
-modified: 20141020100849509
+modified: 20141128204105725
 tags: Main
 title: News
 type: text/vnd.tiddlywiki
@@ -13,4 +13,4 @@ This is useful for those situations where you need to add multiple (conflicting)
 
 !!Skeleton Project
 
-Included is now a complete skeleton project that you can find in the `skeleton` subfolder within the source code files for the //Third Flow//. This helps you to get quickly up and running the //Third Flow// in your own plugin projects.
+Included is now a complete skeleton project that you can find in the `skeleton` subfolder within the source code files for the <<tf>>. This helps you to get quickly up and running the <<tf>> in your own plugin projects.

@@ -1,5 +1,5 @@
 created: 20140925190552195
-modified: 20141021174841204
+modified: 20141128203736881
 tags: Terminology
 title: Foreground Tiddler
 type: text/vnd.tiddlywiki
@@ -14,7 +14,7 @@ In some contexts, the ~TiddlyWiki 5 documentation uses the broader term [[ordina
 
 !Technical
 
-In the context of the //Third Flow// plugin, the precise term of ''foreground tiddlers'' is of importance: when generating a demonstration ~TiddlyWiki 5 during the plugin release phase the //Third Flow// plugin automatically drops those foreground tiddlers that are synchronized to their shadows from a plugin to be released.
+In the context of the <<tf>> plugin, the precise term of ''foreground tiddlers'' is of importance: when generating a demonstration ~TiddlyWiki 5 during the plugin release phase the <<tf>> plugin automatically drops those foreground tiddlers that are synchronized to their shadows from a plugin to be released.
 
 Otherwise, such demo ~TiddlyWikis would contain both the plugin shadows as well as the original foreground tiddlers. While strictly this wouldn't be much of a concern, it defeats the purpose of a demostration wiki to also act as a final plugin check before official release.
 

@@ -1,5 +1,5 @@
 created: 20140925204107359
-modified: 20141020161237122
+modified: 20141128203853698
 tags: Module [[Sync Adaptor]]
 title: hierarchicalfilesystemadaptor Sync Adaptor
 type: text/vnd.tiddlywiki
@@ -20,7 +20,7 @@ The HFS sync adaptor is extensible using so-called [[folder policy modules|Folde
 
 !! Development Phase
 
-In order to use the HFS sync adaptor, you simply include it into your tiddler source file tree. Please note that we do ''not'' keep the HFS sync adaptor in a separate plugins folder. Instead, it is part of the //Third Flow// plugin itself. This makes deploying it much simpler: no plugin files configuration to add and maintain, just install the //Third Flow// plugin into your own plugin project and you are ready and set.
+In order to use the HFS sync adaptor, you simply include it into your tiddler source file tree. Please note that we do ''not'' keep the HFS sync adaptor in a separate plugins folder. Instead, it is part of the <<tf>> plugin itself. This makes deploying it much simpler: no plugin files configuration to add and maintain, just install the <<tf>> plugin into your own plugin project and you are ready and set.
 
 The HFS sync adaptor will be activated automatically as soon as it gets run under the control of a Node.js-based TiddlyWiki server.
 

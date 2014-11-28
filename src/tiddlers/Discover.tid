@@ -1,9 +1,9 @@
 created: 20141020155307660
-modified: 20141020175437751
+modified: 20141128203408435
 title: Discover
 type: text/vnd.tiddlywiki
 
-The //Third Flow// plugin is an interesting adventure into TiddlyWiki 5 development territory in itself.
+The <<tf>> plugin is an interesting adventure into TiddlyWiki 5 development territory in itself.
 
 * [[Sync Adaptor]] -- there can always be only one active in a given TiddlyWiki instance:
 ** [[hierarchicalfilesystemadaptor Sync Adaptor]] ... organizes your tiddlers neatly into folders and subfolders. Also does tag-based folder organization. And it has [[extensible folder policies|Folder Policy]] which you can even extend yourself. Very nice.

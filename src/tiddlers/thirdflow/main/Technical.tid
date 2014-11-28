@@ -1,14 +1,14 @@
 caption: Technical
 created: 20140902131746344
-modified: 20141020155252247
+modified: 20141128204957882
 tags: Main
 title: Technical
 type: text/vnd.tiddlywiki
 
-Interesting technical tidbits of //Third Flow// are:
+Interesting technical tidbits of <<tf>> are:
 
 @@.wide
-* you only need to maintain a ''single'' tiddler source code tree. All the tiddlers you're developing are living inside their hierarchical folders in and below the single ``./src/tiddlers`` hierarchy. In addition, there is no need for maintaining separate ~~``plugin/``~~ folder structures outside your main tiddler tree. This simplification is especially convenient when developing single and probably simpler plugins which often do not need all the whistles and bells of what ~TiddlyWiki 5 has to offer under control of Node.js.
+* you only need to maintain a ''single'' tiddler source code tree. All the tiddlers you're developing are living inside their hierarchical folders in and below the single ``./src/tiddlers`` hierarchy. In addition, there is no need for maintaining separate ~~``plugin/``~~ folder structures outside your main tiddler tree. This simplification is especially convenient when developing single and probably simpler plugins which often do not need all the whistles and bells of what <<tw5>> has to offer under control of Node.js.
 
 * two editions help you maintaining and releasing your plugin: the [[develop edition]] and the [[release edition]]. These editions ''do not'' contain any additional tiddlers! There's only a //single// source tree on purpose and it lives in ``src/tiddlers``.
 
@@ -16,9 +16,9 @@ Interesting technical tidbits of //Third Flow// are:
 
 * there is a new ``is`` filter operand ``shadowinsync``: given a list of tiddlers you get back those tiddlers for which a shadow tiddler exists and this shadow is the same (on the basis of creation time, modification time, and tiddler type) as the non-shadow tiddler. Also supports the inverse, where it returns only those tiddlers being out of sync with their shadows. The ``[is[shadowinsync]]`` is used in the ~TiddlyWiki save template, we discuss next.
 
-* the [[save-all-wo-plugin-sources|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]] template: works amost like the [[$:/core/save/all]] template, but leaves out all those plugin source tiddlers that are also contained in a plugin. In most projects you most probably ''don't need to touch'' this template as it should work fully automatic and detect your plugin(s) correctly. This template in addition ensures that the //Third Flow// plugin does not get dumped into your own plugin demonstration ~TiddlyWikis (you typically don't want it //there//). See the [[save-all-wo-plugin-sources test]] for some more background information.
+* the [[save-all-wo-plugin-sources|$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources]] template: works amost like the [[$:/core/save/all]] template, but leaves out all those plugin source tiddlers that are also contained in a plugin. In most projects you most probably ''don't need to touch'' this template as it should work fully automatic and detect your plugin(s) correctly. This template in addition ensures that the <<tf>> plugin does not get dumped into your own plugin demonstration ~TiddlyWikis (you typically don't want it //there//). See the [[save-all-wo-plugin-sources test]] for some more background information.
 
-* there's a new [[hierarchical file system adapter|$:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js]] in the plugin that handles hierarchical title names for maintaining a subfolder hierarchicy.
+* there's a new [[hierarchical file system adapter|$:/plugins/TheDiveO/ThirdFlow/syncadapters/hierarchicalfilesystemadaptor.js]] in the plugin that handles hierarchical title names for maintaining a subfolder hierarchicy. It also supports extensible [[folder placement policies|Folder Policy]].
 
 * for easier release there are two additional commands in the plugin:
 ** the new [[--packplugin|$:/plugins/TheDiveO/ThirdFlow/commands/packplugin.js]] command for packing a plugin tiddler.

@@ -1,5 +1,5 @@
 created: 20140927112534297
-modified: 20140927115503130
+modified: 20141128204443854
 tags: Module Terminology
 title: Sync Adaptor
 type: text/vnd.tiddlywiki
@@ -43,4 +43,4 @@ Any other methods are not used by the ~TiddlyWiki 5 core itself. Such methods wi
 
 !See Also
 
-* The [[hierarchicalfilesystemadaptor Sync Adaptor]] that the //Third Flow// uses to synchronize tiddlers with the local file system and into hierarchical folder structures according to tiddler titles.
+* The [[hierarchicalfilesystemadaptor Sync Adaptor]] that the <<tf>> uses to synchronize tiddlers with the local file system and into hierarchical folder structures according to tiddler titles.

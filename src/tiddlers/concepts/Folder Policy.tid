@@ -1,6 +1,6 @@
 color: #5686a9
 created: 20141020160924825
-modified: 20141020171537754
+modified: 20141128203706172
 tags: Concept
 title: Folder Policy
 type: text/vnd.tiddlywiki
@@ -27,7 +27,7 @@ In addition, each folder policy module should have a `priority` field: its range
 
 !! Stock Folder Policy Modules
 
-The following folder policy modules are built-in.
+The following folder policy modules are built-in...
 
 |!Policy|!Priority|!Source|!Purpose|
 |<<fpm-doc name:"draft">>| 200|<<fpm-source name:"draft">>|handles draft tiddlers.|
@@ -81,5 +81,5 @@ Folder policy modules need to export the following symbols:
 
 ! References
 
-The //Third Flow// plugin comes with these built-in folder policies:
+The <<tf>> plugin comes with these built-in folder policies:
 <<list-links filter:"[prefix[$:/plugins/TheDiveO/ThirdFlow/folderpolicies/]removeprefix[$:/plugins/TheDiveO/ThirdFlow/folderpolicies/]removesuffix[.js]addsuffix[ Folder Policy]]">>
