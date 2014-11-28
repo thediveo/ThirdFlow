@@ -92,24 +92,9 @@ HierarchicalFileSystemAdaptor.prototype.getTiddlerInfo = function(tiddler) {
 	return {};
 };
 
-// Nota Bene: this needs to mirror the file extension information as established
-// in function $tw.boot.startup (boot.js). Otherwise, the sync adaptor will use
-// another encoding than expected by the boot process.
-$tw.config.typeInfo = {
-	"text/vnd.tiddlywiki": {
-		fileType: "application/x-tiddler",
-		extension: ".tid"
-	},
-	"image/jpeg" : {
-		hasMetaFile: true,
-		encoding: "base64"
-	},
-	"image/png" : {
-		hasMetaFile: true,
-		encoding: "base64"
-	}
-};
-
+//
+// file type-specific templates
+//
 $tw.config.typeTemplates = {
 	"application/x-tiddler": "$:/core/templates/tid-tiddler",
 	"application/javascript": "$:/plugins/TheDiveO/ThirdFlow/templates/javascript-tiddler"
@@ -123,14 +108,20 @@ HierarchicalFileSystemAdaptor.prototype.getTiddlerFileInfo = function(tiddler,ca
 		draftOf = tiddler.fields["draft.of"];
 	// Get information about how to save tiddlers of this type
 	var type = tiddler.fields.type || "text/vnd.tiddlywiki",
-		typeInfo = $tw.config.typeInfo[type];
+		typeInfo = $tw.config.contentTypeInfo[type];
 	if(!typeInfo) {
-		typeInfo = $tw.config.typeInfo["text/vnd.tiddlywiki"];
+        typeInfo = $tw.config.contentTypeInfo["text/vnd.tiddlywiki"];
 	}
 	var extension = typeInfo.extension || "";
 	if(!fileInfo) {
 		// If not, we'll need to generate it
-		var paf = self.generateTiddlerPathAndFilename(tiddler, title, draftOf);
+        // Handle case where the title already ends in the file extension:
+        // in this case we remove the extension from the suggested title.
+        var suggestedName = title;
+        if(suggestedName.substr(-extension.length) === extension) {
+            suggestedName = suggestedName.substr(0,suggestedName.length - extension.length);
+        }
+		var paf = self.generateTiddlerPathAndFilename(tiddler, suggestedName, draftOf);
 		var folder = $tw.boot.wikiTiddlersPath+path.sep+paf.subfolder;
 		$tw.utils.createDirectory(folder);
 		// Start by getting a list of the existing files in the directory
@@ -173,20 +164,20 @@ HierarchicalFileSystemAdaptor.prototype.leafFromTitle = function(title) {
 	}
 };
 
-HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = function(tiddler, title, draftOf) {
+HierarchicalFileSystemAdaptor.prototype.generateTiddlerPathAndFilename = function(tiddler, suggestedTitle, draftOf) {
 	// set up the policy method options such that if in a rare circumstance no policy
 	// should fire, then we fall back to plain old flat storage in the main wiki folder.
 	var options = {
 		tiddler: tiddler, // in: tiddler object we're trying a policy to find for
 		draft: !!draftOf, // in: is this a draft tiddler?
-		subfolder: "", // out: folder into which to place the tiddler file
-		name: title // out: name of tiddler file
+		subfolder: "", // in/out: folder into which to place the tiddler file
+		name: suggestedTitle // in/out: name of tiddler file
 	};
 	
 	// run through our ordered list of folder policies and wait for one of them
 	// to return true because its folder policy should be applied.
 	for (var i=0; i<this.policyModules.length; ++i) {
-		if (this.policyModules[i].policy.call(this, title, options)) {
+		if (this.policyModules[i].policy.call(this, suggestedTitle, options)) {
 			break;
 		}
 	}
@@ -254,7 +245,7 @@ HierarchicalFileSystemAdaptor.prototype.saveTiddler = function(tiddler,callback)
 		}
 		if(fileInfo.hasMetaFile) {
 			// Save the tiddler as a separate body and meta file
-			var typeInfo = $tw.config.typeInfo[fileInfo.type],
+			var typeInfo = $tw.config.contentTypeInfo[fileInfo.type],
 				encoding = typeInfo.encoding || "base64"; // makes sense for TW
 			self.logger.log("saving type", fileInfo.type, "with meta file and encoding", encoding);
 			fs.writeFile(fileInfo.filepath,tiddler.fields.text,{encoding: encoding},function(err) {

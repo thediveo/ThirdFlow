@@ -1,8 +1,9 @@
 author: TheDiveO
+core-version: >=5.1.5
 created: 20140902114846490
 description: Third Flow in-TW plugin development process support
 list: readme license history
-modified: 20141025091052613
+modified: 20141128200040846
 plugin-type: plugin
 source: http://thediveo.github.io/ThirdFlow
 title: $:/plugins/TheDiveO/ThirdFlow
