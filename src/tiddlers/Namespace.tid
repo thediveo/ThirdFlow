@@ -1,0 +1,18 @@
+created: 20141119194626415
+modified: 20141119210746462
+title: Namespace
+type: text/vnd.tiddlywiki
+
+''Namespaces'' in <<tw5>> are based on the titles of tiddlers. The titles decide to which namespace a tiddler belongs.
+
+!System Namespace
+
+The most fundamental namespace is probably the ''system'' namespace. It consists of titles starting with `$:/`. The system namespace is divided further with these notable sub namespaces:
+
+@@.wide
+* `$:/plugins/` -- the [[plugin|Plugin]] namespace. This is further divided by first publisher, and second plugin name. For instance, `$:/plugins/TheDiveO/ThirdFlow` is the namespace for this <<tf>> plugin.
+* `$:/themes/` -- the <<tw5>> themes namespace. This namespace is further divided by first publisher, and second theme name. For instance, `$:/themes/tiddlywiki/vanilla`.
+* `$:/config/` -- the <<tw5>> configuration data namespace.
+* `$:/state/` -- the <<tw5>> state information namespace. For instance, the state of sidebar tabs and reveal widgets is typically stored here.
+* `$:/temp/` -- temporary information that shouldn't be made persistent.
+@@
