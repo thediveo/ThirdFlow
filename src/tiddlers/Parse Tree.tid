@@ -1,17 +1,17 @@
 created: 20141119195948491
-modified: 20141119205340559
+modified: 20141130181346629
 title: Parse Tree
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-The ''parse tree'' is the internal representation of tiddler content after parsing. Due to its modular design, <<tw5>> supports multiple parsers for different content types, such as ~TiddlyWiki markup (wiki markup). The parse tree represents the tiddler content in a markup-neutral form.
+The ''parse tree'' is the internal representation of tiddler content after parsing. Due to its modular design, <<tw5>> supports multiple parsers for different content types, such as <<tw>> markup (wiki markup). The parse tree represents the tiddler content in a markup-neutral form.
 
 The parse tree nodes immediately map to corresponding widgets. In particular, ~TiddlyWiki does not only define widgets for user interaction, but also for dynamic content, and even basic DOM objects, such as ''elements'', ''entities'', and so on.
 
 !Parse Tree Node Types
 
-<<tw5>> currently defines the following parse tree node types that almost directly map to DOM objects. The particular node type is indicated through the `type` field of each node object:
+<<tw>> currently defines the following parse tree node types that almost directly map to DOM objects. The particular node type is indicated through the `type` field of each node object:
 
 ;element
 :represents an HTML element, but not widgets. For instance, a `span` element. Element nodes contain the following additional fields that further describe the element:
@@ -23,6 +23,10 @@ The parse tree nodes immediately map to corresponding widgets. In particular, ~T
 :*;indirect
 :*:a textual reference, such as `{{!!title}}`. Further information is given in these fields:
 :*:* `textReference`: ???
+:*;macro
+:*: a macro reference, such as `<<foobar>>`.
+:*:* `name`: the macro name.
+:*:* `params`: the macro parameters.
 :* `children`: an array of child parse tree nodes.
 
 ;text
@@ -44,7 +48,7 @@ The parse tree nodes immediately map to corresponding widgets. In particular, ~T
 :...
 :* `attributes`: ...
 
-Further node types (`type` field) exist, which correspond to the other widget types one-to-one. For instance:
+Further node types (`type` field) exist, which correspond to the other [[widget|Widget]] types one-to-one. For instance:
 
 ;list
 :the `$list` list widget.

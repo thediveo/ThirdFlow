@@ -1,6 +1,50 @@
 color: #c44000
 created: 20141020211917939
-modified: 20141020213313765
+modified: 20141130180451355
 title: Widget
 type: text/vnd.tiddlywiki
 
+!Abstract
+
+''Widgets'' add dynamic functionality to wiki markup. If you are accustomed to the term widget in other contexts, better forget about your existing widget knowledge while working with <<tw5>>.
+
+In particular, widgets in <<tw>> do not necessarily represent user interface elements. While some widgets, such as buttons, are user interface elements, other widgets, such as the list widget, instead represent dynamic content. The content of the list gets updated whenever there are changes in to the tiddler store.
+
+!Technical
+
+Most widget work can de done by inheriting the infrastructure offered through `$:/core/modules/widgets/widget.js`.
+
+!!Constructor
+
+Widget constructors expect these two parameters:
+
+;parseTreeNode
+
+;options
+
+!!Initialize
+
+!!Widget Fields
+
+;parentWidget
+;parseTreeNode
+;variables
+:an object representing the variables of a widget in form of object fields. The variables object may be chained to the variables of a parent widget through the prototype chain.
+;wiki
+
+!!Render
+
+This widget method renders the widget conent or representation into the DOM.
+
+;parent
+
+;nextSibling
+
+!!~RenderChildren
+
+Renders the child widgets into the DOM. The default implementation simply ieterates over all child widgets stored in `this.children` and renders each one by calling the child widget's `render()` method.
+
+;parent
+;nextSibling
+
+!!Execute

@@ -1,5 +1,5 @@
 created: 20140930201806697
-modified: 20141117174412449
+modified: 20141130170945502
 tags: $:/tags/Macro Customization
 title: ThirdFlow Wiki Macros
 type: text/vnd.tiddlywiki
@@ -16,6 +16,10 @@ type: text/vnd.tiddlywiki
 
 \define tw5()
 [[TiddlyWiki 5]]
+\end
+
+\define tw()
+~TiddlyWiki&nbsp;5
 \end
 
 \define lightbox(title, width)

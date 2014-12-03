@@ -1,13 +1,13 @@
 color: #77a70e
 created: 20140926142754247
-modified: 20141128203526384
+modified: 20141202192141552
 tags: Terminology
 title: Filter
 type: text/vnd.tiddlywiki
 
 !Abstract
 
-In ~TiddlyWiki 5, ''filters'' are used to choose tiddlers according to some critera. With the new and greatly improved ~TiddlyWiki 5 architecture, the existing filters easily can be augmented by new filters as needed.
+In ~TiddlyWiki 5, ''filters'' are used to choose tiddlers according to some critera. With the new and greatly improved ~TiddlyWiki 5 architecture, the existing filters easily can be extended by new filters as needed. There is also a filter language to express how to use filters, see [[Filter Syntax]].
 
 New filters are implemented through [[modules|Module]] with a `module-type` of either `filter` or `isfilteroperator`. The latter allows to cleanly add even more selection categories to the existing `is` filter operator without the need to hacking it.
 

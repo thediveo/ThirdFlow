@@ -1,6 +1,6 @@
 caption: Tag-based Folders
 created: 20141013152809952
-modified: 20141021155458219
+modified: 20141203202326182
 tags: $:/tags/HFS/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/FileStorage/Tags
 type: text/vnd.tiddlywiki
@@ -24,13 +24,9 @@ background-color:$(backgroundColor)$;
     </$list>
     <tr class="tc-edit-field">
       <td class="tc-edit-tag-name">
-      	<$link to=<<currentListElement>>>
-          <$set name="backgroundColor" value={{$(currentListElement)$!!color}}>
-            <span style=<<tag-styles>> class="tc-tag-label">
-              <$text text=<<currentListElement>> format="text"/>
-            </span>
-          </$set>
-        </$link>
+        <$tiddler tiddler=<<currentListElement>> >
+          <$transclude tiddler="$:/core/ui/TagTemplate"/>
+        </$tiddler>
       </td>
 
       <td class="tc-edit-tag-folder">
@@ -56,7 +52,7 @@ background-color:$(backgroundColor)$;
   </$set>
 \end
 
-Tags towards the beginning of the list take priority over later tags.
+Tags towards the beginning of the list take priority over tags more down the list.
 
 <$listmangler tiddler=<<config-tiddler>>>
 
