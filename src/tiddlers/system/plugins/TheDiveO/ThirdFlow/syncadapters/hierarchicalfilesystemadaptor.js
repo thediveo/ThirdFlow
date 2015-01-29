@@ -35,8 +35,8 @@ to support hierarchical tiddler storage as well as folder policies.
 "use strict";
 
 // Get a reference to the file system and path tools
-var fs = !$tw.browser ? require("fs") : null,
-	path = !$tw.browser ? require("path") : null;
+var fs = $tw.node ? require("fs") : null,
+	path = $tw.node ? require("path") : null;
 
 function HierarchicalFileSystemAdaptor(options) {
 	var self = this;
