@@ -112,6 +112,10 @@ HierarchicalFileSystemAdaptor.prototype.getTiddlerFileInfo = function(tiddler,ca
 	if(!typeInfo) {
         typeInfo = $tw.config.contentTypeInfo["text/vnd.tiddlywiki"];
 	}
+	if (!($tw.config.typeTemplates[typeInfo.fileType || tiddler.fields.type])) {
+        typeInfo = $tw.config.contentTypeInfo["text/vnd.tiddlywiki"];
+		typeInfo.fileType = "application/x-tiddler";
+	}
 	var extension = typeInfo.extension || "";
 	if(!fileInfo) {
 		// If not, we'll need to generate it
