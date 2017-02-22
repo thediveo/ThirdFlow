@@ -1,15 +1,23 @@
 caption: Rationale
 created: 20140902115316645
-modified: 20141128204314188
+modified: 20170222210417266
 tags: Main
 title: Rationale
 type: text/vnd.tiddlywiki
 
-The existing established plugin development flows either completely work inside the browser not caring about source code management or mandate to maintain separate branches for normal tiddlers and plugin tiddlers. These flows surely have their advantages.
+The existing established plugin development flows either...
 
-You may want to try the <<tf>> and its plugin a try when you are ''developing customizing plugins'' and you want to ''develop mainly inside the web browser'' yet have your well-organized ''plugin tiddlers under source code control'' but not dumped in a single flat folder or even separate folder structure.
+# completely work inside the browser, not caring about source code management,
 
-Instead, the <<tf>> neatly organizes the system tiddlers you are developing in a hierarchical folder structure following the tiddler naming hierarchy.
+# or they mandate to maintain separate branches for normal tiddlers and plugin tiddlers.
+
+Of course, these established development flows surely have their advantages.
+
+But: what about developing ''customized plugins'' (mainly) ''inside a web browser'', yet having the all your ''plugin tiddlers under source code control''?
+
+Then you should give the <<tf>> with its plugin a test drive!
+
+<<tf>> neatly organizes all the system tiddlers you are developing in a hierarchical folder structure following the tiddler naming hierarchy. Or according to your tagging, if you want to have it that way. You can also have it both ways.
 
 The <<tf>> does not replace existing development flows, instead it //complements// them, namely (1) using the plugin branch support in headless TW5 and editing your plugins in an external editor and with full source code control, as well as (2) editing and creating your plugins solely from within your browser but with only limited source code control. With the <<tf>> you now get (3) develop flow from ''within'' the browser but with ''full source code management'' with well-organized tiddler files in a single source code tree.
 

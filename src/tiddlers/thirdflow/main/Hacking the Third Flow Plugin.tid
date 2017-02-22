@@ -1,0 +1,7 @@
+created: 20170222210622323
+modified: 20170222211045969
+tags: Main
+title: Hacking the Third Flow Plugin
+type: text/vnd.tiddlywiki
+
+* write your own [[Folder Policy]] modules in order to add your own cool organization strategies for storing tiddlers in a hierarchical file system.
