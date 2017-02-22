@@ -1,9 +1,13 @@
 caption: News
 created: 20141020092824815
-modified: 20141128204105725
+modified: 20170222205259844
 tags: Main
 title: News
 type: text/vnd.tiddlywiki
+
+!!Not (Quite) Dead Yet
+
+'nuff said. Some fixes to make <<tf>> work with recent and decent TiddlyWiki 5 releases.
 
 !!Configuration Panel Tab
 

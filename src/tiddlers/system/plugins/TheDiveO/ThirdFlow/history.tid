@@ -1,5 +1,5 @@
 created: 20140902083720188
-modified: 20170222200225447
+modified: 20170222204220273
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
@@ -7,6 +7,10 @@ type: text/vnd.tiddlywiki
 ** the <<tf>> plugin is not dead yet.
 ** fixes `HierarchicalFileSystemAdaptor` to make it work with recent TW5 releases: adds missing `isReady()` method that was introduced some time ago to TW sync adaptors.
 ** fixes `editions/develop/tiddlywiki.info` to load the -- now required -- `tiddlywiki/filesystem` plugin.
+** supports node-webkit; thanks to Eucaly for this fix.
+** fixes handling of filetypes not defined in `$tw.config.typeTemplates`; again, thanks to Eucaly for this fix.
+** updated documentation to properly reflect the correct configuration required with recent TiddlyWiki 5 releases.
+** minor textual tweaks.
 
 * ''1.0.9''
 ** upgraded the tag-based folder storage user interface to use the new core tag-pill template ([[$:/core/ui/TagTemplate]]).

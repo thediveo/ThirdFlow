@@ -1,10 +1,10 @@
 created: 20140903102610926
-modified: 20140926152454977
+modified: 20170222204322877
 tags: Template Plugin
 title: Plugin Declaration Template
 type: text/vnd.tiddlywiki
 
-Every [[plugin|Plugin]] needs a tiddler which declares this plugin in more detail. The following fields should always be declared:
+Every [[plugin|Plugin]] needs a tiddler which describes this plugin in more detail. The following fields should always be declared:
 
 |!Field|!Value|!Note|
 |''author''|``Author Jones``|//your name here.//|
