@@ -88,6 +88,11 @@ function HierarchicalFileSystemAdaptor(options) {
 	}
 }
 
+// Are we ready? Are we ready?? We're always ready!
+HierarchicalFileSystemAdaptor.prototype.isReady = function() {
+	return true;
+};
+
 HierarchicalFileSystemAdaptor.prototype.getTiddlerInfo = function(tiddler) {
 	return {};
 };
