@@ -88,6 +88,8 @@ function HierarchicalFileSystemAdaptor(options) {
 		this.logger.log("plugin disabled; no saving and deleting");
 	}
 }
+    
+HierarchicalFileSystemAdaptor.prototype.isReady = "hfs";
 
 // Are we ready? Are we ready?? We're always ready!
 HierarchicalFileSystemAdaptor.prototype.isReady = function() {
