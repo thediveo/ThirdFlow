@@ -1,8 +1,10 @@
 created: 20140902083720188
-modified: 20170222204220273
+modified: 20170227211644434
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.11''
+** fixes the import tiddler activating the plugin view template when it shouldn't.
 * ''1.0.10''
 ** the <<tf>> plugin is not dead yet.
 ** fixes `HierarchicalFileSystemAdaptor` to make it work with recent TW5 releases: adds missing `isReady()` method that was introduced some time ago to TW sync adaptors.
