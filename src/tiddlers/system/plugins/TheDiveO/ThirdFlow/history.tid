@@ -1,8 +1,10 @@
 created: 20140902083720188
-modified: 20170227211644434
+modified: 20170316171523131
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.12''
+** minor internal optimization: in filter expressions use `[all[current]]` instead of `[is[current]]`.
 * ''1.0.11''
 ** fixes the import tiddler activating the plugin view template when it shouldn't.
 * ''1.0.10''

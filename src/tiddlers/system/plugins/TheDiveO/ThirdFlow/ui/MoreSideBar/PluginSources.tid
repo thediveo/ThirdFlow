@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 
 \define plugin-contents-filter() [prefix[$(plugin-full-path)$]!is[shadow]sort[]]
 
-\define plugin-item-relname() [is[current]removeprefix[$(plugin-full-path)$/]!prefix[tiddlywiki/]]
+\define plugin-item-relname() [all[current]removeprefix[$(plugin-full-path)$/]!prefix[tiddlywiki/]]
 
 \define plugin-item()
 <div class="tc-menu-list-subitem">

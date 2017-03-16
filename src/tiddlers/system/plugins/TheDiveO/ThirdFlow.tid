@@ -3,11 +3,11 @@ core-version: >=5.1.12
 created: 20140902114846490
 description: Third Flow in-TW plugin development process support
 list: readme license history
-modified: 20170227211521427
+modified: 20170316171417407
 plugin-type: plugin
 source: http://thediveo.github.io/ThirdFlow
 title: $:/plugins/TheDiveO/ThirdFlow
 type: application/json
-version: 1.0.11-master
+version: 1.0.12-master
 
 {"tiddlers": {}}

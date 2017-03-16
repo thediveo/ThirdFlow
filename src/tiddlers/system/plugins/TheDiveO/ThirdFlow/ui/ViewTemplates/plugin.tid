@@ -45,7 +45,7 @@ type: text/vnd.tiddlywiki
 \end
 
 \define plugin-info-field-link(name, field)
-  <$list filter="[is[current]!field:$field$[]]" emptyMessage="""<<plugin-info-row "$name$" "<$macrocall $name='plugin-info-field-unspecified'/>" >>""">
+  <$list filter="[all[current]!field:$field$[]]" emptyMessage="""<<plugin-info-row "$name$" "<$macrocall $name='plugin-info-field-unspecified'/>" >>""">
     <$macrocall $name="plugin-info-row" name="$name$" value={{!!$field$}} />
   </$list>
 \end
