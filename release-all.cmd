@@ -19,4 +19,7 @@ if exist ..\TW5FontAwesome\README.md (
     echo Copying files: updating FontAwesome with plugin
     copy editions\release\output\thirdflow.tid ..\TW5FontAwesome\src\tiddlers\system\plugins\TheDiveO
 )
-    
+if exist ..\IETF-RFC\README.md (
+    echo Copying files: updating IETF-RFC with plugin
+    copy editions\release\output\thirdflow.tid ..\IETF-RFC\src\tiddlers\system\plugins\TheDiveO
+)
