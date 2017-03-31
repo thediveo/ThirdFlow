@@ -1,8 +1,10 @@
 created: 20140902083720188
-modified: 20170316171523131
+modified: 20170331105435772
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.13''
+** fixes a bug in the hierarchical filesystem sync adapter related to evaluation of the `disable-hfs` configuration option.
 * ''1.0.12''
 ** minor internal optimization: in filter expressions use `[all[current]]` instead of `[is[current]]`.
 * ''1.0.11''

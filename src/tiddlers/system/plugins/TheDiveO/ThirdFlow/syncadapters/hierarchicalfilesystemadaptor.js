@@ -83,7 +83,7 @@ function HierarchicalFileSystemAdaptor(options) {
 	this.logger.log(fpModules.length + " folder policies active");
 	this.policyModules = fpModules;
 	
-	if($tw.boot.wikiInfo.config["disable-hfs"]) {
+	if($tw.boot.wikiInfo.config && $tw.boot.wikiInfo.config["disable-hfs"]) {
 		this.config.disabled = true;
 		this.logger.log("plugin disabled; no saving and deleting");
 	}
