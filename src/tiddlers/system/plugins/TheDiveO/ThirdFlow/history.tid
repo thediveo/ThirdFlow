@@ -1,14 +1,24 @@
 created: 20140902083720188
-modified: 20170331105435772
+modified: 20180122101002950
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.0.14''
+** adds npm package and (development) script support.
+** after cloning the ThirdFlow repository, first run `npm install tiddlywiki` inside the project directory.
+*** `npm run develop` starts the development TiddlyWiki server. Use Ctrl-C to stop the server.
+*** `npm run release` creates the release files.
+*** `nmp start` starts the development TiddlyWiki server. Use `npm stop` to stop it.
+
 * ''1.0.13''
 ** fixes a bug in the hierarchical filesystem sync adapter related to evaluation of the `disable-hfs` configuration option.
+
 * ''1.0.12''
 ** minor internal optimization: in filter expressions use `[all[current]]` instead of `[is[current]]`.
+
 * ''1.0.11''
 ** fixes the import tiddler activating the plugin view template when it shouldn't.
+
 * ''1.0.10''
 ** the <<tf>> plugin is not dead yet.
 ** fixes `HierarchicalFileSystemAdaptor` to make it work with recent TW5 releases: adds missing `isReady()` method that was introduced some time ago to TW sync adaptors.
