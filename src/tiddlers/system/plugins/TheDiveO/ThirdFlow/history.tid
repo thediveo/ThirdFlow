@@ -1,9 +1,9 @@
 created: 20140902083720188
-modified: 20180122100617418
+modified: 20180122101002950
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''development''
+* ''1.0.14''
 ** adds npm package and (development) script support.
 ** after cloning the ThirdFlow repository, first run `npm install tiddlywiki` inside the project directory.
 *** `npm run develop` starts the development TiddlyWiki server. Use Ctrl-C to stop the server.
