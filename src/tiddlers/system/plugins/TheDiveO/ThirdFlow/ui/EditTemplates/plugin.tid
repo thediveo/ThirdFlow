@@ -1,6 +1,6 @@
 created: 20180202124221987
 list-before: $:/core/ui/EditTemplate/body
-modified: 20180202134033922
+modified: 20180202195811504
 tags: $:/tags/EditTemplate
 title: $:/plugins/TheDiveO/ThirdFlow/ui/EditTemplates/plugin
 type: text/vnd.tiddlywiki
@@ -16,7 +16,7 @@ type: text/vnd.tiddlywiki
   </tr>
 \end
 
-<$list filter="[all[current]has:field[plugin-type]]">
+<$list filter="[all[current]has:field[plugin-type]!field:plugin-type[import]]">
 
 <h1>Plugin Data</h1>
 
