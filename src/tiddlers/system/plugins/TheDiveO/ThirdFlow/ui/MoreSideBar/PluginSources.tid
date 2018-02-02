@@ -1,13 +1,13 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180202220256092
+modified: 20180202225557197
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
 
 \whitespace trim
 
-\define qualify-plugin() <<qualify "$:/state/popup/thirdflow/pluginactions/$(plugin-name)$">>
+\define qualify-plugin() $(q)$/$(plugin-name)$">>
 
 \define plugin-full-path() $:/plugins/$(plugin-name)$
 
@@ -35,7 +35,7 @@ type: text/vnd.tiddlywiki
 </div>
 \end
 
-
+<$set name="q" value=<<qualify "$:/state/popup/thirdflow/pluginactions">>>
 <div class="tc-timeline">
   <div class="tc-menu-list-item tc-sidebar-header">
     <div class="tc-plugin-info-chunk">{{$:/core/images/plugin-generic-plugin}}</div>
@@ -60,19 +60,8 @@ type: text/vnd.tiddlywiki
         </$transclude>
       </div>
       &nbsp;
-      <!-- plugin author/name w. link -->
-      <$link to=<<plugin-full-path>>>
-        <$macrocall $name="plugin-name" $output="text/plain" />
-      </$link>
-      <!-- new plugin source tiddler here -->
-      &nbsp;<$button message="tm-new-tiddler" param=<<new-source-tiddler-name>> class=<<tv-config-toolbar-class>> tooltip="Create a new source tiddler here">
-	    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">{{$:/core/images/new-button}}</$list>
-		<$list filter="[<tv-config-toolbar-text>prefix[yes]]"><span class="tc-btn-text"><$text text="New source here"/></span></$list>
-	  </$button>
-      &nbsp;
       <!-- plugin actions -->
       <$set name="qp" value=<<qualify-plugin>> >
-        <<q>>
         <$button popup=<<qp>> class=<<tv-config-toolbar-class>> selectedClass="tc-selected">
           <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
           {{$:/core/images/down-arrow}}
@@ -89,6 +78,11 @@ type: text/vnd.tiddlywiki
           </div>
         </$reveal>
       </$set>
+      &nbsp;
+      <!-- plugin author/name w. link -->
+      <$link to=<<plugin-full-path>>>
+        <$macrocall $name="plugin-name" $output="text/plain" />
+      </$link>
       
       <!-- list of plugin contents -->
       <$list filter=<<plugin-contents-filter>> >
@@ -98,3 +92,4 @@ type: text/vnd.tiddlywiki
     </div>
   </$list>
 </div>
+</$set>
