@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20141025161502864
+modified: 20180202203554562
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -29,7 +29,17 @@ type: text/vnd.tiddlywiki
 </div>
 \end
 
+
 <div class="tc-timeline">
+  <div class="tc-menu-list-item tc-sidebar-header">
+    <div class="tc-plugin-info-chunk">{{$:/core/images/plugin-generic-plugin}}</div>
+    new plugin
+    <$button tooltip="create new plugin" class=<<tv-config-toolbar-class>> >
+    <$action-sendmessage $message="tm-new-tiddler" title="$:/plugins/PublisherName/PluginName" plugin-type="plugin" text="""{"tiddlers": {}}""" />
+    {{$:/core/images/new-button}}
+    </$button>
+  </div>
+
   <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]]" variable="plugin-name">
     <div class="tc-menu-list-item tc-sidebar-header">
     
