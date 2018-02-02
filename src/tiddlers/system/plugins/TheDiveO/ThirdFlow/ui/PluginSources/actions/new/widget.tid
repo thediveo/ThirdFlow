@@ -1,0 +1,10 @@
+created: 20180202223929415
+modified: 20180202224025422
+tags: $:/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/widget
+type: text/vnd.tiddlywiki
+
+<$button class=<<tv-config-toolbar-class>> >
+<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "widgets/foo.js">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/widget" />
+new TW widget module
+</$button>

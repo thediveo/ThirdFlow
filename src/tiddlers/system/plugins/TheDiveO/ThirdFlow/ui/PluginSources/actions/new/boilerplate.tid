@@ -1,7 +1,7 @@
 created: 20180202210615976
-modified: 20180202222526245
+modified: 20180202224053480
 tags: $:/tags/ThirdFlow/PluginAction
-title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/boilerplate
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/boilerplate
 type: text/vnd.tiddlywiki
 
 <$set name="old-list" tiddler=<<plugin-full-path>> field="list">

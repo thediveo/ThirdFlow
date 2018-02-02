@@ -1,0 +1,10 @@
+created: 20180202223710863
+modified: 20180202224117173
+tags: $:/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/style
+type: text/vnd.tiddlywiki
+
+<$button class=<<tv-config-toolbar-class>> >
+<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "styles/foo.css">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/style" />
+new stylesheet tiddler 
+</$button>
