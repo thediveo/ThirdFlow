@@ -1,11 +1,17 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180202204410294
+modified: 20180202220256092
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
 
+\whitespace trim
+
+\define qualify-plugin() <<qualify "$:/state/popup/thirdflow/pluginactions/$(plugin-name)$">>
+
 \define plugin-full-path() $:/plugins/$(plugin-name)$
+
+\define plugin-tiddler-within(title) $:/plugins/$(plugin-name)$/$title$
 
 \define new-source-tiddler-name() $(plugin-full-path)$/new source tiddler
 
@@ -33,14 +39,16 @@ type: text/vnd.tiddlywiki
 <div class="tc-timeline">
   <div class="tc-menu-list-item tc-sidebar-header">
     <div class="tc-plugin-info-chunk">{{$:/core/images/plugin-generic-plugin}}</div>
+    &nbsp;
     new plugin
+    &nbsp;
     <$button tooltip="create new plugin" class=<<tv-config-toolbar-class>> >
-    <$action-sendmessage $message="tm-new-tiddler" title="$:/plugins/PublisherName/PluginName" $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/NewPluginTiddler" />
-    {{$:/core/images/new-button}}
+      <$action-sendmessage $message="tm-new-tiddler" title="$:/plugins/PublisherName/PluginName" $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/plugin" />
+      {{$:/core/images/new-button}}
     </$button>
   </div>
 
-  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!prefix[TheDiveO/ThirdFlow/]]" variable="plugin-name">
+  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!prefix[TheDiveO/ThirdFlow/]sort[]]" variable="plugin-name">
     <div class="tc-menu-list-item tc-sidebar-header">
     
       <!-- plugin icon or default icon -->
@@ -51,6 +59,7 @@ type: text/vnd.tiddlywiki
           </$list>
         </$transclude>
       </div>
+      &nbsp;
       <!-- plugin author/name w. link -->
       <$link to=<<plugin-full-path>>>
         <$macrocall $name="plugin-name" $output="text/plain" />
@@ -60,6 +69,26 @@ type: text/vnd.tiddlywiki
 	    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">{{$:/core/images/new-button}}</$list>
 		<$list filter="[<tv-config-toolbar-text>prefix[yes]]"><span class="tc-btn-text"><$text text="New source here"/></span></$list>
 	  </$button>
+      &nbsp;
+      <!-- plugin actions -->
+      <$set name="qp" value=<<qualify-plugin>> >
+        <<q>>
+        <$button popup=<<qp>> class=<<tv-config-toolbar-class>> selectedClass="tc-selected">
+          <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+          {{$:/core/images/down-arrow}}
+          </$list>
+          <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+          <span class="tc-btn-text">plugin actions</span>
+          </$list>
+        </$button>
+        <$reveal state=<<qp>> type="popup" position="below" animate="yes">
+          <div class="tc-drop-down">
+            <$list filter="[all[shadows+tiddlers]tag[$:/tags/ThirdFlow/PluginAction]!has[draft.of]]">
+              <$transclude mode="inline"/>
+            </$list>
+          </div>
+        </$reveal>
+      </$set>
       
       <!-- list of plugin contents -->
       <$list filter=<<plugin-contents-filter>> >

@@ -1,0 +1,19 @@
+created: 20180202210615976
+modified: 20180202222526245
+tags: $:/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/boilerplate
+type: text/vnd.tiddlywiki
+
+<$set name="old-list" tiddler=<<plugin-full-path>> field="list">
+<$set name="list" filter="[enlist<old-list>] -[[readme]] -[[license]] -[[history]]">
+<$set name="new-list" filter="readme license history [enlist<list>]">
+<$button class=<<tv-config-toolbar-class>> >
+<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "readme">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/readme" />
+<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "license">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/license" />
+<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "history">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/history" />
+<$action-setfield $tiddler=<<plugin-full-path>> list=<<new-list>> />
+add boilerplate tiddlers
+</$button>
+</$set>
+</$set>
+</$set>

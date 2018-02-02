@@ -1,9 +1,10 @@
 created: 20140902083720188
-modified: 20180202204501470
+modified: 20180202213827761
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''next''
+** fixes //Plugin Sources// sidebar tab not sorting plugins.
 ** adds //new plugin// button to the //Plugin Sources// sidebar tab which creates a new plugin tiddler from the plugin template [[$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/NewPluginTiddler]].
 * ''1.0.14''
 ** adds npm package and (development) script support.
