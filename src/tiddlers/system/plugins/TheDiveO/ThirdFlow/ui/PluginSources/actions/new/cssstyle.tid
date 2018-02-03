@@ -1,7 +1,7 @@
 created: 20180202223710863
-modified: 20180202224117173
+modified: 20180203174649337
 tags: $:/tags/ThirdFlow/PluginAction
-title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/style
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/cssstyle
 type: text/vnd.tiddlywiki
 
 <$button class=<<tv-config-toolbar-class>> >
