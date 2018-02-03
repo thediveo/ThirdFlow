@@ -1,18 +1,31 @@
 caption: ThirdFlow
 created: 20180203154413491
-modified: 20180203161544927
+modified: 20180203164956215
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
 type: text/vnd.tiddlywiki
 
 \define infix(config, default)
 <div class="tfc-infix-setting">
-  <div>...&nbsp;</div>
+  <div class="tfc-infix-setting-prefix">plugin/&nbsp;</div>
   <$edit-text tiddler="$:/config/ThirdFlow/$config$" default="$default$" tag="input"/>
-  <div>&nbsp;...</div>
 </div>
 \end
 
-Default settings for plugin development.
+\define what(w) $w$ in...
 
-|new macros in:|<<infix "macroinfix" "macros">>|
+Settings for plugin development: where are new tiddlers to be added inside your plugin...
+
+|<<what "commands">>|<<infix "commandinfix" "commands">>|
+|<<what "filters">>|<<infix "filterinfix" "filters">>|
+|<<what "&#8195;`all[...]` filters">>|<<infix "allfilterinfix" "filters/all">>|
+|<<what "&#8195;`is[...]` filters">>|<<infix "isfilterinfix" "filters/is">>|
+|<<what "Javascript macros">>|<<infix "jsmacroinfix" "macros">>|
+|<<what "TW5 macros">>|<<infix "twmacroinfix" "macros">>|
+|<<what "parser modules">>|<<infix "parserinfix" "parsers">>|
+|<<what "startup modules">>|<<infix "macroinfix" "startups">>|
+|<<what "style tiddlers">>|<<infix "styleinfix" "styles">>|
+|<<what "template tiddlers">>|<<infix "templateinfix" "templates">>|
+|<<what "UI tiddlers">>|<<infix "uiinfix" "ui">>|
+|<<what "utility modules">>|<<infix "utilinfix" "utils">>|
+|<<what "widgets">>|<<infix "widgetinfix" "widgets">>|
