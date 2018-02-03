@@ -1,0 +1,11 @@
+created: 20180203155550006
+modified: 20180203161028232
+tags: $:/tags/Stylesheet
+title: $:/plugins/TheDiveO/ThirdFlow/styles/ControlPanel
+type: text/css
+
+.tfc-infix-setting {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}

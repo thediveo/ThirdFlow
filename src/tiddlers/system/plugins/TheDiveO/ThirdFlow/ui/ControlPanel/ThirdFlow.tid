@@ -1,0 +1,18 @@
+caption: ThirdFlow
+created: 20180203154413491
+modified: 20180203161544927
+tags: $:/tags/ControlPanel
+title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
+type: text/vnd.tiddlywiki
+
+\define infix(config, default)
+<div class="tfc-infix-setting">
+  <div>...&nbsp;</div>
+  <$edit-text tiddler="$:/config/ThirdFlow/$config$" default="$default$" tag="input"/>
+  <div>&nbsp;...</div>
+</div>
+\end
+
+Default settings for plugin development.
+
+|new macros in:|<<infix "macroinfix" "macros">>|
