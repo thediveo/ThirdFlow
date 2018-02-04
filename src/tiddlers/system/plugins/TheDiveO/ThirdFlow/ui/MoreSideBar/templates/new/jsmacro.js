@@ -1,8 +1,8 @@
 /*\
 created: 20180203175030065
-title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro
-modified: 20180203180023460
 type: application/javascript
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro.js
+modified: 20180204195221746
 module-type: macro
 \*/
 (function(){

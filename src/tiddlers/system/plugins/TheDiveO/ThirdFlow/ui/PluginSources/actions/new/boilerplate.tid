@@ -1,6 +1,6 @@
 created: 20180202210615976
-modified: 20180202224053480
-tags: $:/tags/ThirdFlow/PluginAction
+modified: 20180204195029705
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/boilerplate
 type: text/vnd.tiddlywiki
 
@@ -12,7 +12,7 @@ type: text/vnd.tiddlywiki
 <$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "license">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/license" />
 <$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "history">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/history" />
 <$action-setfield $tiddler=<<plugin-full-path>> list=<<new-list>> />
-add boilerplate tiddlers
+add plugin boilerplate tiddlers
 </$button>
 </$set>
 </$set>

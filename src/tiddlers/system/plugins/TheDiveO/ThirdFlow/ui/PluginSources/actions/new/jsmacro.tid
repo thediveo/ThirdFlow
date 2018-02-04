@@ -1,7 +1,7 @@
 created: 20180204191504018
-modified: 20180204193530007
-tags: $:/tags/ThirdFlow/PluginAction
+modified: 20180204195240200
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/jsmacro
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:"new Javascript macro" infixtype:"commandinfix" title:"new macro.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro">>
+<<action-new-with-template actiontext:"new Javascript macro" infixtype:"commandinfix" title:"new macro.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro.js">>
