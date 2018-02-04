@@ -1,5 +1,5 @@
 created: 20180203171654847
-modified: 20180203172540849
+modified: 20180204192526446
 tags: $:/tags/Macro
 title: $:/plugins/TheDiveO/ThirdFlow/macros/defaults
 type: text/vnd.tiddlywiki
@@ -7,5 +7,3 @@ type: text/vnd.tiddlywiki
 \define tf-config-base() $:/config/ThirdFlow/
 
 \define tf-config-base-default() $:/plugins/TheDiveO/ThirdFlow/defaults/
-
-\define tf-config-setting-filter(setting) [{$(tf-config-base)$$setting$}] [{$(tf-config-base-default)$$setting$}] +[minlength[1]first[]]

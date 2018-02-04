@@ -1,6 +1,6 @@
 caption: ThirdFlow
 created: 20180203154413491
-modified: 20180203174835893
+modified: 20180204191322513
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
 type: text/vnd.tiddlywiki
@@ -8,28 +8,35 @@ type: text/vnd.tiddlywiki
 \define template-path(t) $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/$t$
 
 \define infix(setting, template)
-<$set name="default" filter=<<tf-config-setting-filter "$setting$">> >
 <div class="tfc-infix-setting">
   <div class="tfc-infix-setting-prefix">plugin/&nbsp;</div>
-  <$edit-text tiddler="$:/config/ThirdFlow/$config$" default=<<default>> tag="input"/>
+  <$edit-text tiddler="$:/config/ThirdFlow/$setting$" default={{$(tf-config-base-default)$$setting$}} tag="input"/>
+  &nbsp;
+  <$button class="tc-btn-invisible" aria-label="reset to default" tooltip="reset to default">
+    <$action-deletetiddler $tiddler="$:/config/ThirdFlow/$setting$" />
+    {{$:/core/images/refresh-button}}
+  </$button>
 </div>
-</$set>
 \end
 
-\define template(t)
-<$link to=<<template-path "$t$">> >template</$link>
+\define template(t, ttype)
+<$button class="tc-btn-invisible" aria-label="open $ttype$ template" tooltip="open $ttype$ template" to=<<template-path "$t$">>>
+  {{$:/core/images/file}}
+</$button>
 \end
 
-\define what(w) $w$ in...
+\define what(w) $w$
 
-Settings for plugin development: where are new tiddlers to be added inside your plugin...
+Settings for plugin development.
+
+Define the places inside a plugin you are developing where you want to add new tiddlers of a certain type:
 
 |<<what "commands">>|<<infix "commandinfix">>|<<template "command">>|
 |<<what "filters">>|<<infix "filterinfix">>|<<template "filter">>|
 |<<what "&#8195;`all[...]` filters">>|<<infix "allfilterinfix">>|<<template "allfilter">>|
 |<<what "&#8195;`is[...]` filters">>|<<infix "isfilterinfix">>|<<template "isfilter">>|
-|<<what "Javascript macros">>|<<infix "jsmacroinfix">>|<<template "jsmacro">>|
-|<<what "TW5 macros">>|<<infix "twmacroinfix">>|<<template "twmacro">>|
+|<<what "Javascript macros">>|<<infix "jsmacroinfix">>|<<template "jsmacro" "Javascript macro">>|
+|<<what "TW5 markup macros">>|<<infix "twmacroinfix">>|<<template "twmacro">>|
 |<<what "Javascript libraries">>|<<infix "jslibinfix">>|<<template "jslib">>|
 |<<what "parser modules">>|<<infix "parserinfix">>|<<template "parser">>|
 |<<what "&#8195;wikiparser modules">>|<<infix "wikiparserinfix">>|<<template "wikiparser">>|
