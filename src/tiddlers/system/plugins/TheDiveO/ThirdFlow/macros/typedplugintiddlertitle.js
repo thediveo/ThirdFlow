@@ -2,7 +2,7 @@
 created: 20180203193341374
 type: application/javascript
 title: $:/plugins/TheDiveO/ThirdFlow/macros/typedplugintiddlertitle.js
-modified: 20180203200431580
+modified: 20180205195741652
 module-type: macro
 \*/
 (function(){
@@ -44,7 +44,8 @@ exports.run = function(pluginroot, configtiddler, defaulttiddler, title) {
   /* End with the (suffix) title element. */
   t += title;
   
-  return t;
+  /* Grmpf: ensure that the full title returned is unique. */
+  return this.wiki.generateNewTitle(t);
 };
 
 })();

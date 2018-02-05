@@ -1,7 +1,7 @@
 created: 20180203171654847
-modified: 20180204192526446
+modified: 20180205195031010
 tags: $:/tags/Macro
-title: $:/plugins/TheDiveO/ThirdFlow/macros/defaults
+title: $:/plugins/TheDiveO/ThirdFlow/macros/ConfigLocations
 type: text/vnd.tiddlywiki
 
 \define tf-config-base() $:/config/ThirdFlow/
