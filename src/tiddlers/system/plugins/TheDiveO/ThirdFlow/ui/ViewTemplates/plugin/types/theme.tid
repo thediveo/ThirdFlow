@@ -1,6 +1,7 @@
 created: 20141025174630240
-modified: 20141025175636400
+modified: 20180205194533069
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin/types/theme
 type: text/vnd.tiddlywiki
 
+\rules except wikilink
 `theme` -- contains a TiddlyWiki 5 theme. You can select this theme through the [[theme switcher|$:/core/ui/ControlPanel/Theme]] in the [[control pane|$:/ControlPanel]].

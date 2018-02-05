@@ -1,5 +1,5 @@
 created: 20140902083720188
-modified: 20180205184820286
+modified: 20180205194740430
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
@@ -13,6 +13,7 @@ type: text/vnd.tiddlywiki
 ** adds a new //edit// template to edit plugin meta data:
 *** the edit template shows the same plugin meta data as the plugin //view// template, but additionally allows //editing// most fields.
 *** two plugin meta data elements cannot be edited: the plugin publisher and plugin name elements, as these are derived from the plugin title.
+** removes (annoying) wikilink-ification when displaying or editing plugin meta data.
 
 * ''1.0.14''
 ** adds npm package and (development) script support.
