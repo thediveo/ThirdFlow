@@ -1,6 +1,6 @@
 caption: ThirdFlow
 created: 20180203154413491
-modified: 20180205162623206
+modified: 20180205170454524
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
 type: text/vnd.tiddlywiki
@@ -50,15 +50,19 @@ Configure the places where you want to add new tiddlers of a certain type when d
       <<infixsetting "&#8195;&#8230; `is[...]` filters" "isfilterinfix" "isfilter.js" "is[...] filter module">>
       <<infixsetting "Javascript macro modules" "jsmacroinfix" "jsmacro.js" "Javascript macro module">>
       <<infixsetting "~TiddlyWiki-markup macros" "twmacroinfix" "twmacro" "TiddlyWiki-markup macro">>
-      <<infixsetting "Javascript library modules" "jslibinfix" "lib.js" "Javascript library module">>
+      <<infixsetting "library modules" "jslibinfix" "lib.js" "Javascript library module">>
       <<infixsetting "parser modules" "parserinfix" "parser.js" "parser module">>
       <<infixsetting "&#8195;&#8230; wikiparser rule modules" "wikiparserruleinfix" "wikirule.js" "wikiparser rule module">>
-      <<infixsetting "startup modules" "startupinfix" "startup" "startup module">>
+      <<infixsetting "startup modules" "startupinfix" "startup.js" "startup module">>
       <<infixsetting "CSS tiddlers" "styleinfix" "cssstyle.css" "CSS">>
-      <<infixsetting "~TiddlyWiki template tiddlers" "templateinfix" "template" "TiddlyWiki template tiddler">>
+      <<infixsetting "template tiddlers" "templateinfix" "template" "TiddlyWiki template tiddler">>
       <<infixsetting "UI tiddlers" "uiinfix" "ui" "UI tiddler">>
-      <<infixsetting "Javascript utility modules" "utilinfix" "util.js" "utility module">>
+      <<infixsetting "utility modules" "utilinfix" "util.js" "utility module">>
       <<infixsetting "widget modules" "widgetinfix" "widget.js" "widget module">>
+      <<infixsetting "`$tw` global modules" "twglobalinfix" "twglobal.js" "$tw global module">>
+      <<infixsetting "`$tw.config` modules" "twconfiginfix" "twconfig.js" "$tw.config module">>
+      <<infixsetting "`$tw.utils` modules" "twutilinfix" "twutil.js" "$tw.utils module">>
+      <<infixsetting "`$tw.utils` Node.js-only modules" "twutilnodeinfix" "twutilnode.js" "$tw.utils Node.js-only configuration module">>
     </tbody>
   </table>
 </div>

@@ -1,10 +1,7 @@
 created: 20180202224303945
-modified: 20180202224329137
-tags: $:/tags/ThirdFlow/PluginAction
+modified: 20180205165758283
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/tiddler
 type: text/vnd.tiddlywiki
 
-<$button class=<<tv-config-toolbar-class>> >
-<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "New Tiddler">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/tiddler" />
-new tiddler
-</$button>
+<<action-new-with-template actiontext:"new tiddler" infixtype:"" title:"New Tiddler" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/Tiddler">>
