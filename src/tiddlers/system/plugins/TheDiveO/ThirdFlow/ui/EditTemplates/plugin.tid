@@ -1,0 +1,46 @@
+created: 20180202124221987
+list-before: $:/core/ui/EditTemplate/body
+modified: 20180205190131686
+tags: $:/tags/EditTemplate
+title: $:/plugins/TheDiveO/ThirdFlow/ui/EditTemplates/plugin
+type: text/vnd.tiddlywiki
+
+\define plugin-info-row(name, value)
+  <tr class="tfc-plugin-info-element">
+    <td class="tfc-plugin-info-element-name">
+      $name$:
+    </td>
+    <td class="tfc-plugin-edit-element-value">
+      $value$
+    </td>
+  </tr>
+\end
+
+\define plugin-edit-row(name, field, placeholder)
+  <<plugin-info-row "$name$" '<$edit-text field="$field$" placeholder="$placeholder$"/>'>>
+\end
+
+<$list filter="[all[current]has:field[plugin-type]!field:plugin-type[import]]">
+
+<h1>Plugin Meta Data</h1>
+
+<div class="tfc-plugin-info">
+  <table class="tfc-plugin-info">
+    <$set name="publisher" filter="[all[current]removeprefix[Draft of ']removesuffix[']removeprefix[$:/plugins/]splitbefore[/]removesuffix[/]]">
+      <<plugin-info-row name:"Plugin publisher" value:"$(publisher)$">>
+      <$set name="plugin-name" filter="[all[current]removeprefix[Draft of ']removesuffix[']removeprefix[$:/plugins/]removeprefix<publisher>removeprefix[/]splitbefore[/]]">
+        <<plugin-info-row name:"Plugin name" value:"$(plugin-name)$">>
+      </$set>
+    </$set>
+
+	<<plugin-edit-row "Version" "version" "0.0.1">>
+	<<plugin-edit-row "Plugin type" "plugin-type" "plugin">>
+	<<plugin-edit-row "Description" "description" "Tell TiddlyWiki users about what your plugin does">>
+	<<plugin-edit-row "Author" "author" "U. K. Known">>
+	<<plugin-edit-row "Source" "source" "https://example.org/foo">>
+	<<plugin-edit-row "Plugin priority" "plugin-priority" "">>
+	<<plugin-edit-row "Required TW Core version" "core-version" ">=5.0.0">>
+</table>
+</div>
+
+</$list>

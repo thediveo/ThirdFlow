@@ -1,5 +1,5 @@
 created: 20140902083720188
-modified: 20180205152508932
+modified: 20180205184820286
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
@@ -7,6 +7,12 @@ type: text/vnd.tiddlywiki
 ** fixes //Plugin Sources// sidebar tab not sorting plugins alphabetically.
 ** adds a new "v" popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.
 ** adds a new //ThirdFlow// tab to the control panel. This tab allows developers to configure the places inside plugins where they want to add new tiddlers of a certain type (such as macro modules, filter modules, et cetera).
+** shows more plugin meta data when //viewing// a plugin tiddler:
+*** `core-version` dependency field,
+*** `plugin-priority` field controlling the order of unpacking (where plugin tiddlers "explode" into their shadow tiddlers).
+** adds a new //edit// template to edit plugin meta data:
+*** the edit template shows the same plugin meta data as the plugin //view// template, but additionally allows //editing// most fields.
+*** two plugin meta data elements cannot be edited: the plugin publisher and plugin name elements, as these are derived from the plugin title.
 
 * ''1.0.14''
 ** adds npm package and (development) script support.
@@ -60,7 +66,7 @@ type: text/vnd.tiddlywiki
 *** added support for TW5's native ~JavaScript storage format when creating ~JavaScript tiddlers directly inside ~TiddlyWiki 5. Tiddler meta-data gets correctly inserted into a (special) comment section.
 * ''1.0.4'' -- fix and more documentation.
 ** fixed a typo in the (empty) source plugin tiddler itself which caused hiccups in ~TiddlyWiki's control panel plugin tab.
-** added more background information about plugins, modules, and the crazy stuff the <<tf>> plugin is made of. 
+** added more background information about plugins, modules, and the crazy stuff the <<tf>> plugin is made of.
 
 * ''1.0.3'' -- upgraded to work with the final ~TiddlyWiki 5.1.x releases.
 ** fixed using deprecated regular expression when packing plugin tiddlers.
