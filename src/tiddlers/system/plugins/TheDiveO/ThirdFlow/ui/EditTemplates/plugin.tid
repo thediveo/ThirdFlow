@@ -1,6 +1,6 @@
 created: 20180202124221987
 list-before: $:/core/ui/EditTemplate/body
-modified: 20180202195811504
+modified: 20180205185349401
 tags: $:/tags/EditTemplate
 title: $:/plugins/TheDiveO/ThirdFlow/ui/EditTemplates/plugin
 type: text/vnd.tiddlywiki
@@ -16,9 +16,13 @@ type: text/vnd.tiddlywiki
   </tr>
 \end
 
+\define plugin-edit-row(name, field, placeholder)
+  <<plugin-info-row "$name$" '<$edit-text field="$field$" placeholder="$placeholder$"/>'>>
+\end
+
 <$list filter="[all[current]has:field[plugin-type]!field:plugin-type[import]]">
 
-<h1>Plugin Data</h1>
+<h1>Plugin Meta Data</h1>
 
 <div class="tfc-plugin-info">
   <table class="tfc-plugin-info">
@@ -29,50 +33,13 @@ type: text/vnd.tiddlywiki
       </$set>
     </$set>
 
-    <tr class="tfc-plugin-info-element">
-      <td class="tfc-plugin-info-element-name">
-        Version:
-      </td>
-      <td class="tfc-plugin-edit-element-value">
-        <$edit-text field="version" placeholder="0.0.1"/>
-      </td>
-    </tr>
-
-    <tr class="tfc-plugin-info-element">
-      <td class="tfc-plugin-info-element-name">
-        Description:
-      </td>
-      <td class="tfc-plugin-edit-element-value">
-        <$edit-text field="description" placeholder="Bring a little Foo to your TW"/>
-      </td>
-    </tr>
-
-    <tr class="tfc-plugin-info-element">
-      <td class="tfc-plugin-info-element-name">
-        Author:
-      </td>
-      <td class="tfc-plugin-edit-element-value">
-        <$edit-text field="author" placeholder="U. N. Known"/>
-      </td>
-    </tr>
-
-    <tr class="tfc-plugin-info-element">
-      <td class="tfc-plugin-info-element-name">
-        Source:
-      </td>
-      <td class="tfc-plugin-edit-element-value">
-        <$edit-text field="source" placeholder="https://example.org/foo"/>
-      </td>
-    </tr>
-
-    <tr class="tfc-plugin-info-element">
-      <td class="tfc-plugin-info-element-name">
-        Source:
-      </td>
-      <td class="tfc-plugin-edit-element-value">
-        <$edit-text field="core-version" placeholder=">=5.0.0"/>
-      </td>
-    </tr>
+	<<plugin-edit-row "Version" "version" "0.0.1">>
+	<<plugin-edit-row "Plugin type" "plugin-type" "plugin">>
+	<<plugin-edit-row "Description" "description" "Tell your plugin users about what your plugin does">>
+	<<plugin-edit-row "Author" "author" "U. K. Known">>
+	<<plugin-edit-row "Source" "source" "https://example.org/foo">>
+	<<plugin-edit-row "Plugin priority" "plugin-priority" "">>
+	<<plugin-edit-row "Required TW Core version" "core-version" ">=5.0.0">>
 </table>
 </div>
 
