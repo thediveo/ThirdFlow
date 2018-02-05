@@ -1,8 +1,8 @@
 /*\
-created: 20180203175030065
+created: 20180205162715434
+modified: 20180205163131597
 type: application/javascript
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro.js
-modified: 20180204195221746
 module-type: macro
 \*/
 (function(){
@@ -11,18 +11,20 @@ module-type: macro
 /*global $tw: false */
 "use strict";
 
-/* macro name as seen in TW5 */
+/* Tells TiddlyWiki the name of our macro through the export mechanism. */
 exports.name = "foObAr";
 
-/* list of macro parameters; leave array empty if you need none or want
- * all supplied macro call parameters to be passed to the run() method.
+/* Lists of macro parameters; leave this array empty if you need none, or
+ * want all supplied macro call parameters to be passed to the run() method.
  */
 exports.params = [
   { name: "foo" }, /* 1st parameter name */
   { name: "bar", default: "bar" }
 ];
 
-/* macro code to run when macro requires evaluation; return string value. */
+/* Executes (runs) our macro when it requires evaluation; returns a string
+ * value.
+ */
 exports.run = function(foo, bar) {
   return foo + bar;
 };

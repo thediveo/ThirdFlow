@@ -1,11 +1,13 @@
 created: 20140902083720188
-modified: 20180202213827761
+modified: 20180205152508932
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''next''
-** fixes //Plugin Sources// sidebar tab not sorting plugins.
-** adds //new plugin// button to the //Plugin Sources// sidebar tab which creates a new plugin tiddler from the plugin template [[$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/NewPluginTiddler]].
+** fixes //Plugin Sources// sidebar tab not sorting plugins alphabetically.
+** adds a new "v" popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.
+** adds a new //ThirdFlow// tab to the control panel. This tab allows developers to configure the places inside plugins where they want to add new tiddlers of a certain type (such as macro modules, filter modules, et cetera).
+
 * ''1.0.14''
 ** adds npm package and (development) script support.
 ** after cloning the ThirdFlow repository, first run `npm install tiddlywiki` inside the project directory.
