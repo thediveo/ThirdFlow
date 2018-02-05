@@ -1,6 +1,6 @@
 created: 20141025150024301
 list-before: $:/core/ui/ViewTemplate/plugin
-modified: 20170227211354093
+modified: 20180205185306573
 tags: $:/tags/ViewTemplate
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin
 type: text/vnd.tiddlywiki
@@ -58,7 +58,7 @@ type: text/vnd.tiddlywiki
 
 <$list filter="[all[current]has[plugin-type]!field:plugin-type[import]]">
 
-! Plugin Information
+! Plugin Meta Data
 
 <div class="tfc-plugin-info">
   <table class="tfc-plugin-info">
@@ -79,6 +79,8 @@ type: text/vnd.tiddlywiki
     <<plugin-info-field "Description" "description">>
     <<plugin-info-field "Author" "author">>
     <$macrocall $name="plugin-info-field-link" name="Source" field="source" />
+    <<plugin-info-field "Plugin priority" "plugin-priority">>
+    <<plugin-info-field "Required TW Core version" "core-version">>
   </table>
 </div>
 

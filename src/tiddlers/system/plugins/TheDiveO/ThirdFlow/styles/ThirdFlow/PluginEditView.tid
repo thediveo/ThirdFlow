@@ -1,0 +1,15 @@
+created: 20180202130047517
+modified: 20180202130858732
+tags: $:/tags/Stylesheet
+title: $:/plugins/TheDiveO/ThirdFlow/styles/ThirdFlow/PluginEditView
+type: text/vnd.tiddlywiki
+
+td.tfc-plugin-edit-element-value {
+  text-align: left;
+  vertical-align: baseline;
+  width: 100%;
+}
+
+td.tfc-plugin-edit-element-value input {
+  width: 100%;
+}

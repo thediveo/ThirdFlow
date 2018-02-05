@@ -1,7 +1,15 @@
 created: 20140902083720188
-modified: 20180122101002950
+modified: 20180205184820286
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''next''
+** shows more plugin meta data when //viewing// a plugin tiddler:
+*** `core-version` dependency field,
+*** `plugin-priority` field controlling the order of unpacking (where plugin tiddlers "explode" into their shadow tiddlers).
+** adds a new //edit// template to edit plugin meta data:
+*** the edit template shows the same plugin meta data as the plugin //view// template, but additionally allows //editing// most fields.
+*** two plugin meta data elements cannot be edited: the plugin publisher and plugin name elements, as these are derived from the plugin title.
 
 * ''1.0.14''
 ** adds npm package and (development) script support.
