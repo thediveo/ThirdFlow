@@ -1,6 +1,6 @@
 caption: ThirdFlow
 created: 20180203154413491
-modified: 20180205170454524
+modified: 20180207095227643
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
 type: text/vnd.tiddlywiki
@@ -50,7 +50,7 @@ Configure the places where you want to add new tiddlers of a certain type when d
       <<infixsetting "&#8195;&#8230; `is[...]` filters" "isfilterinfix" "isfilter.js" "is[...] filter module">>
       <<infixsetting "Javascript macro modules" "jsmacroinfix" "jsmacro.js" "Javascript macro module">>
       <<infixsetting "~TiddlyWiki-markup macros" "twmacroinfix" "twmacro" "TiddlyWiki-markup macro">>
-      <<infixsetting "library modules" "jslibinfix" "lib.js" "Javascript library module">>
+      <<infixsetting "library modules" "jslibinfix" "library.js" "Javascript library module">>
       <<infixsetting "parser modules" "parserinfix" "parser.js" "parser module">>
       <<infixsetting "&#8195;&#8230; wikiparser rule modules" "wikiparserruleinfix" "wikirule.js" "wikiparser rule module">>
       <<infixsetting "startup modules" "startupinfix" "startup.js" "startup module">>

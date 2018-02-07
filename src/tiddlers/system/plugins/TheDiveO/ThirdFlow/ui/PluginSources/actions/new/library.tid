@@ -1,0 +1,7 @@
+created: 20180202223038045
+modified: 20180207095238128
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/library
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:"new Javascript library" infixtype:"jslibinfix" title:"library.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/library.js" fields:"moduleType='library'">>

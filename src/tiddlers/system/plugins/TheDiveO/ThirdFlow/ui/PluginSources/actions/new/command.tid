@@ -1,7 +1,7 @@
 created: 20180202223504033
-modified: 20180204195300224
+modified: 20180207094708973
 tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/command
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:"new command module" infixtype:"commandinfix" title:"new command.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/command.js">>
+<<action-new-with-template actiontext:"new command module" infixtype:"commandinfix" title:"command.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/command.js" fields:"moduleType='command'">>

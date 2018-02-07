@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180204194215545
+modified: 20180207094719885
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -15,10 +15,10 @@ type: text/vnd.tiddlywiki
 <<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">>
 \end
 
-\define action-new-with-template(actiontext, infixtype, title, template)
+\define action-new-with-template(actiontext, infixtype, title, template, fields)
 <$set name="newtitle" value=<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">> >
 <$button class=<<tv-config-toolbar-class>> >
-<$action-sendmessage $message="tm-new-tiddler" title=<<newtitle>> $param="$template$" />
+<$action-sendmessage $message="tm-new-tiddler" title=<<newtitle>> $param="$template$" $fields$ />
 $actiontext$
 </$button>
 </$set>
