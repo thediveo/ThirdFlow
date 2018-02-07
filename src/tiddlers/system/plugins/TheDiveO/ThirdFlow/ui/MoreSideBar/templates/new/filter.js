@@ -1,9 +1,8 @@
 /*\
 created: 20180205162715434
-modified: 20180205163131597
 type: application/javascript
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/filter.js
-module-type: filteroperator
+modified: 20180207103213628
 \*/
 (function(){
 

@@ -1,0 +1,8 @@
+caption: new [...[]] filter operator
+created: 20180207103225047
+modified: 20180207103715611
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/filteroperator
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"filterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/filter.js" fields:"moduleType='filteroperator'">>

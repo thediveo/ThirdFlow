@@ -1,6 +1,6 @@
 caption: ThirdFlow
 created: 20180203154413491
-modified: 20180207095227643
+modified: 20180207103114724
 tags: $:/tags/ControlPanel
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow
 type: text/vnd.tiddlywiki
@@ -57,7 +57,6 @@ Configure the places where you want to add new tiddlers of a certain type when d
       <<infixsetting "CSS tiddlers" "styleinfix" "cssstyle.css" "CSS">>
       <<infixsetting "template tiddlers" "templateinfix" "template" "TiddlyWiki template tiddler">>
       <<infixsetting "UI tiddlers" "uiinfix" "ui" "UI tiddler">>
-      <<infixsetting "utility modules" "utilinfix" "util.js" "utility module">>
       <<infixsetting "widget modules" "widgetinfix" "widget.js" "widget module">>
       <<infixsetting "`$tw` global modules" "twglobalinfix" "twglobal.js" "$tw global module">>
       <<infixsetting "`$tw.config` modules" "twconfiginfix" "twconfig.js" "$tw.config module">>
