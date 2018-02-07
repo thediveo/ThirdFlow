@@ -1,7 +1,8 @@
+caption: new CSS tiddler
 created: 20180202223710863
-modified: 20180207094701550
+modified: 20180207100321397
 tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/cssstyle
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:"new CSS tiddler" infixtype:"styleinfix" title:"style.css" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/cssstyle.css" fields:"tags='$:/tags/Stylesheet'">>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"styleinfix" title:"style.css" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/cssstyle.css" fields:"tags='$:/tags/Stylesheet'">>
