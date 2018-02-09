@@ -1,5 +1,6 @@
+caption: add plugin boilerplate tiddlers
 created: 20180202210615976
-modified: 20180204195029705
+modified: 20180207100005474
 tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/boilerplate
 type: text/vnd.tiddlywiki
@@ -12,7 +13,7 @@ type: text/vnd.tiddlywiki
 <$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "license">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/license" />
 <$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "history">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/history" />
 <$action-setfield $tiddler=<<plugin-full-path>> list=<<new-list>> />
-add plugin boilerplate tiddlers
+{{!!caption}}
 </$button>
 </$set>
 </$set>

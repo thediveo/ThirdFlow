@@ -1,7 +1,8 @@
+caption: new wikitext tiddler
 created: 20180202224303945
-modified: 20180205165758283
+modified: 20180207100850748
 tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/tiddler
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:"new tiddler" infixtype:"" title:"New Tiddler" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/Tiddler">>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"" title:"New Tiddler" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/Tiddler">>

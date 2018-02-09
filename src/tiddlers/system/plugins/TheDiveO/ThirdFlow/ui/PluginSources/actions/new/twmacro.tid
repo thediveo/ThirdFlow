@@ -1,10 +1,8 @@
+caption: new wikitext macro
 created: 20180202223619732
-modified: 20180203173734347
-tags: $:/tags/ThirdFlow/PluginAction
+modified: 20180207101828276
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/twmacro
 type: text/vnd.tiddlywiki
 
-<$button class=<<tv-config-toolbar-class>> >
-<$action-sendmessage $message="tm-new-tiddler" title=<<plugin-tiddler-within "macros/foo">> $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/macro" />
-new TW macro tiddler
-</$button>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twmacroinfix" title:"macro" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/twmacro" fields:"tags='$:/tags/Macro'">>

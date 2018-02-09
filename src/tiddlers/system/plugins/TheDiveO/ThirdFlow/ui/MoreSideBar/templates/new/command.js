@@ -1,10 +1,9 @@
 /*\
 created: 20180205162715434
-modified: 20180205163131597
 type: application/javascript
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/command.js
-tags:
-module-type: command
+tags: 
+modified: 20180207092452733
 \*/
 (function(){
 

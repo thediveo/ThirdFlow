@@ -1,9 +1,8 @@
 /*\
 created: 20180205162715434
-modified: 20180205163131597
-title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/lib.js
 type: application/javascript
-module-type: library
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/library.js
+modified: 20180207095013968
 \*/
 (function(){
 
