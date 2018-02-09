@@ -94,9 +94,7 @@ cd ThirdFlow
 npm install tiddlywiki
 ```
 
-Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin`
-or
-You can install TW globally with:  `npm install -g tiddlywiki`
+Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin` or you can install TW globally with:  `npm install -g tiddlywiki`
 
 For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
 
@@ -118,7 +116,7 @@ and open [localhost:8080](http://localhost:8080)
 release
 ```
 
-The files will be crated in then `editons/release` folder
+The release files will be created in the `editons/release` folder.
 
 ## License
 
