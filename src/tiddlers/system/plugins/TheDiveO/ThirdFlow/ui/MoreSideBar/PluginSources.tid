@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180207095928657
+modified: 20180210170913294
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -10,10 +10,6 @@ type: text/vnd.tiddlywiki
 \define qualify-plugin() $(q)$/$(plugin-name)$">>
 
 \define plugin-full-path() $:/plugins/$(plugin-name)$
-
-\define plugin-tiddler-within(title, infixtype)
-<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">>
-\end
 
 \define action-new-with-template(actiontext, infixtype, title, template, fields)
 <$set name="newtitle" value=<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">> >
