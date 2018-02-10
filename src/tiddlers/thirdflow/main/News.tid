@@ -1,13 +1,23 @@
 caption: News
 created: 20141020092824815
-modified: 20170222205259844
+modified: 20180210162429064
 tags: Main
 title: News
 type: text/vnd.tiddlywiki
 
+!!Eating My Own Dogfood
+
+Lately, I used my <<tf>> to work on some ~TiddlyWiki plugins, namely the new [[TwTube video player plugin|https://github.com/TheDiveO/TwTube]], the [[TW5FontAwesome plugin|https://github.com/TheDiveO/TW5FontAwesome]] and some more. In this process, I noticed some places where I the <<tf>> plugin could be improved:
+
+* a new plugin (metadata) editing view that  is much easier to use and understand than working directly with the rather abstract plugin tiddler fields.
+
+* a completely overhaul of the simple "create tiddler" inside a plugin button: this now has become a popup menue that offers to create tiddlers of specific types inside a plugin, already set up from typical templates. At this time, there are templates for Javascript macro modules, command modules, filter operator modules, and many, many more.
+
+* a "new plugin" button in the "Plugin Sources" sidebar tab that creates a new plugin tiddler from a template, ready for editing.
+
 !!Not (Quite) Dead Yet
 
-'nuff said. Some fixes to make <<tf>> work with recent and decent TiddlyWiki 5 releases.
+'nuff said. Some fixes to make <<tf>> work with recent and decent ~TiddlyWiki&nbsp;5 releases.
 
 !!Configuration Panel Tab
 
