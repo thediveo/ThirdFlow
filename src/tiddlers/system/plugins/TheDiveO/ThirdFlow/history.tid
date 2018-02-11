@@ -1,9 +1,9 @@
 created: 20140902083720188
-modified: 20180211163129449
+modified: 20180211165656109
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''next''
+* ''1.1.0''
 ** fixes //Plugin Sources// sidebar tab previously not sorting plugins alphabetically.
 ** now shows number of tiddlers inside a plugin next to the plugin publisher/name.
 ** adds a new <$button class=<<tv-config-toolbar-class>> >{{$:/core/images/down-arrow}}</$button> popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.

@@ -1,6 +1,6 @@
 caption: 3 Your Plugin
 created: 20140903081716848
-modified: 20180210165916086
+modified: 20180211170537591
 tags: Usage
 title: Your Plugin
 type: text/vnd.tiddlywiki
@@ -17,7 +17,7 @@ The <<tf>> guides you through this process: if you've not already done so, open 
 
 !!Add New Plugin
 
-Now, click on the topmost "''+ new plugin'' item.
+Now, click on the topmost item in the Plugin Sources view that reads "''+ new plugin''".
 
 {{ThirdFlow Create New Plugin.jpg}}
 
@@ -40,7 +40,11 @@ It is good practice to include the following three plugin boilerplate tiddlers (
 
 The most convenient way to create the `readme`, `license`, and `history`, and to wire them up correctly in the `list` field of your plugin) is to simply...
 
-...click on the <$button class="tc-btn-invisible">{{$:/core/images/down-arrow}}</$button> menu indicator next to your new plugin's name in the "Plugin Sources" tab. Then choose "add plugin boilerplate tiddlers".
+{{ThirdFlow Plugin Add Boilerplate.jpg}}
+
+...click on "add plugin boilerplate tiddlers" right below your new plugin. Please note that this action only appears while your plugin is still empty.
+
+However, at any time, you can click on the <$button class="tc-btn-invisible">{{$:/core/images/down-arrow}}</$button> menu indicator next to your new plugin's name in the "Plugin Sources" tab. Then choose "add plugin boilerplate tiddlers".
 
 {{ThirdFlow Adding Plugin Boilerplate.jpeg}}
 
