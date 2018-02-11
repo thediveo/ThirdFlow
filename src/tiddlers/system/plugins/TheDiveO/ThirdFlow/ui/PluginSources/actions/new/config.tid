@@ -1,0 +1,8 @@
+caption: new $tw.config module
+created: 20180211155634174
+modified: 20180211155728819
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/config
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twconfiginfix" title:"twconfig.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/twconfig.js" fields:"moduleType='config'">>

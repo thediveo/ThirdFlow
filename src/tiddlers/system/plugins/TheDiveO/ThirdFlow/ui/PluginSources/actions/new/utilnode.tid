@@ -1,0 +1,8 @@
+caption: new Nodejs-only $tw.utils module
+created: 20180211155116031
+modified: 20180211155445679
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/utilnode
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twutilnodeinfix" title:"utilnode.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/utilnode.js" fields:"moduleType='utils-node'">>

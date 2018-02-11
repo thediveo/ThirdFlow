@@ -1,8 +1,9 @@
 /*\
-created: 20180205164319473
+created: 20180211153526427
 type: application/javascript
-title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/util.js
-modified: 20180211153602323
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/utilnode.js
+modified: 20180211153817740
+tags: 
 \*/
 (function(){
 
@@ -10,7 +11,8 @@ modified: 20180211153602323
 /*global $tw: false */
 "use strict";
 
-/* Creates a new Foo tool, which can be used as in:
+/* Only when running inside a Node.js-based TiddlyWiki server,
+ * this creates a new Foo tool, which can be used as in:
  * var fool = new $tw.utils.Foo();
  * You don't need to export a constructor function, instead
  * you can also export an ordinary utility function which just

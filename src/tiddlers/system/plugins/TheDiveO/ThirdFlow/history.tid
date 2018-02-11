@@ -1,13 +1,15 @@
 created: 20140902083720188
-modified: 20180205194740430
+modified: 20180211163129449
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''next''
-** fixes //Plugin Sources// sidebar tab not sorting plugins alphabetically.
-** adds a new "v" popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.
-** adds a new //ThirdFlow// tab to the control panel. This tab allows developers to configure the places inside plugins where they want to add new tiddlers of a certain type (such as macro modules, filter modules, et cetera).
-** shows more plugin meta data when //viewing// a plugin tiddler:
+** fixes //Plugin Sources// sidebar tab previously not sorting plugins alphabetically.
+** now shows number of tiddlers inside a plugin next to the plugin publisher/name.
+** adds a new <$button class=<<tv-config-toolbar-class>> >{{$:/core/images/down-arrow}}</$button> popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.
+** shows "add plugin boilerplate tiddlers" for empty plugins; clicking it opens the standard `readme`, `license` and `history` tiddlers ready for editing. Additionally, these three tiddlers get added to the plugin tiddlers `list` field.
+** adds a new //~ThirdFlow// tab to the control panel. This tab allows developers to configure the places inside plugins where they want to add new tiddlers of a certain type (such as macro modules, filter modules, et cetera).
+** now shows more plugin meta data than before when //viewing// a plugin tiddler:
 *** `core-version` dependency field,
 *** `plugin-priority` field controlling the order of unpacking (where plugin tiddlers "explode" into their shadow tiddlers).
 ** adds a new //edit// template to edit plugin meta data:

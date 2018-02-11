@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180207095928657
+modified: 20180211162655364
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -10,10 +10,6 @@ type: text/vnd.tiddlywiki
 \define qualify-plugin() $(q)$/$(plugin-name)$">>
 
 \define plugin-full-path() $:/plugins/$(plugin-name)$
-
-\define plugin-tiddler-within(title, infixtype)
-<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">>
-\end
 
 \define action-new-with-template(actiontext, infixtype, title, template, fields)
 <$set name="newtitle" value=<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">> >
@@ -32,7 +28,7 @@ $actiontext$
 
 \define plugin-default-icon() $:/core/images/plugin-generic-$(plugin-type)$
 
-\define plugin-contents-filter() [prefix[$(plugin-full-path)$]!is[shadow]sort[]]
+\define plugin-contents-filter() [prefix[$(plugin-full-path)$/]!is[shadow]sort[]]
 
 \define plugin-item-relname() [all[current]removeprefix[$(plugin-full-path)$/]!prefix[tiddlywiki/]]
 
@@ -44,6 +40,14 @@ $actiontext$
     </$list>
   </$link>
 </div>
+\end
+
+\define empty-plugin()
+<$set name="plugin-boilerplate-icon" value="{{$:/core/images/list-bullet}}&nbsp;">
+  <div class="tc-menu-list-subitem">
+    {{$:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/boilerplate}}
+  </div>
+</$set>
 \end
 
 <$set name="q" value=<<qualify "$:/state/popup/thirdflow/pluginactions">>>
@@ -94,9 +98,10 @@ $actiontext$
       <$link to=<<plugin-full-path>>>
         <$macrocall $name="plugin-name" $output="text/plain" />
       </$link>
+      &nbsp;(<$count filter=<<plugin-contents-filter>> />)
       
       <!-- list of plugin contents -->
-      <$list filter=<<plugin-contents-filter>> >
+      <$list filter=<<plugin-contents-filter>> emptyMessage=<<empty-plugin>> >
         <<plugin-item>>
       </$list>
       
