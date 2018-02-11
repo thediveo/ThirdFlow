@@ -1,0 +1,20 @@
+caption: 4 Populate
+created: 20180211170148344
+modified: 20180211171133157
+tags: Usage
+title: Populate
+type: text/vnd.tiddlywiki
+
+!Add Good Stuff
+
+<<tf>> helps you quickly adding several types of tiddlers to your plugins, such as filter operators, macros, and more. Simply click the <$button class="tc-btn-invisible">{{$:/core/images/down-arrow}}</$button> indicator right next to your plugin's name.
+
+{{ThirdFlow Add Good Stuff.jpg}}
+
+For instance, when selecting "''new Javascript macro'', a new tiddler will be created inside your plugin and you get a template ready for editing.
+
+The Control Panel has a new "''~ThirdFlow''" tab that allows you to customize the places where the various types of different tiddlers will be put. Please note that these settings only apply for adding new tiddlers.
+
+{{ThirdFlow Control Panel.jpg}}
+
+You can even edit the templates, if you like: simply click on the document icon next to one of the plugin location settings.
