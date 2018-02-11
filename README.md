@@ -55,10 +55,10 @@ From the «a single figure lies more than a thousands words» department...
 
 ### Plugin Sources View
 
-<img src="art/ThirdFlow%20Plugin%20Sources%20View.jpg" width="40%" align="right" style="clear:both;">
-
 While working on the source tiddlers of a plugin from within a web browser, the
 ThirdFlow plugin lends you a helping hand.
+
+<img src="art/ThirdFlow%20Plugin%20Sources%20View.jpg">
 
 For instance, there's a new tab called "Plugin Sources". It lives inside the
 sidebar's "More" tab, and it shows you all your plugin source tiddlers neatly
@@ -74,7 +74,7 @@ Creating a new plugin is now also now easier than before. Simply go to the
 "Plugin Sources" tab in the sidebar. Then click on "+ new plugin", which you'll
 find right at the top of the view.
 
-<img src="art/ThirdFlow%20Create%20New%20Plugin.jpg" width="25%">
+<img src="art/ThirdFlow%20Create%20New%20Plugin.jpg">
 
 With the new plugin tiddler being shown for editing, simply fill in the fields.
 Make sure to replace _PublisherName_ and _PluginName_ with something more
@@ -84,6 +84,26 @@ sensible. You should notice how the Plugin Meta Data fields update accordingly.
 
 And then you're done. Well, for the plugin itself. Now you can start populating
 your new plugin with cool new tiddlers.
+
+### Standard Boilerplate
+
+First, you should add the standard boilerplate tiddlers `readme`, `license`
+and `history`. You may notice that there's already an action for this appearing
+for your still empty plugin.
+
+<img src="art/ThirdFlow%20Plugin%20Add%20Boilerplate.jpg">
+
+Simply click on it and you get the boilerplate tiddlers opened in the right
+places, ready to be edited.
+
+
+### Add Good Stuff
+
+To speed up your plugin development, ThirdFlow offers to create certain types
+of tiddlers in well-known places inside your plugin, giving you an easy start
+by filling in template code.
+
+<img src="art/ThirdFlow%20Add%20Good%20Stuff.jpg">
 
 
 ## Installation
