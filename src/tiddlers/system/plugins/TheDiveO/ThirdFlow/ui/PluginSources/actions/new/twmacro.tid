@@ -1,0 +1,8 @@
+caption: new wikitext macro
+created: 20180202223619732
+modified: 20180207101828276
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/twmacro
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twmacroinfix" title:"macro" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/twmacro" fields:"tags='$:/tags/Macro'">>

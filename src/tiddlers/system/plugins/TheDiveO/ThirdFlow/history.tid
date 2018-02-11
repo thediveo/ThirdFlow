@@ -1,14 +1,38 @@
 created: 20140902083720188
-modified: 20170331105435772
+modified: 20180211165656109
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.1.0''
+** fixes //Plugin Sources// sidebar tab previously not sorting plugins alphabetically.
+** now shows number of tiddlers inside a plugin next to the plugin publisher/name.
+** adds a new <$button class=<<tv-config-toolbar-class>> >{{$:/core/images/down-arrow}}</$button> popup menu to each plugin listed in the //Plugin Sources// sidebar tab. This menu offers to create new tiddlers inside a plugin, from an assortion of type-specific templates. Templates included cover new Javascript macro modules, filter modules, and many more.
+** shows "add plugin boilerplate tiddlers" for empty plugins; clicking it opens the standard `readme`, `license` and `history` tiddlers ready for editing. Additionally, these three tiddlers get added to the plugin tiddlers `list` field.
+** adds a new //~ThirdFlow// tab to the control panel. This tab allows developers to configure the places inside plugins where they want to add new tiddlers of a certain type (such as macro modules, filter modules, et cetera).
+** now shows more plugin meta data than before when //viewing// a plugin tiddler:
+*** `core-version` dependency field,
+*** `plugin-priority` field controlling the order of unpacking (where plugin tiddlers "explode" into their shadow tiddlers).
+** adds a new //edit// template to edit plugin meta data:
+*** the edit template shows the same plugin meta data as the plugin //view// template, but additionally allows //editing// most fields.
+*** two plugin meta data elements cannot be edited: the plugin publisher and plugin name elements, as these are derived from the plugin title.
+** removes (annoying) wikilink-ification when displaying or editing plugin meta data.
+
+* ''1.0.14''
+** adds npm package and (development) script support.
+** after cloning the ThirdFlow repository, first run `npm install tiddlywiki` inside the project directory.
+*** `npm run develop` starts the development TiddlyWiki server. Use Ctrl-C to stop the server.
+*** `npm run release` creates the release files.
+*** `nmp start` starts the development TiddlyWiki server. Use `npm stop` to stop it.
+
 * ''1.0.13''
 ** fixes a bug in the hierarchical filesystem sync adapter related to evaluation of the `disable-hfs` configuration option.
+
 * ''1.0.12''
 ** minor internal optimization: in filter expressions use `[all[current]]` instead of `[is[current]]`.
+
 * ''1.0.11''
 ** fixes the import tiddler activating the plugin view template when it shouldn't.
+
 * ''1.0.10''
 ** the <<tf>> plugin is not dead yet.
 ** fixes `HierarchicalFileSystemAdaptor` to make it work with recent TW5 releases: adds missing `isReady()` method that was introduced some time ago to TW sync adaptors.
@@ -45,7 +69,7 @@ type: text/vnd.tiddlywiki
 *** added support for TW5's native ~JavaScript storage format when creating ~JavaScript tiddlers directly inside ~TiddlyWiki 5. Tiddler meta-data gets correctly inserted into a (special) comment section.
 * ''1.0.4'' -- fix and more documentation.
 ** fixed a typo in the (empty) source plugin tiddler itself which caused hiccups in ~TiddlyWiki's control panel plugin tab.
-** added more background information about plugins, modules, and the crazy stuff the <<tf>> plugin is made of. 
+** added more background information about plugins, modules, and the crazy stuff the <<tf>> plugin is made of.
 
 * ''1.0.3'' -- upgraded to work with the final ~TiddlyWiki 5.1.x releases.
 ** fixed using deprecated regular expression when packing plugin tiddlers.

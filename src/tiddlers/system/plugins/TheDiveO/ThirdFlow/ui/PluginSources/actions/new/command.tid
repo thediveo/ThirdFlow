@@ -1,0 +1,8 @@
+caption: new command module
+created: 20180202223504033
+modified: 20180207100039540
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/command
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"commandinfix" title:"command.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/command.js" fields:"moduleType='command'">>

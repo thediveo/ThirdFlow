@@ -1,6 +1,7 @@
 created: 20141025155451829
-modified: 20141025155720191
+modified: 20180205194504314
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ViewTemplates/plugin/types/plugin
 type: text/vnd.tiddlywiki
 
+\rules except wikilink
 `plugin` -- this is the most general form of a TiddlyWiki 5 plugin.

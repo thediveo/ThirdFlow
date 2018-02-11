@@ -1,0 +1,8 @@
+caption: new [all[...]] filter operator
+created: 20180207103416636
+modified: 20180207103625598
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/allfilteroperator
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"allfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/allfilter.js" fields:"moduleType='allfilteroperator'">>

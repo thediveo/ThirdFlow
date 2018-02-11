@@ -25,7 +25,7 @@ From the «a single figure lies more than a thousands words» department...
 
 ### Development Phase
 
-<img src="https://raw.githubusercontent.com/TheDiveO/ThirdFlow/master/art/ThirdFlow%20Architecture%20Development%20Phase.jpg" width="40%" align="right">
+<img src="art/ThirdFlow%20Architecture%20Development%20Phase.jpg" width="40%" align="right">
 
 (1) Development:
    * You simply develop your plugin in the well-known TiddlyWiki 5 environment.
@@ -35,21 +35,76 @@ From the «a single figure lies more than a thousands words» department...
    * Your TiddlyWiki synchronizes with a computer-local TiddlyWiki 5 server, running on top of Node.js. This TiddlyWiki server is running in (interactive) "development" mode.
      * Inside this server is a special sync plugin HierarchicalFilesystemAdaptor that...
      * ...stores your tiddlers persistently inside a hierarchical folder structure on your disk.
-     
+
 (2) Source Code Control:
    * Use your favorite source code control system (and cloud service) to manage your plugin tiddlers conveniently. For example, git and GitHub.
 
 ### Release Phase
 
-<img src="https://raw.githubusercontent.com/TheDiveO/ThirdFlow/master/art/ThirdFlow%20Architecture%20Release%20Phase.jpg" width="52%" align="right">
+<img src="art/ThirdFlow%20Architecture%20Release%20Phase.jpg" width="52%" align="right">
 
- (3) Release:
+(3) Release:
    * You can easily release your plugin as a single plugin .tid file for easy import, and you can also release it as part of a demonstration TiddlyWiki, too.
      * The export runs as a TiddlyWiki server command...
      * ...inside a Node.js environment.
    * Your plugin tiddlers get loaded as usual from the file system. This time it's all in read-only mode, because we don't want to change tiddlers. We only want to export.
    * Plugin export is controlled using a templated tiddler renderer.
    * Demo TiddlyWiki export is done using a special save template.
+
+## In-TW Development Aid
+
+### Plugin Sources View
+
+While working on the source tiddlers of a plugin from within a web browser, the
+ThirdFlow plugin lends you a helping hand.
+
+<img src="art/ThirdFlow%20Plugin%20Sources%20View.jpg">
+
+For instance, there's a new tab called "Plugin Sources". It lives inside the
+sidebar's "More" tab, and it shows you all your plugin source tiddlers neatly
+listed in order. But more importantly, this additional view is much more
+concise than the existing "System" and "Shadows" views. The latters are fine
+when you need to see _everything_. But they are unwieldy while focusing on your
+_own_ plugin(s)s. That's exactly what the additional "Plugin Sources" view is
+about.
+
+### Creating New Plugins
+
+Creating a new plugin is now also now easier than before. Simply go to the
+"Plugin Sources" tab in the sidebar. Then click on "+ new plugin", which you'll
+find right at the top of the view.
+
+<img src="art/ThirdFlow%20Create%20New%20Plugin.jpg">
+
+With the new plugin tiddler being shown for editing, simply fill in the fields.
+Make sure to replace _PublisherName_ and _PluginName_ with something more
+sensible. You should notice how the Plugin Meta Data fields update accordingly.
+
+<img src="art/ThirdFlow%20Editing%20Plugin%20Metadata.jpg" width="60%">
+
+And then you're done. Well, for the plugin itself. Now you can start populating
+your new plugin with cool new tiddlers.
+
+### Standard Boilerplate
+
+First, you should add the standard boilerplate tiddlers `readme`, `license`
+and `history`. You may notice that there's already an action for this appearing
+for your still empty plugin.
+
+<img src="art/ThirdFlow%20Plugin%20Add%20Boilerplate.jpg">
+
+Simply click on it and you get the boilerplate tiddlers opened in the right
+places, ready to be edited.
+
+
+### Add Good Stuff
+
+To speed up your plugin development, ThirdFlow offers to create certain types
+of tiddlers in well-known places inside your plugin, giving you an easy start
+by filling in template code.
+
+<img src="art/ThirdFlow%20Add%20Good%20Stuff.jpg">
+
 
 ## Installation
 
@@ -59,9 +114,7 @@ cd ThirdFlow
 npm install tiddlywiki
 ```
 
-Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin`
-or
-You can install TW globally with:  `npm install -g tiddlywiki`
+Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin` or you can install TW globally with:  `npm install -g tiddlywiki`
 
 For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
 
@@ -83,7 +136,7 @@ and open [localhost:8080](http://localhost:8080)
 release
 ```
 
-The files will be crated in then `editons/release` folder
+The release files will be created in the `editons/release` folder.
 
 ## License
 

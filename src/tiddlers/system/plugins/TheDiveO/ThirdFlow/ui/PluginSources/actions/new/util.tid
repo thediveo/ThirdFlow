@@ -1,0 +1,8 @@
+caption: new $tw.utils module
+created: 20180211155355001
+modified: 20180211155426871
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/util
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twutilinfix" title:"util.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/util.js" fields:"moduleType='utils'">>

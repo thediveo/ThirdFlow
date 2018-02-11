@@ -1,22 +1,55 @@
-caption: 2 Your Plugin
+caption: 3 Your Plugin
 created: 20140903081716848
-modified: 20141020091850053
+modified: 20180211170537591
 tags: Usage
 title: Your Plugin
 type: text/vnd.tiddlywiki
 
-!Your Plugin
+!Creating Your New Plugin
 
-You need to create a plugin declaration tiddler. It is common to use a system title, such as `$:/plugins/`//`author`//`/`//`pluginname`//. For instance, `$:/plugin/TheDiveO/ThirdFlow`.
+You need to create a plugin tiddler which defines the plugin itself. Plugins (other than themes and translations) usually live inside the `$:/` system namespace. Moreover, plugin authors should follow this naming convention when naming their plugins: `$:/plugins/`//author//`/`//pluginname// (for instance, `$:/plugin/TheDiveO/ThirdFlow`).
+
+!!Plugin Sources More Sidebar Tab
+
+The <<tf>> guides you through this process: if you've not already done so, open the sidebar "''More''" tab. Next, select "''Plugin Sources''" inside it.
+
+{{ThirdFlow Plugin Sources View.jpg}}
+
+!!Add New Plugin
+
+Now, click on the topmost item in the Plugin Sources view that reads "''+ new plugin''".
+
+{{ThirdFlow Create New Plugin.jpg}}
+
+This will create a new plugin tiddler --  already in editing mode, so you can right start filling in the required plugin (meta data).
+
+{{ThirdFlow Editing Plugin Metadata.jpg}}
+
+Make sure to change //~PublisherName// and //~PluginName// in the title to something slightly more useful. As you edit the plugin title you should notice the "Plugin Meta Data" section to update accordingly.
+
+Please also fill in most other fields shown in the "Plugin Meta Data" section. Please see the input field descriptions shown for those plugin fields that are currently empty. The only field you probably most of the time will leave empty is the "Plugin priority" field.
+
+!Add Plugin Boilerplate
+
+It is good practice to include the following three plugin boilerplate tiddlers (or four, depending on your graphical skills):
+
+# `readme` -- a (short) readme explaining what your plugin does and how to use it. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/readme]])
+# `license` -- ''IMPORTANT:'' how your plugin is licensed to your users.
+# `history` -- a release change log, so your plugin users quickly get an overview on what's new and what has been fixed. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/history]])
+# optionally an `icon`.
+
+The most convenient way to create the `readme`, `license`, and `history`, and to wire them up correctly in the `list` field of your plugin) is to simply...
+
+{{ThirdFlow Plugin Add Boilerplate.jpg}}
+
+...click on "add plugin boilerplate tiddlers" right below your new plugin. Please note that this action only appears while your plugin is still empty.
+
+However, at any time, you can click on the <$button class="tc-btn-invisible">{{$:/core/images/down-arrow}}</$button> menu indicator next to your new plugin's name in the "Plugin Sources" tab. Then choose "add plugin boilerplate tiddlers".
+
+{{ThirdFlow Adding Plugin Boilerplate.jpeg}}
+
+Et voilà! You get the three new `readme`, `license` and `history` tiddlers, filled in from templates and ready for editing. Their titles are already correctly namespaces to belong inside your plugin.
+
+!Plugin Field Details
 
 {{Plugin Declaration Template}}
-
-!Auxilliary Plugin Tiddlers
-
-It is good practice to include the following four tiddlers (where ``.../`` denotes tiddler title of your plugin, typically in the form of `$:/plugins/`//`author`//`/`//`pluginname`//):
-
-|!Tiddler Title|!Note|
-|``.../readme``|//a (short) readme explaining what your plugin does and how to use it. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/readme]])//|
-|``.../license``|//how your plugin is licensed. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/license]])//|
-|``.../history``|//the release history of your plugin. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/history]])//|
-|``.../icon``|//an (optional) plugin icon/emblem that will be shown in the plugin tab of the system settings. ([[Third Flow example|$:/plugins/TheDiveO/ThirdFlow/icon]])//|

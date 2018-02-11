@@ -1,0 +1,8 @@
+caption: new [is[...]] filter operator
+created: 20180207103539461
+modified: 20180207103611302
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/isfilteroperator
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"isfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/isfilter.js" fields:"moduleType='isfilteroperator'">>

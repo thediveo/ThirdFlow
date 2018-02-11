@@ -1,0 +1,32 @@
+{
+  "name": "thirdflow",
+  "version": "1.1.0",
+  "author": "TheDiveO",
+  "description": "Third Flow in-TW plugin development process support",
+  "homepage": "https://github.com/TheDiveO/ThirdFlow",
+  "license": "(MIT OR CC-BY-3.0)",
+  "bugs": "https://github.com/TheDiveO/ThirdFlow/issues",
+
+  "main": "thirdflow.js",
+
+  "scripts": {
+    "start": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html & echo $! > tw.pid",
+    "stop": "kill `cat tw.pid` && rm tw.pid",
+    "develop": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html",
+    "release": "tiddlywiki editions/release --verbose --build release"
+  },
+
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/TheDiveO/ThirdFlow.git"
+  },
+
+  "dependencies": {
+    "tiddlywiki": ">=5.1.11"
+  },
+  "devDependencies": {},
+  "bundleDependencies": [],
+  "engines": {
+    "node": ">=0.8.2"
+  }
+}

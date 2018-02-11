@@ -1,11 +1,24 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20141025161502864
+modified: 20180211162655364
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
 
+\whitespace trim
+
+\define qualify-plugin() $(q)$/$(plugin-name)$">>
+
 \define plugin-full-path() $:/plugins/$(plugin-name)$
+
+\define action-new-with-template(actiontext, infixtype, title, template, fields)
+<$set name="newtitle" value=<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">> >
+<$button class=<<tv-config-toolbar-class>> >
+<$action-sendmessage $message="tm-new-tiddler" title=<<newtitle>> $param="$template$" $fields$ />
+$actiontext$
+</$button>
+</$set>
+\end
 
 \define new-source-tiddler-name() $(plugin-full-path)$/new source tiddler
 
@@ -15,7 +28,7 @@ type: text/vnd.tiddlywiki
 
 \define plugin-default-icon() $:/core/images/plugin-generic-$(plugin-type)$
 
-\define plugin-contents-filter() [prefix[$(plugin-full-path)$]!is[shadow]sort[]]
+\define plugin-contents-filter() [prefix[$(plugin-full-path)$/]!is[shadow]sort[]]
 
 \define plugin-item-relname() [all[current]removeprefix[$(plugin-full-path)$/]!prefix[tiddlywiki/]]
 
@@ -29,8 +42,28 @@ type: text/vnd.tiddlywiki
 </div>
 \end
 
+\define empty-plugin()
+<$set name="plugin-boilerplate-icon" value="{{$:/core/images/list-bullet}}&nbsp;">
+  <div class="tc-menu-list-subitem">
+    {{$:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/boilerplate}}
+  </div>
+</$set>
+\end
+
+<$set name="q" value=<<qualify "$:/state/popup/thirdflow/pluginactions">>>
 <div class="tc-timeline">
-  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]]" variable="plugin-name">
+  <div class="tc-menu-list-item tc-sidebar-header">
+    <div class="tc-plugin-info-chunk">{{$:/core/images/plugin-generic-plugin}}</div>
+    &nbsp;
+    <$button tooltip="create new plugin" class=<<tv-config-toolbar-class>> >
+      <$action-sendmessage $message="tm-new-tiddler" title="$:/plugins/PublisherName/PluginName" $param="$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/plugin" />
+      {{$:/core/images/new-button}}
+    </$button>
+    &nbsp;
+    new plugin
+  </div>
+
+  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!prefix[TheDiveO/ThirdFlow/]sort[]]" variable="plugin-name">
     <div class="tc-menu-list-item tc-sidebar-header">
     
       <!-- plugin icon or default icon -->
@@ -41,21 +74,38 @@ type: text/vnd.tiddlywiki
           </$list>
         </$transclude>
       </div>
+      &nbsp;
+      <!-- plugin actions -->
+      <$set name="qp" value=<<qualify-plugin>> >
+        <$button popup=<<qp>> class=<<tv-config-toolbar-class>> selectedClass="tc-selected">
+          <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">
+          {{$:/core/images/down-arrow}}
+          </$list>
+          <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+          <span class="tc-btn-text">plugin actions</span>
+          </$list>
+        </$button>
+        <$reveal state=<<qp>> type="popup" position="below" animate="yes">
+          <div class="tc-drop-down">
+            <$list filter="[all[shadows+tiddlers]tag[$:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction]!has[draft.of]sort[caption]]">
+              <$transclude mode="inline"/>
+            </$list>
+          </div>
+        </$reveal>
+      </$set>
+      &nbsp;
       <!-- plugin author/name w. link -->
       <$link to=<<plugin-full-path>>>
         <$macrocall $name="plugin-name" $output="text/plain" />
       </$link>
-      <!-- new plugin source tiddler here -->
-      &nbsp;<$button message="tm-new-tiddler" param=<<new-source-tiddler-name>> class=<<tv-config-toolbar-class>> tooltip="Create a new source tiddler here">
-	    <$list filter="[<tv-config-toolbar-icons>prefix[yes]]">{{$:/core/images/new-button}}</$list>
-		<$list filter="[<tv-config-toolbar-text>prefix[yes]]"><span class="tc-btn-text"><$text text="New source here"/></span></$list>
-	  </$button>
+      &nbsp;(<$count filter=<<plugin-contents-filter>> />)
       
       <!-- list of plugin contents -->
-      <$list filter=<<plugin-contents-filter>> >
+      <$list filter=<<plugin-contents-filter>> emptyMessage=<<empty-plugin>> >
         <<plugin-item>>
       </$list>
       
     </div>
   </$list>
 </div>
+</$set>

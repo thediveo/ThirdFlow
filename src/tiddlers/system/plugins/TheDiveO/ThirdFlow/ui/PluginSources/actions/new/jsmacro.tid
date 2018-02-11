@@ -1,0 +1,8 @@
+caption: new Javascript macro
+created: 20180204191504018
+modified: 20180207100731291
+tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
+title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/jsmacro
+type: text/vnd.tiddlywiki
+
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"commandinfix" title:"macro.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/jsmacro.js" fields:"moduleType='macro'">>
