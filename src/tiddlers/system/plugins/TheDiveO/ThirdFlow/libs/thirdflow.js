@@ -70,7 +70,10 @@ exports.packagePlugin = function(wiki, pluginTitle, filterExpression) {
 	// We need to update the plugin info that TW had built up during boot...
 	wiki.readPluginInfo();
 	// ...and we need to re-unpack the plugins into their shadow tiddlers in
-	// order to make [is[shadow]] work correctly.
+	// order to make [is[shadow]] work correctly. Yes, that causes the plugin
+  // tiddlers to exist two times: the original source tiddler, as well as
+  // a corresponding shadow tiddler. However, this is just during release,
+  // but never in a development wiki nor in a user wiki deploying this plugin.
 	wiki.unpackPluginTiddlers();
   return;
 };

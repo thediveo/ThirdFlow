@@ -27,14 +27,14 @@ exports.info = {
 
 var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
 
-var Command = function(params,commander) {
+var Command = function(params, commander) {
 	this.params = params;
 	this.commander = commander;
 	this.logger = new $tw.utils.Logger("--" + exports.info.name);
 };
 
 Command.prototype.execute = function() {
-	if(this.params.length < 1) {
+	if (this.params.length < 1) {
 		return "Missing plugin title";
 	}
 	var pluginTitle = this.params[0];
@@ -43,9 +43,9 @@ Command.prototype.execute = function() {
 	// Get the plug-in self-description tiddler. If it doesn't exist,
 	// bail out as the plugin developer needs to provide a plugin tiddler
 	// with the required self-description.
-	this.logger.log("making plugin", pluginTitle);
-	this.logger.log("using filter for packing", filter);
-	return thirdflow.packagePlugin(pluginTitle, filter);
+	this.logger.log("making plugin:", pluginTitle);
+	this.logger.log("using filter for packing:", filter);
+	return thirdflow.packagePlugin($tw.wiki, pluginTitle, filter);
 };
 
 exports.Command = Command;
