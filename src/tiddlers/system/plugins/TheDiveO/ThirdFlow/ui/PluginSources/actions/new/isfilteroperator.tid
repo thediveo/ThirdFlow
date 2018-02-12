@@ -5,4 +5,4 @@ tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/isfilteroperator
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:{{!!caption}} infixtype:"isfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/isfilter.js" fields:"moduleType='isfilteroperator'">>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"isfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/isfilter.js" fields:"module-type='isfilteroperator'">>
