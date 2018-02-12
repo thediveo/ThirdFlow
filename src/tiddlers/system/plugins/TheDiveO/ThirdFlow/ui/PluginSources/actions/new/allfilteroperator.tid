@@ -5,4 +5,4 @@ tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/allfilteroperator
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:{{!!caption}} infixtype:"allfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/allfilter.js" fields:"moduleType='allfilteroperator'">>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"allfilterinfix" title:"filter.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/allfilter.js" fields:"module-type='allfilteroperator'">>

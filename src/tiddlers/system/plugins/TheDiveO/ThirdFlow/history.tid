@@ -1,8 +1,10 @@
 created: 20140902083720188
-modified: 20180211165656109
+modified: 20180212170337814
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
+* ''1.1.1''
+** fixes plugin tiddler templates incorrectly setting `moduleType` instead of `module-type`.
 * ''1.1.0''
 ** fixes //Plugin Sources// sidebar tab previously not sorting plugins alphabetically.
 ** now shows number of tiddlers inside a plugin next to the plugin publisher/name.
