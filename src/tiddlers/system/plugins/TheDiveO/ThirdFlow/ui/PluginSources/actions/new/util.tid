@@ -5,4 +5,4 @@ tags: $:/plugins/TheDiveO/ThirdFlow/tags/ThirdFlow/PluginAction
 title: $:/plugins/TheDiveO/ThirdFlow/ui/PluginSources/actions/new/util
 type: text/vnd.tiddlywiki
 
-<<action-new-with-template actiontext:{{!!caption}} infixtype:"twutilinfix" title:"util.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/util.js" fields:"moduleType='utils'">>
+<<action-new-with-template actiontext:{{!!caption}} infixtype:"twutilinfix" title:"util.js" template:"$:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/util.js" fields:"module-type='utils'">>
