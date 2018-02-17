@@ -12,6 +12,7 @@ module-type: command
 /*global $tw: false */
 "use strict";
 
+
 /* Exports our --releaseplugins command, which packages all plugins marked for
  * release in this wiki, and then writes them to the local filesystem.
  */
@@ -23,9 +24,12 @@ exports.info = {
 
 var RELEASE_CONFIG_TIDDLERS_PREFIX = "$:/config/ThirdFlow/plugins";
 var RELEASE_CONFIG_FILTER = "[prefix[" + RELEASE_CONFIG_TIDDLERS_PREFIX + "/]]";
+var DEFAULT_TID_TEMPLATE = "$:/core/templates/tid-tiddler";
 
 
+/* Required Good Stuff(tm) */
 var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
+var path = require("path");
 
 
 /* Creates a new command instance. */
@@ -57,9 +61,16 @@ Command.prototype.execute = function() {
       if (!releaseName || release !== "yes") {
         self.logger.log("!!! skipping:", pluginTitle);
       } else {
+        // (1) pack the plugin tiddler
         self.logger.log("packaging:", pluginTitle);
         thirdflow.packagePlugin($tw.wiki, pluginTitle);
-        self.logger.log("writing to:", releaseName);
+        // (2) write the plugin tiddler
+        var filename = path.resolve(self.commander.outputPath, releaseName);
+        var template = config.fields["template"] || DEFAULT_TID_TEMPLATE;
+        self.logger.log("writing to:", filename);
+        thirdflow. renderTiddlerWithTemplate(
+          self.commander.wiki, pluginTitle, template, filename
+        );
       }
     }
   });
