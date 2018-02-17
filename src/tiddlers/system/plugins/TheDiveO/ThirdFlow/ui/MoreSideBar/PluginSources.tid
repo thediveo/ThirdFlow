@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180211162655364
+modified: 20180217202921185
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -63,7 +63,7 @@ $actiontext$
     new plugin
   </div>
 
-  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!prefix[TheDiveO/ThirdFlow/]sort[]]" variable="plugin-name">
+  <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!prefix[TheDiveO/ThirdFlow/]sort[]] -[all[shadows]prefix[$:/plugins/]shadowsource[]removeprefix[$:/plugins/]]" variable="plugin-name">
     <div class="tc-menu-list-item tc-sidebar-header">
     
       <!-- plugin icon or default icon -->

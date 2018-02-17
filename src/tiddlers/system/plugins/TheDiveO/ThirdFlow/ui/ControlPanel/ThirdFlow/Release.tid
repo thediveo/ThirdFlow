@@ -1,6 +1,6 @@
 caption: Release
 created: 20180217150231019
-modified: 20180217165547710
+modified: 20180217202317855
 tags: 
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow/Release
 type: text/vnd.tiddlywiki
@@ -48,7 +48,7 @@ Settings to customize your ''plugin(s) release'', including an optional plugin-d
 
 !! Plugins
 
-<$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!regexp:title[^.+/.+/]sort[]]" variable="plugin-name">
+<$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!regexp:title[^.+/.+/]sort[]] -[all[shadows]prefix[$:/plugins/]shadowsource[]removeprefix[$:/plugins/]]" variable="plugin-name">
   <$set name="plugin-config" filter="[<plugin-name>addprefix[$:/config/ThirdFlow/plugins/$:/plugins/]]">
     <$set name="plugin-filename" filter="[<plugin-name>titlecomponents[]last[]addsuffix[.tid]]">
       <$macrocall $name="release-plugin-item" itemdesc=<<plugin-name>> itemconfig=<<plugin-config>> defaultfilename=<<plugin-filename>> templateplaceholder="$:/core/templates/tid-tiddler" />
