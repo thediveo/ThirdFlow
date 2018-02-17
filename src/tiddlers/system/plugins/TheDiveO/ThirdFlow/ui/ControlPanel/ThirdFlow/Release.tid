@@ -1,8 +1,52 @@
 caption: Release
 created: 20180217150231019
-modified: 20180217150445366
+modified: 20180217161655606
 tags: 
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow/Release
 type: text/vnd.tiddlywiki
 
+\define release-item(itemdesc, itemconfig, defaultfilename, template)
+
+<tr class="tc-edit-field">
+  <td style="white-space: nowrap;">
+    <$checkbox tiddler="$itemconfig$" field="release" checked="yes" unchecked="no"/>
+    release $itemdesc$ as:</td>
+  <td>
+    <$edit-text tiddler="$itemconfig$" field="text" default="$defaultfilename$" tag="input" />
+  </td>
+  <td>
+    template:&nbsp;<$edit-text tiddler="$itemconfig$" field="template" default="" placeholder="$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources" tag="input" />
+  </td>
+</tr>
+\end
+
 Settings to customize your ''plugin(s) release'' (including a plugin-demo wiki).
+
+> ''Note:'' To create the release files, run `npm run release` in a terminal session.
+
+!! Plugins
+
+<div class="tc-edit-fields">
+  <table class="tc-edit-fields">
+    <tbody>
+      <$list filter="[prefix[$:/plugins/]has[plugin-type]removeprefix[$:/plugins/]!prefix[tiddlywiki/]!regexp:title[^.+/.+/]sort[]]" variable="plugin-name">
+        <$set name="plugin-config" filter="[<plugin-name>addprefix[$:/config/ThirdFlow/plugins/$:/plugins/]]">
+          <$set name="plugin-filename" filter="[<plugin-name>titlecomponents[]last[]addsuffix[.tid]]">
+            <$macrocall $name="release-item" itemdesc=<<plugin-name>> itemconfig=<<plugin-config>> defaultfilename=<<plugin-filename>> template="x" />
+          </$set>
+        </$set>
+      </$list>
+	</tbody>
+  </table>
+</div>
+
+
+!! Plugin-Demo Wiki
+
+<div class="tc-edit-fields">
+  <table class="tc-edit-fields">
+    <tbody>
+      <<release-item "demo wiki" "$:/config/ThirdFlow/demowiki" "plugin-demo.html">>
+	</tbody>
+  </table>
+</div>
