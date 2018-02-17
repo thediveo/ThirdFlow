@@ -10,10 +10,10 @@
         "tiddlywiki/highlight"
     ],
     "build": {
-		"release": [
-      "--releaseplugins",
-      "--releasedemowiki"
-		]
+  		"release": [
+        "--releaseplugins",
+        "--releasedemowiki"
+  		]
     },
     "themes": [
         "tiddlywiki/vanilla",
