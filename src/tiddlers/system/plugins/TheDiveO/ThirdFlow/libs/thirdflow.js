@@ -17,6 +17,11 @@ functions can be used, for instance, through TW server commands.
 "use strict";
 
 
+/* Good Stuff(tm) we need */
+var fs = require("fs");
+var path = require("path");
+
+
 /* Packages a plugin tiddler from its constituent individual tiddlers that exist
  * inside the title sub-namespace of the plugin tiddler.
  *
@@ -31,8 +36,8 @@ functions can be used, for instance, through TW server commands.
  *
  * Result:
  *   returns undefined when the plugin tiddler specified in pluginTitle has
- *   been packed without issues. Otherwise an error string detailing what
- *   went wrong.
+ *   been packed without issues. Otherwise, an error string is returned,
+ *   detailing what went wrong.
  */
 exports.packagePlugin = function(wiki, pluginTitle, filterExpression) {
   // Prepare input parameters...
@@ -79,10 +84,28 @@ exports.packagePlugin = function(wiki, pluginTitle, filterExpression) {
 };
 
 
-/*
+/* Renders a single tiddler using a template to a file.
  *
+ * Parameters:
+ *   wiki: TW instance.
+ *   title: the tiddler to be rendered.
+ *   template: the title of the template to be used for rendering.
+ *   filename: the output filename to which the tiddler gets rendered.
+ *
+ * Result:
+ *   returns undefined when the rendering and writing process finished
+ *   successfully. Otherwise, an error string is returned, detailing what
+ *   went wrong.
  */
-exports.renderTiddlerWithTemplate = function() {
+exports.renderTiddlerWithTemplate = function(wiki, title, template, filename) {
+  var err = $tw.utils.createFileDirectories(filename);
+  if (typeof err === "string") {
+    return err;
+  }
+  var content = wiki.renderTiddler(
+    "text/plain", template, { variables: { currentTiddler: title } });
+  fs.writeFileSync(filename, content, { encoding: "utf8" });
+  return;
 };
 
 

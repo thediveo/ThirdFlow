@@ -20,18 +20,22 @@ the plugin-type is set.
 /*global $tw: false */
 "use strict";
 
+
 exports.info = {
 	name: "packplugin",
 	synchronous: true
 };
 
+
 var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
+
 
 var Command = function(params, commander) {
 	this.params = params;
 	this.commander = commander;
 	this.logger = new $tw.utils.Logger("--" + exports.info.name);
 };
+
 
 Command.prototype.execute = function() {
 	if (this.params.length < 1) {
@@ -47,6 +51,7 @@ Command.prototype.execute = function() {
 	this.logger.log("using filter for packing:", filter);
 	return thirdflow.packagePlugin($tw.wiki, pluginTitle, filter);
 };
+
 
 exports.Command = Command;
 
