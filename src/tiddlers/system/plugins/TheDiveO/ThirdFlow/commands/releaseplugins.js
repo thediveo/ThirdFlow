@@ -48,6 +48,12 @@ Command.prototype.execute = function() {
 
   // Retrieve the release configuration tiddlers, then iterate over them
   // and package and render those plugins for which release is enabled.
+  // Plugin-release config tiddler fields:
+  //   release: must be "yes" to trigger release, otherwise the release config
+  //     data gets ignored.
+  //   text: mandatory name of plugin file name.
+  //   template: optional title of a tempplate tiddler to be used for rendering
+  //     the plugin output file.
   var releaseConfigs = $tw.wiki.filterTiddlers(RELEASE_CONFIG_FILTER);
   self.logger.log("release config tiddlers found:", releaseConfigs.length);
   $tw.utils.each(releaseConfigs, function(title) {
@@ -55,7 +61,9 @@ Command.prototype.execute = function() {
     var config = $tw.wiki.getTiddler(title);
     if (config) {
       var release = config.fields["release"] || "";
-      var releaseName = config.fields.text;
+      var releaseName = config.fields.text.replace(/\r?\n|\r/g, "");
+      var template = config.fields["template"] || DEFAULT_TID_TEMPLATE;
+
       if (!releaseName || release !== "yes") {
         self.logger.log("!!! skipping:", pluginTitle);
       } else {
@@ -64,7 +72,6 @@ Command.prototype.execute = function() {
         thirdflow.packagePlugin($tw.wiki, pluginTitle);
         // (2) write the plugin tiddler
         var filename = path.resolve(self.commander.outputPath, releaseName);
-        var template = config.fields["template"] || DEFAULT_TID_TEMPLATE;
         self.logger.log("writing to:", filename);
         thirdflow. renderTiddlerWithTemplate(
           self.commander.wiki, pluginTitle, template, filename

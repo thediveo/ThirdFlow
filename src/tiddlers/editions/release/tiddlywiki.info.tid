@@ -1,5 +1,5 @@
 created: 20140903071652956
-modified: 20170222204129284
+modified: 20180217151529231
 tags: tiddlywiki.info Template Edition
 title: editions/release/tiddlywiki.info
 type: application/json
@@ -19,9 +19,8 @@ type: application/json
     ],
     "build": {
 		"release": [
-			"--packplugin", "$:/plugins/TheDiveO/ThirdFlow",
-			"--rendertemplatedtiddler", "$:/plugins/TheDiveO/ThirdFlow", "$:/core/templates/tid-tiddler", "thirdflow.tid", "", "text/plain",
-			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "thirdflow.html", "text/plain"
+          "--releaseplugins",
+          "--releasedemowiki"
 		]
     },
     "themes": [
