@@ -96,7 +96,6 @@ for your still empty plugin.
 Simply click on it and you get the boilerplate tiddlers opened in the right
 places, ready to be edited.
 
-
 ### Add Good Stuff
 
 To speed up your plugin development, ThirdFlow offers to create certain types
@@ -105,6 +104,19 @@ by filling in template code.
 
 <img src="art/ThirdFlow%20Add%20Good%20Stuff.jpg">
 
+### Generate Release Files
+
+When you're ready to release, first configure what to release. That's easy,
+simply go to the Control Pane and open its "ThirdFlow" tab. Then click on its
+"Release" sub-tab.
+
+<img src="art/ThirdFlow%20Control%20Panel%20Release.jpg" width="80%">
+
+Check the plugin you want to release and set their filenames. Optionally,
+check the "demo wiki" and also set its filename.
+
+Then switch to a terminal session and simply run `npm run release` to generate
+your release files inside the `editions/release/output/` folder.
 
 ## Installation
 
@@ -120,20 +132,26 @@ For Windows users the PATH variable is well hidden, so just [ask the search engi
 
 ## Creating Your New Plugin
 
-Simply copy the contents inside the `skeleton` folder to a new folder. Then start the develop phase as described next and edit and rename the plugin tiddlers as suitable for your new plugin creation. After that, simply enter the release phase. These two phases are described next. And if you need to see a full blown life demonstration then simply look at the *Third Flow* plugin itself. Enjoy!
+Simply copy the contents inside the `skeleton` folder to a new folder. Then start the develop phase as described next. Fill in the Plugin Kickstarter that will appear and
+click through its few steps. That's it. Enjoy!
 
 ## Starting the Server
 
 ```
-develop [[username] [password]] [IP]
+npm run develop
 ```
 
-and open [localhost:8080](http://localhost:8080)
+and open [localhost:8080](http://localhost:8080). You'll now be greeted with
+the shiny new "Plugin Kickstarter" tiddler. Fill in the fields and follow its
+instructions by clicking through the few steps to create a new plugin.
+
+Afterwards, you can delete the "Plugin Kickstarter" tiddler when you don't need
+it anymore.
 
 ## Creating the Release Files
 
 ```
-release
+npm run release
 ```
 
 The release files will be created in the `editons/release` folder.

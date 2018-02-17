@@ -1,5 +1,6 @@
 .drafts/
-/node_modules/
+node_modules/
+skeleton/node_modules/
 .directory
 .project
 src/tiddlers/images/Thumbs.db

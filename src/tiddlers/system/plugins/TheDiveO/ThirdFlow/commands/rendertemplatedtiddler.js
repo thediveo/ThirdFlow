@@ -20,38 +20,40 @@ template tiddlers including the filter set.
 /*global $tw: false */
 "use strict";
 
-var widget = require("$:/core/modules/widgets/widget.js");
 
 exports.info = {
 	name: "rendertemplatedtiddler",
 	synchronous: true
 };
 
+
 var Command = function(params,commander) {
 	this.params = params;
 	this.commander = commander;
-    this.logger = new $tw.utils.Logger("--" + exports.info.name);
+  this.logger = new $tw.utils.Logger("--" + exports.info.name);
 };
+
 
 Command.prototype.execute = function() {
-	if(this.params.length < 3) {
+	if (this.params.length < 3) {
 		return "Missing template or filename";
 	}
-	var self = this,
-		fs = require("fs"),
-		path = require("path"),
-		wiki = this.commander.wiki,
-		title = this.params[0],
-		template = this.params[1],
-		filename = path.resolve(this.commander.outputPath,this.params[2]);
-	$tw.utils.createFileDirectories(filename);
+	var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
+	var path = require("path");
+	var title = this.params[0];
+	var template = this.params[1];
+	var filename = path.resolve(this.commander.outputPath, this.params[2]);
 	// Save the tiddler as a self contained templated file
-	var content = wiki.renderTiddler("text/plain",template,{variables: {currentTiddler: title}});
-	fs.writeFileSync(filename,content,{encoding: "utf8"});
-    this.logger.log("rendered tiddler", title, "to", filename);
-
+  thirdflow.renderTiddlerWithTemplate(
+		this.commander.wiki,
+		title,
+		template,
+		filename
+	);
+  this.logger.log("rendered tiddler", title, "to", filename);
 	return null; // done fine
 };
+
 
 exports.Command = Command;
 

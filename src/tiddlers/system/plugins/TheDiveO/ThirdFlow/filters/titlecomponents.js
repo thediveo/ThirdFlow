@@ -1,9 +1,9 @@
 /*\
 created: 20141117182000659
-modified: 20141117182932515
-module-type: filteroperator
-title: $:/plugins/TheDiveO/ThirdFlow/filters/titlecomponents.js
 type: application/javascript
+title: $:/plugins/TheDiveO/ThirdFlow/filters/titlecomponents.js
+modified: 20180217161013611
+module-type: filteroperator
 
 Filter operator for splitting a title containing slashes as separators
 into its components.
@@ -21,7 +21,6 @@ Export our filter function
 exports.titlecomponents = function(source,operator,options) {
 	var results = [];
 	source(function(tiddler,title) {
-        console.log("Title: ", title);
         var components = title.split("/");
         var idx;
         var l = components.length;
