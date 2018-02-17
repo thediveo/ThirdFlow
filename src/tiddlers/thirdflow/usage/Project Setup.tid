@@ -1,6 +1,6 @@
 caption: 1 Project Setup
 created: 20140903075000564
-modified: 20141128204227708
+modified: 20180217205632595
 tags: Usage
 title: Project Setup
 type: text/vnd.tiddlywiki
@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 
 You can either:
 
-* ''start a new plugin project'' using the included skeleton project from the `skeleton` subfolder,
+* ''start a new plugin project'' using the included skeleton project with ''kickstarter'' from the `skeleton` subfolder,
 * or ''upgrade an existing plugin project'' following some simple steps.
 
 !!Start a New Plugin Project
@@ -19,9 +19,15 @@ You can either:
 
 # Simply copy over the `skeleton` folder and all its subfolders to a new location. This will become your source code repository.
 
-# Rename the new folder with the skeleton files to an appropriate name that reflects what your plugin is good for. So, don't take the <<tf>> as an example here.
+# optionally edit the `package.json` file inside your new plugin development source code repository.
 
-# Edit the `release` scripts from the main folder: here, adapt the plugin path and file names in the ``--build release`` configuration to your plugin
+# run `npm install`.
+
+# run `npm develop`.
+
+# navigate to http://localhost:8080.
+
+# Follow the instructions given on the "Plugin Kickstarter" Tiddler which is automatically shown.
 @@
 
 
@@ -44,5 +50,5 @@ You can either:
 
 # Create ``editions/develop/tiddlywiki.info`` using [[this plugin develop template|editions/develop/tiddlywiki.info]]. You can probably take this template just verbatim without any changes.
 
-# Create ``editions/release/tiddlywiki.info`` using [[this plugin release template|editions/release/tiddlywiki.info]]. In this template, please adapt the plugin path and file names in the ``--build release`` configuration to your plugin.
+# Create ``editions/release/tiddlywiki.info`` using [[this plugin release template|editions/release/tiddlywiki.info]]. You can probably take this template just verbatim without any changes.
 @@

@@ -1,6 +1,6 @@
 caption: 5 Release
 created: 20140903075152280
-modified: 20180211170116001
+modified: 20180217210427448
 tags: Usage
 title: Release
 type: text/vnd.tiddlywiki
@@ -9,18 +9,18 @@ type: text/vnd.tiddlywiki
 
 ''Important:'' make sure that you've set up the plugin (description) tiddler correctly. Otherwise, you won't be able to package your plugin tiddler.
 
-''Important:'' make sure that you've adapted the `release` script to your plugin project accordingly. See [[Project Setup]] for details.
-
 @@.wide
 # Make sure to correctly set (or bump up) the version information of your plugin tiddler. Otherwise, people won't be able to upgrade existing installations of your plugin.
 
-# Open a terminal and change into the top folder of your plugin project. This is the folder with the `src/` subfolder below it.
+# Open a terminal and change into the top folder of your plugin project. This is the folder where the `src/` subfolder is inside it.
 
-# Use either `release` (OS&nbsp;X, Linux, ...) or `release.cmd` (Windows) to create a single plugin tiddler file as well as a demonstration ~TiddlyWiki 5 containing, demonstrating, and documenting your plugin.
+# Ensure that you've configure the release files as you need them: for this, go to the [[$:/ControlPanel]]. Then open the "~ThirdFlow" and click on its "Release" sub-tab.
+#* Enable plugin release and set the desired plugin output filename.
+#* Optionally enable the plugin-demo wiki release and set the output filename for the wiki file.
 
-#* `release/output/example.tid` is your plugin packaged in a single tiddler, ready for release.
-
-#* `release/output/example.html` is your demonstration ~TiddlyWiki 5 that also contains your plugin packaged in a single tiddler, ready for release. While the plugin is included, the individual source files that make up the plugin are //not// included (as they would be duplicated due to the plugin tiddler and so the are not necessary any more).
+# Run `npm run release` to create release files inside the `editions/release/output/` subfolder:
+#* one or more plugin release files,
+#* optionally a demonstration ~TiddlyWiki 5 containing, demonstrating, and documenting your plugin.
 
 # Test drive your release files.
 
