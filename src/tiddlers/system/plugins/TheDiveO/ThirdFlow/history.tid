@@ -1,10 +1,10 @@
 created: 20140902083720188
-modified: 20180217165118587
+modified: 20180217170043601
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''next''
-** adds new automated release mechanism for plugins and plugin-demo wikis:
+* ''1.2.0''
+** brings a new automated release mechanism for plugins and plugin-demo wikis that simplifies maintaining what is to be released. The new system especially makes releasing multiple different plugins from the same development wiki much easier -- because there is no more need to tweak the release `tiddlywiki.info` configuration (however, this old release mechanism is still available).
 *** new "''Release''" tab in control panel, which configures which plugin(s) to release  under which name, as well as whether to additionally release a plugin-demo wiki.
 *** new commands `--releaseplugins` and `--releasedemowiki` which use the configuration set from the control panel to package your plugins, write them to files, as well as writing the plugin-demo wiki (when enabled in configuration).
 *** upgrades `release/tiddlywiki.info` to use the new automated release mechanism, so plugin developers don't need to edit this file anymore in the future. To upgrade an existing plugin development wiki, simply upgrade your local `release/tiddlywiki.info` with this new one: [[editions/release/tiddlywiki.info]].
