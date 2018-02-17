@@ -1,0 +1,66 @@
+caption: Default Locations
+created: 20180217145204420
+modified: 20180217150355438
+title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow/Locations
+type: text/vnd.tiddlywiki
+
+\define template-path(t) $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/$t$
+
+\define infix(setting)
+<div class="tfc-infix-setting">
+  <div class="tfc-infix-setting-prefix">plugin/&nbsp;</div>
+  <$edit-text tiddler="$:/config/ThirdFlow/$setting$" default={{$(tf-config-base-default)$$setting$}} tag="input"/>
+  &nbsp;
+  <$button class="tc-btn-invisible" aria-label="reset to default" tooltip="reset to default">
+    <$action-deletetiddler $tiddler="$:/config/ThirdFlow/$setting$" />
+    {{$:/core/images/refresh-button}}
+  </$button>
+</div>
+\end
+
+\define template-link(t, ttype)
+<$button class="tc-btn-invisible" aria-label="open $ttype$ template" tooltip="open $ttype$ template" to=<<template-path "$t$">>>
+  {{$:/core/images/file}}
+</$button>
+\end
+
+\define infixsetting(description, infix, templatetitle, templatetype)
+<tr class="tc-edit-field">
+  <td style="white-space: nowrap;">$description$</td>
+  <td><<infix "$infix$">></td>
+  <td><<template-link "$templatetitle$" "$templatetype$">></td>
+</tr>
+\end
+
+Settings to customize //your// ''plugin development'' in TiddlyWiki.
+
+Configure the places where you want to add new tiddlers of a certain type when developing your plugins. These settings only apply when adding new tiddlers to a plugin, never afterwards.
+
+* Simply leave a place empty when you don't want tiddlers of a specific type to be organized into their own sub title-namespace, but instead "//flat//" directly within the plugin.
+* Press <span class="tc-icon-wrapper">{{$:/core/images/refresh-button}}</span> in order to reset a place for a specific type of plugin tiddler to its default setting.
+* Press <span class="tc-icon-wrapper">{{$:/core/images/file}}</span> to see -- and optionally edit -- the template for a specific plugin tiddler type.
+
+<div class="tc-edit-fields">
+  <table class="tc-edit-fields">
+    <tbody>
+      <<infixsetting "command modules" "commandinfix" "command.js" "command module">>
+      <<infixsetting "general filter operators `foo[]`" "filterinfix" "filter.js" "filter module">>
+      <<infixsetting "&#8195;&#8230; `all[...]` filters" "allfilterinfix" "allfilter.js" "all[...] filter module">>
+      <<infixsetting "&#8195;&#8230; `is[...]` filters" "isfilterinfix" "isfilter.js" "is[...] filter module">>
+      <<infixsetting "Javascript macro modules" "jsmacroinfix" "jsmacro.js" "Javascript macro module">>
+      <<infixsetting "~TiddlyWiki-markup macros" "twmacroinfix" "twmacro" "TiddlyWiki-markup macro">>
+      <<infixsetting "library modules" "jslibinfix" "library.js" "Javascript library module">>
+      <<infixsetting "parser modules" "parserinfix" "parser.js" "parser module">>
+      <<infixsetting "&#8195;&#8230; wikiparser rule modules" "wikiparserruleinfix" "wikirule.js" "wikiparser rule module">>
+      <<infixsetting "startup modules" "startupinfix" "startup.js" "startup module">>
+      <<infixsetting "CSS tiddlers" "styleinfix" "cssstyle.css" "CSS">>
+      <<infixsetting "template tiddlers" "templateinfix" "template" "TiddlyWiki template tiddler">>
+      <<infixsetting "UI tiddlers" "uiinfix" "ui" "UI tiddler">>
+      <<infixsetting "widget modules" "widgetinfix" "widget.js" "widget module">>
+      <<infixsetting "`$tw` global modules" "twglobalinfix" "twglobal.js" "$tw global module">>
+      <<infixsetting "`$tw.config` modules" "twconfiginfix" "twconfig.js" "$tw.config module">>
+      <<infixsetting "`$tw.utils` modules" "twutilinfix" "twutil.js" "$tw.utils module">>
+      <<infixsetting "`$tw.utils` Node.js-only modules" "twutilnodeinfix" "twutilnode.js" "$tw.utils Node.js-only configuration module">>
+    </tbody>
+  </table>
+</div>

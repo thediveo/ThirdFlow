@@ -1,5 +1,5 @@
 created: 20180202130047517
-modified: 20180202130858732
+modified: 20180217165529786
 tags: $:/tags/Stylesheet
 title: $:/plugins/TheDiveO/ThirdFlow/styles/ThirdFlow/PluginEditView
 type: text/vnd.tiddlywiki
@@ -12,4 +12,8 @@ td.tfc-plugin-edit-element-value {
 
 td.tfc-plugin-edit-element-value input {
   width: 100%;
+}
+
+td.tfc-plugin-edit-element-value input[type=checkbox] {
+  width: auto;
 }

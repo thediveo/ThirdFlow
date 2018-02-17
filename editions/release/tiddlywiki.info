@@ -10,11 +10,10 @@
         "tiddlywiki/highlight"
     ],
     "build": {
-		"release": [
-			"--packplugin", "$:/plugins/TheDiveO/ThirdFlow",
-			"--rendertemplatedtiddler", "$:/plugins/TheDiveO/ThirdFlow", "$:/core/templates/tid-tiddler", "thirdflow.tid",
-			"--rendertiddler", "$:/plugins/TheDiveO/ThirdFlow/templates/save-all-wo-plugin-sources", "thirdflow.html", "text/plain"
-		]
+  		"release": [
+        "--releaseplugins",
+        "--releasedemowiki"
+  		]
     },
     "themes": [
         "tiddlywiki/vanilla",
