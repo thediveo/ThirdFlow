@@ -27,11 +27,6 @@ var RELEASE_CONFIG_FILTER = "[prefix[" + RELEASE_CONFIG_TIDDLERS_PREFIX + "/]]";
 var DEFAULT_TID_TEMPLATE = "$:/core/templates/tid-tiddler";
 
 
-/* Required Good Stuff(tm) */
-var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
-var path = require("path");
-
-
 /* Creates a new command instance. */
 var Command = function(params, commander) {
   this.params = params;
@@ -47,6 +42,9 @@ Command.prototype.execute = function() {
   if (self.params.length) {
     self.logger.log("ignoring command parameter(s)");
   }
+
+  var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
+  var path = require("path");
 
   // Retrieve the release configuration tiddlers, then iterate over them
   // and package and render those plugins for which release is enabled.

@@ -27,10 +27,6 @@ exports.info = {
 };
 
 
-var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
-var path = require("path");
-
-
 var Command = function(params,commander) {
 	this.params = params;
 	this.commander = commander;
@@ -39,9 +35,11 @@ var Command = function(params,commander) {
 
 
 Command.prototype.execute = function() {
-	if(this.params.length < 3) {
+	if (this.params.length < 3) {
 		return "Missing template or filename";
 	}
+	var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
+	var path = require("path");
 	var title = this.params[0];
 	var template = this.params[1];
 	var filename = path.resolve(this.commander.outputPath, this.params[2]);

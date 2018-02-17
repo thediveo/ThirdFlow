@@ -18,8 +18,10 @@ functions can be used, for instance, through TW server commands.
 
 
 /* Good Stuff(tm) we need */
-var fs = require("fs");
-var path = require("path");
+if ($tw.node) {
+  var fs = require("fs");
+  var path = require("path");  
+}
 
 
 /* Packages a plugin tiddler from its constituent individual tiddlers that exist
@@ -84,7 +86,9 @@ exports.packagePlugin = function(wiki, pluginTitle, filterExpression) {
 };
 
 
-/* Renders a single tiddler using a template to a file.
+/* Renders a single tiddler using a template to a file. Please note that
+ * this function automatically creates the required subdirectories needed
+ * to contain the output file.
  *
  * Parameters:
  *   wiki: TW instance.
