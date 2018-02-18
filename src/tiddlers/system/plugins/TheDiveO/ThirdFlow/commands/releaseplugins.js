@@ -69,13 +69,22 @@ Command.prototype.execute = function() {
       } else {
         // (1) pack the plugin tiddler
         self.logger.log("packaging:", pluginTitle);
-        thirdflow.packagePlugin($tw.wiki, pluginTitle);
-        // (2) write the plugin tiddler
-        var filename = path.resolve(self.commander.outputPath, releaseName);
-        self.logger.log("writing to:", filename);
-        thirdflow. renderTiddlerWithTemplate(
-          self.commander.wiki, pluginTitle, template, filename
-        );
+        var err = thirdflow.packagePlugin($tw.wiki, pluginTitle);
+        if (!err) {
+          // (2) write the plugin tiddler
+          var filename = path.resolve(self.commander.outputPath, releaseName);
+          self.logger.log("writing to:", filename);
+          err = thirdflow.renderTiddlerWithTemplate(
+            self.commander.wiki, pluginTitle, template, filename
+          );
+          if (err) {
+            self.logger.alert("writing failed:", err);
+            return err;
+          }
+        } else {
+          self.logger.alert("packaging failed:", err);
+          return err;
+        }
       }
     }
   });

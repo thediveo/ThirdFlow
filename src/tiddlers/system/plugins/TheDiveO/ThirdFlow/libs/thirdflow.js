@@ -20,7 +20,7 @@ functions can be used, for instance, through TW server commands.
 /* Good Stuff(tm) we need */
 if ($tw.node) {
   var fs = require("fs");
-  var path = require("path");  
+  var path = require("path");
 }
 
 
@@ -46,7 +46,8 @@ exports.packagePlugin = function(wiki, pluginTitle, filterExpression) {
   if (pluginTitle.substr(-1) === "/") {
     pluginTitle = pluginTitle.substr(0, pluginTitle.length - 1);
   }
-  filterExpression = filterExpression || "[prefix[" + pluginTitle + "/]]";
+  filterExpression = filterExpression
+    || "[all[tiddlers]prefix[" + pluginTitle + "/]]";
   // Plugin tiddler sanity checks...
   var pluginTiddler = wiki.getTiddler(pluginTitle);
 	if (!pluginTiddler) {
