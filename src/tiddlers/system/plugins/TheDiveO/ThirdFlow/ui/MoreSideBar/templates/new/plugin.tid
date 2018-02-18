@@ -1,8 +1,8 @@
 created: 20180202203909068
-modified: 20180205190029459
+modified: 20180218193839795
 plugin-type: plugin
 tags: 
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/plugin
-type: text/vnd.tiddlywiki
+type: application/json
 
 {"tiddlers": {}}
