@@ -57,6 +57,7 @@ Command.prototype.execute = function() {
       var content = $tw.wiki.renderTiddler("text/plain", template);
       var err = $tw.utils.createFileDirectories(filename);
       if (typeof err === "string") {
+        self.logger.alert("cannot create file directories");
         return err;
       }
       fs.writeFileSync(filename, content, { encoding: "utf8" });
