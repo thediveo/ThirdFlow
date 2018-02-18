@@ -1,7 +1,11 @@
 created: 20140902083720188
-modified: 20180217210510100
+modified: 20180218200526556
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.1''
+** fixes new plugin template so its text content is of (mime) type `application/json`.
+** fixes error reporting in `--releaseplugins` and `--releasedemowiki`.
 
 * ''1.2.0''
 ** brings a new automated release mechanism for plugins and plugin-demo wikis that simplifies maintaining what is to be released. The new system especially makes releasing multiple different plugins from the same development wiki much easier -- because there is no more need to tweak the release `tiddlywiki.info` configuration (however, this old release mechanism is still available).

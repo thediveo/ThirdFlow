@@ -4,4 +4,4 @@ release: yes
 title: $:/config/ThirdFlow/demowiki
 type: text/vnd.tiddlywiki
 
-skeleton.html
+demowiki.html
