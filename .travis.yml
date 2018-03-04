@@ -33,4 +33,4 @@ deploy:
     repo: TheDiveO/ThirdFlow
     tags: true
   name: ThirdFlow plugin release $TRAVIS_TAG
-  body: 'ignore this automated release'
+  body: $RELEASE_BODY
