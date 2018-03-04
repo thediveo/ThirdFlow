@@ -2,12 +2,17 @@
 language: node_js
 node_js: 'node' # latest stable Node.js release
 
+branches:
+  only:
+    - 'master'
+    - /^v.*$/
+
 jobs:
   include:
     - stage: test
-        script: npm test
+      script: npm test
     - stage: deploy
-        script: npm run release
+      script: npm run release
 
 cache:
   directories:
@@ -25,5 +30,6 @@ deploy:
   on:
     repo: TheDiveO/ThirdFlow
     tags: true
-  body: 'ignore release'
-  prerelease: true
+  name: ThirdFlow plugin release $TRAVIS_TAG
+  body: 'ignore this automated release'
+  draft: true
