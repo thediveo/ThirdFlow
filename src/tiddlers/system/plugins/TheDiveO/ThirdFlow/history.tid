@@ -1,7 +1,10 @@
 created: 20140902083720188
-modified: 20180218200526556
+modified: 20180224213249509
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.2''
+** supports showing the "Plugin Sources" tab within the More sidebar tab at start for ~TiddlyWiki 5.1.16+.
 
 * ''1.2.1''
 ** fixes new plugin template so its text content is of (mime) type `application/json`.
