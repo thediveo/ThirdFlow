@@ -19,7 +19,7 @@ cache:
 
 # Push generated plugin files and the demonstration tiddlywiki as GitHub tagged release.
 before_deploy:
-  - export RELEASE_BODY=$(jshon -s "$(cat RELEASE.md)")
+  - export RELEASE_BODY="$(cat RELEASE.md)"
 deploy:
   provider: releases
   api_key:
