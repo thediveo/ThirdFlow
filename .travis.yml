@@ -17,9 +17,8 @@ cache:
   directories:
     - "node_modules"
 
-# Push generated plugin files and the demonstration tiddlywiki as GitHub tagged release.
-before_deploy:
-  - export RELEASE_BODY="$(cat RELEASE.md)"
+# Draft a new GitHub release and attach the build plugin files and
+# the demonstration tiddlywiki.
 deploy:
   provider: releases
   api_key:
@@ -33,4 +32,5 @@ deploy:
     repo: TheDiveO/ThirdFlow
     tags: true
   name: ThirdFlow plugin release $TRAVIS_TAG
-  body: $RELEASE_BODY
+  body: 'see RELEASE.md'
+  draft: true
