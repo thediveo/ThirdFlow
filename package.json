@@ -13,7 +13,8 @@
     "start": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html & echo $! > tw.pid",
     "stop": "kill `cat tw.pid` && rm tw.pid",
     "develop": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html",
-    "release": "tiddlywiki editions/release --verbose --build release"
+    "release": "tiddlywiki editions/release --verbose --build release",
+    "test": "tiddlywiki editions/release --verbose"
   },
 
   "repository": {
@@ -22,11 +23,9 @@
   },
 
   "dependencies": {
-    "tiddlywiki": ">=5.1.11"
+    "tiddlywiki": ">=5.1.15"
   },
-  "devDependencies": {},
-  "bundleDependencies": [],
   "engines": {
-    "node": ">=0.8.2"
+    "node": ">=4.6.0"
   }
 }
