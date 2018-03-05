@@ -9,9 +9,15 @@ branches:
 jobs:
   include:
     - stage: test
-      script: npm test
+      script:
+        - npm test
+        - npm run release
+        - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
+        - cp $OUTPUT_DIR/thirdflow.html $GH_PAGES_OUTPUT_DIR
+        - cp $OUTPUT_DIR/thirdflow.tid $GH_PAGES_OUTPUT_DIR
+
     - stage: deploy
-      script: npm run release
+      
 
 cache:
   directories:
@@ -53,7 +59,3 @@ deploy:
     repo: TheDiveO/ThirdFlow
     tags: true
   local_dir: $GH_PAGES_OUTPUT_DIR
-  before_script:
-    - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
-    - cp $OUTPUT_DIR/thirdflow.html $GH_PAGES_OUTPUT_DIR
-    - cp $OUTPUT_DIR/thirdflow.tid $GH_PAGES_OUTPUT_DIR
