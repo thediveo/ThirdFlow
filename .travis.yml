@@ -6,18 +6,19 @@ branches:
   only:
     - /^\d+\.\d+\.\d+*$/
 
-jobs:
-  include:
-    - stage: test
-      script:
-        - npm test
-        - npm run release
-        - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
-        - cp $OUTPUT_DIR/thirdflow.html $GH_PAGES_OUTPUT_DIR
-        - cp $OUTPUT_DIR/thirdflow.tid $GH_PAGES_OUTPUT_DIR
+stages: # just to emphasize this...
+  - test
+  - GitHub Pages
+  - GitHub Release
 
-    - stage: deploy
-      
+before_install:
+  - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
+
+script:
+  - npm test
+  - npm release
+  - cp $OUTPUT_DIR/thirdflow.tid $GH_PAGES_OUTPUT_DIR
+  - cp $OUTPUT_DIR/thirdflow.html $GH_PAGES_OUTPUT_DIR
 
 cache:
   directories:
@@ -31,7 +32,7 @@ env:
 
 # Draft a new GitHub release and attach the build plugin files and
 # the demonstration tiddlywiki.
-deploy:
+GitHub Release:
   provider: releases
   api_key:
     secure: PlSVyfbiiItRmVcTMwgqibjMcWur9zzTyL60IKt/pXTOQi9vE3ggJhj1gqoMrmlNlpdQ+om7wFdIzmyEtogRT0PzvvUt+A6BCYfu/Wcy1ts5E3Eq7jvY5PVx3G3fNrlEbZlzDRub+ymRUdojqerCPSrRvC2gAkUx1x4ZmCnmlIcEK/2ibIbk0M8gr9UlrtdvtKenLJcwNO2lKx453tXxYtf/k/i8iFN1PD2p7DNdzg0Y4/qtH7E0mMhe+a9y1nbsET8t8fQYBo0h3VDnWLr7kIB89dB1kj4hv8W2eGmGY8hTivgAsV7cUbWhB+zrLDuAuuJRDxOu4lORhczoWHXm9IGD2D279a33IR4b90BT+wgICZqEzLen++7DWOCsiEjLzvL8lw/NtOGeqvXi+JO0ro5vYA9OpRxlTHqZbZIKx50roM1inGf7fBqG9vHw87VdAjS4jRm8WOQHg0WMgYz0KWSN28r4RM3jsy8r+dQIY8wiGk0BXy5hpHIlEXRktYH/LR8xIVB7YMApNzkv5kefFYNA2jmjEQ/NkX/f+FCytvVkwy7I1jrH9+yZ6MRICeUu1SCWYvctMu+ysPKiPV+xposgEOiG+tIezCLqshxVRD2SvE6qmblB31lnsOuUBMe/CEsbZsnwydH1gjQjBYiRONR4qPtaVCiZjUNmj1R7jdY=
@@ -49,7 +50,8 @@ deploy:
   body: 'see RELEASE.md'
   draft: true
 
-deploy:
+# Deploy the release files to GitHub Pages.
+GitHub Pages:
   provider: pages
   github-token:
     secure: PlSVyfbiiItRmVcTMwgqibjMcWur9zzTyL60IKt/pXTOQi9vE3ggJhj1gqoMrmlNlpdQ+om7wFdIzmyEtogRT0PzvvUt+A6BCYfu/Wcy1ts5E3Eq7jvY5PVx3G3fNrlEbZlzDRub+ymRUdojqerCPSrRvC2gAkUx1x4ZmCnmlIcEK/2ibIbk0M8gr9UlrtdvtKenLJcwNO2lKx453tXxYtf/k/i8iFN1PD2p7DNdzg0Y4/qtH7E0mMhe+a9y1nbsET8t8fQYBo0h3VDnWLr7kIB89dB1kj4hv8W2eGmGY8hTivgAsV7cUbWhB+zrLDuAuuJRDxOu4lORhczoWHXm9IGD2D279a33IR4b90BT+wgICZqEzLen++7DWOCsiEjLzvL8lw/NtOGeqvXi+JO0ro5vYA9OpRxlTHqZbZIKx50roM1inGf7fBqG9vHw87VdAjS4jRm8WOQHg0WMgYz0KWSN28r4RM3jsy8r+dQIY8wiGk0BXy5hpHIlEXRktYH/LR8xIVB7YMApNzkv5kefFYNA2jmjEQ/NkX/f+FCytvVkwy7I1jrH9+yZ6MRICeUu1SCWYvctMu+ysPKiPV+xposgEOiG+tIezCLqshxVRD2SvE6qmblB31lnsOuUBMe/CEsbZsnwydH1gjQjBYiRONR4qPtaVCiZjUNmj1R7jdY=
@@ -58,4 +60,4 @@ deploy:
   on:
     repo: TheDiveO/ThirdFlow
     tags: true
-  local_dir: $GH_PAGES_OUTPUT_DIR
+  local-dir: $GH_PAGES_OUTPUT_DIR
