@@ -52,7 +52,7 @@ deploy:
   on:
     repo: TheDiveO/ThirdFlow
     tags: true
-  local_dir: $GH_PAGES_DIR
+  local_dir: $GH_PAGES_OUTPUT_DIR
   before_script:
     - git clone --branch gh-pages --single-branch --depth 1 https://github.com/$TRAVIS_REPO_SLUG gh-pages
     - cp $OUTPUT_DIR/thirdflow.html $GH_PAGES_OUTPUT_DIR
