@@ -53,4 +53,4 @@ deploy:
     repo: TheDiveO/ThirdFlow
     tags: true
   local-dir: $GH_PAGES_DIR
-  script: travis-gh-pages.sh
+  before_script: travis-gh-pages.sh
