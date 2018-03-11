@@ -1,7 +1,10 @@
 created: 20140902083720188
-modified: 20180224213249509
+modified: 20180311173125103
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''next''
+** development wiki opens the "Plugin Sources" sidebar tab by default; this can be changed in the Control Panel "Settings" tab. Please note that TiddlyWiki 5.1.16+ will have this feature anyway.
 
 * ''1.2.2''
 ** supports showing the "Plugin Sources" tab within the More sidebar tab at start for ~TiddlyWiki 5.1.16+.
