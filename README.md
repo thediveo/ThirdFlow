@@ -4,52 +4,71 @@
 
 ![Third Flow emblem](third-flow.png)
 
-The Third Flow plugin brings to you another way to develop customizations for TiddlyWiki 5. It is not enforcing
-a specific development flow, it simply tries to help you. Otherwise, it tries to stay out of your way.
+The _Third Flow_ plugin brings to you another way to develop customizations for
+TiddlyWiki 5. It is not enforcing a specific development flow, it simply tries
+to help you. Otherwise, it tries to stay out of your way. You can develop some
+parts of your plugin inside the browser, and other parts in your favorite code
+editor -- get the best of all worlds.  
 
 * You can **develop your plugin directly from within your browser**. A server-based
-TiddlyWiki instance running on Node.js ensures that all your source tiddlers are neatly stored in a clean and
-hierarchically organized folder structure.
+TiddlyWiki instance running on Node.js ensures that all your source tiddlers are
+neatly stored in a clean and hierarchically organized folder structure.
+`$ npm run develop` is your friend.
 
-* **Source code management is done as usual** using your favorite source code management tool, such as git and others.
-As the Third Flow plugin structures your tiddler source files you get a well-organized repository structure at
-no price.
+* **Source code management is done as usual** using your favorite source code
+management tool, such as `git`. As the Third Flow plugin neatly structures your
+tiddler source files, you'll get a well-organized repository structure at no
+price.
 
-* For **packaging your plugin** you finally simply run a shell script which packs the plugin tiddler and saves it
-to disk. Additionally, a demonstration TiddlyWiki is also created that guides your future plugin users through
-the process of deploying your new plugin.
+* For **packaging your plugin** you finally simply run a shell script which
+packs the plugin tiddler and saves it to disk. Additionally, you may opt to
+create an additional demonstration TiddlyWiki to teach your future plugin users
+how to use your AWESOME plugin.
 
-Of course, the Third Flow has been developed using the same process it supports. We actually eat our own dog food.
+Of course, the _Third Flow_ plugin is developed using the same process it
+supports. We actually _eat_ our own dog food.
 
 ## In Simple Pictures
 
-From the «_a single figure lies more than a thousands words_» department...
+Enough words for now, let's follow the old proverb that «_a single figure lies
+more than a thousands words_»...
 
 ### Development Phase
 
 <img src="art/ThirdFlow%20Architecture%20Development%20Phase.jpg" width="40%" align="right">
 
 (1) Development:
-   * You simply develop your plugin in the well-known TiddlyWiki 5 environment.
-     * Edit the tiddlers belonging to your plugin directly inside a TiddlyWiki, and get live, immediate feedback...
+   * You simply develop (parts of) your plugin inside the TiddlyWiki 5
+   environment that you are already familiar with.
+     * Edit the tiddlers belonging to your plugin directly inside a TiddlyWiki,
+     and get live, immediate feedback...
      * ...inside a standard TiddlyWiki 5...
-     * ...inside a standard HMTL5 web browser. Turtles, anyone?
-   * Your TiddlyWiki synchronizes with a computer-local TiddlyWiki 5 server, running on top of Node.js. This TiddlyWiki server is running in (interactive) "development" mode.
-     * Inside this server is a special sync plugin HierarchicalFilesystemAdaptor that...
-     * ...stores your tiddlers persistently inside a hierarchical folder structure on your disk.
+     * ...inside a standard HMTL5 web browser. _Turtles_, anyone?
+   * Your TiddlyWiki synchronizes with a computer-local TiddlyWiki 5 server,
+   running on top of Node.js. This TiddlyWiki server is running in "development"
+   mode.
+     * Inside this server is a special sync plugin HierarchicalFilesystemAdaptor
+     that...
+     * ...stores your tiddlers persistently inside a _hierarchical_ folder
+     structure on your disk.
 
 (2) Source Code Control:
-   * Use your favorite source code control system (and cloud service) to manage your plugin tiddlers conveniently. For example, git and GitHub.
+   * Use your favorite source code control system (and cloud service) to manage
+   your plugin tiddlers conveniently. For example, `git` and GitHub.
 
 ### Release Phase
 
 <img src="art/ThirdFlow%20Architecture%20Release%20Phase.jpg" width="52%" align="right">
 
 (3) Release:
-   * You can easily release your plugin as a single plugin .tid file for easy import, and you can also release it as part of a demonstration TiddlyWiki, too.
+   * You can easily release your plugin as a single plugin .tid file for easy
+   import, and you can also release it as part of a demonstration TiddlyWiki,
+   too. Oh, you can also release multiple separate plugins simultaneously.
      * The export runs as a TiddlyWiki server command...
      * ...inside a Node.js environment.
-   * Your plugin tiddlers get loaded as usual from the file system. This time it's all in read-only mode, because we don't want to change tiddlers. We only want to export.
+   * Your plugin tiddlers get loaded as usual from the file system. This time
+   it's all in _read-only_ mode, because we don't want to change tiddlers. We
+   only want to export.
    * Plugin export is controlled using a templated tiddler renderer.
    * Demo TiddlyWiki export is done using a special save template.
 
@@ -124,7 +143,7 @@ your release files inside the `editions/release/output/` folder.
 # Installation/Setup For Plugin Development
 
 The easiest way to get started with your own plugin development is to clone the
-skeleton repository, and then use that:
+dedicated skeleton repository on GitHub, and then use that:
 
 ```bash
 $ git clone https://github.com/TheDiveO/TiddlyWikiPluginSkeleton
@@ -135,12 +154,12 @@ $ npm run develop
 
 Navigate your browser to [localhost:8080](http://localhost:8080) and start
 developing your plugin. You'll now be greeted with the shiny new "Plugin
-Kickstarter" tiddler. Fill in the fields and follow its instructions by clicking 
+Kickstarter" tiddler. Fill in the fields and follow its instructions by clicking
 through the few steps to create a new plugin.
 
 Also make sure to visit the ThirdFlow tab in the Control Panel, and its Release
-tab. Enable the creation of release file and set their filenames. And then, simply
-run:
+tab. Enable the creation of release file and set their filenames. And then,
+simply run:
 
 ```bash
 $ npm run release
@@ -149,7 +168,7 @@ $ npm run release
 The release files are to be found inside `editions/release/output`.
 
 
-# Hacking ThirdFlow
+# Hacking ThirdFlow Itself
 
 First clone **this repository**, then change into it, and finally run `npm install`
 inside it to get the whole shebang set up correctly.
@@ -177,10 +196,12 @@ The Third Flow plugin is covered by the following licenses:
 
 * The **hierarchical file system adapter** is licensed under the
 [TiddlyWiki 5 license](https://raw.githubusercontent.com/Jermolene/TiddlyWiki5/master/licenses/copyright.md)
-(links to GitHub TW5 repository). It bases on filesystemadaptor.js and brings in storing tiddlers into hierarchical
-folder structures according to their titles.
+(links to GitHub TW5 repository). It bases on filesystemadaptor.js and brings
+in storing tiddlers into hierarchical folder structures according to their
+titles.
 
-* **Other content** of this TiddlyWiki which is not part of the plugin or TiddlyWiki 5 is covered by the
+* **Other content** of this TiddlyWiki which is not part of the plugin or
+TiddlyWiki 5 is covered by the
 [CC BY 3.0](http://creativecommons.org/licenses/by/3.0/) license.
 
 ## Author
