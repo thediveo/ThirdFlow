@@ -3,7 +3,7 @@ modified: 20180311173125103
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''next''
+* ''1.2.3''
 ** makes ThirdFlow plugin available as npm package `tw5-thirdflow`.
 ** the development wiki now opens the "Plugin Sources" sidebar tab by default; this can be changed in the Control Panel "Settings" tab. Please note that TiddlyWiki 5.1.16+ will have this feature anyway.
 
