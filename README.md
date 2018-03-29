@@ -23,7 +23,7 @@ price.
 * For **packaging your plugin** you finally simply run a shell script which
 packs the plugin tiddler and saves it to disk. Additionally, you may opt to
 create an additional demonstration TiddlyWiki to teach your future plugin users
-how to use your AWESOME plugin.
+how to use your AWESOME plugin. `npm run release` is all you need.
 
 Of course, the _Third Flow_ plugin is developed using the same process it
 supports. We actually _eat_ our own dog food.
