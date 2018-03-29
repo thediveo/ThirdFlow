@@ -1,0 +1,16 @@
+caption: {{$:/language/ControlPanel/Settings/DefaultMoreSidebarTab/Caption}}
+created: 20180311171546924
+modified: 20180311171658348
+tags: $:/tags/ControlPanel/Settings
+title: $:/core/ui/ControlPanel/Settings/DefaultMoreSidebarTab
+type: text/vnd.tiddlywiki
+
+\define lingo-base() $:/language/ControlPanel/Settings/DefaultMoreSidebarTab/
+
+<$link to="$:/config/DefaultMoreSidebarTab"><<lingo Hint>></$link>
+
+<$select tiddler="$:/config/DefaultMoreSidebarTab">
+<$list filter="[all[shadows+tiddlers]tag[$:/tags/MoreSideBar]!has[draft.of]]">
+<option value=<<currentTiddler>>><$transclude field="caption"><$text text=<<currentTiddler>>/></$transclude></option>
+</$list>
+</$select>
