@@ -1,3 +1,5 @@
+[![ThirdFlow Build Status](https://travis-ci.org/TheDiveO/ThirdFlow.svg?branch=master)](https://travis-ci.org/TheDiveO/ThirdFlow)
+
 # ThirdFlow Plugin Development Support Plugin
 
 ![Third Flow emblem](third-flow.png)
@@ -21,7 +23,7 @@ Of course, the Third Flow has been developed using the same process it supports.
 
 ## In Simple Pictures
 
-From the «a single figure lies more than a thousands words» department...
+From the «_a single figure lies more than a thousands words_» department...
 
 ### Development Phase
 
@@ -118,45 +120,56 @@ check the "demo wiki" and also set its filename.
 Then switch to a terminal session and simply run `npm run release` to generate
 your release files inside the `editions/release/output/` folder.
 
-## Installation
 
+# Installation/Setup For Plugin Development
+
+The easiest way to get started with your own plugin development is to clone the
+skeleton repository, and then use that:
+
+```bash
+$ git clone https://github.com/TheDiveO/TiddlyWikiPluginSkeleton
+$ cd TiddlyWikiPluginSkeleton
+$ npm install
+$ npm run develop
 ```
-git clone https://github.com/TheDiveO/ThirdFlow.git
-cd ThirdFlow
-npm install tiddlywiki
+
+Navigate your browser to [localhost:8080](http://localhost:8080) and start
+developing your plugin. You'll now be greeted with the shiny new "Plugin
+Kickstarter" tiddler. Fill in the fields and follow its instructions by clicking 
+through the few steps to create a new plugin.
+
+Also make sure to visit the ThirdFlow tab in the Control Panel, and its Release
+tab. Enable the creation of release file and set their filenames. And then, simply
+run:
+
+```bash
+$ npm run release
 ```
 
-Then make sure, that your PATH variable is set to find the tiddlywiki binary at: `./node_modules/.bin` or you can install TW globally with:  `npm install -g tiddlywiki`
+The release files are to be found inside `editions/release/output`.
 
-For Windows users the PATH variable is well hidden, so just [ask the search engine :)](https://www.google.at/search?q=How+to+set+the+path+and+environment+variables+in+Windows)
 
-## Creating Your New Plugin
+# Hacking ThirdFlow
 
-Simply copy the contents inside the `skeleton` folder to a new folder. Then start the develop phase as described next. Fill in the Plugin Kickstarter that will appear and
-click through its few steps. That's it. Enjoy!
+First clone **this repository**, then change into it, and finally run `npm install`
+inside it to get the whole shebang set up correctly.
 
-## Starting the Server
-
+```bash
+$ git clone https://github.com/TheDiveO/ThirdFlow.git
+$ cd ThirdFlow
+$ npm install
 ```
+
+Then run the development server for ThirdFlow itself:
+
+```bash
 npm run develop
 ```
 
-and open [localhost:8080](http://localhost:8080). You'll now be greeted with
-the shiny new "Plugin Kickstarter" tiddler. Fill in the fields and follow its
-instructions by clicking through the few steps to create a new plugin.
+...and open [localhost:8080](http://localhost:8080).
 
-Afterwards, you can delete the "Plugin Kickstarter" tiddler when you don't need
-it anymore.
 
-## Creating the Release Files
-
-```
-npm run release
-```
-
-The release files will be created in the `editons/release` folder.
-
-## License
+# License
 
 The Third Flow plugin is covered by the following licenses:
 
