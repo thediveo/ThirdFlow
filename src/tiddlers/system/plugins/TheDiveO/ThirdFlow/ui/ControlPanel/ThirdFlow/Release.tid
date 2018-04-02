@@ -1,6 +1,6 @@
 caption: Release
 created: 20180217150231019
-modified: 20180217202317855
+modified: 20180402161949362
 tags: 
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow/Release
 type: text/vnd.tiddlywiki
@@ -21,16 +21,28 @@ $text$
           </$checkbox>
         </td>
       </tr>
+      
       <tr class="tc-edit-field">
         <td>as:</td>
         <td class="tfc-plugin-edit-element-value" style="white-space: nowrap;">
           <$edit-text tiddler="$itemconfig$" field="text" default="$defaultfilename$" tag="input" />
         </td>
       </tr>
+      
       <tr class="tc-edit-field">
         <td>template:</td>
         <td class="tfc-plugin-edit-element-value" style="white-space: nowrap;">
           <$edit-text tiddler="$itemconfig$" field="template" default="" placeholder="$templateplaceholder$" tag="input" />
+        </td>
+      </tr>
+      
+      <tr class="tc-edit-field">
+        <td>additional plugin tiddlers:</td>
+        <td class="tfc-plugin-edit-element-value">
+          <$edit-text class="tfc-full-width-input" tiddler="$itemconfig$" field="additional-tiddlers" default="" tag="textarea" />
+          <$set name="additional-tiddlers" tiddler="$itemconfig$" field="additional-tiddlers" emptyValue="foo -foo">
+            (+<$count filter=<<additional-tiddlers>> />)
+          </$set>
         </td>
       </tr>
 	</tbody>
@@ -44,7 +56,13 @@ $text$
 
 Settings to customize your ''plugin(s) release'', including an optional plugin-demo wiki.
 
-> ''Note:'' To ''create'' the release files, run `npm run release` on your development ~TiddlyWiki in a terminal session.
+<blockquote>
+''Note:'' to ''create'' the release files, run `npm run release` on your development ~TiddlyWiki in a terminal session.
+</blockquote>
+
+<blockquote>
+''Note:'' to pack additional tiddlers into your plugin during release, you can specify simultaneously both individual tiddler titles, as well as [[filter runs|https://tiddlywiki.com/#Filter%20Run]] (for instance: `[prefix[$:/config/foo/]]`). The number below the input field shows the number of matching tiddlers.
+</blockquote>
 
 !! Plugins
 
@@ -55,7 +73,6 @@ Settings to customize your ''plugin(s) release'', including an optional plugin-d
     </$set>
   </$set>
 </$list>
-
 
 !! Plugin-Demo Wiki
 

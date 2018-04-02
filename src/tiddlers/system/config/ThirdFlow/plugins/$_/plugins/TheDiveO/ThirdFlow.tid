@@ -1,5 +1,6 @@
+additional-tiddlers: [prefix[$:/config/EditTemplateFields/Visibility/]!is[shadow]]
 created: 20180212173140728
-modified: 20180212173243386
+modified: 20180402155417587
 release: yes
 tags: 
 title: $:/config/ThirdFlow/plugins/$:/plugins/TheDiveO/ThirdFlow
