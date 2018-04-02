@@ -1,5 +1,5 @@
 created: 20180203155550006
-modified: 20180203163400275
+modified: 20180402155311897
 tags: $:/tags/Stylesheet
 title: $:/plugins/TheDiveO/ThirdFlow/styles/ThirdFlow/ControlPanel
 type: text/css
@@ -12,4 +12,8 @@ type: text/css
 
 .tfc-infix-setting-prefix {
   opacity: 0.5;
+}
+
+textarea.tfc-full-width-input {
+  width: 100%;
 }

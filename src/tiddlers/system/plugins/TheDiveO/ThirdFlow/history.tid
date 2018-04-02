@@ -1,7 +1,14 @@
 created: 20140902083720188
-modified: 20180311173125103
+modified: 20180402163058347
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.5''
+** adds new release feature that allows developers to specify additional tiddlers to be included in a plugin. The relase pane listing the plugins to be released now contains an additional row per plugin titled //additional plugin tiddlers//. The input field accepts both a list of titles as well as [[filter run|https://tiddlywiki.com/#Filter%20Run]] expressions, such as `[prefix[$:/config/foo]]`.
+** suppresses duplicate display of plug-in related fields in the generic field edit template: `author`, `core-version`, `description`, `plugin-priority`, `plugin-type`, `source`, and `version`. Please note that `list` is not hidden, as it isn't exposed in the dedicated plugin edit template, but instead is a generic field used in many other situations.
+
+* ''1.2.4''
+** automated CI release.
 
 * ''1.2.3''
 ** makes ThirdFlow plugin available as npm package `tw5-thirdflow`.

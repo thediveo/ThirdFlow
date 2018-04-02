@@ -63,13 +63,18 @@ Command.prototype.execute = function() {
       var release = config.fields["release"] || "";
       var releaseName = config.fields.text.replace(/\r?\n|\r/g, "");
       var template = config.fields["template"] || DEFAULT_TID_TEMPLATE;
+      var pluginContentsFilter = [
+        "[prefix[" + pluginTitle + "/]]",
+        config.fields["additional-tiddlers"] || ""
+      ].join(" ");
 
       if (!releaseName || release !== "yes") {
         self.logger.log("!!! skipping:", pluginTitle);
       } else {
         // (1) pack the plugin tiddler
         self.logger.log("packaging:", pluginTitle);
-        var err = thirdflow.packagePlugin($tw.wiki, pluginTitle);
+        self.logger.log("  with:", pluginContentsFilter);
+        var err = thirdflow.packagePlugin($tw.wiki, pluginTitle, pluginContentsFilter);
         if (!err) {
           // (2) write the plugin tiddler
           var filename = path.resolve(self.commander.outputPath, releaseName);
