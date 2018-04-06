@@ -28,6 +28,8 @@ var Command = function(params, commander) {
   this.params = params;
   this.commander = commander;
   this.logger = new $tw.utils.Logger("--" + exports.info.name);
+  this.warn = new $tw.utils.Logger("--" + exports.info.name, {colour: "brown/orange"});
+  this.ok = new $tw.utils.Logger("--" + exports.info.name, {colour: "green"});
 };
 
 
@@ -35,7 +37,7 @@ var Command = function(params, commander) {
 Command.prototype.execute = function() {
   var self = this;
   if (self.params.length) {
-    self.logger.log("ignoring command parameter(s)");
+    self.warn.log("ignoring command parameter(s)");
   }
 
   var path = require("path");
@@ -43,15 +45,16 @@ Command.prototype.execute = function() {
 
   var config = $tw.wiki.getTiddler(RELEASE_CONFIG_TIDDLER);
   if (!config) {
-    self.logger.log("!!! skipping demowiki");
+    self.warn.log("skipping (disabled) demowiki");
   } else {
     var release = config.fields["release"] || "";
     var releaseName = config.fields.text.replace(/\r?\n|\r/g, "");
     var template = config.fields["template"] || DEFAULT_DEMOWIKI_TEMPLATE;
 
     if (!releaseName || release !== "yes") {
-      self.logger.log("!!! skipping demowiki");
+      self.warn.log("skipping demowiki");
     } else {
+      self.ok.log("packaging demowiki:", releaseName);
       var filename = path.resolve(self.commander.outputPath, releaseName);
       self.logger.log("writing demowiki to:", filename);
       var content = $tw.wiki.renderTiddler("text/plain", template);

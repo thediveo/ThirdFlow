@@ -32,6 +32,8 @@ var Command = function(params, commander) {
   this.params = params;
   this.commander = commander;
   this.logger = new $tw.utils.Logger("--" + exports.info.name);
+  this.warn = new $tw.utils.Logger("--" + exports.info.name, {colour: "brown/orange"});
+  this.ok = new $tw.utils.Logger("--" + exports.info.name, {colour: "green"});
 };
 
 
@@ -40,7 +42,7 @@ Command.prototype.execute = function() {
   var self = this;
   /* check your command parameters, which you will find in this.params */
   if (self.params.length) {
-    self.logger.log("ignoring command parameter(s)");
+    self.warn.log("ignoring command parameter(s)");
   }
 
   var thirdflow = require("$:/plugins/TheDiveO/ThirdFlow/libs/thirdflow.js");
@@ -69,13 +71,17 @@ Command.prototype.execute = function() {
       ].join(" ");
 
       if (!releaseName || release !== "yes") {
-        self.logger.log("!!! skipping:", pluginTitle);
+        self.warn.log("skipping (disabled):", pluginTitle);
       } else {
         // (1) pack the plugin tiddler
-        self.logger.log("packaging:", pluginTitle);
+        self.ok.log("packaging:", pluginTitle);
         self.logger.log("  with:", pluginContentsFilter);
         var err = thirdflow.packagePlugin($tw.wiki, pluginTitle, pluginContentsFilter);
         if (!err) {
+          // (1.1) nice log...
+          self.logger.log("  total:",
+            Object.keys(JSON.parse($tw.wiki.getTiddler(pluginTitle).fields.text).tiddlers).length,
+            "tiddlers");
           // (2) write the plugin tiddler
           var filename = path.resolve(self.commander.outputPath, releaseName);
           self.logger.log("writing to:", filename);
