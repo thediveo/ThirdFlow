@@ -1,7 +1,0 @@
-.drafts/
-node_modules/
-.directory
-.project
-src/tiddlers/images/Thumbs.db
-src/tiddlers/system/StoryList.tid
-npm-debug.log

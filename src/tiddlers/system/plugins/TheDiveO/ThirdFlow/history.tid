@@ -1,7 +1,11 @@
 created: 20140902083720188
-modified: 20180402163058347
+modified: 20180406165518979
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.6''
+** fixes a long-standing quirk that caused plugin development tiddlers to get released as ordinary tiddlers in the demo wikis, despite being correctly packed inside their plugin.
+** improves release logging by carefully adding some (but only //some//) color to the console logging.
 
 * ''1.2.5''
 ** adds new release feature that allows developers to specify additional tiddlers to be included in a plugin. The relase pane listing the plugins to be released now contains an additional row per plugin titled //additional plugin tiddlers//. The input field accepts both a list of titles as well as [[filter run|https://tiddlywiki.com/#Filter%20Run]] expressions, such as `[prefix[$:/config/foo]]`.
