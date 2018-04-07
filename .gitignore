@@ -1,10 +1,9 @@
 .drafts/
-node_modules/
-skeleton/node_modules/
 .directory
 .project
-src/tiddlers/images/Thumbs.db
+node_modules/
+npm-debug.log
+Thumbs.db
 src/tiddlers/system/StoryList 1.tid
 src/tiddlers/system/StoryList.tid
 src/tiddlers/system/plugins/AAA
-npm-debug.log
