@@ -1,0 +1,6 @@
+created: 20180426175409484
+modified: 20180426175411760
+title: $:/config/codemirror/showCursorWhenSelecting
+type: bool
+
+false

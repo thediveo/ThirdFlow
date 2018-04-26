@@ -1,7 +1,23 @@
 created: 20140902083720188
-modified: 20180406165518979
+modified: 20180426181043977
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.7''
+** updates to ~TiddlyWiki 5.1.16 for development and <<tf>> demo wiki.
+** removes now stale local ~CodeMirror //CSS// and //highlight current line// "plugins" and replaces them with with the new modularized ~CodeMirror plugins from ~TiddlyWiki 5.1.16.
+** uses the following ~CodeMirror plugins in this development/demo Wiki:
+*** add-ons:
+**** auto-close tags
+**** auto-completion
+**** close brackets
+**** search and replace
+*** keymap:
+**** sublime text
+*** modes:
+**** CSS highlighting
+**** Javascript highlighting
+**** XML highlighting
 
 * ''1.2.6''
 ** fixes a long-standing quirk that caused plugin development tiddlers to get released as ordinary tiddlers in the demo wikis, despite being correctly packed inside their plugin.

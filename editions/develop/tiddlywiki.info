@@ -9,6 +9,16 @@
     "tiddlywiki/filesystem",
     "tiddlywiki/tiddlyweb",
     "tiddlywiki/codemirror",
+    "tiddlywiki/codemirror-closetag",
+    "tiddlywiki/codemirror-autocomplete",
+    "tiddlywiki/codemirror-closebrackets",
+    "tiddlywiki/codemirror-closetag",
+    "tiddlywiki/codemirror-fullscreen",
+    "tiddlywiki/codemirror-search-replace",
+    "tiddlywiki/codemirror-keymap-sublime-text",
+    "tiddlywiki/codemirror-mode-css",
+    "tiddlywiki/codemirror-mode-javascript",
+    "tiddlywiki/codemirror-mode-xml",
     "tiddlywiki/highlight"
   ],
   "themes": [

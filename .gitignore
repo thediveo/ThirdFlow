@@ -3,6 +3,7 @@
 .project
 node_modules/
 npm-debug.log
+package-lock.json
 Thumbs.db
 src/tiddlers/system/StoryList.tid
 src/tiddlers/system/plugins/AAA

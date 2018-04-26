@@ -22,7 +22,7 @@
     "url": "https://github.com/TheDiveO/ThirdFlow.git"
   },
   "dependencies": {
-    "tiddlywiki": ">=5.1.15"
+    "tiddlywiki": ">=5.1.16"
   },
   "engines": {
     "node": ">=4.6.0"
