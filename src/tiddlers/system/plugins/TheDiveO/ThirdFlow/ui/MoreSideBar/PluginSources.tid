@@ -1,6 +1,6 @@
 caption: Plugin Sources
 created: 20141003192047443
-modified: 20180217202921185
+modified: 20180426183757282
 tags: $:/tags/MoreSideBar
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/PluginSources
 type: text/vnd.tiddlywiki
@@ -10,6 +10,8 @@ type: text/vnd.tiddlywiki
 \define qualify-plugin() $(q)$/$(plugin-name)$">>
 
 \define plugin-full-path() $:/plugins/$(plugin-name)$
+
+\define plugin-full-path-slash() $:/plugins/$(plugin-name)$/
 
 \define action-new-with-template(actiontext, infixtype, title, template, fields)
 <$set name="newtitle" value=<<typedplugintiddlertitle pluginroot:"$:/plugins/$(plugin-name)$" configtiddler:"$(tf-config-base)$$infixtype$" defaulttiddler:"$(tf-config-base-default)$$infixtype$" title:"$title$">> >
@@ -101,9 +103,9 @@ $actiontext$
       &nbsp;(<$count filter=<<plugin-contents-filter>> />)
       
       <!-- list of plugin contents -->
-      <$list filter=<<plugin-contents-filter>> emptyMessage=<<empty-plugin>> >
-        <<plugin-item>>
-      </$list>
+      <div class="tc-tree">
+      <$macrocall $name="tree-node" prefix=<<plugin-full-path-slash>> />
+      </div>
       
     </div>
   </$list>
