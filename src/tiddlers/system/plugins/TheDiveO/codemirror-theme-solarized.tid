@@ -1,0 +1,12 @@
+created: 20180426190944658
+description: Solarized theme for CodeMirror
+list: readme license history
+modified: 20180426194006371
+plugin-type: plugin
+source: https://github.com/codemirror/CodeMirror/blob/master/theme/solarized.css
+tags: 
+title: $:/plugins/TheDiveO/codemirror-theme-solarized
+type: application/json
+version: 1.0.0
+
+{"tiddlers": {}}

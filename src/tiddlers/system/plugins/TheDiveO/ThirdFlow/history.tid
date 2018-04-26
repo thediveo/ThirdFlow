@@ -1,7 +1,10 @@
 created: 20140902083720188
-modified: 20180426184819243
+modified: 20180426194456614
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.8''
+** adds ~CodeMirror theme plugin `TheDiveO/codemirror-theme-solarized` to development/demo wiki.
 
 * ''1.2.7''
 ** changes plugin sources UI for plugin contents from //list// to //tree// view. This gives a cleaner and much more compact view.
