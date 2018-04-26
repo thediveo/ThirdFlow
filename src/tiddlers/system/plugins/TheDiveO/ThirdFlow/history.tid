@@ -1,10 +1,10 @@
 created: 20140902083720188
-modified: 20180426184213166
+modified: 20180426184819243
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''1.2.7''
-** changes plugin sources UI for plugin contents from //list// to //tree// view. This gives a cleaner and much more compact view with its collapsible/expandable groups.
+** changes plugin sources UI for plugin contents from //list// to //tree// view. This gives a cleaner and much more compact view.
 ** updates to ~TiddlyWiki 5.1.16 for development and <<tf>> demo wiki.
 ** removes now stale local ~CodeMirror //CSS// and //highlight current line// "plugins" and replaces them with with the new modularized ~CodeMirror plugins from ~TiddlyWiki 5.1.16.
 ** uses the following ~CodeMirror plugins in this development/demo Wiki:
