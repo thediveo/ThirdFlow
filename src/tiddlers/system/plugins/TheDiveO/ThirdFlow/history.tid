@@ -1,9 +1,10 @@
 created: 20140902083720188
-modified: 20180430085651980
+modified: 20180430163843889
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
 * ''1.2.8''
+** fixes UI not taking the default values for plugin release filenames the first time a plugin gets enabled for release and the name hasn't been set yet.
 ** moves additional tiddler count from in ThirdFlow release settings from input column into the row header to the right.
 ** adds ~CodeMirror theme plugin `TheDiveO/codemirror-theme-solarized` to development/demo wiki. Please note that this is a separate plugin and you need to install it manually if you want to use it.
 ** removes stale left-over ~CodeMirror configuration tiddler (that isn't necessary anymore for the new modularized ~CodeMirror plugin from 5.1.16+).
