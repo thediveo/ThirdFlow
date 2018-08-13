@@ -7,12 +7,17 @@
   "license": "(MIT OR CC-BY-3.0)",
   "bugs": "https://github.com/TheDiveO/ThirdFlow/issues",
   "keywords": [
-    "tiddlywiki", "tiddlywiki5", "plugin", "thirdflow"
+    "tiddlywiki",
+    "tiddlywiki5",
+    "plugin",
+    "thirdflow"
   ],
   "main": "thirdflow.js",
   "scripts": {
     "start": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html & echo $! > tw.pid",
     "stop": "kill `cat tw.pid` && rm tw.pid",
+    "winstart": "start \"ThirdFlow Develop\" cmd /c tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html",
+    "winstop": "taskkill /fi \"WINDOWTITLE eq ThirdFlow Develop\"",
     "develop": "tiddlywiki editions/develop --verbose --server 8080 $:/core/save/all text/plain text/html",
     "release": "tiddlywiki editions/release --verbose --build release",
     "test": "tiddlywiki editions/release --verbose"
@@ -22,7 +27,7 @@
     "url": "https://github.com/TheDiveO/ThirdFlow.git"
   },
   "dependencies": {
-    "tiddlywiki": ">=5.1.16"
+    "tiddlywiki": "^5.1.17"
   },
   "engines": {
     "node": ">=4.6.0"
