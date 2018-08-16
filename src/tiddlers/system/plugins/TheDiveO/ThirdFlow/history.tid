@@ -1,7 +1,17 @@
 created: 20140902083720188
-modified: 20180426184819243
+modified: 20180816200449650
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.9''
+** fixes wikiparser rule name clash between wikiparser rule template and existing core wikiparser rule `dash`.
+** spelling fixes in plugin tiddler templates.
+
+* ''1.2.8''
+** fixes UI not taking the default values for plugin release filenames the first time a plugin gets enabled for release and the name hasn't been set yet.
+** moves additional tiddler count from in ThirdFlow release settings from input column into the row header to the right.
+** adds ~CodeMirror theme plugin `TheDiveO/codemirror-theme-solarized` to development/demo wiki. Please note that this is a separate plugin and you need to install it manually if you want to use it.
+** removes stale left-over ~CodeMirror configuration tiddler (that isn't necessary anymore for the new modularized ~CodeMirror plugin from 5.1.16+).
 
 * ''1.2.7''
 ** changes plugin sources UI for plugin contents from //list// to //tree// view. This gives a cleaner and much more compact view.

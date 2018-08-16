@@ -1,6 +1,6 @@
 caption: Release
 created: 20180217150231019
-modified: 20180402161949362
+modified: 20180430163552083
 tags: 
 title: $:/plugins/TheDiveO/ThirdFlow/ui/ControlPanel/ThirdFlow/Release
 type: text/vnd.tiddlywiki
@@ -16,8 +16,8 @@ $text$
       <tr class="tc-edit-field">
         <td>release:</td>
         <td class="tfc-plugin-edit-element-value" style="white-space: nowrap;">
-          <$checkbox tiddler="$itemconfig$" field="release" checked="yes" unchecked="no">
-	          $itemdesc$
+          <$checkbox tiddler="$itemconfig$" field="release" checked="yes" unchecked="no" actions="""<$action-ensurefield $tiddler="$itemconfig$" text="$defaultfilename$" />""">
+	        $itemdesc$
           </$checkbox>
         </td>
       </tr>
@@ -37,12 +37,11 @@ $text$
       </tr>
       
       <tr class="tc-edit-field">
-        <td>additional plugin tiddlers:</td>
+        <td>
+          additional plugin&nbsp;tiddlers&nbsp;<$set name="additional-tiddlers" tiddler="$itemconfig$" field="additional-tiddlers" emptyValue="foo -foo">(+<$count filter=<<additional-tiddlers>> />):</$set>
+        </td>
         <td class="tfc-plugin-edit-element-value">
           <$edit-text class="tfc-full-width-input" tiddler="$itemconfig$" field="additional-tiddlers" default="" tag="textarea" />
-          <$set name="additional-tiddlers" tiddler="$itemconfig$" field="additional-tiddlers" emptyValue="foo -foo">
-            (+<$count filter=<<additional-tiddlers>> />)
-          </$set>
         </td>
       </tr>
 	</tbody>
