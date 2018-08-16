@@ -1,8 +1,8 @@
 /*\
 created: 20180205162715434
-modified: 20180205163131597
-title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/wikirule.js
 type: application/javascript
+title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/wikirule.js
+modified: 20180816195701777
 module-type: wikirule
 \*/
 (function(){
@@ -12,7 +12,7 @@ module-type: wikirule
 "use strict";
 
 /* Gives a name to our wikiparser rule and exports it */
-exports.name = "dash";
+exports.name = "fOO";
 /* Export the type(s) of rule, can be "inline: true" or/and "block: true" */
 exports.types = { inline: true };
 

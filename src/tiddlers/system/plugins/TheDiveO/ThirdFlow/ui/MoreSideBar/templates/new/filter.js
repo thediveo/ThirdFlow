@@ -2,7 +2,7 @@
 created: 20180205162715434
 type: application/javascript
 title: $:/plugins/TheDiveO/ThirdFlow/ui/MoreSideBar/templates/new/filter.js
-modified: 20180207103213628
+modified: 20180816195608110
 \*/
 (function(){
 
@@ -13,7 +13,7 @@ modified: 20180207103213628
 /* Gives a name to and and exports our filter operator function. The parameters
  * to operator functions are as follows:
  *
- * source: a tiddler iterator that represents the resoluts of the previous
+ * source: a tiddler iterator that represents the results of the previous
  *    filter step.
  * operator: the arguments to this filter operator...
  *    .operator: name of the filter operator.
