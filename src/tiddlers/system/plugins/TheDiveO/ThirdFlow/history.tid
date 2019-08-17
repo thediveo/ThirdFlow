@@ -1,12 +1,14 @@
 created: 20140902083720188
-modified: 20190817144007494
+modified: 20190817144641120
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
 
-* ''1.2.9''
-** fixes wikiparser rule name clash between wikiparser rule template and existing core wikiparser rule `dash`.
+* ''1.2.10''
 ** fixes/updates reference to `codemirror-fullscreen-editing` plugin.
 ** updates to ~TiddlyWiki 5.1.20: this is now the required core version by this plugin.
+
+* ''1.2.9''
+** fixes wikiparser rule name clash between wikiparser rule template and existing core wikiparser rule `dash`.
 
 * ''1.2.8''
 ** fixes UI not taking the default values for plugin release filenames the first time a plugin gets enabled for release and the name hasn't been set yet.
