@@ -9,6 +9,7 @@ type: text/vnd.tiddlywiki
 
 * ''1.2.9''
 ** fixes wikiparser rule name clash between wikiparser rule template and existing core wikiparser rule `dash`.
+** spelling fixes in plugin tiddler templates.
 
 * ''1.2.8''
 ** fixes UI not taking the default values for plugin release filenames the first time a plugin gets enabled for release and the name hasn't been set yet.
