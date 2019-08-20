@@ -1,7 +1,10 @@
 created: 20140902083720188
-modified: 20190817144641120
+modified: 20190820150037842
 title: $:/plugins/TheDiveO/ThirdFlow/history
 type: text/vnd.tiddlywiki
+
+* ''1.2.11''
+** added config variable support to the npm scripts `start`, `winstart` and `develop`. See `README.md` for details.
 
 * ''1.2.10''
 ** fixes/updates reference to `codemirror-fullscreen-editing` plugin.

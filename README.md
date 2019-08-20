@@ -157,6 +157,22 @@ developing your plugin. You'll now be greeted with the shiny new "Plugin
 Kickstarter" tiddler. Fill in the fields and follow its instructions by clicking
 through the few steps to create a new plugin.
 
+> **NOTE:** you can change the default port on which the development server
+> can be reached to a different port by either specifying a different port as
+> an argument:
+>
+> ```bash
+> $ npm run develop --tw5-thirdflow:port=9999
+> ```
+>
+> ...or by constantly changing the configuration value:
+>
+> ```bash
+> $ npm config set tw5-thirdflow:port 9999
+> ```
+>
+> Use `npm config delete tw5-thirdflow:port` to restore the default setting.
+
 Also make sure to visit the ThirdFlow tab in the Control Panel, and its Release
 tab. Enable the creation of release file and set their filenames. And then,
 simply run:
@@ -182,11 +198,24 @@ $ npm install
 Then run the development server for ThirdFlow itself:
 
 ```bash
-npm run develop
+$ npm run develop
 ```
 
 ...and open [localhost:8080](http://localhost:8080).
 
+As mentioned above, you can change the port on which your develop server can be reached, either temporarily:
+
+```bash
+$ npm run develop --tw5-thirdflow:port=9999
+```
+
+...or permanently.
+
+```bash
+$ npm config set tw5-thirdflow:port 9999
+```
+
+Use `npm config delete tw5-thirdflow:port` to restore the default setting.
 
 # License
 
